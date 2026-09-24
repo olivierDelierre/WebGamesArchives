@@ -1,3 +1,9 @@
+> **Update :** the XFL exports are now in the repository (`../xfl/mb2`,
+> `../xfl/title`, `../xfl/mb2edit`). The rewrite (`../rewrite/`) converts them
+> (`npm run xfl`) and draws every original symbol and animation ; see
+> `../rewrite/docs/XFL_INTEGRATION.md`. This port (`html5/`) still uses its
+> redrawn symbols.
+
 # Decoding the .fla files
 
 The HTML5 port already uses every bitmap and sound stored in the `.fla` files (`tools/extract_fla.py`). The **vector symbols** can't be extracted: Flash MX 2004 saved them in an undocumented binary format. They were redrawn by hand in `js/gfx/symbols/*.js` and `js/screens/*.js`.

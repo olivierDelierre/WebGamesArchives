@@ -1,8 +1,8 @@
-# Using the decoded .fla (XFL) in the rewrite — status and what's left
+# Using the decoded .fla (XFL) in the rewrite
 
 The original Flash files, saved as uncompressed XFL, are in `../xfl/` (`mb2/`,
 `title/`, `mb2edit/`). This note says how they are turned into art the
-rewrite draws, what is done, and what remains.
+rewrite draws, and what uses them.
 
 ## How it works
 
@@ -49,79 +49,39 @@ rewrite draws, what is done, and what remains.
   every exported symbol playing; `?only=boss,snake&zoom=2.5&cols=4`; click a
   cell to step through its labels. Use it to check the conversion.
 
-## Done in the game (uses the original symbols)
+## Status : done
 
-- Room: `background` (frame = (x+y)%4), holes (`ground` clipped to the hole
-  tiles + #9B76BC back wall), `border`, `door` (frames off / open…opened /
-  nodoor0-3; the halves `porteA/B` are stopped), block drop shadows as in the
-  original (one rounded rect per vertical and per horizontal run).
-- Bumpers (`src/game/entities/bumpers.js`): `bnormal`, `btime` (hands `aig`,
-  `aig2`), `bdeath`, `bmagnet` (`plus` / `neg`), `bshadow`; shadows with
-  `ombre` (frame = item type − 1).
-- Blocks (`blocks.js`): `wall` (frame = neighbour mask), `interred` /
-  `interblue` (`off` = up, `on` = down, `playOff` / `playOn`), `interupt`.
+Everything on screen is now an original symbol :
 
-Build and the 102 tests pass in this state.
+| part | symbols | code |
+| --- | --- | --- |
+| room | `background` (frame = (x+y)%4), `ground` (holes), `border`, `door` (off / open…opened / nodoor0-3) | `game/room.js`, `game/doors.js` |
+| items | `bnormal`, `btime` (hands `aig`, `aig2`), `bdeath`, `bmagnet`, `bshadow`, `ombre`, `wall`, `interred` / `interblue`, `interupt`, `red` / `blue`, `exit`, `ballbox`, `itembox`, `bteleport`, `zapper` / `checkpoint` | `game/entities/` |
+| effects | `hit`, `wallpart`, `flashLine`, `dalle`, `FXDalleCut` | `entities/effects.js`, `bosses/common.js` |
+| ball | `marble`, `stone` (+ `eclat`), `light`, `shadow` (Ball.as) | `game/ball.js` |
+| HUD | `time counter`, `ball icon`, `icon grelot` | `game/hud.js` |
+| octopus | `boss`, `boss shade`, `boss tir`, `bossParticule` | `bosses/octopus.js` |
+| snakes | `snake` (head / ring / tail, `gfx`, `crane`, eyes `o1` `o2`), `snakePart`, `logoBg` | `bosses/snake.js` |
+| final boss | `tourneboule`, `TBShadow`, `forceBubble`, `TBSpawn`, `TBVanish` ; the state machine follows `kataDone` / `animDone` like BossTB.as | `bosses/tourneboule.js` |
+| powers | `FXWater`, `FXWaterParticule`, `FXWaterQueue`, `FXFire` (`flLoopv`), `FXbourgeon`, `FXLiane`, `FXWind` | `bosses/powers.js` |
+| screens | `loading` ; `intro_bg`, `title`, `deux`, `fissure`, `press start` (Intro.as) ; `fondMenu`, `menu balls`, `cadreInfo` (Menu.as) ; `pause`, `carte`, `room` (Pause.as) ; `panGameOver` (GameOver.as, GameOverCourse.as) | `main.js`, `scenes/` |
 
-## Remaining
+The redrawn art of the first rewrite and its bitmaps (`assets/img`,
+`gfx/icons.js`, most of `gfx/draw.js` / `gfx/ui.js`) are gone.
 
-1. **Item placement like the original** (started): in `src/game/room.js`, replace
-   the `SIZES` table by `symbolCells(symbol)` of each item's symbol
-   (bnormal, btime, bdeath, bmagnet, bshadow, wall, red, blue, bteleport,
-   interupt, interred, interblue, zapper / checkpoint in Course, exit):
-   centre = (x + cells.w / 2) × 4. Real sizes differ from the port's guesses
-   for btime (18 cells, not 16), interupt (14, not 8), interred/interblue
-   (12, not 10), zapper (12, not 8). Also, from Level.as: the switch and the
-   blue block are drawn 2 px up-left (`_x -= 2`), the hatch 2 px down-right;
-   pink/blue blocks keep the wall collision box (40×40 from x×4, y×4);
-   zapper phase = ((x − w/2) + (y − h/2)) % 7 with the real w, h (= 12).
-   Then fix the tests that depend on positions (tests/game.test.js "laser beam").
-2. **Pickups** (`pickups.js`): `red` / `blue` (play "hit", the entity dies
-   when the clip is `removed`); `exit` (`anim_open`, open when
-   `art.vars.flOpen`; keep `hatch.open` = 1 then, the tests use it);
-   `ballbox` (child `ball` frame = ball type; "hit"); `itembox` (child `item`
-   frame = icon; "hit" then "opened"); teleport: `bteleport` with its `c0`
-   hidden and 5 `_gfx/_bumpers/_teleport/teleCercle` clips drawn like
-   Level.as / Collide.bumper_teleport_on_update (gfx y = random(6),
-   rotation random, rot 3..5 °/frame, x/yscale 1 ± cos/sin 0.5).
-3. **Zappers** (`zappers.js`): `zapper` gotoAndStop(phase) (its `reflet` plays),
-   `checkpoint` in Course; laser flash `flashLine` (child `gfx` frame = phase,
-   xscale = length, rotation). The beams drawn between posts are a port
-   addition (keep, or make optional).
-4. **Effects** (`effects.js`): `hit` (spark, removes itself), `wallpart`
-   (debris), `dalle` / `FXDalleCut` (floor breaking, in bosses/common.js).
-5. **Ball** (`ball.js`): like Ball.as — `marble` frame = type; 6–20 `stone`
-   clips at frame (random(4) + type × 10) placed/alpha'd by move_stones,
-   clipped by `round` (a circle of radius 12); `light` on top; `shadow`
-   symbol under it. HUD icons: `ball icon` (off / on / select, child `ball`
-   frame = type), `icon grelot` ("hit" when a key is used).
-6. **HUD** (`hud.js`): `time counter` at x = 610 (labels score / time /
-   classic; texts `tview_txt`, `niv_txt`, `lap_txt`, and in `timerPanel`:
-   `min_txt`, `sec_txt`, `mil_txt`). See Interf.update in the port.
-7. **Bosses**: octopus `boss` (labels normal, aspire, eat, throw, newEye,
-   looseEye, death, dodo; parts `b` (pincers `p1`, `p2`), `souffle`, `oeil`
-   (pupil `p`); script calls `change_pattern`), `boss shade`, `boss tir`
-   ("shrink"), `bossParticule`; `snake` (frames head/body/tail…, parts `gfx`,
-   `crane`, eyes `o1`, `o2`), `snakePart`, `logoBg` (frame = element);
-   `tourneboule` / `TBShadow` (labels kata1-6, startFly, fly, stopFly,
-   flyVanish, death; it calls `kataDone` / `animDone` — the rewrite's state
-   machine can follow these events or keep its durations), `TBSpawn`,
-   `TBVanish`, `forceBubble`; powers `FXWater`, `FXWaterParticule`,
-   `FXWaterQueue`, `FXFire` (label loop, var flLoopv), `FXbourgeon`
-   (explode, death), `FXLiane`, `FXWind`. The original code for each is in
-   `../mb2/Boss*.as`, the port's version in `../html5/js/boss/`.
-8. **Screens**: `title` / `deux` / `fissure` / `intro_bg` / `press start`
-   (Intro.as), `fondMenu` + `menu balls` (normal / disable / selected) +
-   `cadreInfo` (Menu.as), `pause`, `carte` + `room` (Pause.as), `panGameOver`
-   (gameOver / victory / texte / records…, text `mainField`, `scoreText`;
-   GameOver.as), `loading`. `../xfl/title` has the title.fla animation.
-9. Then: remove the now unused redrawn art (gfx/draw.js sprites, gfx/icons.js,
-   the old assets/img bitmaps that the symbols replace), update
-   docs/ARCHITECTURE.md and README, `../html5/FLA_DECODING.md` (the XFL is now
-   in the repo and used by the rewrite), add tests (converter: a symbol's
-   frames/labels/bounds; Clip: goto/labels/scripts/tweens), check every screen
-   with the gallery and screenshots, commit.
+Fixed on the way : colour transforms were drawn straight to the screen instead
+of the offscreen layer (so they were never applied), and negative colour
+offsets were ignored (the snakes' colours use them).
 
-Performance to watch: every entity draws its clip each frame (Path2D and
-gradients are cached). If needed, cache still frames of static symbols as
-bitmaps (gfx/draw.js `sprite()` does this for the redrawn art).
+Tests : `tests/xfl.test.js` (converter, library, Clip). `npm test` : 113 tests ;
+`npm run test:browser` passes.
+
+## Possible follow-ups
+
+- Performance : every entity draws its clip each frame (Path2D and gradients
+  are cached ; colour transforms go through an offscreen canvas). If needed,
+  cache the still frames of static symbols as bitmaps.
+- The fonts of the texts (Kiloton, Polo, Pleasantly Plump...) are not in the
+  XFL ; a web font replaces them.
+- `../xfl/mb2edit` (the level editor) is not converted : nothing in the game
+  needs it.

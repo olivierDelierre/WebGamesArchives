@@ -20,18 +20,24 @@ doors, find the coloured balls, beat the boss).
   seconds, speeds are pixels per second. Values that come from the original
   game (which counted in pixels per frame at 40 frames per second) are
   converted, and the comment gives the original value.
-- **No Flash emulation.** The faithful port in `../html5/` rebuilt Flash's
-  movie clips and timelines to run the original code unchanged. The rewrite
-  describes each animation by its duration and state instead.
+- **The original art, the rewrite's code.** Everything on screen is an
+  original symbol of `mb2.fla` (converted from its XFL export, see
+  [XFL_INTEGRATION.md](XFL_INTEGRATION.md)), played by a small timeline player
+  (`gfx/xfl/clip.js`). The game code drives the symbols the way the original
+  ActionScript did (`gotoAndPlay("hit")`, a needle's rotation, a text), but the
+  rules are the rewrite's own code : the faithful port in `../html5/` is the
+  one that runs the original code on an emulated Flash runtime.
 
 ## Layout
 
 ```
 index.html            the page (loads dist/motionball2.js)
 package.json          esbuild ; scripts build / serve / test / levels
-assets/img, snd       the original bitmaps and sounds
+assets/xfl           the symbols of mb2.fla and title.fla (JSON) and their bitmaps (generated)
+assets/snd           the original sounds
 dist/                 the bundle built from src/ (committed : the game runs without a build)
 tools/build_levels.js packs ../dungeon/*.txt into src/data/levels.generated.js
+tools/xfl/           convert.js : ../xfl/ (XFL) -> assets/xfl ; gallery.js : xfl-gallery.html
 tests/                Node tests (see "Tests" below) ; browser/smoke.js : Chromium smoke test
 
 src/
@@ -46,7 +52,7 @@ src/
     screen.js         canvas sizing, game coordinates
     input.js          keyboard / gamepad / touch -> actions and a direction
     audio.js          effects, cross-faded music, layered music (Web Audio or <audio>)
-    assets.js         image loading
+    assets.js         image loading (the bitmaps of the symbols)
     storage.js        localStorage with fallbacks
     scenes.js         current screen + fade transitions
     math.js           helpers (angles, frame-rate independent decay, random, easing)
@@ -77,27 +83,31 @@ src/
       blocks.js       green blocks, pink / blue blocks and their switch
       pickups.js      pastilles, balls, item boxes, hatch, teleports
       zappers.js      laser posts and beams (checkpoints in Course mode)
-      effects.js      sparks, debris, bursts...
+      effects.js      symbols that play once (sparks, debris, laser flash)
 
   bosses/
     index.js          which boss for which dungeon
-    common.js         base class, red "hurt" tint, breaking floor
+    common.js         base class, red "hurt" colour, breaking floor
     octopus.js        Challenge boss
     snake.js          the 4 elemental snakes (adventures 1-4)
     powers.js         water, fire, earth, wind powers
     tourneboule.js    final boss (adventure 5)
 
   gfx/
-    draw.js           drawing helpers, colours, sprite cache
-    icons.js          item and key icons
-    ui.js             menu backgrounds, panels, buttons, title letters
+    xfl/              the original symbols
+      index.js        clip(name), drawClip, symbolCells (the original item sizes)
+      library.js      the converted library : symbols, shapes, bitmaps
+      clip.js         Clip : a playing symbol instance (timeline, scripts, nested clips)
+      render.js       shapes, texts, masks, colour transforms, tweens
+    draw.js           text and shape helpers (for what the symbols don't cover)
+    ui.js             the pause buttons, the "pop" of the end panel
 
   scenes/
-    title.js          "press a key"
-    menu.js           modes, adventures, courses, options, help
+    title.js          the original intro (Intro.as), "press a key"
+    menu.js           the ring of balls of the original menu (Menu.as)
     widgets.js        button navigation (mouse, touch, keyboard, gamepad)
     play.js           runs a Game ; pause and end-of-game panels
-    map_view.js       the dungeon map of the pause
+    map_view.js       the dungeon map of the pause ("carte", "room")
 ```
 
 ## The main loop
@@ -177,16 +187,30 @@ pastilles back).
 `Room` (`game/room.js`) turns a room of the data into entities:
 
 - level items (`{ type, x, y }` in 4 x 4 pixel cells, top-left corner) become
-  entities centred on their shape (`SIZES` gives each item's size) ;
+  entities centred on their symbol, sized like the original did it
+  (`symbolCells`, from the symbol's bounds) ;
 - green blocks and holes also go into a 14 x 9 grid of 40 x 40 tiles
   (`room.tiles`): holes are only tiles, blocks use it to merge their shapes ;
 - ball rooms, bonus rooms and the boss room have a fixed layout ;
 - the zappers of the same colour are linked by beams.
 
-Drawing, back to front: background bitmap, holes (the `bgHole` bitmap clipped
-to the hole tiles, with a back wall on their top edge), block shadows, then the
-entities sorted by layer (`entity.js` `Layer`), their shadows first, and finally
-the border and the doors on top.
+Drawing, back to front: the `background` symbol, holes (the `ground` symbol
+clipped to the hole tiles, with a back wall on their top edge), block shadows,
+then the entities sorted by layer (`entity.js` `Layer`), their shadows first,
+and finally the `border` and the `door` symbols on top.
+
+## The original art
+
+`gfx/xfl/` plays the symbols converted from the XFL export of `mb2.fla`
+(`npm run xfl`, see [XFL_INTEGRATION.md](XFL_INTEGRATION.md)). An entity keeps
+a `Clip` (`clip("bnormal")`), updates it (`art.update(dt)`, 40 frames per
+second like the original) and draws it (`drawClip(ctx, art, x, y)`). The game
+drives it like the original ActionScript : `gotoAndPlay("hit")`,
+`art.set("aig", { rotation })`, `art.setText("tview_txt", "123")`,
+`art.child("ball").gotoAndStop(type)` ; the frame scripts of the symbols run
+(stops, loops, `removeMovieClip`), and their calls reach the game through
+`art.on = event => ...` (the final boss follows its `kataDone` / `animDone`
+like BossTB.as).
 
 ## Physics
 
@@ -293,7 +317,7 @@ checks the real page in Chromium.
 | tune the ball | `config.js` (`BALLS`, `PHYSICS`) |
 | change a mode's rules (time, lives...) | `game/modes.js` |
 | change a bumper's bounce | `game/physics.js` `BOUNCE` |
-| add an item type | `data/enums.js`, `Room.addItem` + `SIZES` in `game/room.js`, a class in `game/entities/` |
+| add an item type | `data/enums.js`, `Room.addItem` + `ITEM_SYMBOLS` in `game/room.js`, a class in `game/entities/` |
 | change what a boss does | its state methods in `bosses/` |
 | change a sound | `sounds.js` |
 | add a screen | a scene in `scenes/`, then `app.scenes.goto(new MyScene())` |
