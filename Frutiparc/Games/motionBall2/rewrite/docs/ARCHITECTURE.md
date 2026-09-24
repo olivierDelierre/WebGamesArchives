@@ -32,7 +32,7 @@ package.json          esbuild ; scripts build / serve / test / levels
 assets/img, snd       the original bitmaps and sounds
 dist/                 the bundle built from src/ (committed : the game runs without a build)
 tools/build_levels.js packs ../dungeon/*.txt into src/data/levels.generated.js
-tests/                Node tests (data layer, physics)
+tests/                Node tests (see "Tests" below) ; browser/smoke.js : Chromium smoke test
 
 src/
   main.js             entry point : creates the services, loads, starts the loop
@@ -268,6 +268,24 @@ the adventures won (the 5th opens after the 4 others), the unlocked courses
 and their 3 best times (starting with 3 "CPU" times), the best Challenge score
 and Classique level.
 
+## Tests
+
+The game logic doesn't need the browser : it only draws through the canvas
+context it is given, and reaches the sound, the input and the images through
+`app`. The tests (`npm test`) replace those with fakes (`tests/helpers.js`):
+
+- `setup(seed)` installs a fake input (the test sets `app.input.dir` and
+  triggers actions), a fake audio recording the sounds, no images, a fake
+  `document` / canvas context, and seeds `Math.random` ;
+- `newGame(mode)` starts a game, `run(game, seconds)` / `runUntil(game, cond)`
+  advance it by simulation steps ;
+- `testRoom(game, items, exits)` puts the ball in a room made for the test
+  (items placed by their centre with `item()` / `tileItem()`).
+
+The drawing code is run on the fake context too (`scenes.test.js`), so an error
+in it fails the tests even though nothing is drawn. `tests/browser/smoke.js`
+checks the real page in Chromium.
+
 ## Common tasks
 
 | to... | look at |
@@ -281,5 +299,6 @@ and Classique level.
 | add a screen | a scene in `scenes/`, then `app.scenes.goto(new MyScene())` |
 | edit a hand-made dungeon | `../dungeon/*.txt`, then `npm run levels` and `npm run build` |
 
-After a change in `src/`, run `npm run build` (the page loads `dist/`), and
-`npm test`.
+After a change in `src/`, run `npm test` and `npm run build` (the page loads
+`dist/`). A new behaviour deserves a test in `tests/game.test.js` : most are a
+few lines with `testRoom`.

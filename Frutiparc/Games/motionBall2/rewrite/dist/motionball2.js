@@ -1548,9 +1548,10 @@
       const k = decay(inertia, dt);
       this.vx *= k;
       this.vy *= k;
-      if (Math.abs(this.vx) < PHYSICS.restSpeed)
+      const rest = PHYSICS.restSpeed * dt * ORIGINAL_FPS;
+      if (Math.abs(this.vx) < rest)
         this.vx = 0;
-      if (Math.abs(this.vy) < PHYSICS.restSpeed)
+      if (Math.abs(this.vy) < rest)
         this.vy = 0;
       if (this.controlled && !this.jump) {
         const axis = app.input.axis();

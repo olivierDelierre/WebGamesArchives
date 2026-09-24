@@ -11,7 +11,7 @@
  * room after each sub-step (physics.js).
  */
 
-import { BALLS, BALL_RADIUS, PHYSICS, WATER, INVULNERABLE_TIME, TILE, TILE_ORIGIN } from "../config.js";
+import { BALLS, BALL_RADIUS, PHYSICS, WATER, INVULNERABLE_TIME, TILE, TILE_ORIGIN, ORIGINAL_FPS } from "../config.js";
 import { BallType, Item } from "../data/enums.js";
 import { Entity, Layer } from "./entity.js";
 import { collideBall } from "./physics.js";
@@ -134,9 +134,12 @@ export class Ball extends Entity {
 		const k = decay(inertia, dt);
 		this.vx *= k;
 		this.vy *= k;
-		if (Math.abs(this.vx) < PHYSICS.restSpeed)
+		// (the original threshold is per 1/40 s frame : smaller for shorter steps,
+		// or weak forces such as a distant magnet could never move the ball)
+		const rest = PHYSICS.restSpeed * dt * ORIGINAL_FPS;
+		if (Math.abs(this.vx) < rest)
 			this.vx = 0;
-		if (Math.abs(this.vy) < PHYSICS.restSpeed)
+		if (Math.abs(this.vy) < rest)
 			this.vy = 0;
 
 		// the player (not while a boss holds the ball, nor in the air)

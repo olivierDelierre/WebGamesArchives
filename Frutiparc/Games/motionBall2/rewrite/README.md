@@ -29,7 +29,8 @@ to roll the ball, Space to change ball, Escape or P for the pause and the map.
 npm install        # esbuild
 npm run serve      # http://localhost:8000, rebuilds on reload
 npm run build      # writes dist/motionball2.js (commit it : index.html uses it)
-npm test           # tests of the level data and the physics (Node 20+)
+npm test           # the tests (Node 20+, about 10 s), see below
+npm run test:browser   # loads the built game in Chromium (needs Playwright)
 npm run levels     # regenerates src/data/levels.generated.js from ../dungeon/*.txt
 ```
 
@@ -37,6 +38,27 @@ npm run levels     # regenerates src/data/levels.generated.js from ../dungeon/*.
 starts a game, `motionball.scenes.current.game` is the game being played.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how the code is organised.
+
+## Tests
+
+`npm test` runs the game in Node, without a browser (the canvas, sound and input
+are replaced by fakes, see `tests/helpers.js`, and the random numbers are seeded) :
+
+| file | covers |
+| --- | --- |
+| `tests/game.test.js` | the ball, every kind of item, doors and keys, room changes, holes, deaths, time, the rules of each mode, long random games |
+| `tests/bosses.test.js` | the three bosses : how each one is hurt, its attacks, its death ; the four powers |
+| `tests/scenes.test.js` | menus, pause, end of game ; every screen, room and boss fight is also drawn on a fake canvas |
+| `tests/progress.test.js` | unlocks, records, saving |
+| `tests/engine.test.js` | input, audio mixing, main loop, transitions, math |
+| `tests/physics.test.js` | the collision shapes and the bounce |
+| `tests/data.test.js` | the hand-made dungeons and the random generator |
+
+`npm run test:browser` (`tests/browser/smoke.js`) opens the built game in
+Chromium, goes through the title and the menu, starts every mode and every
+boss, and fails on any error or missing file. It needs Playwright
+(`npm install --no-save playwright && npx playwright install chromium`, or
+`CHROMIUM_PATH` pointing to a Chromium), and skips itself otherwise.
 
 ## Differences with the original
 

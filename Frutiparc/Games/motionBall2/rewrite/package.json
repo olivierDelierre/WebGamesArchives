@@ -9,7 +9,8 @@
     "watch": "esbuild src/main.js --bundle --format=iife --target=es2020 --sourcemap --outfile=dist/motionball2.js --watch",
     "serve": "esbuild src/main.js --bundle --format=iife --target=es2020 --sourcemap --outfile=dist/motionball2.js --servedir=. --serve=8000",
     "levels": "node tools/build_levels.js",
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node tests/browser/smoke.js"
   },
   "devDependencies": {
     "esbuild": "^0.28.2"
