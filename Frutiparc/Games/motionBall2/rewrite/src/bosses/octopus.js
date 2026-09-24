@@ -15,7 +15,7 @@
  */
 
 import { WIDTH as W, HEIGHT as H, TILES_X, TILES_Y } from "../config.js";
-import { Boss, breakFloor, ARENA } from "./common.js";
+import { Boss, breakFloor, ARENA, redOffset } from "./common.js";
 import { clip, drawClip } from "../gfx/xfl/index.js";
 import { angleDiff, dist2, decay, randInt, TAU } from "../engine/math.js";
 import { app } from "../app.js";
@@ -479,6 +479,3 @@ export class Octopus extends Boss {
 
 let shade = null;
 let particle = null;
-
-/** A colour transform adding red. */
-const redOffset = red => ({ am: 1, rm: 1, gm: 1, bm: 1, ao: 0, ro: Math.min(255, red), go: 0, bo: 0 });

@@ -6036,35 +6036,7 @@
     onPause() {
     }
   };
-  var tintCanvas = null;
-  function drawTinted(ctx, x, y, size, amount, draw) {
-    if (amount <= 0.01) {
-      ctx.save();
-      ctx.translate(x, y);
-      draw(ctx);
-      ctx.restore();
-      return;
-    }
-    const scale = 2;
-    const px = size * 2 * scale;
-    if (!tintCanvas || tintCanvas.width < px) {
-      tintCanvas = document.createElement("canvas");
-      tintCanvas.width = tintCanvas.height = px;
-    }
-    const c = tintCanvas.getContext("2d");
-    c.setTransform(1, 0, 0, 1, 0, 0);
-    c.globalCompositeOperation = "source-over";
-    c.globalAlpha = 1;
-    c.clearRect(0, 0, px, px);
-    c.setTransform(scale, 0, 0, scale, size * scale, size * scale);
-    draw(c);
-    c.setTransform(1, 0, 0, 1, 0, 0);
-    c.globalCompositeOperation = "source-atop";
-    c.globalAlpha = Math.min(0.85, amount);
-    c.fillStyle = "rgb(255,40,40)";
-    c.fillRect(0, 0, px, px);
-    ctx.drawImage(tintCanvas, 0, 0, px, px, x - size, y - size, size * 2, size * 2);
-  }
+  var redOffset = (red) => ({ am: 1, rm: 1, gm: 1, bm: 1, ao: 0, ro: Math.min(255, red), go: 0, bo: 0 });
   var FallingTile = class extends Effect {
     constructor(tx, ty) {
       super(TILE_ORIGIN + tx * TILE + 1 + TILE / 2, TILE_ORIGIN + ty * TILE + 1 + TILE / 2, 0.6, Layer.ITEM);
@@ -6559,7 +6531,6 @@
   };
   var shade = null;
   var particle = null;
-  var redOffset = (red) => ({ am: 1, rm: 1, gm: 1, bm: 1, ao: 0, ro: Math.min(255, red), go: 0, bo: 0 });
 
   // src/bosses/powers.js
   var FRAME = 1 / ORIGINAL_FPS;
@@ -7321,22 +7292,11 @@
   // src/bosses/tourneboule.js
   var HITS_TO_GROUND = 4;
   var HITS_TO_DIE = 20;
-  var FLY_HEIGHT = 60;
   var Power2 = { WIND: 0, FIRE: 1, WATER: 2, EARTH: 3, HOLES: 4, BLOCK: 5 };
-  var KATA_COLORS = ["#e8fff0", "#ff6a2a", "#5ac8ff", "#b08a4a", "#b070ff", "#7ad84a"];
-  var KATA_HANDS = [
-    (k) => [-Math.PI / 2 - k * 3, -Math.PI / 2 + k * 3],
-    (k) => [k * TAU, Math.PI + k * TAU],
-    (k) => [-0.3 - Math.sin(k * Math.PI) * 1.2, Math.PI + 0.3 + Math.sin(k * Math.PI) * 1.2],
-    (k) => [Math.PI / 2 + Math.sin(k * TAU) * 1.5, Math.PI / 2 - Math.sin(k * TAU) * 1.5],
-    (k) => [-Math.PI / 2 + Math.sin(k * 3 * Math.PI) * 0.8, Math.PI / 2 - Math.sin(k * 3 * Math.PI) * 0.8],
-    (k) => [Math.PI + k * Math.PI, -k * Math.PI]
-  ];
-  var KATA_TIME = 0.6;
-  var KATA_CAST = 0.35;
   var Tourneboule = class extends Boss {
     constructor(game) {
       super(WIDTH / 2, HEIGHT / 2);
+      this.game = game;
       this.powers = [];
       this.hits = 0;
       this.hurt = 0;
@@ -7344,71 +7304,97 @@
       this.shieldFlash = 0;
       this.speed = 0;
       this.alpha = 1;
-      this.spinTime = 0;
       this.holesMade = 0;
       this.blocksMade = 0;
       this.previousKata = -1;
-      this.set("land");
+      this.art = clip("tourneboule");
+      this.shade = clip("TBShadow");
+      this.bubble = clip("forceBubble");
+      this.art.on = (event) => this.onArt(event);
+      this.land();
     }
     /** Changes state ; `data` gives the fields of the new state. */
     set(name, data = {}) {
       this.state = { name, time: 0, ...data };
+    }
+    /** Plays a label on the boss and its shadow. */
+    anim(label, stop = false) {
+      for (const c of [this.art, this.shade]) {
+        if (stop)
+          c.gotoAndStop(label);
+        else
+          c.gotoAndPlay(label);
+      }
     }
     angleToBall() {
       return Math.atan2(this.ball.y - this.y, this.ball.x - this.x);
     }
     // ----- every step -----
     update(dt, game) {
+      this.game = game;
       this.ball = game.ball;
       this.powers = this.powers.filter((p) => !p.dead);
-      this.spinTime += dt;
-      this.shieldFlash = Math.max(0, this.shieldFlash - dt * 5);
+      this.shieldFlash = Math.max(0, this.shieldFlash - dt * 2);
       this.hurt = Math.max(0, this.hurt - dt);
       const s = this.state;
       s.time += dt;
+      if (s.name === "hidden")
+        this.updateHidden(dt, game);
+      if (s.name === "wait" && s.time >= s.duration)
+        this.startKatas(game);
+      if (s.name === "wait" || s.name === "kata")
+        this.collide(dt, game);
+      this.art.update(dt);
+      this.shade.update(dt);
+    }
+    /** The calls of the animation. */
+    onArt(event) {
+      const game = this.game;
+      const s = this.state;
+      if (event === "kataDone") {
+        if (s.name === "kata" && s.left === 0 && !s.cast) {
+          s.cast = true;
+          this.cast(s.power, game);
+        }
+        return;
+      }
+      if (event !== "animDone")
+        return;
       switch (s.name) {
         case "land":
-          if (s.time >= 0.5)
-            this.startWait();
-          break;
-        case "wait":
-          this.collide(dt, game);
-          if (s.time >= s.duration)
-            this.startKatas(game);
+          this.startWait();
           break;
         case "kata":
-          this.collide(dt, game);
-          this.updateKata(game);
+          this.kataEnd(game);
           break;
         case "takeoff":
-          if (s.time >= 0.375)
-            this.set("fly", { loops: 3 });
-          break;
         case "fly":
-          if (s.time >= 0.5) {
-            if (s.loops-- <= 0)
-              this.vanish(game);
-            else
-              s.time = 0;
+          if (s.loops-- <= 0) {
+            this.vanish(game);
+          } else {
+            this.state.name = "fly";
+            this.anim("fly");
           }
           break;
-        case "hidden":
-          this.updateHidden(dt, game);
-          break;
-        case "appear":
-          if (s.time >= 0.5)
-            this.set("land");
-          break;
         case "death":
-          if (s.time >= 1) {
+          if (!this.dead) {
+            this.art.stop();
+            this.shade.stop();
             this.dead = true;
             game.bossBeaten();
           }
           break;
       }
     }
+    land() {
+      this.speed = 0;
+      this.alpha = 1;
+      this.anim("stopFly");
+      this.set("land");
+    }
     startWait() {
       this.shield = true;
+      this.anim(0, true);
       this.set("wait", { duration: [0.5, 0.2, 0.1][this.hits] || 0 });
     }
     /** Chooses the power of the next katas. */
@@ -7430,7 +7416,8 @@
     }
     /**
      * A kata. `left` = katas after this one ; the first one shows the power
-     * (its colour), the others are random, the last one casts it.
+     * (the kata of the same number), the others are random, the last one
+     * casts it.
      */
     startKata(power, left, first = false) {
       let kata = power;
@@ -7442,15 +7429,11 @@
       this.previousKata = kata;
       app.audio.play(left === 0 ? "kata3" : "kata" + (1 + randInt(3)));
       this.set("kata", { kata, power, left, cast: false });
+      this.anim("kata" + (kata + 1));
     }
-    updateKata(game) {
+    /** The end of a kata's animation. */
+    kataEnd(game) {
       const s = this.state;
-      if (s.left === 0 && !s.cast && s.time >= KATA_CAST) {
-        s.cast = true;
-        this.cast(s.power, game);
-      }
-      if (s.time < KATA_TIME)
-        return;
       if (s.left > 0) {
         this.startKata(s.power, s.left - 1);
       } else if (this.hits >= HITS_TO_DIE) {
@@ -7460,13 +7443,15 @@
         this.hits++;
         this.startKatas(game);
       } else {
-        this.set("takeoff");
+        this.anim("startFly");
+        this.set("takeoff", { loops: 3 });
       }
     }
-    /** Flies invisibly to a place at least 200 pixels away. */
+    /** Flies invisibly to a place more than 200 pixels away. */
     vanish(game) {
       app.audio.play("hide");
-      game.room.add(new Puff(this.x, this.y, false));
+      game.room.add(new ClipEffect("TBVanish", this.x, this.y, Layer.BOSS));
+      this.anim("flyVanish");
       let tx;
       let ty;
       do {
@@ -7487,10 +7472,18 @@
       }
       const ball = game.ball;
       this.alpha = ball.type === BallType.VIOLET ? Math.min(1, 2e3 / Math.max(1, (ball.x - this.x) ** 2 + (ball.y - this.y) ** 2)) : 0;
-      if (step2 >= d) {
-        app.audio.play("hide");
-        game.room.add(new Puff(this.x, this.y, true));
-        this.alpha = 1;
+      const f = this.art.frame - this.art.frameOf("flyVanish");
+      if (step2 >= d && f >= 2 && f <= 10) {
+        this.art.stop();
+        this.shade.stop();
+        const spawn = new ClipEffect("TBSpawn", this.x, this.y, Layer.BOSS);
+        spawn.art.on = (event) => {
+          if (event === "animDone" && this.state.name === "appear") {
+            app.audio.play("hide");
+            this.land();
+          }
+        };
+        game.room.add(spawn);
         this.set("appear");
       }
     }
@@ -7592,146 +7585,39 @@
       return null;
     }
     die(game) {
+      this.anim("death");
       this.set("death");
       this.powers.forEach((p) => p.destroy());
       game.invincible = true;
     }
     // ----- drawing -----
-    /** Height above the floor, and spinning speed, of the current state. */
-    pose() {
-      const s = this.state;
-      switch (s.name) {
-        case "land": {
-          const k = Math.min(1, s.time / 0.5);
-          return { alt: FLY_HEIGHT * (1 - k) * (1 - k), spin: (1 - k) * 3 };
-        }
-        case "takeoff": {
-          const k = Math.min(1, s.time / 0.375);
-          return { alt: FLY_HEIGHT * k * k, spin: 1 + k * 2 };
-        }
-        case "fly":
-          return { alt: FLY_HEIGHT + Math.sin(s.time / 0.5 * TAU) * 6, spin: 3 };
-        case "hidden":
-        case "appear":
-          return { alt: FLY_HEIGHT, spin: 3 };
-        case "kata":
-          return { alt: 0, spin: 0, kata: s.kata, k: Math.min(1, s.time / KATA_TIME) };
-        case "death":
-          return { alt: 0, spin: 4, death: Math.min(1, s.time) };
-        default:
-          return { alt: 0, spin: 0 };
-      }
-    }
     renderShadow(ctx) {
-      if (this.alpha <= 0)
-        return;
-      const p = this.pose();
-      const s = 1 - p.alt / 150;
-      ctx.fillStyle = "rgba(40,0,60," + 0.3 * s * this.alpha * (p.death !== void 0 ? 1 - p.death : 1) + ")";
-      ctx.beginPath();
-      ctx.ellipse(this.x, this.y + 18, 26 * s, 9 * s, 0, 0, TAU);
-      ctx.fill();
-    }
-    render(ctx) {
       if (this.alpha <= 0.01)
         return;
-      const p = this.pose();
-      ctx.globalAlpha = this.alpha;
-      drawTinted(ctx, this.x, this.y - p.alt, 60, this.hurt * 300 / 255, (c) => this.drawBody(c, p));
-      ctx.globalAlpha = 1;
-      if (this.shieldFlash > 0) {
-        ctx.save();
-        ctx.globalAlpha = this.shieldFlash;
-        ctx.translate(this.x, this.y);
-        const g = ctx.createRadialGradient(-10, -14, 4, 0, 0, 38);
-        g.addColorStop(0, "rgba(255,255,255,0.8)");
-        g.addColorStop(0.7, "rgba(160,220,255,0.25)");
-        g.addColorStop(1, "rgba(120,180,255,0.7)");
-        ctx.fillStyle = g;
-        circle(ctx, 0, 0, 38);
-        ctx.fill();
-        ctx.strokeStyle = "rgba(255,255,255,0.9)";
-        ctx.lineWidth = 2;
-        ctx.stroke();
-        ctx.restore();
-      }
-    }
-    drawBody(ctx, p) {
-      if (p.death !== void 0) {
-        ctx.globalAlpha *= 1 - p.death;
-        ctx.scale(1 + p.death, 1 - p.death * 0.8);
-      }
-      const spin = p.spin ? this.spinTime * 10 * p.spin : 0;
-      if (p.kata !== void 0) {
-        const r = 26 + Math.sin(p.k * Math.PI) * 14;
-        const g = ctx.createRadialGradient(0, 0, 10, 0, 0, r + 8);
-        g.addColorStop(0, "rgba(255,255,255,0)");
-        g.addColorStop(0.7, KATA_COLORS[p.kata]);
-        g.addColorStop(1, "rgba(255,255,255,0)");
-        ctx.fillStyle = g;
-        circle(ctx, 0, 0, r + 8);
-        ctx.fill();
-      }
-      const hands = p.kata !== void 0 ? KATA_HANDS[p.kata](p.k) : [spin + 0.3, spin + Math.PI + 0.3];
-      for (const a of hands)
-        sphere(ctx, Math.cos(a) * 30, Math.sin(a) * 30, 6, "#ffffff", "#9a90b0");
       ctx.save();
-      ctx.rotate(spin);
-      sphere(ctx, 0, 0, 22, "#ffffff", "#8a84a0", "#ffffff");
-      ctx.strokeStyle = "rgba(120,110,150,0.6)";
-      ctx.lineWidth = 1.5;
-      circle(ctx, 0, 0, 15);
-      ctx.stroke();
+      ctx.globalAlpha *= this.alpha;
+      ctx.translate(this.x, this.y);
+      this.shade.draw(ctx);
       ctx.restore();
-      ctx.fillStyle = "#7a2ab0";
-      ctx.beginPath();
-      ctx.moveTo(-21, -8);
-      ctx.quadraticCurveTo(0, -14, 21, -8);
-      ctx.lineTo(19, 2);
-      ctx.quadraticCurveTo(0, -3, -19, 2);
-      ctx.closePath();
-      ctx.fill();
-      ctx.fillStyle = "#fff";
-      ctx.beginPath();
-      ctx.ellipse(-8, -5, 4, 2.5, 0.2, 0, TAU);
-      ctx.ellipse(8, -5, 4, 2.5, -0.2, 0, TAU);
-      ctx.fill();
-      ctx.fillStyle = "#000";
-      circle(ctx, -7, -5, 1.6);
-      ctx.fill();
-      circle(ctx, 7, -5, 1.6);
-      ctx.fill();
-      const wave = Math.sin(this.spinTime * 10) * 4;
-      ctx.strokeStyle = "#7a2ab0";
-      ctx.lineWidth = 3;
-      ctx.lineCap = "round";
-      ctx.beginPath();
-      ctx.moveTo(20, -6);
-      ctx.quadraticCurveTo(30, -10 + wave, 36, -4 - wave);
-      ctx.stroke();
+    }
+    render(ctx) {
+      ctx.save();
+      ctx.translate(this.x, this.y);
+      if (this.alpha > 0.01) {
+        ctx.globalAlpha *= this.alpha;
+        this.art.draw(ctx, this.hurt > 0 ? redOffset(this.hurt * 300) : null);
+        ctx.globalAlpha = 1;
+      }
+      if (this.shieldFlash > 0) {
+        ctx.globalAlpha = this.shieldFlash;
+        this.bubble.draw(ctx);
+      }
+      ctx.restore();
     }
   };
   function tileOf(x, y) {
     return [Math.floor((x - TILE_ORIGIN) / TILE), Math.floor((y - TILE_ORIGIN) / TILE)];
   }
-  var Puff = class extends Effect {
-    constructor(x, y, reverse) {
-      super(x, y, 0.5, Layer.BOSS);
-      this.reverse = reverse;
-    }
-    render(ctx) {
-      const k = this.reverse ? 1 - this.t : this.t;
-      ctx.save();
-      ctx.globalAlpha = this.reverse ? k : 1 - k;
-      ctx.fillStyle = "rgba(230,220,255,0.9)";
-      for (let i = 0; i < 7; i++) {
-        const a = i * TAU / 7;
-        circle(ctx, this.x + Math.cos(a) * 30 * k, this.y + Math.sin(a) * 30 * k - 20, 10 + 10 * k);
-        ctx.fill();
-      }
-      ctx.restore();
-    }
-  };
 
   // src/bosses/index.js
   function createBoss(game) {

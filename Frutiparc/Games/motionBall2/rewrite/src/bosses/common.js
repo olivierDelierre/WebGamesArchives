@@ -23,41 +23,8 @@ export class Boss extends Entity {
 
 // ----- red flash -----
 
-let tintCanvas = null;
-
-/**
- * Draws with a red tint (the boss is hurt) : `draw(ctx)` draws around (0, 0)
- * within `size` pixels, amount in [0, 1].
- * The drawing goes through an offscreen canvas, so the tint only covers it.
- */
-export function drawTinted(ctx, x, y, size, amount, draw) {
-	if (amount <= 0.01) {
-		ctx.save();
-		ctx.translate(x, y);
-		draw(ctx);
-		ctx.restore();
-		return;
-	}
-	const scale = 2;
-	const px = size * 2 * scale;
-	if (!tintCanvas || tintCanvas.width < px) {
-		tintCanvas = document.createElement("canvas");
-		tintCanvas.width = tintCanvas.height = px;
-	}
-	const c = tintCanvas.getContext("2d");
-	c.setTransform(1, 0, 0, 1, 0, 0);
-	c.globalCompositeOperation = "source-over";
-	c.globalAlpha = 1;
-	c.clearRect(0, 0, px, px);
-	c.setTransform(scale, 0, 0, scale, size * scale, size * scale);
-	draw(c);
-	c.setTransform(1, 0, 0, 1, 0, 0);
-	c.globalCompositeOperation = "source-atop";
-	c.globalAlpha = Math.min(0.85, amount);
-	c.fillStyle = "rgb(255,40,40)";
-	c.fillRect(0, 0, px, px);
-	ctx.drawImage(tintCanvas, 0, 0, px, px, x - size, y - size, size * 2, size * 2);
-}
+/** The colour transform of a hurt boss : a red offset (0..255). */
+export const redOffset = red => ({ am: 1, rm: 1, gm: 1, bm: 1, ao: 0, ro: Math.min(255, red), go: 0, bo: 0 });
 
 // ----- new holes -----
 
