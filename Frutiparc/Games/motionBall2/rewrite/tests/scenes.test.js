@@ -143,7 +143,7 @@ test("pause : quitting goes back to the menu", () => {
 	const scene = new PlayScene(Mode.CHALLENGE);
 	scene.enter();
 	press(scene, "pause");
-	press(scene, "down");
+	press(scene, "right");
 	press(scene, "confirm");
 	assert.ok(app.scenes.current instanceof MenuScene);
 });

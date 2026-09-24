@@ -1,29 +1,24 @@
 /**
- * The map of the dungeon, shown in the pause.
+ * The map of the dungeon, shown in the pause, as in Pause.as : the "carte"
+ * symbol, and a "room" symbol per thing to show (its frames : the rooms,
+ * the passages, the rocks, the radar icons).
  *
  *   with the map item    the known rooms, and the passages between them
  *   with the radar       where the start, the boss, the balls and the bonuses are
  *   without either       only the current room
  */
 
-import { RoomType, Exit, DungeonBonus, BallType } from "../data/enums.js";
-import { ballSphere, circle, image, roundRect, text } from "../gfx/draw.js";
-import { drawItemIcon, Icon } from "../gfx/icons.js";
+import { RoomType, Exit } from "../data/enums.js";
+import { clip } from "../gfx/xfl/index.js";
 
-const MAP_W = 440;
-const MAP_H = 360;
-const GRID_X = 18;
-const GRID_Y = 40;
-const CELL_W = 48;
-const CELL_H = 36;
-
-const BALL_OF_OBJECT = [BallType.GREEN, BallType.BLUE, BallType.METAL, BallType.VIOLET];
-const BONUS_ICONS = {
-	[DungeonBonus.MAP]: [Icon.MAP, 0.7],
-	[DungeonBonus.KEY]: [Icon.KEY, 0.8],
-	[DungeonBonus.SMALL_TIME]: [Icon.SMALL_TIME, 0.8],
-	[DungeonBonus.BIG_TIME]: [Icon.BIG_TIME, 0.7]
-};
+/** The frames of "room" (as in the original, from 1). */
+const CURRENT = 34;
+const VISITED = 33;
+const ROCKS = 14;          // + 0..3
+const START = 26;
+const BOSS = 31;
+const OBJECT_FRAMES = [19, 22, 23, 24];
+const BONUS_FRAMES = [21, 20, 28, 0, 27, 29, 30];
 
 /** Is exit `dir` of a room a visible passage ? */
 function passage(room, dir) {
@@ -33,108 +28,100 @@ function passage(room, dir) {
 	return t !== Exit.WALL && t !== Exit.HIDDEN;
 }
 
-/** Draws the map with its top-left corner at (x, y). `time` animates the current room. */
-export function drawMap(ctx, game, x, y, time) {
+let carte = null;
+const frames = new Map();
+
+/** A still "room" symbol at a frame (shared). */
+function roomArt(frame) {
+	if (!frames.has(frame)) {
+		const c = clip("room");
+		c.gotoAndStop(frame - 1);
+		frames.set(frame, c);
+	}
+	return frames.get(frame);
+}
+
+/** Draws the map at its place in the pause (the original : at 95, 55). */
+export function drawMap(ctx, game) {
 	const d = game.dungeon;
 	const inv = game.inventory;
 	const cur = game.room;
+	const under = [];      // (original : the rocks and the icons go under the rooms)
+	const over = [];
+	const add = (px, py, frame) => {
+		if (frame)
+			(frame > 14 ? under : over).push([px, py, frame]);
+	};
 
-	ctx.save();
-	ctx.translate(x, y);
-	image(ctx, "map", MAP_W, MAP_H, 0, 0);
+	for (let x = 0; x < Math.min(8, d.width); x++) {
+		for (let y = 0; y < Math.min(8, d.height); y++) {
+			const room = d.room(x, y);
+			const px = 18 + 48 * x;
+			const py = 16 + 36 * y;
+			const isCurrent = (rx, ry) => rx === cur.rx && ry === cur.ry;
 
-	const cols = Math.min(8, d.width);
-	const rows = Math.min(8, d.height);
-	for (let rx = 0; rx < cols; rx++) {
-		for (let ry = 0; ry < rows; ry++) {
-			const room = d.room(rx, ry);
-			const cx = GRID_X + CELL_W * rx + CELL_W / 2;
-			const cy = GRID_Y + CELL_H * ry + CELL_H / 2;
+			if (room) {
+				let t = 0;
+				if (isCurrent(x, y)) {
+					add(px, py, CURRENT);
+					t = 8;
+				} else if (room.visited && inv.map) {
+					add(px, py, VISITED);
+					t = 4;
+				}
+				// the passages toward the left and upper rooms, coloured like the brighter room
+				if (inv.map) {
+					const link = (other, ox, oy, frame) => {
+						if (!other)
+							return;
+						let k = t;
+						if (isCurrent(ox, oy))
+							k = 8;
+						else if (k !== 8 && other.visited)
+							k = 4;
+						add(px, py, frame + k);
+					};
+					if (x > 0 && passage(room, 0) && passage(d.room(x - 1, y), 1))
+						link(d.room(x - 1, y), x - 1, y, 1);
+					if (y > 0 && passage(room, 2) && passage(d.room(x, y - 1), 3))
+						link(d.room(x, y - 1), x, y - 1, 2);
+				}
+			}
 
 			if (!room) {
-				if (inv.map) {
-					// rocks in the empty places
-					const k = (rx * 7 + ry * 3) % 4;
-					ctx.fillStyle = "rgba(160,100,0,0.25)";
-					circle(ctx, cx - 8 + k * 4, cy - 4 + (k % 2) * 6, 4 + k);
-					ctx.fill();
-				}
+				if (inv.map)
+					add(px, py, ROCKS + (x * 7 + y * 3) % 4);
 				continue;
 			}
-
-			const current = rx === cur.rx && ry === cur.ry;
-			const known = current || (room.visited && inv.map);
-			if (known) {
-				ctx.fillStyle = current ? "#ff6a2a" : "#e0a020";
-				roundRect(ctx, cx - 16, cy - 11, 32, 22, 6);
-				ctx.fill();
-				ctx.strokeStyle = current ? "#a02a00" : "#a06a00";
-				ctx.lineWidth = 1.5;
-				ctx.stroke();
-			} else if (inv.map) {
-				ctx.strokeStyle = "rgba(160,100,0,0.6)";
-				ctx.lineWidth = 1.5;
-				roundRect(ctx, cx - 16, cy - 11, 32, 22, 6);
-				ctx.stroke();
-			}
-
-			// passages toward the left and upper rooms (the others are drawn by those rooms)
-			if (inv.map) {
-				ctx.strokeStyle = "#a06a00";
-				ctx.lineWidth = 5;
-				ctx.lineCap = "round";
-				if (rx > 0 && passage(room, 0) && passage(d.room(rx - 1, ry), 1)) {
-					ctx.beginPath();
-					ctx.moveTo(cx - 17, cy);
-					ctx.lineTo(cx - 31, cy);
-					ctx.stroke();
-				}
-				if (ry > 0 && passage(room, 2) && passage(d.room(rx, ry - 1), 3)) {
-					ctx.beginPath();
-					ctx.moveTo(cx, cy - 12);
-					ctx.lineTo(cx, cy - 24);
-					ctx.stroke();
-				}
-			}
-
-			if (inv.radar)
-				drawRadarIcon(ctx, d, room, rx, ry, cx, cy);
-
-			if (current) {
-				ctx.strokeStyle = "rgba(255,255,255," + (0.5 + 0.5 * Math.sin(time * 6)) + ")";
-				ctx.lineWidth = 2;
-				roundRect(ctx, cx - 18, cy - 13, 36, 26, 7);
-				ctx.stroke();
+			if (!inv.radar)
+				continue;
+			switch (room.type) {
+			case RoomType.BOSS:
+				add(px, py, BOSS);
+				break;
+			case RoomType.BALL:
+				if (!room.taken)
+					add(px, py, OBJECT_FRAMES[room.content]);
+				break;
+			case RoomType.BONUS:
+				if (!room.taken)
+					add(px, py, BONUS_FRAMES[room.content]);
+				break;
+			default:
+				if (x === d.start.x && y === d.start.y)
+					add(px, py, START);
 			}
 		}
+	}
+
+	ctx.save();
+	ctx.translate(95, 55);
+	(carte || (carte = clip("carte"))).draw(ctx);
+	for (const [px, py, frame] of under.concat(over)) {
+		ctx.save();
+		ctx.translate(px, py);
+		roomArt(frame).draw(ctx);
+		ctx.restore();
 	}
 	ctx.restore();
 }
-
-/** What the radar shows in a room. */
-function drawRadarIcon(ctx, d, room, rx, ry, cx, cy) {
-	switch (room.type) {
-	case RoomType.BOSS:
-		text(ctx, "☠", cx, cy, { size: 18, color: "#fff", outline: "#5a0a0a" });
-		return;
-	case RoomType.BALL:
-		ballSphere(ctx, cx, cy, 7, BALL_OF_OBJECT[room.content]);
-		return;
-	case RoomType.BONUS:
-		if (room.content === DungeonBonus.ORANGE || room.content === DungeonBonus.RED) {
-			ballSphere(ctx, cx, cy, 7, room.content === DungeonBonus.ORANGE ? BallType.ORANGE : BallType.RED);
-		} else if (!room.taken && BONUS_ICONS[room.content]) {
-			const [icon, scale] = BONUS_ICONS[room.content];
-			ctx.save();
-			ctx.translate(cx, cy);
-			drawItemIcon(ctx, icon, scale);
-			ctx.restore();
-		}
-		return;
-	default:
-		if (rx === d.start.x && ry === d.start.y)
-			text(ctx, "D", cx, cy, { size: 14, color: "#fff", outline: "#205a10" });
-	}
-}
-
-export const MAP_SIZE = { w: MAP_W, h: MAP_H };
