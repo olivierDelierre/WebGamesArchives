@@ -52,6 +52,7 @@ export class Game {
 		this.state = "play";
 		this.scroll = null;
 		this.hud = new Hud(this);
+		this.stats = { lost: 0 };        // for the achievements
 
 		// the first room
 		let x = this.dungeon.start.x;
@@ -87,6 +88,12 @@ export class Game {
 
 	// ----- actions for the entities -----
 
+	/** Tells the achievements what happened (see achievements.js). */
+	achieve(event, data) {
+		if (app.achievements)
+			app.achievements.event(event, this, data);
+	}
+
 	/** Adds time : in chrono mode, it counts the other way. */
 	addTime(seconds) {
 		this.time += seconds;
@@ -105,6 +112,7 @@ export class Game {
 			inv.found.add(type);
 			app.audio.setLayer(Math.min(inv.found.size, GAME_MUSIC.layers.length - 1));
 		}
+		this.achieve("ball", type);
 	}
 
 	/** The ball has finished falling (hole, hatch) or dying. */
@@ -115,9 +123,13 @@ export class Game {
 		}
 		const ball = this.ball;
 		const inv = this.inventory;
+		if (kind === "hole")
+			this.achieve("fall");
 		const free = this.rules.noLoss || (this.rules.freeYellow && ball.type === BallType.YELLOW);
-		if (!free)
+		if (!free) {
 			inv.balls[ball.type]--;
+			this.achieve("lost");
+		}
 
 		const next = inv.next(ball.type, true);
 		if (next < 0) {
@@ -308,6 +320,7 @@ export class Game {
 	nextClassicLevel() {
 		const b = this.ball;
 		this.level++;
+		this.achieve("level", this.level + 1);
 		this.addTime(this.rules.levelBonus);
 		b.vx = 0;
 		b.vy = 0;

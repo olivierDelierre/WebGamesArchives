@@ -64,7 +64,7 @@ test("menu : the arrows go around the ring of modes, confirm opens them", () => 
 	assert.equal(menu.group.focused.name, "course");
 	press(menu, "left");
 	press(menu, "left");
-	assert.equal(menu.group.focused.name, "aide", "the ring goes round");
+	assert.equal(menu.group.focused.name, "succes", "the ring goes round");
 	press(menu, "right");
 	press(menu, "right");
 	press(menu, "confirm");

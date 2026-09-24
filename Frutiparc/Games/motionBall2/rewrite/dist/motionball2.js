@@ -45,6 +45,7 @@
     audio: null,
     images: null,
     save: null,
+    achievements: null,
     scenes: null,
     time: 0
   };
@@ -886,6 +887,325 @@
     }
   };
 
+  // src/data/enums.js
+  var BallType = Object.freeze({
+    YELLOW: 0,
+    // the default ball
+    GREEN: 1,
+    // destroys the green blocks
+    RED: 2,
+    // attracts the red pastilles
+    ORANGE: 3,
+    // fast
+    BLUE: 4,
+    // jumps over the holes
+    METAL: 5,
+    // heavy, immune to the death bumpers and to the magnets
+    VIOLET: 6
+    // sees the invisible bumpers
+  });
+  var BALL_TYPE_COUNT = 7;
+  var Item = Object.freeze({
+    NONE: 0,
+    // removed (destroyed block, collected pastille)
+    BUMPER: 1,
+    CLOCK: 2,
+    // costs 5 seconds when hit
+    DEATH: 3,
+    // kills the ball, except the metal one
+    MAGNET: 4,
+    GHOST: 5,
+    // invisible bumper
+    BLOCK: 6,
+    // green block, destroyed by the green ball
+    HOLE: 7,
+    RED: 8,
+    // red pastille : collect them all to open the doors
+    BLUE: 9,
+    // time pastille
+    TELEPORT: 10,
+    SWITCH: 11,
+    // toggles the pink and blue blocks
+    PINK_BLOCK: 12,
+    // solid while the switch is on
+    BLUE_BLOCK: 13,
+    // solid while the switch is off
+    ZAPPER: 14,
+    // laser post (a checkpoint in Course mode)
+    HATCH: 15
+    // exit of the Classique rooms
+  });
+  var RoomType = Object.freeze({
+    NONE: 0,
+    NORMAL: 1,
+    BOSS: 2,
+    BALL: 3,
+    // holds a ball to collect (data : DungeonObject)
+    BONUS: 4,
+    // holds an item box or a bonus ball (data : DungeonBonus)
+    NEEDS_BALL: 5
+    // a room that can only be crossed with a given ball
+  });
+  var Exit = Object.freeze({
+    DOOR: 0,
+    // opens when every red pastille is collected
+    WALL: 1,
+    HIDDEN: 2,
+    // open, but looks like a wall
+    SPECIAL: 3,
+    // Challenge : a door needing a ball ; other modes : a one-way door
+    OPEN: -1,
+    // a door that has been opened
+    ONE_WAY: -2
+    // a one-way door that has been crossed
+  });
+  var Dir = Object.freeze({ LEFT: 0, RIGHT: 1, UP: 2, DOWN: 3 });
+  var DIR_DX = [-1, 1, 0, 0];
+  var DIR_DY = [0, 0, -1, 1];
+  var OPPOSITE = [1, 0, 3, 2];
+  var DungeonBall = Object.freeze({ GREEN: 0, BLUE: 1, METAL: 2, VIOLET: 3 });
+  var DungeonBonus = Object.freeze({
+    ORANGE: 0,
+    RED: 1,
+    MAP: 2,
+    RADAR: 3,
+    KEY: 4,
+    SMALL_TIME: 5,
+    BIG_TIME: 6
+  });
+  var Mode = Object.freeze({
+    CHALLENGE: "challenge",
+    ADVENTURE: "adventure",
+    COURSE: "course",
+    CLASSIC: "classic",
+    TUTORIAL: "tutorial"
+  });
+  var Icon = Object.freeze({ MAP: 0, RADAR: 1, SMALL_TIME: 2, BIG_TIME: 3, KEY: 4 });
+
+  // src/gfx/draw.js
+  var FONT = "'Baloo 2', 'Trebuchet MS', 'Arial Rounded MT Bold', Verdana, sans-serif";
+  var BALL_COLORS = [
+    ["#ffd41c", "#b87a00", "#fffbd0"],
+    // yellow
+    ["#95e04c", "#3a8a14", "#efffd8"],
+    // green
+    ["#ee4a22", "#7a1004", "#ffc4a8"],
+    // red
+    ["#ffa01e", "#c04c00", "#fff0b8"],
+    // orange
+    ["#a8e2ff", "#3c86c4", "#ffffff"],
+    // blue
+    ["#d2d6dc", "#646e7a", "#ffffff"],
+    // metal
+    ["#bf84ea", "#6a2a9c", "#f6e6ff"]
+    // violet
+  ];
+  function circle(ctx, x, y, r) {
+    ctx.beginPath();
+    ctx.arc(x, y, Math.max(0, r), 0, Math.PI * 2);
+  }
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    roundRectPath(ctx, x, y, w, h, r);
+    ctx.closePath();
+  }
+  function roundRectPath(ctx, x, y, w, h, r) {
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+  }
+  function text(ctx, str, x, y, options = {}) {
+    const size = options.size || 16;
+    ctx.font = (options.weight || "800") + " " + size + "px " + FONT;
+    ctx.textAlign = options.align || "center";
+    ctx.textBaseline = options.baseline || "middle";
+    const lines = String(str).split("\n");
+    const lineHeight = size * 1.15;
+    let yy = y - (lines.length - 1) * lineHeight / 2;
+    for (const line of lines) {
+      if (options.outline) {
+        ctx.lineJoin = "round";
+        ctx.lineWidth = options.outlineWidth || Math.max(2, size / 5);
+        ctx.strokeStyle = options.outline;
+        ctx.strokeText(line, x, yy);
+      }
+      ctx.fillStyle = options.color || "#fff";
+      ctx.fillText(line, x, yy);
+      yy += lineHeight;
+    }
+  }
+
+  // src/achievements.js
+  var DUNGEON_BALLS = [BallType.GREEN, BallType.BLUE, BallType.METAL, BallType.VIOLET];
+  var ACHIEVEMENTS = [
+    { id: "tutorial", name: "Premier pas", text: "Terminer le tutoriel.", ball: BallType.YELLOW },
+    { id: "octopus", name: "Poulpe frit", text: "Battre le poulpe du Challenge.", ball: BallType.RED },
+    { id: "flawless", name: "Sans une \xE9gratignure", text: "Gagner un Challenge sans perdre de bille.", ball: BallType.METAL },
+    { id: "express", name: "Express", text: "Gagner un Challenge avec plus de 5 min restantes.", ball: BallType.ORANGE },
+    { id: "collector", name: "Collectionneur", text: "Trouver les 4 billes d'un donjon du Challenge.", ball: BallType.GREEN },
+    { id: "rainbow", name: "Arc-en-ciel", text: "Avoir les 7 billes dans une m\xEAme partie.", ball: BallType.VIOLET },
+    { id: "cartographer", name: "Cartographe", text: "Trouver la carte et le radar dans une m\xEAme partie.", ball: BallType.BLUE },
+    { id: "adventure", name: "Premier donjon", text: "Gagner une aventure.", ball: BallType.GREEN },
+    { id: "elements", name: "Ma\xEEtre des \xE9l\xE9ments", text: "Gagner les quatre aventures des \xE9l\xE9ments.", ball: BallType.RED },
+    { id: "final", name: "Le dernier donjon", text: "Gagner l'aventure finale.", ball: BallType.VIOLET, secret: true },
+    { id: "driver", name: "Pilote", text: "Terminer un circuit.", ball: BallType.ORANGE },
+    { id: "champion", name: "Champion", text: "Prendre la premi\xE8re place d'un circuit.", ball: BallType.YELLOW },
+    { id: "diver", name: "Plongeur", text: "Atteindre le niveau 10 en Classique.", ball: BallType.BLUE },
+    { id: "abyss", name: "Abysses", text: "Atteindre le niveau 25 en Classique.", ball: BallType.VIOLET },
+    { id: "pastilles", name: "Pastilleur", text: "Ramasser 500 pastilles rouges.", ball: BallType.RED, counter: "pastilles", goal: 500 },
+    { id: "bricks", name: "Casse-briques", text: "Casser 100 blocs verts.", ball: BallType.GREEN, counter: "blocks", goal: 100 },
+    { id: "clumsy", name: "Maladroit", text: "Tomber 25 fois dans un trou.", ball: BallType.METAL, counter: "falls", goal: 25 }
+  ];
+  var BANNER_TIME = 3.5;
+  var Achievements = class {
+    /** @param save  the Progress (its data keeps `achievements`) */
+    constructor(save) {
+      this.save = save;
+      this.banners = [];
+      const d = save.data;
+      if (!d.achievements || typeof d.achievements !== "object")
+        d.achievements = {};
+      d.achievements.unlocked = d.achievements.unlocked || {};
+      d.achievements.counters = d.achievements.counters || {};
+    }
+    get data() {
+      return this.save.data.achievements;
+    }
+    isUnlocked(id) {
+      return !!this.data.unlocked[id];
+    }
+    /** The date (ms) it was unlocked, or 0. */
+    date(id) {
+      return this.data.unlocked[id] || 0;
+    }
+    /** { value, goal } of a counting achievement, or null. */
+    progress(a) {
+      return a.counter ? { value: Math.min(a.goal, this.data.counters[a.counter] || 0), goal: a.goal } : null;
+    }
+    get unlockedCount() {
+      return ACHIEVEMENTS.filter((a) => this.isUnlocked(a.id)).length;
+    }
+    unlock(id) {
+      if (this.isUnlocked(id))
+        return false;
+      this.data.unlocked[id] = Date.now();
+      this.save.save();
+      const a = ACHIEVEMENTS.find((x) => x.id === id);
+      if (a)
+        this.banners.push({ achievement: a, time: 0 });
+      return true;
+    }
+    count(counter, n = 1) {
+      const c = this.data.counters;
+      c[counter] = (c[counter] || 0) + n;
+      for (const a of ACHIEVEMENTS)
+        if (a.counter === counter && c[counter] >= a.goal)
+          this.unlock(a.id);
+    }
+    /** Something happened in `game`. */
+    event(name, game, data) {
+      const stats = game.stats || (game.stats = { lost: 0 });
+      switch (name) {
+        case "pastille":
+          this.count("pastilles");
+          break;
+        case "block":
+          this.count("blocks");
+          break;
+        case "fall":
+          this.count("falls");
+          break;
+        case "lost":
+          stats.lost++;
+          break;
+        case "ball": {
+          const found = game.inventory.found;
+          if (game.mode === Mode.CHALLENGE && DUNGEON_BALLS.every((t) => found.has(t)))
+            this.unlock("collector");
+          if ((/* @__PURE__ */ new Set([BallType.YELLOW, ...found])).size === 7)
+            this.unlock("rainbow");
+          break;
+        }
+        case "item":
+          if (game.inventory.map && game.inventory.radar)
+            this.unlock("cartographer");
+          break;
+        case "level":
+          if (data >= 10)
+            this.unlock("diver");
+          if (data >= 25)
+            this.unlock("abyss");
+          break;
+        case "end":
+          this.gameOver(game, data);
+          this.save.save();
+          break;
+      }
+    }
+    gameOver(game, result) {
+      if (result.cause !== "win")
+        return;
+      switch (result.mode) {
+        case Mode.TUTORIAL:
+          this.unlock("tutorial");
+          break;
+        case Mode.CHALLENGE:
+          this.unlock("octopus");
+          if (!game.stats || game.stats.lost === 0)
+            this.unlock("flawless");
+          if (result.time > 5 * 60)
+            this.unlock("express");
+          break;
+        case Mode.ADVENTURE:
+          this.unlock("adventure");
+          if (result.param === 4)
+            this.unlock("final");
+          if (this.save.data.adventures.won.slice(0, 4).every(Boolean))
+            this.unlock("elements");
+          break;
+        case Mode.COURSE:
+          this.unlock("driver");
+          if (result.courseRank === 0)
+            this.unlock("champion");
+          break;
+      }
+    }
+    // ----- the banner of a new achievement -----
+    update(dt) {
+      const b = this.banners[0];
+      if (b) {
+        b.time += dt;
+        if (b.time >= BANNER_TIME)
+          this.banners.shift();
+      }
+    }
+    /** Draws the banner of the new achievement, over everything. */
+    render(ctx) {
+      const b = this.banners[0];
+      if (!b)
+        return;
+      const t = b.time;
+      const k = Math.min(1, t / 0.3, (BANNER_TIME - t) / 0.3);
+      const y = -30 + 52 * Math.max(0, k);
+      ctx.save();
+      ctx.fillStyle = "rgba(40,0,70,0.85)";
+      roundRect(ctx, WIDTH / 2 - 150, y - 20, 300, 42, 14);
+      ctx.fill();
+      ctx.strokeStyle = "#ffe060";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      text(ctx, "Succ\xE8s d\xE9bloqu\xE9 !", WIDTH / 2, y - 7, { size: 12, color: "#ffe060", weight: "700" });
+      text(ctx, b.achievement.name, WIDTH / 2, y + 9, { size: 16, color: "#fff" });
+      ctx.restore();
+    }
+  };
+
   // src/sounds.js
   var dir = "assets/snd/";
   var SOUND_FILES = {
@@ -977,65 +1297,6 @@
       return p;
     }
   };
-
-  // src/gfx/draw.js
-  var FONT = "'Baloo 2', 'Trebuchet MS', 'Arial Rounded MT Bold', Verdana, sans-serif";
-  var BALL_COLORS = [
-    ["#ffd41c", "#b87a00", "#fffbd0"],
-    // yellow
-    ["#95e04c", "#3a8a14", "#efffd8"],
-    // green
-    ["#ee4a22", "#7a1004", "#ffc4a8"],
-    // red
-    ["#ffa01e", "#c04c00", "#fff0b8"],
-    // orange
-    ["#a8e2ff", "#3c86c4", "#ffffff"],
-    // blue
-    ["#d2d6dc", "#646e7a", "#ffffff"],
-    // metal
-    ["#bf84ea", "#6a2a9c", "#f6e6ff"]
-    // violet
-  ];
-  function circle(ctx, x, y, r) {
-    ctx.beginPath();
-    ctx.arc(x, y, Math.max(0, r), 0, Math.PI * 2);
-  }
-  function roundRect(ctx, x, y, w, h, r) {
-    ctx.beginPath();
-    roundRectPath(ctx, x, y, w, h, r);
-    ctx.closePath();
-  }
-  function roundRectPath(ctx, x, y, w, h, r) {
-    ctx.moveTo(x + r, y);
-    ctx.lineTo(x + w - r, y);
-    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-    ctx.lineTo(x + w, y + h - r);
-    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-    ctx.lineTo(x + r, y + h);
-    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-    ctx.lineTo(x, y + r);
-    ctx.quadraticCurveTo(x, y, x + r, y);
-  }
-  function text(ctx, str, x, y, options = {}) {
-    const size = options.size || 16;
-    ctx.font = (options.weight || "800") + " " + size + "px " + FONT;
-    ctx.textAlign = options.align || "center";
-    ctx.textBaseline = options.baseline || "middle";
-    const lines = String(str).split("\n");
-    const lineHeight = size * 1.15;
-    let yy = y - (lines.length - 1) * lineHeight / 2;
-    for (const line of lines) {
-      if (options.outline) {
-        ctx.lineJoin = "round";
-        ctx.lineWidth = options.outlineWidth || Math.max(2, size / 5);
-        ctx.strokeStyle = options.outline;
-        ctx.strokeText(line, x, yy);
-      }
-      ctx.fillStyle = options.color || "#fff";
-      ctx.fillText(line, x, yy);
-      yy += lineHeight;
-    }
-  }
 
   // src/gfx/xfl/render.js
   var GRADIENT_SIZE = 819.2;
@@ -1898,101 +2159,6 @@
       return pad2(m) + ":" + pad2(sec) + ":" + pad2(Math.floor(s * 100) % 100);
     return m + ":" + pad2(sec);
   }
-
-  // src/data/enums.js
-  var BallType = Object.freeze({
-    YELLOW: 0,
-    // the default ball
-    GREEN: 1,
-    // destroys the green blocks
-    RED: 2,
-    // attracts the red pastilles
-    ORANGE: 3,
-    // fast
-    BLUE: 4,
-    // jumps over the holes
-    METAL: 5,
-    // heavy, immune to the death bumpers and to the magnets
-    VIOLET: 6
-    // sees the invisible bumpers
-  });
-  var BALL_TYPE_COUNT = 7;
-  var Item = Object.freeze({
-    NONE: 0,
-    // removed (destroyed block, collected pastille)
-    BUMPER: 1,
-    CLOCK: 2,
-    // costs 5 seconds when hit
-    DEATH: 3,
-    // kills the ball, except the metal one
-    MAGNET: 4,
-    GHOST: 5,
-    // invisible bumper
-    BLOCK: 6,
-    // green block, destroyed by the green ball
-    HOLE: 7,
-    RED: 8,
-    // red pastille : collect them all to open the doors
-    BLUE: 9,
-    // time pastille
-    TELEPORT: 10,
-    SWITCH: 11,
-    // toggles the pink and blue blocks
-    PINK_BLOCK: 12,
-    // solid while the switch is on
-    BLUE_BLOCK: 13,
-    // solid while the switch is off
-    ZAPPER: 14,
-    // laser post (a checkpoint in Course mode)
-    HATCH: 15
-    // exit of the Classique rooms
-  });
-  var RoomType = Object.freeze({
-    NONE: 0,
-    NORMAL: 1,
-    BOSS: 2,
-    BALL: 3,
-    // holds a ball to collect (data : DungeonObject)
-    BONUS: 4,
-    // holds an item box or a bonus ball (data : DungeonBonus)
-    NEEDS_BALL: 5
-    // a room that can only be crossed with a given ball
-  });
-  var Exit = Object.freeze({
-    DOOR: 0,
-    // opens when every red pastille is collected
-    WALL: 1,
-    HIDDEN: 2,
-    // open, but looks like a wall
-    SPECIAL: 3,
-    // Challenge : a door needing a ball ; other modes : a one-way door
-    OPEN: -1,
-    // a door that has been opened
-    ONE_WAY: -2
-    // a one-way door that has been crossed
-  });
-  var Dir = Object.freeze({ LEFT: 0, RIGHT: 1, UP: 2, DOWN: 3 });
-  var DIR_DX = [-1, 1, 0, 0];
-  var DIR_DY = [0, 0, -1, 1];
-  var OPPOSITE = [1, 0, 3, 2];
-  var DungeonBall = Object.freeze({ GREEN: 0, BLUE: 1, METAL: 2, VIOLET: 3 });
-  var DungeonBonus = Object.freeze({
-    ORANGE: 0,
-    RED: 1,
-    MAP: 2,
-    RADAR: 3,
-    KEY: 4,
-    SMALL_TIME: 5,
-    BIG_TIME: 6
-  });
-  var Mode = Object.freeze({
-    CHALLENGE: "challenge",
-    ADVENTURE: "adventure",
-    COURSE: "course",
-    CLASSIC: "classic",
-    TUTORIAL: "tutorial"
-  });
-  var Icon = Object.freeze({ MAP: 0, RADAR: 1, SMALL_TIME: 2, BIG_TIME: 3, KEY: 4 });
 
   // src/scenes/widgets.js
   var DIRS = { left: [-1, 0], right: [1, 0], up: [0, -1], down: [0, 1] };
@@ -5055,6 +5221,7 @@
       this.solid = false;
       this.data.destroyed = true;
       game.room.removeTile(this);
+      game.achieve("block");
       const ball = game.ball;
       const angle = Math.atan2(ball.vy, ball.vx);
       const speed = contact.speed;
@@ -5167,6 +5334,7 @@
       if (this.red) {
         app.audio.play("red");
         game.room.redTaken(game);
+        game.achieve("pastille");
       } else {
         app.audio.play("blue");
         game.addTime(game.rules.bluePastille);
@@ -5809,10 +5977,12 @@
   var BONUS_ITEMS = {
     [DungeonBonus.MAP]: [Icon.MAP, (game) => {
       game.inventory.map = true;
+      game.achieve("item");
       game.showMap();
     }],
     [DungeonBonus.RADAR]: [Icon.RADAR, (game) => {
       game.inventory.radar = true;
+      game.achieve("item");
       game.showMap();
     }],
     [DungeonBonus.KEY]: [Icon.KEY, (game) => {
@@ -7462,6 +7632,7 @@
       this.state = "play";
       this.scroll = null;
       this.hud = new Hud(this);
+      this.stats = { lost: 0 };
       let x = this.dungeon.start.x;
       let y = this.dungeon.start.y;
       if (this.rules.randomStartRow)
@@ -7488,6 +7659,11 @@
       return b.x > m && b.y > m && b.x < WIDTH - m && b.y < HEIGHT - m;
     }
     // ----- actions for the entities -----
+    /** Tells the achievements what happened (see achievements.js). */
+    achieve(event, data) {
+      if (app.achievements)
+        app.achievements.event(event, this, data);
+    }
     /** Adds time : in chrono mode, it counts the other way. */
     addTime(seconds) {
       this.time += seconds;
@@ -7505,6 +7681,7 @@
         inv.found.add(type);
         app.audio.setLayer(Math.min(inv.found.size, GAME_MUSIC.layers.length - 1));
       }
+      this.achieve("ball", type);
     }
     /** The ball has finished falling (hole, hatch) or dying. */
     ballFell(kind) {
@@ -7514,9 +7691,13 @@
       }
       const ball = this.ball;
       const inv = this.inventory;
+      if (kind === "hole")
+        this.achieve("fall");
       const free = this.rules.noLoss || this.rules.freeYellow && ball.type === BallType.YELLOW;
-      if (!free)
+      if (!free) {
         inv.balls[ball.type]--;
+        this.achieve("lost");
+      }
       const next = inv.next(ball.type, true);
       if (next < 0) {
         ball.hidden = true;
@@ -7683,6 +7864,7 @@
     nextClassicLevel() {
       const b = this.ball;
       this.level++;
+      this.achieve("level", this.level + 1);
       this.addTime(this.rules.levelBonus);
       b.vx = 0;
       b.vy = 0;
@@ -7954,6 +8136,7 @@
         this.game.boss.onPause(false);
     }
     quit() {
+      app.save.save();
       app.audio.stopLayers(0.5);
       app.audio.playMusic("musicMenu", MUSIC_VOLUME);
       app.scenes.goto(new MenuScene());
@@ -7966,6 +8149,7 @@
       const lines = [];
       let heading = win ? "Victoire !" : result.cause === "time" ? "Temps \xE9coul\xE9 !" : "Plus de billes !";
       let table = null;
+      let courseRank = -1;
       switch (result.mode) {
         case Mode.CHALLENGE:
         case Mode.ADVENTURE: {
@@ -7984,6 +8168,7 @@
           if (win) {
             heading = "Arriv\xE9e !";
             const r = save.courseTime(result.param, result.time);
+            courseRank = r.rank;
             table = r.table;
             lines.push("Temps : " + formatTime(result.time, true));
             lines.push(r.rank < 0 ? "Pas de record..." : "Record battu !");
@@ -8003,6 +8188,8 @@
           lines.push(win ? "Tu connais les bases : \xE0 toi de jouer !" : "Essaie encore !");
           break;
       }
+      if (app.achievements)
+        app.achievements.event("end", this.game, { ...result, courseRank });
       this.ending = { heading, lines, table, pop: new Pop(), scale: 0, time: 0, art: this.endPanel(win, lines, table) };
       if (win)
         app.audio.playMusic("musicMenu", MUSIC_VOLUME);
@@ -8120,6 +8307,96 @@
     }
   };
 
+  // src/scenes/achievements.js
+  var COLUMNS = 2;
+  var TOP = 58;
+  var ROW = 38;
+  var CELL_W = 285;
+  var LEFT2 = (WIDTH - CELL_W * COLUMNS - 10) / 2;
+  var day = (ms) => {
+    const d = new Date(ms);
+    const two = (n) => String(n).padStart(2, "0");
+    return two(d.getDate()) + "/" + two(d.getMonth() + 1) + "/" + d.getFullYear();
+  };
+  var AchievementsScene = class {
+    constructor() {
+      this.time = 0;
+      this.bg = clip("fondMenu");
+      this.icons = /* @__PURE__ */ new Map();
+    }
+    update(dt) {
+      this.time += dt;
+      const input = app.input;
+      if (this.time > 0.3 && !app.scenes.busy && (input.pressed("back") || input.pressed("confirm") || input.pressed("pause") || input.pointer)) {
+        app.audio.play("menuEnter");
+        this.back();
+      }
+    }
+    back() {
+      app.scenes.goto(new MenuScene("main", "succes"));
+    }
+    icon(type) {
+      if (!this.icons.has(type)) {
+        const c = clip("marble");
+        c.gotoAndStop(type);
+        this.icons.set(type, c);
+      }
+      return this.icons.get(type);
+    }
+    render(ctx) {
+      this.bg.draw(ctx);
+      ctx.fillStyle = "rgba(40,0,70,0.45)";
+      ctx.fillRect(0, 0, WIDTH, HEIGHT);
+      const ach = app.achievements;
+      text(
+        ctx,
+        "Succ\xE8s  " + ach.unlockedCount + " / " + ACHIEVEMENTS.length,
+        WIDTH / 2,
+        28,
+        { size: 24, color: "#ffe060", outline: "#4a1470" }
+      );
+      ACHIEVEMENTS.forEach((a, i) => {
+        const x = LEFT2 + i % COLUMNS * (CELL_W + 10);
+        const y = TOP + Math.floor(i / COLUMNS) * ROW;
+        const done = ach.isUnlocked(a.id);
+        const hidden = a.secret && !done;
+        ctx.fillStyle = done ? "rgba(255,255,255,0.22)" : "rgba(20,0,40,0.45)";
+        roundRect(ctx, x, y, CELL_W, ROW - 4, 10);
+        ctx.fill();
+        ctx.save();
+        ctx.globalAlpha = done ? 1 : 0.3;
+        ctx.translate(x + 18, y + (ROW - 4) / 2);
+        ctx.scale(1.15, 1.15);
+        this.icon(a.ball).draw(ctx);
+        ctx.restore();
+        const name = hidden ? "???" : a.name;
+        const desc = hidden ? "Un succ\xE8s secret." : a.text;
+        text(ctx, name, x + 38, y + 11, { size: 13, color: done ? "#ffe060" : "#e8dcf4", align: "left" });
+        text(ctx, desc, x + 38, y + 25, { size: 10, color: done ? "#fff" : "#c8b8d8", align: "left", weight: "600" });
+        if (done) {
+          text(ctx, day(ach.date(a.id)), x + CELL_W - 8, y + 11, { size: 10, color: "#fff", align: "right", weight: "600" });
+        } else {
+          const p = ach.progress(a);
+          if (p) {
+            text(ctx, p.value + " / " + p.goal, x + CELL_W - 8, y + 11, { size: 10, color: "#e8dcf4", align: "right", weight: "600" });
+            ctx.fillStyle = "rgba(0,0,0,0.35)";
+            ctx.fillRect(x + CELL_W - 70, y + 20, 62, 4);
+            ctx.fillStyle = "#b4f08a";
+            ctx.fillRect(x + CELL_W - 70, y + 20, 62 * p.value / p.goal, 4);
+          }
+        }
+      });
+      if (this.time > 0.3)
+        text(
+          ctx,
+          "Clique ou appuie sur une touche pour revenir",
+          WIDTH / 2,
+          HEIGHT - 8,
+          { size: 11, color: "rgba(255,255,255,0.75)", weight: "700" }
+        );
+    }
+  };
+
   // src/scenes/menu.js
   var FRAME2 = 1 / 40;
   var CX = 305;
@@ -8145,7 +8422,8 @@
     }
   };
   var MenuScene = class {
-    constructor(page = "main") {
+    /** @param focus  the name of the ball to focus on the main page (e.g. coming back from a screen) */
+    constructor(page = "main", focus = null) {
       this.time = 0;
       this.clock = 0;
       this.bg = clip("fondMenu");
@@ -8163,6 +8441,8 @@
       this.menuTime = 0;
       this.goHole = false;
       this.next = null;
+      if (focus)
+        this.mainFocus = Math.max(0, this.mainPage().findIndex((b) => b.name === focus));
       this.open(page);
     }
     /** Shows the balls of a page. */
@@ -8197,12 +8477,12 @@
      * A ball of the menu : `id` is its frame in the original (its title and
      * its picture).
      */
-    ball(id, name, action, enabled = true) {
+    ball(id, name, action, enabled = true, label = null) {
       const art = clip("menu balls");
       art.gotoAndStop(enabled ? "normal" : "disable");
       art.child("title")?.gotoAndStop(id - 1);
       art.child("ball")?.gotoAndStop(id - 1);
-      const b = { name, id, art, enabled, action, x: CX, y: CY, selected: false };
+      const b = { name, id, art, enabled, action, x: CX, y: CY, selected: false, label };
       b.draw = (ctx, focused) => this.drawBall(ctx, b, focused);
       return b;
     }
@@ -8214,7 +8494,9 @@
         this.ball(3, "aventure", () => this.goto("adventure")),
         this.ball(4, "classique", () => this.play(Mode.CLASSIC)),
         this.ball(5, "options", () => this.goto("options")),
-        this.ball(6, "aide", () => this.play(Mode.TUTORIAL))
+        this.ball(6, "aide", () => this.play(Mode.TUTORIAL)),
+        // (the rewrite's achievements : on a silver ball of the original, without a title)
+        this.ball(26, "succes", () => this.leave(() => new AchievementsScene()), true, "succ\xE8s")
       ];
     }
     coursePage() {
@@ -8309,6 +8591,23 @@
       this.cosSpeed = 0;
       this.cosRay = 0;
       this.goHole = true;
+      this.showInfo(null);
+    }
+    /** The balls fly away, then another screen comes. */
+    leave(scene) {
+      if (this.phase > 1)
+        return;
+      this.phase = 2;
+      this.next = () => {
+        if (!app.scenes.busy)
+          app.scenes.goto(scene());
+      };
+      this.raySpeed = 7;
+      this.rayAcc = 1.05;
+      this.angSpeed = 0.1;
+      this.angAcc = 1.05;
+      this.cosSpeed = 0;
+      this.cosRay = 0;
       this.showInfo(null);
     }
     /** The balls fly to the centre, and come back with another page. */
@@ -8513,6 +8812,18 @@
       ctx.save();
       ctx.translate(b.px + (b.x - b.px) * k, b.py + (b.y - b.py) * k);
       b.art.draw(ctx);
+      if (b.label) {
+        const selected = b.art.frame >= b.art.frameOf("selected");
+        ctx.rotate(-0.12);
+        ctx.font = "italic 700 " + (selected ? 21 : 19) + "px Georgia, 'Times New Roman', serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "rgba(255,255,255,0.7)";
+        ctx.strokeText(b.label, 0, 0);
+        ctx.fillStyle = "#3d5561";
+        ctx.fillText(b.label, 0, 0);
+      }
       ctx.restore();
     }
   };
@@ -8808,6 +9119,7 @@
     app.audio = new AudioEngine(SOUND_FILES);
     app.images = new ImageStore();
     app.save = new Progress();
+    app.achievements = new Achievements(app.save);
     app.scenes = new SceneManager();
     const bindButton = (id, action) => {
       const el = document.getElementById(id);
@@ -8870,11 +9182,14 @@
     app.time += dt;
     app.audio.update(dt);
     app.scenes.update(dt);
+    app.achievements.update(dt);
     app.input.endStep();
   }
   function render() {
     app.input.poll();
-    app.scenes.render(app.screen.begin());
+    const ctx = app.screen.begin();
+    app.scenes.render(ctx);
+    app.achievements.render(ctx);
   }
   start();
   window.motionball = app;

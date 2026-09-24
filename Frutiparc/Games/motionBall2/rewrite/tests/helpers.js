@@ -13,6 +13,7 @@
 
 import { app } from "../src/app.js";
 import { Progress } from "../src/progress.js";
+import { Achievements } from "../src/achievements.js";
 import { Game } from "../src/game/game.js";
 import { Room } from "../src/game/room.js";
 import { Dungeon, makeRoom } from "../src/data/dungeon.js";
@@ -161,6 +162,7 @@ export function setup(seed = 1) {
 	app.audio = new FakeAudio();
 	app.images = { get: () => null };
 	app.save = new Progress();
+	app.achievements = new Achievements(app.save);
 	app.scenes = { busy: false, current: null, goto(scene) { this.current = scene; if (scene.enter) scene.enter(); } };
 	app.time = 0;
 }

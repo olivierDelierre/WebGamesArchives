@@ -46,6 +46,7 @@ src/
   config.js           sizes, physics tuning, ball specs
   sounds.js           sound names -> files, music layers
   progress.js         saved settings, unlocks and records
+  achievements.js     the achievements : the list, what unlocks them, the banner
 
   engine/             game-independent code
     loop.js           fixed-step main loop
@@ -107,6 +108,7 @@ src/
     menu.js           the ring of balls of the original menu (Menu.as)
     widgets.js        button navigation (mouse, touch, keyboard, gamepad)
     play.js           runs a Game ; pause and end-of-game panels
+    achievements.js   the achievements screen
     map_view.js       the dungeon map of the pause ("carte", "room")
 ```
 

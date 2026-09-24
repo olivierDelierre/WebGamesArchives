@@ -470,10 +470,12 @@ let ground = null;
 const BONUS_ITEMS = {
 	[DungeonBonus.MAP]: [Icon.MAP, game => {
 		game.inventory.map = true;
+		game.achieve("item");
 		game.showMap();
 	}],
 	[DungeonBonus.RADAR]: [Icon.RADAR, game => {
 		game.inventory.radar = true;
+		game.achieve("item");
 		game.showMap();
 	}],
 	[DungeonBonus.KEY]: [Icon.KEY, game => {

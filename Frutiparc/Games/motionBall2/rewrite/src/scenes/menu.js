@@ -21,6 +21,7 @@ import { formatTime } from "../engine/math.js";
 import { app } from "../app.js";
 import { ButtonGroup } from "./widgets.js";
 import { PlayScene } from "./play.js";
+import { AchievementsScene } from "./achievements.js";
 
 const FRAME = 1 / 40;
 const CX = 305;
@@ -58,7 +59,8 @@ class Ring extends ButtonGroup {
 
 export class MenuScene {
 
-	constructor(page = "main") {
+	/** @param focus  the name of the ball to focus on the main page (e.g. coming back from a screen) */
+	constructor(page = "main", focus = null) {
 		this.time = 0;
 		this.clock = 0;
 		this.bg = clip("fondMenu");
@@ -79,6 +81,8 @@ export class MenuScene {
 		this.goHole = false;
 		this.next = null;
 
+		if (focus)
+			this.mainFocus = Math.max(0, this.mainPage().findIndex(b => b.name === focus));
 		this.open(page);
 	}
 
@@ -116,12 +120,13 @@ export class MenuScene {
 	 * A ball of the menu : `id` is its frame in the original (its title and
 	 * its picture).
 	 */
-	ball(id, name, action, enabled = true) {
+	ball(id, name, action, enabled = true, label = null) {
 		const art = clip("menu balls");
 		art.gotoAndStop(enabled ? "normal" : "disable");
 		art.child("title")?.gotoAndStop(id - 1);
 		art.child("ball")?.gotoAndStop(id - 1);
-		const b = { name, id, art, enabled, action, x: CX, y: CY, selected: false };
+		// (`label` : a title written over a ball without one, for the rewrite's own entries)
+		const b = { name, id, art, enabled, action, x: CX, y: CY, selected: false, label };
 		b.draw = (ctx, focused) => this.drawBall(ctx, b, focused);
 		return b;
 	}
@@ -135,7 +140,9 @@ export class MenuScene {
 			this.ball(3, "aventure", () => this.goto("adventure")),
 			this.ball(4, "classique", () => this.play(Mode.CLASSIC)),
 			this.ball(5, "options", () => this.goto("options")),
-			this.ball(6, "aide", () => this.play(Mode.TUTORIAL))
+			this.ball(6, "aide", () => this.play(Mode.TUTORIAL)),
+			// (the rewrite's achievements : on a silver ball of the original, without a title)
+			this.ball(26, "succes", () => this.leave(() => new AchievementsScene()), true, "succès")
 		];
 	}
 
@@ -239,6 +246,24 @@ export class MenuScene {
 		this.cosSpeed = 0;
 		this.cosRay = 0;
 		this.goHole = true;
+		this.showInfo(null);
+	}
+
+	/** The balls fly away, then another screen comes. */
+	leave(scene) {
+		if (this.phase > 1)
+			return;
+		this.phase = 2;
+		this.next = () => {
+			if (!app.scenes.busy)
+				app.scenes.goto(scene());
+		};
+		this.raySpeed = 7;
+		this.rayAcc = 1.05;
+		this.angSpeed = 0.1;
+		this.angAcc = 1.05;
+		this.cosSpeed = 0;
+		this.cosRay = 0;
 		this.showInfo(null);
 	}
 
@@ -461,6 +486,19 @@ export class MenuScene {
 		ctx.save();
 		ctx.translate(b.px + (b.x - b.px) * k, b.py + (b.y - b.py) * k);
 		b.art.draw(ctx);
+		if (b.label) {
+			// (like the titles of the original balls : dark slanted letters)
+			const selected = b.art.frame >= b.art.frameOf("selected");
+			ctx.rotate(-0.12);
+			ctx.font = "italic 700 " + (selected ? 21 : 19) + "px Georgia, 'Times New Roman', serif";
+			ctx.textAlign = "center";
+			ctx.textBaseline = "middle";
+			ctx.lineWidth = 3;
+			ctx.strokeStyle = "rgba(255,255,255,0.7)";
+			ctx.strokeText(b.label, 0, 0);
+			ctx.fillStyle = "#3d5561";
+			ctx.fillText(b.label, 0, 0);
+		}
 		ctx.restore();
 	}
 }
