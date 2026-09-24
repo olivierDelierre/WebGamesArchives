@@ -775,6 +775,12 @@ function convertDocument(name) {
 		console.log("  scripts kept as text (" + report.scripts.length + ") :\n    " + report.scripts.join("\n    "));
 }
 
-fs.mkdirSync(OUT_DIR, { recursive: true });
-for (const name of process.argv.slice(2).length ? process.argv.slice(2) : ["mb2", "title"])
-	convertDocument(name);
+// (the functions are exported for the tests ; the conversion runs when the
+// file is run by itself)
+export { edgeNumber, colorOf, parseEdges, loops, translateScript, decodeBitmap };
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+	fs.mkdirSync(OUT_DIR, { recursive: true });
+	for (const name of process.argv.slice(2).length ? process.argv.slice(2) : ["mb2", "title"])
+		convertDocument(name);
+}

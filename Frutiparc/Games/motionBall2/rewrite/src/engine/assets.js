@@ -1,19 +1,16 @@
 /**
- * Image loading. Images are loaded once at startup and then looked up by
- * name with `images.get(name)`.
+ * Image loading (the bitmaps of the original symbols). Images are loaded once
+ * at startup and then looked up by path with `images.get(path)`.
  */
 
 export class ImageStore {
 
-	constructor(basePath) {
-		this.basePath = basePath;
+	constructor() {
 		this.images = new Map();
 	}
 
 	/**
-	 * @param {string[]} files  file names of the base folder, e.g. "bg01.jpg" (the name is the file
-	 *                          name without extension), or paths with a folder, e.g.
-	 *                          "assets/xfl/mb2/b3.png" (the name is the path itself)
+	 * @param {string[]} files  paths, e.g. "assets/xfl/mb2/b3.png"
 	 * @param {(p: number) => void} progress
 	 */
 	load(files, progress) {
@@ -24,16 +21,15 @@ export class ImageStore {
 				progress(++done / files.length);
 				resolve();
 			};
-			const isPath = file.includes("/");
 			img.onload = () => {
-				this.images.set(isPath ? file : file.replace(/\.[a-z]+$/, ""), img);
+				this.images.set(file, img);
 				finish();
 			};
 			img.onerror = () => {
 				console.warn("image", file, "not loaded");
 				finish();
 			};
-			img.src = isPath ? file : this.basePath + file;
+			img.src = file;
 		})));
 	}
 

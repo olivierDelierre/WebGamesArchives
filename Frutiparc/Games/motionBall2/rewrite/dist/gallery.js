@@ -12,14 +12,11 @@
 
   // src/engine/assets.js
   var ImageStore = class {
-    constructor(basePath) {
-      this.basePath = basePath;
+    constructor() {
       this.images = /* @__PURE__ */ new Map();
     }
     /**
-     * @param {string[]} files  file names of the base folder, e.g. "bg01.jpg" (the name is the file
-     *                          name without extension), or paths with a folder, e.g.
-     *                          "assets/xfl/mb2/b3.png" (the name is the path itself)
+     * @param {string[]} files  paths, e.g. "assets/xfl/mb2/b3.png"
      * @param {(p: number) => void} progress
      */
     load(files, progress) {
@@ -30,16 +27,15 @@
           progress(++done / files.length);
           resolve();
         };
-        const isPath = file.includes("/");
         img.onload = () => {
-          this.images.set(isPath ? file : file.replace(/\.[a-z]+$/, ""), img);
+          this.images.set(file, img);
           finish();
         };
         img.onerror = () => {
           console.warn("image", file, "not loaded");
           finish();
         };
-        img.src = isPath ? file : this.basePath + file;
+        img.src = file;
       })));
     }
     /** The image, or null when it could not be loaded. */
@@ -781,7 +777,7 @@
   var ZOOM = +(params.get("zoom") || 1);
   var CELL = 150 * ZOOM;
   var COLS = +(params.get("cols") || 8);
-  app.images = new ImageStore("assets/img/");
+  app.images = new ImageStore();
   app.images.load(xflBitmapFiles(), () => {
   }).then(start);
   function start() {

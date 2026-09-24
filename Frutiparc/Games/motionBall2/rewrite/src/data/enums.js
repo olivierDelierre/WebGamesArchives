@@ -81,3 +81,6 @@ export const Mode = Object.freeze({
 	CLASSIC: "classic",
 	TUTORIAL: "tutorial"
 });
+
+/** The items of the item boxes (the frames of the "itembox" symbol's "item"). */
+export const Icon = Object.freeze({ MAP: 0, RADAR: 1, SMALL_TIME: 2, BIG_TIME: 3, KEY: 4 });

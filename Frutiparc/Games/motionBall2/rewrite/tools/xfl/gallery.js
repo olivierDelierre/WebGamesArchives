@@ -12,7 +12,7 @@ const ZOOM = +(params.get("zoom") || 1);
 const CELL = 150 * ZOOM;
 const COLS = +(params.get("cols") || 8);
 
-app.images = new ImageStore("assets/img/");
+app.images = new ImageStore();
 app.images.load(xflBitmapFiles(), () => { }).then(start);
 
 function start() {

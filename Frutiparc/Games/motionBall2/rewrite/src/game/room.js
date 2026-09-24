@@ -9,7 +9,7 @@
  */
 
 import { WIDTH as W, HEIGHT as H, CELL, TILE, TILE_ORIGIN, TILES_X, TILES_Y } from "../config.js";
-import { Item, RoomType, Exit, Mode, DungeonBonus, BallType } from "../data/enums.js";
+import { Item, RoomType, Exit, Mode, DungeonBonus, BallType, Icon } from "../data/enums.js";
 import { Layer } from "./entity.js";
 import { circleTouchesSegment } from "./physics.js";
 import { Door, borderColliders, drawBorder } from "./doors.js";
@@ -19,7 +19,6 @@ import { Pastille, Hatch, BallPickup, ItemBox, Teleport } from "./entities/picku
 import { Zapper, makeBeams } from "./entities/zappers.js";
 import { roundRect } from "../gfx/draw.js";
 import { clip, drawClip, symbolCells } from "../gfx/xfl/index.js";
-import { Icon } from "../gfx/icons.js";
 import { app } from "../app.js";
 
 /** The original symbol of each item (their size places the items, see centreOf). */
