@@ -128,6 +128,8 @@ export function lerpColor(a, b, t) {
 	return out;
 }
 
+// offscreen canvases, one per nesting level of colour transforms ; they only
+// grow, and each use works in their top-left `w` x `h` corner
 const pool = [];
 let poolDepth = 0;
 
@@ -137,21 +139,49 @@ function offscreen(w, h) {
 		c = document.createElement("canvas");
 		pool[poolDepth] = c;
 	}
-	if (c.width !== w || c.height !== h) {
-		c.width = w;
-		c.height = h;
+	if (c.width < w || c.height < h) {
+		c.width = Math.max(c.width, w);
+		c.height = Math.max(c.height, h);
 	}
 	poolDepth++;
 	return c;
 }
 
+/** The rectangle of the canvas (device pixels) covered by local `bounds` under ctx's transform. */
+function deviceRect(ctx, t, bounds) {
+	const w = ctx.canvas.width;
+	const h = ctx.canvas.height;
+	if (!bounds)
+		return { x: 0, y: 0, w, h };
+	const [x0, y0, x1, y1] = bounds;
+	let minX = Infinity;
+	let minY = Infinity;
+	let maxX = -Infinity;
+	let maxY = -Infinity;
+	for (const [x, y] of [[x0, y0], [x1, y0], [x0, y1], [x1, y1]]) {
+		const dx = t.a * x + t.c * y + t.e;
+		const dy = t.b * x + t.d * y + t.f;
+		minX = Math.min(minX, dx);
+		minY = Math.min(minY, dy);
+		maxX = Math.max(maxX, dx);
+		maxY = Math.max(maxY, dy);
+	}
+	// (a margin for the strokes and the antialiasing)
+	const rx = Math.max(0, Math.floor(minX) - 2);
+	const ry = Math.max(0, Math.floor(minY) - 2);
+	return { x: rx, y: ry, w: Math.min(w, Math.ceil(maxX) + 2) - rx, h: Math.min(h, Math.ceil(maxY) + 2) - ry };
+}
+
 /**
  * Draws `draw(ctx)` with a colour transform : new = colour x multiplier +
- * offset, per channel.
+ * offset, per channel. The drawing goes through an offscreen canvas, only as
+ * big as `bounds` (the local bounds of what is drawn ; the whole canvas
+ * without them).
  */
-export function withColor(ctx, c, draw) {
+export function withColor(ctx, c, draw, bounds = null) {
 	const alpha = Math.max(0, Math.min(1, c.am + c.ao / 255));
-	if (isAlphaOnly(c) || typeof document === "undefined" || !ctx.getTransform) {
+	const t = typeof document !== "undefined" && ctx.getTransform ? ctx.getTransform() : null;
+	if (isAlphaOnly(c) || !t) {
 		const a = ctx.globalAlpha;
 		ctx.globalAlpha = a * alpha;
 		draw(ctx);
@@ -159,17 +189,31 @@ export function withColor(ctx, c, draw) {
 		return;
 	}
 
-	const w = ctx.canvas.width;
-	const h = ctx.canvas.height;
+	const r = deviceRect(ctx, t, bounds);
+	if (r.w <= 0 || r.h <= 0)
+		return;
+	const w = r.w;
+	const h = r.h;
 	const layer = offscreen(w, h);
 	const lc = layer.getContext("2d");
 	lc.setTransform(1, 0, 0, 1, 0, 0);
 	lc.globalCompositeOperation = "source-over";
 	lc.globalAlpha = 1;
 	lc.clearRect(0, 0, w, h);
-	lc.setTransform(ctx.getTransform());
+	lc.setTransform(t.a, t.b, t.c, t.d, t.e - r.x, t.f - r.y);
 	draw(lc);
 	lc.setTransform(1, 0, 0, 1, 0, 0);
+
+	// a silhouette of what is drawn, in a colour
+	const silhouette = (sc, color) => {
+		sc.setTransform(1, 0, 0, 1, 0, 0);
+		sc.globalCompositeOperation = "copy";
+		sc.drawImage(layer, 0, 0, w, h, 0, 0, w, h);
+		sc.globalCompositeOperation = "source-in";
+		sc.fillStyle = color;
+		sc.fillRect(0, 0, w, h);
+	};
+	const channel = v => Math.round(Math.max(0, Math.min(255, v)));
 
 	// multipliers : multiply, then restore the transparency
 	if (c.rm < 1 || c.gm < 1 || c.bm < 1) {
@@ -177,12 +221,12 @@ export function withColor(ctx, c, draw) {
 		const cc = copy.getContext("2d");
 		cc.setTransform(1, 0, 0, 1, 0, 0);
 		cc.globalCompositeOperation = "copy";
-		cc.drawImage(layer, 0, 0);
+		cc.drawImage(layer, 0, 0, w, h, 0, 0, w, h);
 		lc.globalCompositeOperation = "multiply";
-		lc.fillStyle = "rgb(" + [c.rm, c.gm, c.bm].map(v => Math.round(Math.max(0, Math.min(1, v)) * 255)).join(",") + ")";
+		lc.fillStyle = "rgb(" + [c.rm, c.gm, c.bm].map(v => channel(v * 255)).join(",") + ")";
 		lc.fillRect(0, 0, w, h);
 		lc.globalCompositeOperation = "destination-in";
-		lc.drawImage(copy, 0, 0);
+		lc.drawImage(copy, 0, 0, w, h, 0, 0, w, h);
 		poolDepth--;
 	}
 
@@ -192,15 +236,9 @@ export function withColor(ctx, c, draw) {
 	const bo = Math.max(0, c.bo);
 	if (ro || go || bo) {
 		const sil = offscreen(w, h);
-		const sc = sil.getContext("2d");
-		sc.setTransform(1, 0, 0, 1, 0, 0);
-		sc.globalCompositeOperation = "copy";
-		sc.drawImage(layer, 0, 0);
-		sc.globalCompositeOperation = "source-in";
-		sc.fillStyle = "rgb(" + Math.round(Math.min(255, ro)) + "," + Math.round(Math.min(255, go)) + "," + Math.round(Math.min(255, bo)) + ")";
-		sc.fillRect(0, 0, w, h);
+		silhouette(sil.getContext("2d"), "rgb(" + [ro, go, bo].map(channel).join(",") + ")");
 		lc.globalCompositeOperation = "lighter";
-		lc.drawImage(sil, 0, 0);
+		lc.drawImage(sil, 0, 0, w, h, 0, 0, w, h);
 		poolDepth--;
 	}
 
@@ -212,23 +250,15 @@ export function withColor(ctx, c, draw) {
 	if (rn || gn || bn) {
 		const sil = offscreen(w, h);
 		const sc = sil.getContext("2d");
-		sc.setTransform(1, 0, 0, 1, 0, 0);
-		const silhouette = color => {
-			sc.globalCompositeOperation = "copy";
-			sc.drawImage(layer, 0, 0);
-			sc.globalCompositeOperation = "source-in";
-			sc.fillStyle = color;
-			sc.fillRect(0, 0, w, h);
-		};
 		const invert = () => {
-			silhouette("#fff");
+			silhouette(sc, "#fff");
 			lc.globalCompositeOperation = "difference";
-			lc.drawImage(sil, 0, 0);
+			lc.drawImage(sil, 0, 0, w, h, 0, 0, w, h);
 		};
 		invert();
-		silhouette("rgb(" + [rn, gn, bn].map(v => Math.round(Math.min(255, v))).join(",") + ")");
+		silhouette(sc, "rgb(" + [rn, gn, bn].map(channel).join(",") + ")");
 		lc.globalCompositeOperation = "lighter";
-		lc.drawImage(sil, 0, 0);
+		lc.drawImage(sil, 0, 0, w, h, 0, 0, w, h);
 		invert();
 		poolDepth--;
 	}
@@ -236,9 +266,27 @@ export function withColor(ctx, c, draw) {
 	ctx.save();
 	ctx.setTransform(1, 0, 0, 1, 0, 0);
 	ctx.globalAlpha *= alpha;
-	ctx.drawImage(layer, 0, 0);
+	ctx.drawImage(layer, 0, 0, w, h, r.x, r.y, w, h);
 	ctx.restore();
 	poolDepth--;
+}
+
+/** Union of rectangles [x0, y0, x1, y1] ; `m` transforms `b` first. */
+export function unionBounds(acc, b, m) {
+	if (!b)
+		return acc;
+	let r = b;
+	if (m) {
+		const [a, bb, c, d, tx, ty] = m;
+		const xs = [];
+		const ys = [];
+		for (const [x, y] of [[b[0], b[1]], [b[2], b[1]], [b[0], b[3]], [b[2], b[3]]]) {
+			xs.push(a * x + c * y + tx);
+			ys.push(bb * x + d * y + ty);
+		}
+		r = [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
+	}
+	return acc ? [Math.min(acc[0], r[0]), Math.min(acc[1], r[1]), Math.max(acc[2], r[2]), Math.max(acc[3], r[3])] : r;
 }
 
 // ----- masks -----
