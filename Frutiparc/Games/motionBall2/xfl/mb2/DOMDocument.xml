@@ -1,0 +1,1151 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" backgroundColor="#ADE67D" gridColor="#C0C0C0" guidesColor="#00FF00" width="610" height="410" frameRate="40" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Windows" versionInfo="Saved by Adobe Flash Windows 12.0 build 481" majorVersion="12" buildNumber="481" gridSpacingX="18" gridSpacingY="18" snapAlign="false" snapAlignBorderSpacing="18" snapAlignHorizontalSpacing="1" snapAlignVerticalSpacing="1" sharedLibraryURL="flashLine.swf" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false">
+     <folders>
+          <DOMFolderItem name="_ a ranger" itemID="404459a8-000001fb"/>
+          <DOMFolderItem name="_bitmap" itemID="3f7d3683-00000219"/>
+          <DOMFolderItem name="_bordel" itemID="3f57394c-0000008d"/>
+          <DOMFolderItem name="_boss" itemID="3fa10db5-000000b9"/>
+          <DOMFolderItem name="_boss/_poulpe" itemID="40910c23-00001121"/>
+          <DOMFolderItem name="_boss/_snake" itemID="40910c2d-00001124"/>
+          <DOMFolderItem name="_boss/_snake/_bitmap" itemID="40962814-00000a33"/>
+          <DOMFolderItem name="_boss/_snake/_elements" itemID="40962809-00000a30"/>
+          <DOMFolderItem name="_boss/_snake/_old" itemID="40961b57-000004df"/>
+          <DOMFolderItem name="_boss/_snake/_old/_bitmap" itemID="40910c51-00001128"/>
+          <DOMFolderItem name="_boss/_tournéboulé" itemID="40978996-0000024a" isExpanded="true"/>
+          <DOMFolderItem name="_boss/_tournéboulé/_elements" itemID="40978922-00000245" isExpanded="true"/>
+          <DOMFolderItem name="_door" itemID="3f575c54-0000005e"/>
+          <DOMFolderItem name="_gfx" itemID="3f56eb61-0000003c" isExpanded="true"/>
+          <DOMFolderItem name="_gfx/_ball" itemID="3f57256e-00000046"/>
+          <DOMFolderItem name="_gfx/_bumpers" itemID="3f3b5869-0000002d"/>
+          <DOMFolderItem name="_gfx/_bumpers/_checkpoint" itemID="40587654-000000e5"/>
+          <DOMFolderItem name="_gfx/_bumpers/_death" itemID="3f572690-00000083"/>
+          <DOMFolderItem name="_gfx/_bumpers/_inter" itemID="40436230-00000484"/>
+          <DOMFolderItem name="_gfx/_bumpers/_interrupt" itemID="404361f7-00000481"/>
+          <DOMFolderItem name="_gfx/_bumpers/_magnet" itemID="3f57269c-00000084"/>
+          <DOMFolderItem name="_gfx/_bumpers/_magnet/_bitmap" itemID="40616755-000003e1"/>
+          <DOMFolderItem name="_gfx/_bumpers/_magnet/_src" itemID="4061675c-000003e4"/>
+          <DOMFolderItem name="_gfx/_bumpers/_normal" itemID="3f572679-00000082"/>
+          <DOMFolderItem name="_gfx/_bumpers/_normal/_bitmap" itemID="40615292-000002ee"/>
+          <DOMFolderItem name="_gfx/_bumpers/_normal/_src" itemID="4061529f-000002f1"/>
+          <DOMFolderItem name="_gfx/_bumpers/_shadow" itemID="3f5726a6-00000085"/>
+          <DOMFolderItem name="_gfx/_bumpers/_teleport" itemID="403ca61f-00000156"/>
+          <DOMFolderItem name="_gfx/_bumpers/_time" itemID="3f5726b2-00000086"/>
+          <DOMFolderItem name="_gfx/_bumpers/_time/_bitmap" itemID="406162d7-000003c4"/>
+          <DOMFolderItem name="_gfx/_bumpers/_time/_src" itemID="40615fa0-00000376"/>
+          <DOMFolderItem name="_gfx/_bumpers/_trappe" itemID="40587609-000000e1" isExpanded="true"/>
+          <DOMFolderItem name="_gfx/_bumpers/_wall" itemID="40436246-00000487"/>
+          <DOMFolderItem name="_gfx/_bumpers/_zapper" itemID="40436250-0000048a"/>
+          <DOMFolderItem name="_gfx/_dalle" itemID="40614bd6-000001cc"/>
+          <DOMFolderItem name="_gfx/_decor" itemID="3f7d368c-0000021c"/>
+          <DOMFolderItem name="_gfx/_logoBg" itemID="409a3868-00000cdd"/>
+          <DOMFolderItem name="_gfx/_particule" itemID="3f7d3650-00000216"/>
+          <DOMFolderItem name="_gfx/_particule/_FXDalleCut" itemID="409bb537-00000f3a"/>
+          <DOMFolderItem name="_interface" itemID="3f572564-00000045"/>
+          <DOMFolderItem name="_interface/_timePanel" itemID="40961b39-000004dc"/>
+          <DOMFolderItem name="_menu" itemID="3f8a79b9-0000010f"/>
+          <DOMFolderItem name="_menu/_icones Menu" itemID="4098a1d5-00000600"/>
+          <DOMFolderItem name="_minimap" itemID="3f81977b-0000005c"/>
+          <DOMFolderItem name="_option" itemID="3f8513c2-00000060"/>
+          <DOMFolderItem name="_option/_itemBox" itemID="3f8518c6-00000063"/>
+          <DOMFolderItem name="_option/_oeil" itemID="3f8513d9-00000064"/>
+          <DOMFolderItem name="_option/_pastilleBleue" itemID="3f853e6f-00000190"/>
+          <DOMFolderItem name="_option/_pastilleRouge" itemID="3f853e6c-0000018f"/>
+          <DOMFolderItem name="_option/_time" itemID="3f852305-00000070"/>
+          <DOMFolderItem name="_sounds" itemID="3f9cb46a-00000111"/>
+     </folders>
+     <fonts>
+          <DOMFontItem name="Font 3" itemID="6ab56b24-00000344" font="Pleasantly Plump" size="18" id="3" sourceLastImported="1790274340" embedRanges="1|2|3" bitmapSize="360"/>
+          <DOMFontItem name="Font 2" itemID="6ab56b24-00000342" font="Polo" size="28" id="2" sourceLastImported="1790274340" embedRanges="1|2|3|4|17" bitmapSize="560"/>
+          <DOMFontItem name="Font 1" itemID="6ab56b24-00000345" font="Sweet as candy" size="22" id="1" sourceLastImported="1790274340" embeddedCharacters="&apos;&quot;." embedRanges="3|1|2|4|5|17" bitmapSize="440"/>
+     </fonts>
+     <media>
+          <DOMBitmapItem name="_gfx/_bumpers/_time/_bitmap/aiguille.png" itemID="4061535f-000002f7" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_time/_bitmap/aiguille.png" sourceLastImported="1080120151" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_time/_bitmap/aiguille.png" bitmapDataHRef="Media 58.dat" frameRight="160" frameBottom="380"/>
+          <DOMBitmapItem name="_boss/_snake/_old/_bitmap/ano.png" itemID="40910de7-0000120a" sourceExternalFilepath="./LIBRARY/_boss/_snake/_old/_bitmap/ano.png" sourceLastImported="1083247810" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_boss/_snake/_old/_bitmap/ano.png" bitmapDataHRef="Media 72.dat" frameRight="2120" frameBottom="2120"/>
+          <DOMBitmapItem name="_boss/_snake/_bitmap/ano.png" itemID="4096237d-000005cf" sourceExternalFilepath="./LIBRARY/_boss/_snake/_bitmap/ano.png" sourceLastImported="1083581207" originalCompressionType="lossless" quality="50" href="_boss/_snake/_bitmap/ano.png" bitmapDataHRef="Media 76.dat" frameRight="2120" frameBottom="2120"/>
+          <DOMBitmapItem name="_bitmap/b1.png" itemID="3fa107ed-000000a2" sourceExternalFilepath="./LIBRARY/_bitmap/b1.png" sourceLastImported="1067517705" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/b1.png" bitmapDataHRef="Media 28.dat" frameRight="2960" frameBottom="2960"/>
+          <DOMBitmapItem name="_bitmap/b2.png" itemID="3fa107ed-000000a6" sourceExternalFilepath="./LIBRARY/_bitmap/b2.png" sourceLastImported="1067517728" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/b2.png" bitmapDataHRef="Media 29.dat" frameRight="2960" frameBottom="2960"/>
+          <DOMBitmapItem name="_bitmap/b3.png" itemID="3fa107ed-000000aa" sourceExternalFilepath="./LIBRARY/_bitmap/b3.png" sourceLastImported="1067517740" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/b3.png" bitmapDataHRef="Media 30.dat" frameRight="2960" frameBottom="2960"/>
+          <DOMBitmapItem name="_bitmap/b4.png" itemID="3fa107ed-000000ae" sourceExternalFilepath="./LIBRARY/_bitmap/b4.png" sourceLastImported="1067517756" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/b4.png" bitmapDataHRef="Media 31.dat" frameRight="2960" frameBottom="2960"/>
+          <DOMBitmapItem name="_bitmap/b5.png" itemID="3fa107ee-000000b2" sourceExternalFilepath="./LIBRARY/_bitmap/b5.png" sourceLastImported="1067517781" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/b5.png" bitmapDataHRef="Media 32.dat" frameRight="2960" frameBottom="2960"/>
+          <DOMBitmapItem name="_bitmap/b6.png" itemID="3fa107ee-000000b6" sourceExternalFilepath="./LIBRARY/_bitmap/b6.png" sourceLastImported="1067517798" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/b6.png" bitmapDataHRef="Media 33.dat" frameRight="2960" frameBottom="2960"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_normal/_bitmap/base.png" itemID="406150b4-000002a6" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_normal/_bitmap/base.png" sourceLastImported="1080119473" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_normal/_bitmap/base.png" bitmapDataHRef="Media 55.dat" frameRight="880" frameBottom="880"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_time/_bitmap/base.png" itemID="406153ad-000002fe" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_time/_bitmap/base.png" sourceLastImported="1080120228" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_time/_bitmap/base.png" bitmapDataHRef="Media 59.dat" frameRight="1000" frameBottom="1000"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_death/base.png" itemID="40616139-00000383" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_death/base.png" sourceLastImported="1080123683" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_death/base.png" bitmapDataHRef="Media 62.dat" frameRight="700" frameBottom="720"/>
+          <DOMBitmapItem name="_bitmap/bg01.jpg" itemID="403a41ad-000005c7" sourceExternalFilepath="./LIBRARY/_bitmap/bg01.jpg" sourceLastImported="1077554839" allowSmoothing="true" quality="50" href="_bitmap/bg01.jpg" bitmapDataHRef="Media 39.dat" frameRight="12200" frameBottom="8200" isJPEG="true"/>
+          <DOMBitmapItem name="_bitmap/bg02.jpg" itemID="403a41ad-000005cb" sourceExternalFilepath="./LIBRARY/_bitmap/bg02.jpg" sourceLastImported="1077554839" allowSmoothing="true" quality="50" href="_bitmap/bg02.jpg" bitmapDataHRef="Media 40.dat" frameRight="12200" frameBottom="8200" isJPEG="true"/>
+          <DOMBitmapItem name="_bitmap/bg03.jpg" itemID="403a41ad-000005cf" sourceExternalFilepath="./LIBRARY/_bitmap/bg03.jpg" sourceLastImported="1077554839" allowSmoothing="true" quality="50" href="_bitmap/bg03.jpg" bitmapDataHRef="Media 41.dat" frameRight="12200" frameBottom="8200" isJPEG="true"/>
+          <DOMBitmapItem name="_bitmap/bg04.jpg" itemID="403a41ad-000005d3" sourceExternalFilepath="./LIBRARY/_bitmap/bg04.jpg" allowSmoothing="true" quality="50" href="_bitmap/bg04.jpg" bitmapDataHRef="Media 53.dat" frameRight="12200" frameBottom="8200" isJPEG="true"/>
+          <DOMBitmapItem name="_bitmap/bgHole.jpg" itemID="403a4213-000005db" sourceExternalFilepath="./LIBRARY/_bitmap/bgHole.jpg" sourceLastImported="1077554839" allowSmoothing="true" quality="50" href="_bitmap/bgHole.jpg" bitmapDataHRef="Media 43.dat" frameRight="12200" frameBottom="8200" isJPEG="true"/>
+          <DOMSoundItem name="_sounds/bonus_blip.wav" itemID="3f9fee82-000000c9" linkageExportForAS="true" linkageIdentifier="bonus_blip" sourceExternalFilepath="./LIBRARY/_sounds/bonus_blip.wav" sourceLastImported="1067444575" href="_sounds/bonus_blip.wav" soundDataHRef="Media 11.dat" format="11kHz 16bit Mono" sampleCount="2747"/>
+          <DOMSoundItem name="_sounds/bonus_blip2.wav" itemID="3f9fee82-000000ca" linkageExportForAS="true" linkageIdentifier="bonus_blip2" sourceExternalFilepath="./LIBRARY/_sounds/bonus_blip2.wav" sourceLastImported="1067444565" href="_sounds/bonus_blip2.wav" soundDataHRef="Media 10.dat" format="22kHz 16bit Mono" sampleCount="8448"/>
+          <DOMSoundItem name="_sounds/bonus_blip3.wav" itemID="3f9fee82-000000cb" linkageExportForAS="true" linkageIdentifier="bonus_blip3" sourceExternalFilepath="./LIBRARY/_sounds/bonus_blip3.wav" sourceLastImported="1067432711" href="_sounds/bonus_blip3.wav" soundDataHRef="Media 19.dat" format="11kHz 16bit Mono" sampleCount="2748"/>
+          <DOMSoundItem name="_sounds/boss.wav" itemID="3fad0c2d-000000bd" linkageExportForAS="true" linkageIdentifier="boss_loop" sourceExternalFilepath="./LIBRARY/_sounds/boss.wav" sourceLastImported="1068305519" href="_sounds/boss.wav" soundDataHRef="Media 36.dat" format="44kHz 16bit Mono" sampleCount="149888" exportFormat="5" exportBits="17"/>
+          <DOMSoundItem name="_sounds/boss_saut.wav" itemID="40408717-0000071e" linkageExportForAS="true" linkageIdentifier="sound_boss_saut" sourceExternalFilepath="./LIBRARY/_sounds/boss_saut.wav" sourceLastImported="1075191054" href="_sounds/boss_saut.wav" soundDataHRef="Media 50.dat" format="44kHz 16bit Stereo" sampleCount="5600"/>
+          <DOMBitmapItem name="_gfx/_logoBg/bossLogoEau.png" itemID="409a380e-00000cd9" sourceExternalFilepath="./LIBRARY/_gfx/_logoBg/bossLogoEau.png" sourceLastImported="1083848713" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_logoBg/bossLogoEau.png" bitmapDataHRef="Media 112.dat" frameRight="5200" frameBottom="2900"/>
+          <DOMBitmapItem name="_gfx/_logoBg/bossLogoFeu.png" itemID="409a3724-00000cbd" sourceExternalFilepath="./LIBRARY/_gfx/_logoBg/bossLogoFeu.png" sourceLastImported="1083847455" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_logoBg/bossLogoFeu.png" bitmapDataHRef="Media 109.dat" frameRight="3400" frameBottom="3960"/>
+          <DOMBitmapItem name="_gfx/_logoBg/bossLogoTerre.png" itemID="409a3724-00000cc1" sourceExternalFilepath="./LIBRARY/_gfx/_logoBg/bossLogoTerre.png" sourceLastImported="1083847455" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_logoBg/bossLogoTerre.png" bitmapDataHRef="Media 110.dat" frameRight="3240" frameBottom="3360"/>
+          <DOMBitmapItem name="_gfx/_logoBg/bossLogoVent.png" itemID="409a3724-00000cb9" sourceExternalFilepath="./LIBRARY/_gfx/_logoBg/bossLogoVent.png" sourceLastImported="1083847455" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_logoBg/bossLogoVent.png" bitmapDataHRef="Media 108.dat" frameRight="5100" frameBottom="3040"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_time/_bitmap/bout.png" itemID="40615459-00000305" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_time/_bitmap/bout.png" sourceLastImported="1080120406" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_time/_bitmap/bout.png" bitmapDataHRef="Media 60.dat" frameRight="320" frameBottom="440"/>
+          <DOMSoundItem name="_sounds/bumper_metal.wav" itemID="3f9fee82-000000cd" linkageExportForAS="true" linkageIdentifier="bumper_metal" sourceExternalFilepath="./LIBRARY/_sounds/bumper_metal.wav" sourceLastImported="1067445870" href="_sounds/bumper_metal.wav" soundDataHRef="Media 13.dat" format="22kHz 16bit Mono" sampleCount="13824" exportFormat="10" exportBits="0"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_teleport/circle.png" itemID="4044a3d0-00000c3b" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_teleport/circle.png" sourceLastImported="1078241180" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_teleport/circle.png" bitmapDataHRef="Media 51.dat" frameRight="880" frameBottom="880"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_magnet/_bitmap/content.png" itemID="40616386-000003d8" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_magnet/_bitmap/content.png" sourceLastImported="1080124292" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_magnet/_bitmap/content.png" bitmapDataHRef="Media 65.dat" frameRight="340" frameBottom="320"/>
+          <DOMSoundItem name="_sounds/doors_open.wav" itemID="3f9fee82-000000ce" linkageExportForAS="true" linkageIdentifier="door_open" sourceExternalFilepath="./LIBRARY/_sounds/doors_open.wav" sourceLastImported="1067444470" href="_sounds/doors_open.wav" soundDataHRef="Media 14.dat" format="22kHz 16bit Mono" sampleCount="10416"/>
+          <DOMSoundItem name="_sounds/earth.wav" itemID="40ab1785-00000240" linkageExportForAS="true" linkageIdentifier="earth" sourceExternalFilepath="./LIBRARY/_sounds/earth.wav" sourceLastImported="1084954506" href="_sounds/earth.wav" soundDataHRef="Media 118.dat" format="44kHz 16bit Stereo" sampleCount="11968"/>
+          <DOMSoundItem name="_sounds/fireball03.wav" itemID="40407f64-0000064e" linkageExportForAS="true" linkageIdentifier="sound_casse" sourceExternalFilepath="./LIBRARY/_sounds/fireball03.wav" sourceLastImported="1084954357" href="_sounds/fireball03.wav" soundDataHRef="Media 47.dat" format="22kHz 16bit Stereo" sampleCount="24832"/>
+          <DOMSoundItem name="_sounds/game_over.wav" itemID="404440b4-00000125" linkageExportForAS="true" linkageIdentifier="game_over" sourceExternalFilepath="./LIBRARY/_sounds/game_over.wav" sourceLastImported="1077046680" href="_sounds/game_over.wav" soundDataHRef="Media 17.dat" format="44kHz 16bit Stereo" sampleCount="86144"/>
+          <DOMBitmapItem name="_boss/_snake/_bitmap/headBase.png" itemID="4096235e-000005c7" sourceExternalFilepath="./LIBRARY/_boss/_snake/_bitmap/headBase.png" sourceLastImported="1083581184" originalCompressionType="lossless" quality="50" href="_boss/_snake/_bitmap/headBase.png" bitmapDataHRef="Media 74.dat" frameRight="2280" frameBottom="1820"/>
+          <DOMBitmapItem name="_boss/_snake/_old/_bitmap/headBase.png" itemID="40910dc0-00001206" sourceExternalFilepath="./LIBRARY/_boss/_snake/_old/_bitmap/headBase.png" sourceLastImported="1083247947" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_boss/_snake/_old/_bitmap/headBase.png" bitmapDataHRef="Media 71.dat" frameRight="3120" frameBottom="2600"/>
+          <DOMSoundItem name="_sounds/hide.wav" itemID="40ab197c-00000269" linkageExportForAS="true" linkageIdentifier="hide" sourceExternalFilepath="./LIBRARY/_sounds/hide.wav" sourceLastImported="1084955010" href="_sounds/hide.wav" soundDataHRef="Media 119.dat" format="44kHz 16bit Stereo" sampleCount="56064"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_inter/high_blue.png" itemID="406168f1-000003f4" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_inter/high_blue.png" sourceLastImported="1080125673" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_inter/high_blue.png" bitmapDataHRef="Media 69.dat" frameRight="840" frameBottom="840"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_inter/high_pink.png" itemID="4061695e-000003f9" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_inter/high_pink.png" sourceLastImported="1080125785" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_inter/high_pink.png" bitmapDataHRef="Media 70.dat" frameRight="880" frameBottom="880"/>
+          <DOMBitmapItem name="_bitmap/iconeBallBleue.png" itemID="40966028-000009fa" sourceExternalFilepath="./LIBRARY/_bitmap/iconeBallBleue.png" sourceLastImported="1083596672" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/iconeBallBleue.png" bitmapDataHRef="Media 89.dat" frameRight="2720" frameBottom="2720"/>
+          <DOMBitmapItem name="_bitmap/iconeBallJaune.png" itemID="40966028-000009ff" sourceExternalFilepath="./LIBRARY/_bitmap/iconeBallJaune.png" sourceLastImported="1083596667" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/iconeBallJaune.png" bitmapDataHRef="Media 90.dat" frameRight="2720" frameBottom="2720"/>
+          <DOMBitmapItem name="_bitmap/iconeBallMetal.png" itemID="40966028-00000a04" sourceExternalFilepath="./LIBRARY/_bitmap/iconeBallMetal.png" sourceLastImported="1083596663" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/iconeBallMetal.png" bitmapDataHRef="Media 91.dat" frameRight="2720" frameBottom="2720"/>
+          <DOMBitmapItem name="_bitmap/iconeBallOrange.png" itemID="40966028-00000a09" sourceExternalFilepath="./LIBRARY/_bitmap/iconeBallOrange.png" sourceLastImported="1083596660" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/iconeBallOrange.png" bitmapDataHRef="Media 92.dat" frameRight="2720" frameBottom="2720"/>
+          <DOMBitmapItem name="_bitmap/iconeBallRouge.png" itemID="40966028-00000a0e" sourceExternalFilepath="./LIBRARY/_bitmap/iconeBallRouge.png" sourceLastImported="1083596655" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/iconeBallRouge.png" bitmapDataHRef="Media 93.dat" frameRight="2720" frameBottom="2720"/>
+          <DOMBitmapItem name="_bitmap/iconeBallVerte.png" itemID="40966029-00000a13" sourceExternalFilepath="./LIBRARY/_bitmap/iconeBallVerte.png" sourceLastImported="1083596648" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/iconeBallVerte.png" bitmapDataHRef="Media 94.dat" frameRight="2720" frameBottom="2720"/>
+          <DOMBitmapItem name="_bitmap/iconeBallViolette.png" itemID="40966029-00000a18" sourceExternalFilepath="./LIBRARY/_bitmap/iconeBallViolette.png" sourceLastImported="1083596634" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/iconeBallViolette.png" bitmapDataHRef="Media 95.dat" frameRight="2720" frameBottom="2720"/>
+          <DOMBitmapItem name="_menu/_icones Menu/iconeDonjonEau.png" itemID="40976f3e-0000027e" sourceExternalFilepath="./LIBRARY/_menu/_icones Menu/iconeDonjonEau.png" sourceLastImported="1083666231" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_menu/_icones Menu/iconeDonjonEau.png" bitmapDataHRef="Media 104.dat" frameRight="1680" frameBottom="1160"/>
+          <DOMBitmapItem name="_menu/_icones Menu/iconeDonjonFeu.png" itemID="40976fae-00000282" sourceExternalFilepath="./LIBRARY/_menu/_icones Menu/iconeDonjonFeu.png" sourceLastImported="1083666293" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_menu/_icones Menu/iconeDonjonFeu.png" bitmapDataHRef="Media 105.dat" frameRight="1420" frameBottom="1600"/>
+          <DOMBitmapItem name="_menu/_icones Menu/iconeDonjonTerre.png" itemID="40976fc0-00000286" sourceExternalFilepath="./LIBRARY/_menu/_icones Menu/iconeDonjonTerre.png" sourceLastImported="1083666320" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_menu/_icones Menu/iconeDonjonTerre.png" bitmapDataHRef="Media 106.dat" frameRight="1480" frameBottom="1540"/>
+          <DOMBitmapItem name="_menu/_icones Menu/iconeDonjonVent.png" itemID="40976fdd-0000028a" sourceExternalFilepath="./LIBRARY/_menu/_icones Menu/iconeDonjonVent.png" sourceLastImported="1083666341" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_menu/_icones Menu/iconeDonjonVent.png" bitmapDataHRef="Media 107.dat" frameRight="2140" frameBottom="1400"/>
+          <DOMSoundItem name="_sounds/kata1.wav" itemID="40ab1363-000001c5" linkageExportForAS="true" linkageIdentifier="kata1" sourceExternalFilepath="./LIBRARY/_sounds/kata1.wav" sourceLastImported="1084953448" href="_sounds/kata1.wav" soundDataHRef="Media 115.dat" format="44kHz 16bit Stereo" sampleCount="7809"/>
+          <DOMSoundItem name="_sounds/kata2.wav" itemID="40ab1363-000001c1" linkageExportForAS="true" linkageIdentifier="kata2" sourceExternalFilepath="./LIBRARY/_sounds/kata2.wav" sourceLastImported="1084953454" href="_sounds/kata2.wav" soundDataHRef="Media 114.dat" format="44kHz 16bit Stereo" sampleCount="5600"/>
+          <DOMSoundItem name="_sounds/kata3.wav" itemID="40ab1363-000001bd" linkageExportForAS="true" linkageIdentifier="kata3" sourceExternalFilepath="./LIBRARY/_sounds/kata3.wav" sourceLastImported="1084953458" href="_sounds/kata3.wav" soundDataHRef="Media 113.dat" format="44kHz 16bit Stereo" sampleCount="4865"/>
+          <DOMSoundItem name="_sounds/loop1.wav" itemID="3fa012ad-000000ea" linkageExportForAS="true" linkageIdentifier="loop$1" sourceExternalFilepath="./LIBRARY/_sounds/loop1.wav" sourceLastImported="1077531394" href="_sounds/loop1.wav" soundDataHRef="Media 26.dat" format="44kHz 16bit Mono" sampleCount="74970" exportFormat="5" exportBits="17"/>
+          <DOMSoundItem name="_sounds/loop2.wav" itemID="3fa012ad-000000eb" linkageExportForAS="true" linkageIdentifier="loop$2" sourceExternalFilepath="./LIBRARY/_sounds/loop2.wav" sourceLastImported="1077531399" href="_sounds/loop2.wav" soundDataHRef="Media 23.dat" format="44kHz 16bit Mono" sampleCount="75004" exportFormat="5" exportBits="17"/>
+          <DOMSoundItem name="_sounds/loop3.wav" itemID="3fa012ad-000000ec" linkageExportForAS="true" linkageIdentifier="loop$3" sourceExternalFilepath="./LIBRARY/_sounds/loop3.wav" sourceLastImported="1077531403" href="_sounds/loop3.wav" soundDataHRef="Media 24.dat" format="44kHz 16bit Mono" sampleCount="75002" exportFormat="5" exportBits="17"/>
+          <DOMSoundItem name="_sounds/loop4.wav" itemID="3fa012ad-000000ed" linkageExportForAS="true" linkageIdentifier="loop$4" sourceExternalFilepath="./LIBRARY/_sounds/loop4.wav" sourceLastImported="1077531407" href="_sounds/loop4.wav" soundDataHRef="Media 25.dat" format="44kHz 16bit Mono" sampleCount="74980" exportFormat="5" exportBits="17"/>
+          <DOMSoundItem name="_sounds/loop5.wav" itemID="3fa012ad-000000ee" linkageExportForAS="true" linkageIdentifier="loop$5" sourceExternalFilepath="./LIBRARY/_sounds/loop5.wav" sourceLastImported="1077531410" href="_sounds/loop5.wav" soundDataHRef="Media 22.dat" format="44kHz 16bit Mono" sampleCount="74993" exportFormat="5" exportBits="17"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_inter/low_blue.png" itemID="40616865-000003ea" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_inter/low_blue.png" sourceLastImported="1080125501" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_inter/low_blue.png" bitmapDataHRef="Media 67.dat" frameRight="800" frameBottom="800"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_inter/low_pink.png" itemID="4061688f-000003ee" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_inter/low_pink.png" sourceLastImported="1080125518" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_inter/low_pink.png" bitmapDataHRef="Media 68.dat" frameRight="800" frameBottom="800"/>
+          <DOMSoundItem name="_sounds/main_loop.mp3" itemID="3f9fee82-000000d0" sourceExternalFilepath="./LIBRARY/_sounds/main_loop.mp3" sourceLastImported="1067456968" href="_sounds/main_loop.mp3" soundDataHRef="Media 5.dat" format="44kHz 16bit Stereo" sampleCount="653184" exportFormat="1" exportBits="7" dataLength="236854" exportNative="true" cacheFormat="5kHz 8bit Stereo" cachedSampleCount="81648"/>
+          <DOMBitmapItem name="_bitmap/map.png" itemID="403cdbe3-00000df0" sourceExternalFilepath="./LIBRARY/_bitmap/map.png" sourceLastImported="1077730499" allowSmoothing="true" originalCompressionType="lossless" quality="50" href="_bitmap/map.png" bitmapDataHRef="Media 44.dat" frameRight="8800" frameBottom="7200"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_magnet/_bitmap/mecontent.png" itemID="406163b6-000003dc" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_magnet/_bitmap/mecontent.png" sourceLastImported="1080124339" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_magnet/_bitmap/mecontent.png" bitmapDataHRef="Media 66.dat" frameRight="340" frameBottom="260"/>
+          <DOMSoundItem name="_sounds/menu.wav" itemID="3fad0bf7-000000ba" linkageExportForAS="true" linkageIdentifier="menu" sourceExternalFilepath="./LIBRARY/_sounds/menu.wav" sourceLastImported="1068305327" href="_sounds/menu.wav" soundDataHRef="Media 35.dat" format="44kHz 16bit Stereo" sampleCount="301984" exportFormat="1" exportBits="16"/>
+          <DOMSoundItem name="_sounds/menu_enter.wav" itemID="3f9fee82-000000d2" linkageExportForAS="true" linkageIdentifier="menu_enter" sourceExternalFilepath="./LIBRARY/_sounds/menu_enter.wav" sourceLastImported="1067305513" href="_sounds/menu_enter.wav" soundDataHRef="Media 7.dat" format="11kHz 16bit Mono" sampleCount="22358"/>
+          <DOMSoundItem name="_sounds/menu_select.wav" itemID="4039f961-000005c1" linkageExportForAS="true" linkageIdentifier="menu_select" sourceExternalFilepath="./LIBRARY/_sounds/menu_select.wav" sourceLastImported="1077541211" href="_sounds/menu_select.wav" soundDataHRef="Media 6.dat" format="11kHz 16bit Mono" sampleCount="1120"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_magnet/_bitmap/miniBumper.png" itemID="4061631c-000003ca" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_magnet/_bitmap/miniBumper.png" sourceLastImported="1080124178" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_magnet/_bitmap/miniBumper.png" bitmapDataHRef="Media 63.dat" frameRight="720" frameBottom="720"/>
+          <DOMSoundItem name="_sounds/mort_monstre07.wav" itemID="40407a7f-00000582" linkageExportForAS="true" linkageIdentifier="sound_poulpe" sourceExternalFilepath="./LIBRARY/_sounds/mort_monstre07.wav" sourceLastImported="1084954178" href="_sounds/mort_monstre07.wav" soundDataHRef="Media 45.dat" format="44kHz 16bit Stereo" sampleCount="60672"/>
+          <DOMSoundItem name="_sounds/object_found.wav" itemID="3f9fee82-000000d3" linkageExportForAS="true" linkageIdentifier="object_found" sourceExternalFilepath="./LIBRARY/_sounds/object_found.wav" sourceLastImported="1067305513" href="_sounds/object_found.wav" soundDataHRef="Media 18.dat" format="11kHz 16bit Mono" sampleCount="23128"/>
+          <DOMSoundItem name="_sounds/oeil.wav" itemID="3fad1e22-000000c3" linkageExportForAS="true" linkageIdentifier="eye" sourceExternalFilepath="./LIBRARY/_sounds/oeil.wav" sourceLastImported="1068310282" href="_sounds/oeil.wav" soundDataHRef="Media 38.dat" format="22kHz 16bit Mono" sampleCount="10636"/>
+          <DOMSoundItem name="_sounds/oeilnew.wav" itemID="3fad1e21-000000c0" linkageExportForAS="true" linkageIdentifier="eye_new" sourceExternalFilepath="./LIBRARY/_sounds/oeilnew.wav" sourceLastImported="1068310389" href="_sounds/oeilnew.wav" soundDataHRef="Media 37.dat" format="22kHz 16bit Mono" sampleCount="14812"/>
+          <DOMBitmapItem name="_boss/_snake/_bitmap/queue.png" itemID="40962395-000005d3" sourceExternalFilepath="./LIBRARY/_boss/_snake/_bitmap/queue.png" sourceLastImported="1083581228" originalCompressionType="lossless" quality="50" href="_boss/_snake/_bitmap/queue.png" bitmapDataHRef="Media 77.dat" frameRight="2060" frameBottom="1280"/>
+          <DOMBitmapItem name="_boss/_snake/_old/_bitmap/queue.png" itemID="40910e08-0000120e" sourceExternalFilepath="./LIBRARY/_boss/_snake/_old/_bitmap/queue.png" sourceLastImported="1083247842" originalCompressionType="lossless" quality="50" href="_boss/_snake/_old/_bitmap/queue.png" bitmapDataHRef="Media 73.dat" frameRight="2060" frameBottom="1280"/>
+          <DOMSoundItem name="_sounds/ramasse_option01.wav" itemID="404080bd-00000672" linkageExportForAS="true" linkageIdentifier="sound_grelot" sourceExternalFilepath="./LIBRARY/_sounds/ramasse_option01.wav" sourceLastImported="1077969096" href="_sounds/ramasse_option01.wav" soundDataHRef="Media 49.dat" format="44kHz 16bit Stereo" sampleCount="38394"/>
+          <DOMBitmapItem name="_ a ranger/roue.gif" itemID="3fa103ed-0000009e" sourceExternalFilepath="./LIBRARY/_ a ranger/roue.gif" sourceLastImported="1067516615" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_ a ranger/roue.gif" bitmapDataHRef="Media 27.dat" frameRight="14040" frameBottom="14040"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_magnet/_bitmap/sommet.png" itemID="40616350-000003d0" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_magnet/_bitmap/sommet.png" sourceLastImported="1080124237" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_magnet/_bitmap/sommet.png" bitmapDataHRef="Media 64.dat" frameRight="480" frameBottom="480"/>
+          <DOMBitmapItem name="_gfx/_bumpers/_normal/_bitmap/sommet.png" itemID="40615161-000002cd" sourceExternalFilepath="./LIBRARY/_gfx/_bumpers/_normal/_bitmap/sommet.png" sourceLastImported="1080119646" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="_gfx/_bumpers/_normal/_bitmap/sommet.png" bitmapDataHRef="Media 56.dat" frameRight="440" frameBottom="440"/>
+          <DOMSoundItem name="_sounds/superpouvoir02.wav" itemID="40407ef8-0000062e" linkageExportForAS="true" linkageIdentifier="sound_bdeath" sourceExternalFilepath="./LIBRARY/_sounds/superpouvoir02.wav" sourceLastImported="1077116112" href="_sounds/superpouvoir02.wav" soundDataHRef="Media 46.dat" format="44kHz 16bit Mono" sampleCount="21504"/>
+          <DOMSoundItem name="_sounds/touched.wav" itemID="40ab197d-0000026d" linkageExportForAS="true" linkageIdentifier="touched" sourceExternalFilepath="./LIBRARY/_sounds/touched.wav" sourceLastImported="1084955015" href="_sounds/touched.wav" soundDataHRef="Media 120.dat" format="44kHz 16bit Stereo" sampleCount="39131"/>
+          <DOMSoundItem name="_sounds/traverse_laser07.wav" itemID="4040806c-0000066e" linkageExportForAS="true" linkageIdentifier="sound_zapper" sourceExternalFilepath="./LIBRARY/_sounds/traverse_laser07.wav" sourceLastImported="1077969013" href="_sounds/traverse_laser07.wav" soundDataHRef="Media 48.dat" format="44kHz 16bit Stereo" sampleCount="54016"/>
+          <DOMSoundItem name="_sounds/wall_bump.wav" itemID="3f9fee82-000000d4" linkageExportForAS="true" linkageIdentifier="wall_bump" sourceExternalFilepath="./LIBRARY/_sounds/wall_bump.wav" sourceLastImported="1067445884" href="_sounds/wall_bump.wav" soundDataHRef="Media 8.dat" format="11kHz 16bit Mono" sampleCount="4265"/>
+          <DOMSoundItem name="_sounds/water.wav" itemID="40ab1742-0000023c" linkageExportForAS="true" linkageIdentifier="water" sourceExternalFilepath="./LIBRARY/_sounds/water.wav" sourceLastImported="1084954445" href="_sounds/water.wav" soundDataHRef="Media 117.dat" format="44kHz 16bit Stereo" sampleCount="37889"/>
+          <DOMSoundItem name="_sounds/wind.wav" itemID="40ab14b6-000001ee" linkageExportForAS="true" linkageIdentifier="wind" sourceExternalFilepath="./LIBRARY/_sounds/wind.wav" sourceLastImported="1084953982" href="_sounds/wind.wav" soundDataHRef="Media 116.dat" format="44kHz 16bit Stereo" sampleCount="116224"/>
+     </media>
+     <symbols>
+          <Include href="_ a ranger/ballBleueCourseGFX.xml" loadImmediate="false" itemID="409643ad-00000535" lastModified="1083594808"/>
+          <Include href="_ a ranger/ballHelpGFX.xml" loadImmediate="false" itemID="40313441-00000180" lastModified="1076967129"/>
+          <Include href="_ a ranger/ballJauneCourseGFX.xml" loadImmediate="false" itemID="409633d0-0000044e" lastModified="1083590770"/>
+          <Include href="_ a ranger/ballMetalCourseGFX.xml" loadImmediate="false" itemID="40965247-000007e8" lastModified="1083594833"/>
+          <Include href="_ a ranger/ballOrangeCourseGFX.xml" loadImmediate="false" itemID="40964ccc-00000701" lastModified="1083594051"/>
+          <Include href="_ a ranger/ballRougeCourseGFX.xml" loadImmediate="false" itemID="40964854-0000061b" lastModified="1083594142"/>
+          <Include href="_ a ranger/ballverteCourseGFX.xml" loadImmediate="false" itemID="409643b3-00000536" lastModified="1083593143"/>
+          <Include href="_ a ranger/ballVioletteCourseGFX.xml" loadImmediate="false" itemID="409655e8-000008d0" lastModified="1083595003"/>
+          <Include href="_ a ranger/bumperInvisible.xml" loadImmediate="false" itemID="4096587a-000009b9" lastModified="1083594932"/>
+          <Include href="_ a ranger/gameOverText.xml" loadImmediate="false" itemID="40312103-00000154" lastModified="1077546519"/>
+          <Include href="_ a ranger/Help retour button.xml" itemIcon="0" loadImmediate="false" itemID="4031386d-000000b1" lastModified="1076967651"/>
+          <Include href="_ a ranger/intro_bg.xml" itemID="4035ec1f-00000216" lastModified="1077275731"/>
+          <Include href="_ a ranger/main.xml" loadImmediate="false" itemID="4035e727-0000014b" lastModified="1078156826"/>
+          <Include href="_ a ranger/old_main.xml" loadImmediate="false" itemID="4035e705-00000149" lastModified="1077281708"/>
+          <Include href="_ a ranger/panGameOver.xml" itemID="40311c5c-000000eb" lastModified="1083341802"/>
+          <Include href="_ a ranger/rayure.xml" loadImmediate="false" itemID="3fa101e5-0000009a" lastModified="1067516922"/>
+          <Include href="_ a ranger/retour.xml" itemIcon="1" loadImmediate="false" itemID="3fe07e12-00000821" lastModified="1071676946"/>
+          <Include href="_ a ranger/sphereTest.xml" loadImmediate="false" itemID="40436b57-000000cf" lastModified="1078160215"/>
+          <Include href="_ a ranger/victoire text.xml" loadImmediate="false" itemID="40312363-00000156" lastModified="1083316349"/>
+          <Include href="_bordel/aura.xml" loadImmediate="false" itemID="3f3f6360-0000007c" lastModified="1077649661"/>
+          <Include href="_bordel/aura gfx.xml" itemIcon="1" loadImmediate="false" itemID="3f3f6368-0000007e" lastModified="1077649659"/>
+          <Include href="_bordel/ball.xml" loadImmediate="false" itemID="3f3a0901-00000022" lastModified="1077649727"/>
+          <Include href="_bordel/ballbox.xml" itemID="3f3f62fa-0000007a" lastModified="1077649861"/>
+          <Include href="_bordel/grgzgrgzr.xml" loadImmediate="false" itemID="3f7c2d8d-0000095e" lastModified="1065102768"/>
+          <Include href="_bordel/hit.xml" itemID="3f3a6d0f-00000024" lastModified="1060794380"/>
+          <Include href="_bordel/itembox gfx.xml" itemIcon="1" loadImmediate="false" itemID="3f3f4b89-00000024" lastModified="1062078342"/>
+          <Include href="_bordel/itembox opened gfx.xml" itemIcon="1" loadImmediate="false" itemID="3f4e07a0-00000027" lastModified="1062078368"/>
+          <Include href="_bordel/ombre.xml" itemID="3f797ba7-000000e3" lastModified="1080123739"/>
+          <Include href="_bordel/palette.xml" loadImmediate="false" itemID="3f5739cd-0000008f" lastModified="1062681037"/>
+          <Include href="_bordel/palette2.xml" loadImmediate="false" itemID="3f83ef23-0000016e" lastModified="1065611043"/>
+          <Include href="_bordel/timer.xml" loadImmediate="false" itemID="3f4e271a-000000fb" lastModified="1062090576"/>
+          <Include href="_boss/_poulpe/aspiration.xml" loadImmediate="false" itemID="3fe32774-000000e3" lastModified="1071856515"/>
+          <Include href="_boss/_poulpe/basePicto.xml" loadImmediate="false" itemID="3fe2d02e-00000cec" lastModified="1071857880"/>
+          <Include href="_boss/_poulpe/boss.xml" itemID="3f97801e-0000010b" lastModified="1083238782"/>
+          <Include href="_boss/_poulpe/boss base.xml" loadImmediate="false" itemID="3f979db5-0000010f" lastModified="1067325787"/>
+          <Include href="_boss/_poulpe/boss shade.xml" itemID="3f97877f-0000010d" lastModified="1075809649"/>
+          <Include href="_boss/_poulpe/boss tir.xml" itemID="3f9e197c-0000011b" lastModified="1075809652"/>
+          <Include href="_boss/_poulpe/boss tir gfx.xml" loadImmediate="false" itemID="3f9e1a38-0000011f" lastModified="1068298546"/>
+          <Include href="_boss/_poulpe/bossBase.xml" loadImmediate="false" itemID="3facc0d2-000000a2" lastModified="1068286526"/>
+          <Include href="_boss/_poulpe/bossGFX.xml" loadImmediate="false" itemID="3facc0cb-000000a0" lastModified="1079541973"/>
+          <Include href="_boss/_poulpe/bossParticule.xml" itemID="405882af-00000252" lastModified="1083237938"/>
+          <Include href="_boss/_poulpe/frame_log.xml" loadImmediate="false" itemID="401f9a60-00000160" lastModified="1075813051"/>
+          <Include href="_boss/_poulpe/hole.xml" loadImmediate="false" itemID="3facf5ff-000000ae" lastModified="1068299893"/>
+          <Include href="_boss/_poulpe/oeil.xml" loadImmediate="false" itemID="3facd82b-000000aa" lastModified="1083238505"/>
+          <Include href="_boss/_poulpe/oeilDeath.xml" loadImmediate="false" itemID="40605f66-00003144" lastModified="1080057702"/>
+          <Include href="_boss/_poulpe/paupiere.xml" loadImmediate="false" itemID="3face7ca-000000ac" lastModified="1071849510"/>
+          <Include href="_boss/_poulpe/pince.xml" loadImmediate="false" itemID="3fe32260-000000cb" lastModified="1071856809"/>
+          <Include href="_boss/_poulpe/pince2.xml" loadImmediate="false" itemID="3fe326f3-000000df" lastModified="1071851271"/>
+          <Include href="_boss/_poulpe/plorch.xml" loadImmediate="false" itemID="3facfe06-000000b4" lastModified="1068301830"/>
+          <Include href="_boss/_poulpe/pupille.xml" loadImmediate="false" itemID="3facc2e7-000000a4" lastModified="1068286937"/>
+          <Include href="_boss/_poulpe/slimeCoule.xml" loadImmediate="false" itemID="3facfdd0-000000b2" lastModified="1071849543"/>
+          <Include href="_boss/_poulpe/slimePlorch.xml" loadImmediate="false" itemID="3facfe12-000000b6" lastModified="1071849537"/>
+          <Include href="_boss/_poulpe/tache.xml" loadImmediate="false" itemID="406062c1-0000314a" lastModified="1080118374"/>
+          <Include href="_boss/_poulpe/tentacule.xml" loadImmediate="false" itemID="3faccd67-000000a8" lastModified="1068289854"/>
+          <Include href="_boss/_snake/_elements/ano.xml" loadImmediate="false" itemID="40962635-0000078e" lastModified="1083851368"/>
+          <Include href="_boss/_snake/_elements/anoGFX.xml" loadImmediate="false" itemID="40962646-00000791" lastModified="1083582325"/>
+          <Include href="_boss/_snake/_elements/head.xml" loadImmediate="false" itemID="409623b6-000005d5" lastModified="1083851338"/>
+          <Include href="_boss/_snake/_elements/headGFX.xml" loadImmediate="false" itemID="409623c5-000005d8" lastModified="1083831075"/>
+          <Include href="_boss/_snake/_elements/queue.xml" loadImmediate="false" itemID="409626fc-0000086f" lastModified="1083852325"/>
+          <Include href="_boss/_snake/_elements/queueGFX.xml" loadImmediate="false" itemID="40962709-00000872" lastModified="1083582217"/>
+          <Include href="_boss/_snake/_old/crane.xml" loadImmediate="false" itemID="40910900-0000111c" lastModified="1083582444"/>
+          <Include href="_boss/_snake/_old/craneStone.xml" loadImmediate="false" itemID="40910b78-0000111e" lastModified="1083580034"/>
+          <Include href="_boss/_snake/_old/oeil.xml" loadImmediate="false" itemID="409104cb-0000111a" lastModified="1083247226"/>
+          <Include href="_boss/_snake/_old/snake.xml" loadImmediate="false" itemID="40910cff-00001130" lastModified="1083581393"/>
+          <Include href="_boss/_snake/_old/snake src.xml" loadImmediate="false" itemID="40910c4b-00001125" lastModified="1083247882"/>
+          <Include href="_boss/_snake/_old/snakeHeadHalf.xml" loadImmediate="false" itemID="4090ed6b-00001116" lastModified="1083240687"/>
+          <Include href="_boss/_snake/crane.xml" loadImmediate="false" itemID="40962826-00000a35" lastModified="1083851393"/>
+          <Include href="_boss/_snake/snake.xml" itemID="40962346-000004ec" lastModified="1083852316"/>
+          <Include href="_boss/_snake/snake src.xml" loadImmediate="false" itemID="40961b7d-000004e2" lastModified="1083581242"/>
+          <Include href="_boss/_tournéboulé/_elements/base.xml" loadImmediate="false" itemID="40974a95-0000014d" lastModified="1083672078"/>
+          <Include href="_boss/_tournéboulé/_elements/jambe.xml" loadImmediate="false" itemID="40967edf-000003bb" lastModified="1083663561"/>
+          <Include href="_boss/_tournéboulé/_elements/main.xml" loadImmediate="false" itemID="40967e60-000003b7" lastModified="1083667558"/>
+          <Include href="_boss/_tournéboulé/_elements/manche.xml" loadImmediate="false" itemID="40967ea0-000003b9" lastModified="1083672809"/>
+          <Include href="_boss/_tournéboulé/_elements/ombre.xml" loadImmediate="false" itemID="40976129-0000014f" lastModified="1083662633"/>
+          <Include href="_boss/_tournéboulé/_elements/visage.xml" loadImmediate="false" itemID="409749b1-00000144" lastModified="1083684591"/>
+          <Include href="_boss/_tournéboulé/explomain.xml" loadImmediate="false" itemID="4097c4fd-0000053c" lastModified="1083688613"/>
+          <Include href="_boss/_tournéboulé/flaque.xml" loadImmediate="false" itemID="4097bb5a-000003e6" lastModified="1083687434"/>
+          <Include href="_boss/_tournéboulé/forceBubble.xml" itemID="409f5b83-00000808" lastModified="1084186982"/>
+          <Include href="_boss/_tournéboulé/TBShadow.xml" itemID="409f6133-00000810" lastModified="1084186979"/>
+          <Include href="_boss/_tournéboulé/TBSpawn.xml" itemID="409f6ab8-00000b38" lastModified="1084189420"/>
+          <Include href="_boss/_tournéboulé/TBVanish.xml" itemID="409f5d37-0000080e" lastModified="1084885936"/>
+          <Include href="_boss/_tournéboulé/tournéboulé.xml" itemID="40978991-00000249" lastModified="1084189059"/>
+          <Include href="_door/door.xml" itemID="3f3e1282-0000001e" lastModified="1077544200"/>
+          <Include href="_door/slider.xml" loadImmediate="false" itemID="3f575d9e-00000060" lastModified="1071847607"/>
+          <Include href="_gfx/_ball/eclat.xml" loadImmediate="false" itemID="3f5701e4-00000053" lastModified="1062666726"/>
+          <Include href="_gfx/_ball/eclatOrange.xml" loadImmediate="false" itemID="3f572113-0000003e" lastModified="1067505365"/>
+          <Include href="_gfx/_ball/eclatOrangeGFX.xml" loadImmediate="false" itemID="3f57211c-00000040" lastModified="1062674716"/>
+          <Include href="_gfx/_ball/eclatViolet.xml" loadImmediate="false" itemID="3f572390-00000042" lastModified="1083238340"/>
+          <Include href="_gfx/_ball/eclatVioletGFX.xml" loadImmediate="false" itemID="3f572462-00000044" lastModified="1062675554"/>
+          <Include href="_gfx/_ball/light.xml" itemID="3f56f783-00000049" lastModified="1062664182"/>
+          <Include href="_gfx/_ball/marble.xml" itemID="3f56f705-00000047" lastModified="1083238328"/>
+          <Include href="_gfx/_ball/round.xml" itemID="3f5712c2-0000003c" lastModified="1062671042"/>
+          <Include href="_gfx/_ball/shadow.xml" itemID="3f56f85b-0000004b" lastModified="1077731388"/>
+          <Include href="_gfx/_ball/stone.xml" itemID="3f56edfa-00000044" lastModified="1083238393"/>
+          <Include href="_gfx/_bumpers/_checkpoint/base.xml" loadImmediate="false" itemID="4058766a-000000ec" lastModified="1079539469"/>
+          <Include href="_gfx/_bumpers/_checkpoint/bumperBase.xml" loadImmediate="false" itemID="40587675-000000ee" lastModified="1079539317"/>
+          <Include href="_gfx/_bumpers/_checkpoint/checkpoint.xml" itemID="40587671-000000ed" lastModified="1080139541"/>
+          <Include href="_gfx/_bumpers/_death/base src.xml" loadImmediate="false" itemID="406160a3-0000037b" lastModified="1080123648"/>
+          <Include href="_gfx/_bumpers/_death/bdeath.xml" itemID="3f3caebb-00000024" lastModified="1080124000"/>
+          <Include href="_gfx/_bumpers/_death/deathPike.xml" loadImmediate="false" itemID="3f575a37-0000005b" lastModified="1080123804"/>
+          <Include href="_gfx/_bumpers/_death/pointeGFX.xml" loadImmediate="false" itemID="3f5746ad-000000a5" lastModified="1062684333"/>
+          <Include href="_gfx/_bumpers/_inter/bloc.xml" loadImmediate="false" itemID="40448a8b-00000841" lastModified="1080125813"/>
+          <Include href="_gfx/_bumpers/_inter/bloc src.xml" loadImmediate="false" itemID="406168bb-000003f0" lastModified="1080125627"/>
+          <Include href="_gfx/_bumpers/_inter/blocBas.xml" loadImmediate="false" itemID="40448b03-00000843" lastModified="1080125603"/>
+          <Include href="_gfx/_bumpers/_inter/blocBas src.xml" loadImmediate="false" itemID="40616823-000003e6" lastModified="1080125475"/>
+          <Include href="_gfx/_bumpers/_inter/interblue.xml" itemID="403cb23f-0000072f" lastModified="1080125822"/>
+          <Include href="_gfx/_bumpers/_inter/interred.xml" itemID="40448c95-00000862" lastModified="1078234266"/>
+          <Include href="_gfx/_bumpers/_inter/interred old.xml" loadImmediate="false" itemID="40448c5d-00000860" lastModified="1083597245"/>
+          <Include href="_gfx/_bumpers/_interrupt/base.xml" loadImmediate="false" itemID="40436748-0000048e" lastModified="1078234506"/>
+          <Include href="_gfx/_bumpers/_interrupt/color.xml" loadImmediate="false" itemID="40436730-0000048c" lastModified="1078159159"/>
+          <Include href="_gfx/_bumpers/_interrupt/flash.xml" loadImmediate="false" itemID="40437bd5-0000015f" lastModified="1078166095"/>
+          <Include href="_gfx/_bumpers/_interrupt/interupt.xml" itemID="403cb04b-0000072a" lastModified="1080124468"/>
+          <Include href="_gfx/_bumpers/_magnet/_src/content src.xml" loadImmediate="false" itemID="40616376-000003d2" lastModified="1080124278"/>
+          <Include href="_gfx/_bumpers/_magnet/_src/mecontent src.xml" loadImmediate="false" itemID="4061637b-000003d4" lastModified="1080124283"/>
+          <Include href="_gfx/_bumpers/_magnet/_src/miniBumper src.xml" loadImmediate="false" itemID="406162f6-000003c6" lastModified="1080124150"/>
+          <Include href="_gfx/_bumpers/_magnet/_src/sommet src.xml" loadImmediate="false" itemID="40616344-000003cc" lastModified="1080124238"/>
+          <Include href="_gfx/_bumpers/_magnet/bmagnet.xml" itemID="3f3caec9-00000026" lastModified="1080124407"/>
+          <Include href="_gfx/_bumpers/_magnet/content.xml" loadImmediate="false" itemID="3f58aa5a-0000026d" lastModified="1080124394"/>
+          <Include href="_gfx/_bumpers/_magnet/mecontent.xml" loadImmediate="false" itemID="3f58aa56-0000026b" lastModified="1080124382"/>
+          <Include href="_gfx/_bumpers/_magnet/miniBumper.xml" loadImmediate="false" itemID="3f58a71e-00000269" lastModified="1080124218"/>
+          <Include href="_gfx/_bumpers/_normal/_src/base src.xml" loadImmediate="false" itemID="4061505c-0000029e" lastModified="1080119388"/>
+          <Include href="_gfx/_bumpers/_normal/_src/sommet src.xml" loadImmediate="false" itemID="40615151-000002c9" lastModified="1080119633"/>
+          <Include href="_gfx/_bumpers/_normal/base.xml" loadImmediate="false" itemID="3f5727ea-0000008c" lastModified="1080119501"/>
+          <Include href="_gfx/_bumpers/_normal/bnormal.xml" itemID="3f3caea4-00000020" lastModified="1080139601"/>
+          <Include href="_gfx/_bumpers/_normal/bumperBase.xml" loadImmediate="false" itemID="3f58ad2b-0000039b" lastModified="1080119993"/>
+          <Include href="_gfx/_bumpers/_normal/sommet.xml" loadImmediate="false" itemID="40615150-000002c8" lastModified="1080120013"/>
+          <Include href="_gfx/_bumpers/_shadow/bshadow.xml" itemID="3f3caee0-00000029" lastModified="1080139630"/>
+          <Include href="_gfx/_bumpers/_shadow/bshadow gfx.xml" itemIcon="1" loadImmediate="false" itemID="3f3caee8-0000002a" lastModified="1080139613"/>
+          <Include href="_gfx/_bumpers/_teleport/bteleport.xml" itemID="403ca54e-0000014f" lastModified="1080139683"/>
+          <Include href="_gfx/_bumpers/_teleport/teleCercle.xml" loadImmediate="false" itemID="40449263-000008d8" lastModified="1078241249"/>
+          <Include href="_gfx/_bumpers/_teleport/teleCercleGFX.xml" loadImmediate="false" itemID="40449283-000008da" lastModified="1078239145"/>
+          <Include href="_gfx/_bumpers/_teleport/teleport_1.xml" itemIcon="1" loadImmediate="false" itemID="403ca60d-00000151" lastModified="1077716610"/>
+          <Include href="_gfx/_bumpers/_teleport/teleport_2.xml" itemIcon="1" loadImmediate="false" itemID="403ca614-00000153" lastModified="1077716500"/>
+          <Include href="_gfx/_bumpers/_time/_src/base src.xml" loadImmediate="false" itemID="40615398-000002fa" lastModified="1080120233"/>
+          <Include href="_gfx/_bumpers/_time/_src/boutGFX.xml" loadImmediate="false" itemID="3f573e17-00000099" lastModified="1080120427"/>
+          <Include href="_gfx/_bumpers/_time/_src/boutGFX src.xml" loadImmediate="false" itemID="40615445-00000301" lastModified="1080120389"/>
+          <Include href="_gfx/_bumpers/_time/_src/tr.xml" loadImmediate="false" itemID="3f573a98-00000097" lastModified="1080120433"/>
+          <Include href="_gfx/_bumpers/_time/aiguille.xml" loadImmediate="false" itemID="3f574115-0000009b" lastModified="1083154777"/>
+          <Include href="_gfx/_bumpers/_time/aiguille src.xml" loadImmediate="false" itemID="40615346-000002f3" lastModified="1080120134"/>
+          <Include href="_gfx/_bumpers/_time/btime.xml" itemID="3f3caeb1-00000022" lastModified="1083154816"/>
+          <Include href="_gfx/_bumpers/_trappe/door 1.xml" loadImmediate="false" itemID="40586688-00001398" lastModified="1083314644"/>
+          <Include href="_gfx/_bumpers/_trappe/door 2.xml" loadImmediate="false" itemID="4058669a-0000139a" lastModified="1083314829"/>
+          <Include href="_gfx/_bumpers/_trappe/maskHole.xml" itemID="4098b4ba-00000773" lastModified="1084883763"/>
+          <Include href="_gfx/_bumpers/_trappe/trappe.xml" itemID="405863cc-00001396" lastModified="1083749541"/>
+          <Include href="_gfx/_bumpers/_wall/wall.xml" itemID="3f7a88df-00000045" lastModified="1080124822"/>
+          <Include href="_gfx/_bumpers/_zapper/flashLine.xml" itemID="4044adad-00000153" lastModified="1078242738"/>
+          <Include href="_gfx/_bumpers/_zapper/flashLineGfx.xml" loadImmediate="false" itemID="404467b7-00000481" lastModified="1078225163"/>
+          <Include href="_gfx/_bumpers/_zapper/reflet.xml" loadImmediate="false" itemID="40445996-000001f8" lastModified="1078221206"/>
+          <Include href="_gfx/_bumpers/_zapper/zapper.xml" itemID="403cfcf6-00000192" lastModified="1080139733"/>
+          <Include href="_gfx/_bumpers/bumper gfx base.xml" itemIcon="1" loadImmediate="false" itemID="3f3caef5-0000002b" lastModified="1060941557"/>
+          <Include href="_gfx/_dalle/dalle.xml" itemID="40614b18-000001c9" lastModified="1080141623"/>
+          <Include href="_gfx/_dalle/mcSquare.xml" loadImmediate="false" itemID="4016ab54-00000035" lastModified="1080141620"/>
+          <Include href="_gfx/_dalle/plaqueGFX.xml" loadImmediate="false" itemID="40191c84-000000e3" lastModified="1080118183"/>
+          <Include href="_gfx/_decor/background.xml" itemID="3f27c3d3-000000c2" lastModified="1080117977"/>
+          <Include href="_gfx/_decor/border.xml" itemID="3f7c1625-00000804" lastModified="1075809708"/>
+          <Include href="_gfx/_decor/ground.xml" itemID="3f7d30c2-00000210" lastModified="1077559834"/>
+          <Include href="_gfx/_logoBg/logoBg.xml" itemID="409a3738-00000cc7" lastModified="1084185284"/>
+          <Include href="_gfx/_particule/_FXDalleCut/billeCut.xml" loadImmediate="false" itemID="409bb233-00000eeb" lastModified="1083945662"/>
+          <Include href="_gfx/_particule/_FXDalleCut/bouleCut.xml" loadImmediate="false" itemID="409bb14c-00000ee9" lastModified="1083945642"/>
+          <Include href="_gfx/_particule/_FXDalleCut/FXDalleCut.xml" itemID="409bb52e-00000f39" lastModified="1084187066"/>
+          <Include href="_gfx/_particule/feuille.xml" loadImmediate="false" itemID="4096684f-00000383" lastModified="1083600249"/>
+          <Include href="_gfx/_particule/FXbourgeon.xml" itemID="409a3168-00000c8b" lastModified="1083850320"/>
+          <Include href="_gfx/_particule/FXbourgeonGFX.xml" loadImmediate="false" itemID="409a317d-00000c8d" lastModified="1083848331"/>
+          <Include href="_gfx/_particule/FXBourgeonLeaf.xml" loadImmediate="false" itemID="409a3281-00000c8f" lastModified="1083847960"/>
+          <Include href="_gfx/_particule/FXBourgeonLeafGFX.xml" loadImmediate="false" itemID="409a3458-00000c92" lastModified="1083847768"/>
+          <Include href="_gfx/_particule/FXBourgeonRacine.xml" loadImmediate="false" itemID="409a360a-00000cb5" lastModified="1083848325"/>
+          <Include href="_gfx/_particule/FXFire.xml" itemID="409666f1-0000037d" lastModified="1083943454"/>
+          <Include href="_gfx/_particule/FXLiane.xml" itemID="40966792-0000037f" lastModified="1083835622"/>
+          <Include href="_gfx/_particule/FXWater.xml" itemID="409670c6-00000385" lastModified="1083828821"/>
+          <Include href="_gfx/_particule/FXWaterParticule.xml" itemID="40967abc-00000390" lastModified="1083684139"/>
+          <Include href="_gfx/_particule/FXWaterQueue.xml" itemID="4099eaa8-000001f6" lastModified="1083830070"/>
+          <Include href="_gfx/_particule/FXWaterQueueGFX.xml" loadImmediate="false" itemID="4099eac4-000001f8" lastModified="1083830068"/>
+          <Include href="_gfx/_particule/FXWind.xml" itemID="40965a5a-00000b5b" lastModified="1083827162"/>
+          <Include href="_gfx/_particule/FXWindOld.xml" loadImmediate="false" itemID="4099e375-00000159" lastModified="1083827061"/>
+          <Include href="_gfx/_particule/FXWindOld2.xml" loadImmediate="false" itemID="4099e36d-00000156" lastModified="1083827053"/>
+          <Include href="_gfx/_particule/lianeGFX.xml" loadImmediate="false" itemID="4096679c-00000381" lastModified="1083600642"/>
+          <Include href="_gfx/_particule/snakePart.xml" itemID="4099f2ca-00000226" lastModified="1083851379"/>
+          <Include href="_gfx/_particule/snakePartGFX.xml" loadImmediate="false" itemID="4099f2c1-00000224" lastModified="1083831315"/>
+          <Include href="_gfx/_particule/wall.xml" itemID="3f7d3347-00000213" lastModified="1083597233"/>
+          <Include href="_interface/_timePanel/slot.xml" loadImmediate="false" itemID="409221ad-0000013a" lastModified="1083319536"/>
+          <Include href="_interface/_timePanel/timePanel.xml" loadImmediate="false" itemID="40922632-0000015b" lastModified="1083332530"/>
+          <Include href="_interface/_timePanel/timeSlot.xml" loadImmediate="false" itemID="409219d7-00000136" lastModified="1083341127"/>
+          <Include href="_interface/_timePanel/timeSlotBall.xml" loadImmediate="false" itemID="40921c53-00000138" lastModified="1083318964"/>
+          <Include href="_interface/ball icon.xml" itemID="3f3b71d2-00000023" lastModified="1083237965"/>
+          <Include href="_interface/ball icon mask gfx.xml" itemIcon="1" loadImmediate="false" itemID="3f3f517c-00000027" lastModified="1083237961"/>
+          <Include href="_interface/loading.xml" itemID="3f8aa225-00000109" lastModified="1077722589"/>
+          <Include href="_interface/pause.xml" itemID="3f868066-00000114" lastModified="1080749235"/>
+          <Include href="_interface/Time Counter.xml" itemID="3f85303d-00000072" lastModified="1083336031"/>
+          <Include href="_menu/_icones Menu/anim logo DonjonFinal.xml" loadImmediate="false" itemID="409771b9-0000028c" lastModified="1083858292"/>
+          <Include href="_menu/_icones Menu/glow.xml" loadImmediate="false" itemID="40977434-0000029e" lastModified="1083667508"/>
+          <Include href="_menu/_icones Menu/logoEau.xml" loadImmediate="false" itemID="40977207-00000295" lastModified="1083666951"/>
+          <Include href="_menu/_icones Menu/logoFeu.xml" loadImmediate="false" itemID="4097720d-00000298" lastModified="1083666957"/>
+          <Include href="_menu/_icones Menu/logoTerre.xml" loadImmediate="false" itemID="40977211-0000029b" lastModified="1083666961"/>
+          <Include href="_menu/_icones Menu/logoVent.xml" loadImmediate="false" itemID="40977202-00000292" lastModified="1083666946"/>
+          <Include href="_menu/aide retour.xml" loadImmediate="false" itemID="3f9c850a-0000010e" lastModified="1077544618"/>
+          <Include href="_menu/bouleMenu.xml" loadImmediate="false" itemID="3fa0d130-00000090" lastModified="1083934701"/>
+          <Include href="_menu/chargement.xml" loadImmediate="false" itemID="3fa12d6b-000000c3" lastModified="1077722622"/>
+          <Include href="_menu/fissure.xml" itemID="3f853473-000000a8" lastModified="1077275786"/>
+          <Include href="_menu/fondMenu.xml" itemID="3fa100c3-00000098" lastModified="1077544622"/>
+          <Include href="_menu/hole.xml" loadImmediate="false" itemID="3fa11cfe-000000c1" lastModified="1077545830"/>
+          <Include href="_menu/menu balls.xml" itemID="3f8a64c1-000000a8" lastModified="1083934693"/>
+          <Include href="_menu/menu balls title.xml" loadImmediate="false" itemID="3f8a64ca-000000a9" lastModified="1083158064"/>
+          <Include href="_menu/press start.xml" itemID="3f8ab937-00000112" lastModified="1077737010"/>
+          <Include href="_menu/title.xml" itemID="3f8514e0-000000a2" lastModified="1077544347"/>
+          <Include href="_minimap/carte.xml" itemID="3f817e25-00000052" lastModified="1077730304"/>
+          <Include href="_minimap/carteFond.xml" loadImmediate="false" itemID="3f818103-00000055" lastModified="1077730295"/>
+          <Include href="_minimap/carteGrille.xml" loadImmediate="false" itemID="3f819791-0000005d" lastModified="1077726244"/>
+          <Include href="_minimap/room.xml" itemID="3f81979c-0000005e" lastModified="1075809756"/>
+          <Include href="_option/_itemBox/BouleCrystal.xml" loadImmediate="false" itemID="3f851400-00000065" lastModified="1065686016"/>
+          <Include href="_option/_itemBox/halo.xml" loadImmediate="false" itemID="3f83f72c-00000172" lastModified="1065613210"/>
+          <Include href="_option/_itemBox/haloGFX.xml" loadImmediate="false" itemID="3f83f771-00000174" lastModified="1065613208"/>
+          <Include href="_option/_itemBox/itembox.xml" itemID="3f3f4b45-00000022" lastModified="1080124441"/>
+          <Include href="_option/_itemBox/particuleSphere.xml" itemID="3f8515b4-00000067" lastModified="1080124429"/>
+          <Include href="_option/_oeil/pupille.xml" loadImmediate="false" itemID="3f8405ef-00000178" lastModified="1065617723"/>
+          <Include href="_option/_oeil/pupilleGFX.xml" loadImmediate="false" itemID="3f840724-0000017a" lastModified="1065617188"/>
+          <Include href="_option/_oeil/pupilleSystem.xml" loadImmediate="false" itemID="3f8405e7-00000176" lastModified="1065617728"/>
+          <Include href="_option/_oeil/veine.xml" loadImmediate="false" itemID="3f8408fe-0000017c" lastModified="1065617662"/>
+          <Include href="_option/_pastilleBleue/blue.xml" itemID="3f853e9f-00000192" lastModified="1075809778"/>
+          <Include href="_option/_pastilleBleue/etincelle.xml" loadImmediate="false" itemID="3f853f6d-00000199" lastModified="1070039301"/>
+          <Include href="_option/_pastilleRouge/etincelle.xml" loadImmediate="false" itemID="3f853bc6-00000187" lastModified="1065697162"/>
+          <Include href="_option/_pastilleRouge/red.xml" itemID="3f3a89bb-00000060" lastModified="1083591159"/>
+          <Include href="_option/_time/haloSpark.xml" itemIcon="1" loadImmediate="false" itemID="3f8522fe-0000006d" lastModified="1065689854"/>
+          <Include href="_option/_time/time.xml" loadImmediate="false" itemID="3f8519d0-00000069" lastModified="1065774838"/>
+          <Include href="_option/_time/timeHalo.xml" loadImmediate="false" itemID="3f851945-00000065" lastModified="1065687496"/>
+          <Include href="_option/grelot.xml" loadImmediate="false" itemID="3f867b70-00000102" lastModified="1065778032"/>
+          <Include href="_option/icon grelot.xml" itemID="3f867b8b-00000104" lastModified="1077528649"/>
+          <Include href="_option/item.xml" itemID="3f3e7f97-00000021" lastModified="1066891880"/>
+          <Include href="cadreInfo.xml" itemID="40aa0bf8-00000d71" lastModified="1084888570"/>
+          <Include href="deux.xml" itemID="3f852b0b-000000a4" lastModified="1077544610"/>
+          <Include href="EAU.xml" loadImmediate="false" itemID="409a551e-0000052c" lastModified="1083856186"/>
+          <Include href="grzzgrzgr.xml" loadImmediate="false" itemID="409f699b-00000b36" lastModified="1084189083"/>
+          <Include href="logoEau.xml" loadImmediate="false" itemID="409a5732-00000536" lastModified="1083856690"/>
+          <Include href="sphereDonjonLocked.xml" loadImmediate="false" itemID="409a56c4-00000530" lastModified="1083858014"/>
+     </symbols>
+     <timelines>
+          <DOMTimeline name="Scene 1">
+               <layers>
+                    <DOMLayer name="Layer 5" color="#4FFFFF">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <Actionscript>
+                                        <script><![CDATA[stop();
+]]></script>
+                                   </Actionscript>
+                                   <elements/>
+                              </DOMFrame>
+                              <DOMFrame index="1" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                              <DOMFrame index="2" duration="2" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="Layer 6" color="#808080" current="true" isSelected="true">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMShape>
+                                             <fills>
+                                                  <FillStyle index="1">
+                                                       <SolidColor color="#ADE67D"/>
+                                                  </FillStyle>
+                                             </fills>
+                                             <edges>
+                                                  <Edge fillStyle1="1" edges="!12200 234S2[#2FA5.C2 #8A.77 12129.5 70.5!12129.5 70.5[#2F1D.8A #2.31 11966 0!11966 0|12200 0!12200 0|12200 234"/>
+                                                  <Edge fillStyle0="1" edges="!200 3S1[#D8.8A #0.67 234 0!234 0|0 0!0 0|0 234!0 234[#2.3E #8A.77 70.5 70.5!70.5 70.5[#57.CE #35.1B 107 40!107 40[#95.1C #B.0B 200 3!0 7966|0 8200!0 8200|234 8200!234 8200[#8A.76 #2005.CF 70.5 8129.5!70.5 8129.5[#2.3E #1F7D.89 0 7966"/>
+                                                  <Edge fillStyle1="1" edges="!12200 8200S2|11966 8200!11966 8200[#2F1D.8A #2005.CF 12129.5 8129.5!12129.5 8129.5[#2FA5.C2 #1F7D.89 12200 7966!12200 7966|12200 8200"/>
+                                             </edges>
+                                        </DOMShape>
+                                        <DOMGroup selected="true">
+                                             <members>
+                                                  <DOMShape selected="true">
+                                                       <fills>
+                                                            <FillStyle index="1">
+                                                                 <SolidColor color="#467317"/>
+                                                            </FillStyle>
+                                                       </fills>
+                                                       <edges>
+                                                            <Edge fillStyle1="1" edges="!12129.5 70.5[#2FA5.C2 #8A.77 12200 234!12200 234|12200 7966!12200 7966[#2FA5.C2 #1F7D.89 12129.5 8129.5!12129.5 8129.5[#2F1D.8A #2005.CF 11966 8200!11966 8200|234 8200!234 8200[#8A.76 #2005.CF 70.5 8129.5!70.5 8129.5[#2.3E #1F7D.89 0
+ 7966!0 7966|0 234!0 234[#2.3E #8A.77 70.5 70.5!70.5 70.5[#8A.76 #2.31 234 0!234 0|11966 0!11966 0[#2F1D.8A #2.31 12129.5 70.5"/>
+                                                            <Edge fillStyle0="1" edges="
+!12120 236|12120 7964!12120 7964[#2F56.74 #1F5B.AB 12073 8073!12073 8073[#2EFB.AB #1FB6.7B 11964 8120!11964 8120|236 8120!236 8120[#AC.55 #1FB6.7B 127 8073!127 8073[#51.8C #1F5B.AB 80 7964!80 7964|80 236!80 236[#51.8C #AC.55 127 127!127
+ 127[#AC.55 #51.85 236 80!236 80|11964 80!11964 80[#2EFB.AB #51.85 12073 127!12073 127[#2F56.74 #AC.55 12120 236"/>
+                                                       </edges>
+                                                  </DOMShape>
+                                             </members>
+                                        </DOMGroup>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="1" duration="3" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="cadreInfo" selected="true">
+                                             <matrix>
+                                                  <Matrix tx="929.05" ty="368.45"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="Layer 1" color="#4F80FF">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="_ a ranger/main" name="main">
+                                             <matrix>
+                                                  <Matrix a="1.00009155273438" d="1.0001220703125" tx="0.15" ty="0.1"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="1" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="_option/_pastilleBleue/blue">
+                                             <matrix>
+                                                  <Matrix tx="106.35" ty="313.25"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point y="0.05"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="2" keyMode="9728">
+                                   <elements>
+                                        <DOMShape>
+                                             <fills>
+                                                  <FillStyle index="1">
+                                                       <SolidColor color="#0000FF"/>
+                                                  </FillStyle>
+                                             </fills>
+                                             <edges>
+                                                  <Edge fillStyle1="1" edges="
+!4027 4427.5[#FBA.43 #114A.93 4025.5 4426!4025.5 4426|4027 4426!4027 4426|4027 4427.5"/>
+                                             </edges>
+                                        </DOMShape>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_ball/shadow">
+                                             <matrix>
+                                                  <Matrix tx="341.7" ty="-21.15"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_ball/stone">
+                                             <matrix>
+                                                  <Matrix tx="353.4" ty="-40.85"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_ball/marble">
+                                             <matrix>
+                                                  <Matrix tx="338.7" ty="-24.15"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_interface/ball icon">
+                                             <matrix>
+                                                  <Matrix tx="367.15" ty="-30.05"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_bordel/ombre" symbolType="graphic" loop="single frame">
+                                             <matrix>
+                                                  <Matrix tx="72.75" ty="111"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_normal/bnormal">
+                                             <matrix>
+                                                  <Matrix tx="72.75" ty="111"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_bordel/ombre" symbolType="graphic" firstFrame="1" loop="single frame">
+                                             <matrix>
+                                                  <Matrix tx="199.45" ty="111.8"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_time/btime">
+                                             <matrix>
+                                                  <Matrix tx="198.25" ty="109.3"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_bordel/ombre" symbolType="graphic" firstFrame="2" loop="single frame">
+                                             <matrix>
+                                                  <Matrix tx="331.8" ty="112.5"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_death/bdeath">
+                                             <matrix>
+                                                  <Matrix tx="331.8" ty="112.5"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_bordel/ombre" symbolType="graphic" firstFrame="3" loop="single frame">
+                                             <matrix>
+                                                  <Matrix tx="460.8" ty="112.5"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_magnet/bmagnet">
+                                             <matrix>
+                                                  <Matrix tx="460.8" ty="112.5"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_bordel/ombre" symbolType="graphic" firstFrame="4" loop="single frame">
+                                             <matrix>
+                                                  <Matrix tx="91.75" ty="236.6"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_shadow/bshadow">
+                                             <matrix>
+                                                  <Matrix tx="91.75" ty="236.6"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_bordel/ombre" symbolType="graphic" firstFrame="5" loop="single frame">
+                                             <matrix>
+                                                  <Matrix tx="232.2" ty="240.8"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_wall/wall">
+                                             <matrix>
+                                                  <Matrix tx="232.2" ty="240.8"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMStaticText fontRenderingMode="standard" width="33.55" height="29.2" isSelectable="false">
+                                             <matrix>
+                                                  <Matrix tx="108.95" ty="98.2"/>
+                                             </matrix>
+                                             <textRuns>
+                                                  <DOMTextRun>
+                                                       <characters>1</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" autoKern="false" size="24" face="Verdana-Bold" fillColor="#006600"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                             </textRuns>
+                                        </DOMStaticText>
+                                        <DOMStaticText fontRenderingMode="standard" width="33.55" height="29.2" isSelectable="false">
+                                             <matrix>
+                                                  <Matrix tx="129.25" ty="223.3"/>
+                                             </matrix>
+                                             <textRuns>
+                                                  <DOMTextRun>
+                                                       <characters>5</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" autoKern="false" size="24" face="Verdana-Bold" fillColor="#006600"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                             </textRuns>
+                                        </DOMStaticText>
+                                        <DOMStaticText fontRenderingMode="standard" width="33.55" height="29.2" isSelectable="false">
+                                             <matrix>
+                                                  <Matrix tx="247.4" ty="97.55"/>
+                                             </matrix>
+                                             <textRuns>
+                                                  <DOMTextRun>
+                                                       <characters>2</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" autoKern="false" size="24" face="Verdana-Bold" fillColor="#006600"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                             </textRuns>
+                                        </DOMStaticText>
+                                        <DOMStaticText fontRenderingMode="standard" width="33.55" height="29.2" isSelectable="false">
+                                             <matrix>
+                                                  <Matrix tx="366.15" ty="97.55"/>
+                                             </matrix>
+                                             <textRuns>
+                                                  <DOMTextRun>
+                                                       <characters>3</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" autoKern="false" size="24" face="Verdana-Bold" fillColor="#006600"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                             </textRuns>
+                                        </DOMStaticText>
+                                        <DOMStaticText fontRenderingMode="standard" width="33.55" height="29.2" isSelectable="false">
+                                             <matrix>
+                                                  <Matrix tx="501.65" ty="97.55"/>
+                                             </matrix>
+                                             <textRuns>
+                                                  <DOMTextRun>
+                                                       <characters>4</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" autoKern="false" size="24" face="Verdana-Bold" fillColor="#006600"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                             </textRuns>
+                                        </DOMStaticText>
+                                        <DOMStaticText fontRenderingMode="standard" width="33.55" height="29.2" isSelectable="false">
+                                             <matrix>
+                                                  <Matrix tx="266.65" ty="223.3"/>
+                                             </matrix>
+                                             <textRuns>
+                                                  <DOMTextRun>
+                                                       <characters>6</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" autoKern="false" size="24" face="Verdana-Bold" fillColor="#006600"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                             </textRuns>
+                                        </DOMStaticText>
+                                        <DOMSymbolInstance libraryItemName="_bordel/ombre" symbolType="graphic" firstFrame="5" loop="single frame">
+                                             <matrix>
+                                                  <Matrix tx="325.2" ty="240.8"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_wall/wall">
+                                             <matrix>
+                                                  <Matrix tx="325.2" ty="240.8"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMStaticText fontRenderingMode="standard" width="33.55" height="29.2" isSelectable="false">
+                                             <matrix>
+                                                  <Matrix tx="359.65" ty="223.3"/>
+                                             </matrix>
+                                             <textRuns>
+                                                  <DOMTextRun>
+                                                       <characters>7</characters>
+                                                       <textAttrs>
+                                                            <DOMTextAttrs aliasText="false" autoKern="false" size="24" face="Verdana-Bold" fillColor="#006600"/>
+                                                       </textAttrs>
+                                                  </DOMTextRun>
+                                             </textRuns>
+                                        </DOMStaticText>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_decor/ground">
+                                             <matrix>
+                                                  <Matrix tx="614.65" ty="0.85"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="305" y="205"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_particule/wall">
+                                             <matrix>
+                                                  <Matrix tx="334" ty="205.8"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_option/_itemBox/itembox">
+                                             <matrix>
+                                                  <Matrix tx="482.25" ty="238.9"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="0.35"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_option/_pastilleRouge/red">
+                                             <matrix>
+                                                  <Matrix tx="459.35" ty="-72.35"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="0.1" y="0.1"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_option/_pastilleBleue/blue">
+                                             <matrix>
+                                                  <Matrix tx="502.65" ty="-71.6"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point y="0.05"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_option/_itemBox/particuleSphere">
+                                             <matrix>
+                                                  <Matrix tx="460.6" ty="189.7"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_option/icon grelot">
+                                             <matrix>
+                                                  <Matrix tx="404.75" ty="-49.55"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="17" y="17.4"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_boss/_poulpe/boss shade">
+                                             <matrix>
+                                                  <Matrix tx="-120.3" ty="103.5"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="57.25" y="16.25"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_boss/_poulpe/boss">
+                                             <matrix>
+                                                  <Matrix a="1.00079345703125" d="0.9996337890625" tx="-118.75" ty="104.35"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-0.05" y="-2.55"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_boss/_poulpe/boss tir">
+                                             <matrix>
+                                                  <Matrix tx="765.3" ty="-43.65"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="31" y="31"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_boss/_poulpe/boss tir gfx">
+                                             <matrix>
+                                                  <Matrix tx="-454.45" ty="58.05"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_zapper/zapper">
+                                             <matrix>
+                                                  <Matrix tx="87.35" ty="347.3"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_interrupt/interupt">
+                                             <matrix>
+                                                  <Matrix tx="180.3" ty="349.3"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_inter/interblue">
+                                             <matrix>
+                                                  <Matrix tx="281.3" ty="350.3"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_inter/interred old">
+                                             <matrix>
+                                                  <Matrix tx="371.3" ty="350.3"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_teleport/bteleport">
+                                             <matrix>
+                                                  <Matrix tx="202.7" ty="42.35"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="0.05"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMBitmapInstance libraryItemName="_bitmap/bg01.jpg">
+                                             <matrix>
+                                                  <Matrix tx="-5" ty="405"/>
+                                             </matrix>
+                                        </DOMBitmapInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/trappe">
+                                             <matrix>
+                                                  <Matrix tx="160" ty="450"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_checkpoint/checkpoint">
+                                             <matrix>
+                                                  <Matrix tx="73" ty="26"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_boss/_poulpe/bossParticule">
+                                             <matrix>
+                                                  <Matrix tx="-252.7" ty="109.25"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_boss/_poulpe/bossParticule">
+                                             <matrix>
+                                                  <Matrix tx="-30.6" ty="-30.05"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="0.4"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_dalle/dalle">
+                                             <matrix>
+                                                  <Matrix tx="442.2" ty="331.5"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_boss/_snake/snake">
+                                             <matrix>
+                                                  <Matrix tx="-133.9" ty="249.05"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-46.1" y="0.05"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_particule/FXWind">
+                                             <matrix>
+                                                  <Matrix tx="-236.35" ty="54.7"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_particule/FXFire">
+                                             <matrix>
+                                                  <Matrix tx="-317.75" ty="116.3"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_particule/FXLiane">
+                                             <matrix>
+                                                  <Matrix tx="-322.95" ty="155"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="19.45"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_particule/FXWater">
+                                             <matrix>
+                                                  <Matrix tx="-308.15" ty="198.6"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_particule/FXWaterParticule">
+                                             <matrix>
+                                                  <Matrix tx="-232.95" ty="198.8"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-0.05"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_logoBg/logoBg">
+                                             <matrix>
+                                                  <Matrix tx="-5" ty="405"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="79" y="79"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/forceBubble">
+                                             <matrix>
+                                                  <Matrix tx="480.25" ty="526.6"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/tournéboulé">
+                                             <matrix>
+                                                  <Matrix tx="480.25" ty="526.6"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/maskHole">
+                                             <matrix>
+                                                  <Matrix tx="210" ty="450"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_particule/FXWaterQueue">
+                                             <matrix>
+                                                  <Matrix tx="-322.6" ty="230.75"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_particule/snakePart">
+                                             <matrix>
+                                                  <Matrix tx="-46.5" ty="259"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_particule/FXbourgeon">
+                                             <matrix>
+                                                  <Matrix tx="-391.65" ty="149.45"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMGroup>
+                                             <members>
+                                                  <DOMSymbolInstance libraryItemName="_gfx/_particule/_FXDalleCut/FXDalleCut">
+                                                       <matrix>
+                                                            <Matrix tx="60.3" ty="430.15"/>
+                                                       </matrix>
+                                                       <transformationPoint>
+                                                            <Point x="20" y="20"/>
+                                                       </transformationPoint>
+                                                  </DOMSymbolInstance>
+                                             </members>
+                                        </DOMGroup>
+                                        <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/TBVanish">
+                                             <matrix>
+                                                  <Matrix tx="574.2" ty="528.25"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/TBShadow">
+                                             <matrix>
+                                                  <Matrix tx="391.25" ty="526.6"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/TBSpawn">
+                                             <matrix>
+                                                  <Matrix tx="574.2" ty="623.1"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="3" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_decor/background">
+                                             <transformationPoint>
+                                                  <Point x="305" y="205"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_gfx/_decor/border">
+                                             <transformationPoint>
+                                                  <Point x="305" y="205"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_door/door">
+                                             <matrix>
+                                                  <Matrix a="-1" d="-1" tx="304" ty="397.5"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_minimap/carte">
+                                             <matrix>
+                                                  <Matrix tx="647.95" ty="45.85"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_minimap/room">
+                                             <matrix>
+                                                  <Matrix tx="59.25" ty="-148.4"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="0.1" y="17.4"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_interface/Time Counter">
+                                             <matrix>
+                                                  <Matrix tx="608.25" ty="0.2"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-72.95" y="22.15"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_interface/pause">
+                                             <transformationPoint>
+                                                  <Point x="55" y="13.4"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_menu/menu balls">
+                                             <matrix>
+                                                  <Matrix tx="222.45" ty="-200"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="2.9"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_menu/title">
+                                             <matrix>
+                                                  <Matrix tx="459.9" ty="-152.2"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="1.45" y="-4.75"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_minimap/room">
+                                             <matrix>
+                                                  <Matrix tx="714" ty="97.65"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="0.1" y="17.4"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="_ a ranger/panGameOver">
+                                             <matrix>
+                                                  <Matrix tx="310" ty="200"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="Layer 7" color="#4F80FF">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMShape>
+                                             <fills>
+                                                  <FillStyle index="1">
+                                                       <SolidColor color="#8037AA"/>
+                                                  </FillStyle>
+                                             </fills>
+                                             <edges>
+                                                  <Edge fillStyle1="1" edges="
+!3 2|12200 2!12200 2|12200 8200!12200 8200|3 8200!3 8200|3 2"/>
+                                             </edges>
+                                        </DOMShape>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="1" duration="3" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <PrinterSettings/>
+     <publishHistory/>
+</DOMDocument>

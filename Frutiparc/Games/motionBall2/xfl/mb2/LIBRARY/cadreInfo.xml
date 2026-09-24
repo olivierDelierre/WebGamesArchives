@@ -1,0 +1,288 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="cadreInfo" itemID="40aa0bf8-00000d71" linkageExportForAS="true" linkageIdentifier="cadreInfo" lastModified="1084888570">
+  <timeline>
+    <DOMTimeline name="cadreInfo">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#6C5282"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!3360 40.5S2[#D25.42 #2A.56 3369.5 45!3369.5 45[#D2D.C2 #30.EA 3377 52!3377 52[#D36.D4 #39.ED 3381.5 65.5!3381.5 65.5[#CDE.0B #79.08 3171.5 132.5!3171.5 132.5[#C54.D3 #7A.7B 3157.5 107.5!3157.5 107.5[#C55.AE #64.2C 3164 94.5!3164 94.5
+[#CB3.EB #39.52 3347 37.5!3347 37.5[#D1A.03 39 3360 40.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#6C5282"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!4582.5 132.5S2[#11D7.D3 #7A.7B 4568.5 107.5!4568.5 107.5[#11D8.AE #64.2C 4575 94.5!4575 94.5[#1236.EB #39.52 4758 37.5!4758 37.5[#129D.03 39 4771 40.5!4771 40.5[#12A8.42 #2A.56 4780.5 45!4780.5 45[#12B0.C2 #30.EA 4788 52!4788 52[#12B9.D4
+ #39.ED 4792.5 65.5!4792.5 65.5[#1261.0B #79.08 4582.5 132.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-221" ty="-0.3"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-221" ty="-0.3"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#6C5282"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!3360 40.5S2[#D25.42 #2A.56 3369.5 45!3369.5 45[#D2D.C2 #30.EA 3377 52!3377 52[#D36.D4 #39.ED 3381.5 65.5!3381.5 65.5[#CDE.0B #79.08 3171.5 132.5!3171.5 132.5[#C54.D3 #7A.7B 3157.5 107.5!3157.5 107.5[#C55.AE #64.2C 3164 94.5!3164 94.5
+[#CB3.EB #39.52 3347 37.5!3347 37.5[#D1A.03 39 3360 40.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-359" ty="-22.5"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-359" ty="-22.5"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#6C5282"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!3360 40.5S2[#D25.42 #2A.56 3369.5 45!3369.5 45[#D2D.C2 #30.EA 3377 52!3377 52[#D36.D4 #39.ED 3381.5 65.5!3381.5 65.5[#CDE.0B #79.08 3171.5 132.5!3171.5 132.5[#C54.D3 #7A.7B 3157.5 107.5!3157.5 107.5[#C55.AE #64.2C 3164 94.5!3164 94.5
+[#CB3.EB #39.52 3347 37.5!3347 37.5[#D1A.03 39 3360 40.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMStaticText fontRenderingMode="standard" width="571.85" height="37.8" isSelectable="false">
+                      <matrix>
+                        <Matrix tx="-286.85" ty="-20.7"/>
+                      </matrix>
+                      <textRuns>
+                        <DOMTextRun>
+                          <characters>Qui sera le plus rapide pour finir&#xD;le donjon du jour</characters>
+                          <textAttrs>
+                            <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" italic="true" size="16" face="Sweet as candy" fillColor="#6C5282"/>
+                          </textAttrs>
+                        </DOMTextRun>
+                      </textRuns>
+                    </DOMStaticText>
+                    <DOMStaticText fontRenderingMode="standard" left="66.35" width="11.3" height="22.35" autoExpand="true" isSelectable="false">
+                      <matrix>
+                        <Matrix a="1.53800964355469" c="0.470535278320313" d="0.870834350585938" tx="13.65" ty="0.9"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="72.05" y="9.9"/>
+                      </transformationPoint>
+                      <textRuns>
+                        <DOMTextRun>
+                          <characters>?</characters>
+                          <textAttrs>
+                            <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" italic="true" size="20" face="Regulators Italic" fillColor="#6C5282"/>
+                          </textAttrs>
+                        </DOMTextRun>
+                      </textRuns>
+                    </DOMStaticText>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMStaticText fontRenderingMode="standard" width="571.85" height="37.8" isSelectable="false">
+                      <matrix>
+                        <Matrix tx="-286.85" ty="-20.7"/>
+                      </matrix>
+                      <textRuns>
+                        <DOMTextRun>
+                          <characters>Detruisez les quatres elementaires&#xD;et rencontrez l'immonde Tourneboule !</characters>
+                          <textAttrs>
+                            <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" italic="true" size="16" face="Sweet as candy" fillColor="#6C5282"/>
+                          </textAttrs>
+                        </DOMTextRun>
+                      </textRuns>
+                    </DOMStaticText>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMStaticText selected="true" fontRenderingMode="standard" width="571.85" height="17.9" isSelectable="false">
+                      <matrix>
+                        <Matrix tx="-286.85" ty="-20.7"/>
+                      </matrix>
+                      <textRuns>
+                        <DOMTextRun>
+                          <characters>Maitrisez les 7 circuits et gagnez les trophees Motion-Ball.</characters>
+                          <textAttrs>
+                            <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" italic="true" size="16" face="Sweet as candy" fillColor="#6C5282"/>
+                          </textAttrs>
+                        </DOMTextRun>
+                      </textRuns>
+                    </DOMStaticText>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMStaticText fontRenderingMode="standard" width="571.85" height="37.8" isSelectable="false">
+                      <matrix>
+                        <Matrix tx="-286.85" ty="-20.7"/>
+                      </matrix>
+                      <textRuns>
+                        <DOMTextRun>
+                          <characters>Decouvrez l'origine de Motion-ball&#xD;et gagnez  son ultitem.</characters>
+                          <textAttrs>
+                            <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" italic="true" size="16" face="Sweet as candy" fillColor="#6C5282"/>
+                          </textAttrs>
+                        </DOMTextRun>
+                      </textRuns>
+                    </DOMStaticText>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMStaticText fontRenderingMode="standard" width="571.85" height="17.9" isSelectable="false">
+                      <matrix>
+                        <Matrix tx="-286.85" ty="-20.7"/>
+                      </matrix>
+                      <textRuns>
+                        <DOMTextRun>
+                          <characters>Modifiez vos touches a foison grace a la fabuleuse section option.</characters>
+                          <textAttrs>
+                            <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" italic="true" size="16" face="Sweet as candy" fillColor="#6C5282"/>
+                          </textAttrs>
+                        </DOMTextRun>
+                      </textRuns>
+                    </DOMStaticText>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#FFFFFF" alpha="0.501960784313725"/>
+                            </FillStyle>
+                          </fills>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal" weight="2">
+                                <fill>
+                                  <SolidColor color="#FFFFFF"/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge fillStyle0="1" strokeStyle="1" edges="
+!-5776.5 -9[#FFE971.5D #91.FA -5772.5 301!-5772.5 301[#FFE974.81 406 -5695.5 482!-5695.5 482|-5694.5 482!-5694.5 482[#FFEA17.81 569 -5483.5 570!-5483.5 570|5480.5 570!5480.5 570[5585.5 572 5668.5 502!5668.5 502[5680.5 492 5691.5 482!5691.5
+ 482[#1694.7E 394 5780.5 271!5780.5 271[#1694.4E #82.FC 5780 -9!5780 -9[#1693.AF #FFFF74.7D 5779.5 -270!5779.5 -270[#1693.7E -394 5692.5 -482!5692.5 -482[#15F3.7F -557 5512.5 -568!5512.5 -568[5496.5 -569 5481.5 -570!5481.5 -570|-5482.5
+ -570!-5482.5 -570[#FFEA19.81 -567 -5694.5 -482!-5694.5 -482[#FFE96A.81 -393 -5781.5 -270!-5781.5 -270[-5781.5 #FFFF74.7B -5781 -9"/>
+                            <Edge fillStyle0="1" edges="
+!-5781 -9|-5776.5 -9"/>
+                            <Edge cubics="!7182 -568(;7171,-569 7161,-569 7151,-570p7182 -568 7151 -570);"/>
+                            <Edge cubics="!7449 -270(;7448,-353 7419,-423 7362,-482q7449 -270Q7448 -393q7362 -482);"/>
+                            <Edge cubics="!7449 -9(;7449,-96 7449,-183 7449,-270q7449 -9 7449 -270);"/>
+                            <Edge cubics="!7362 -482(;7313,-532 7253,-561 7182,-568q7362 -482Q7288 -558q7182 -568);"/>
+                            <Edge cubics="!-4112 -9(;-4112,-9 -4107,-9 -4107,-9q-4112 -9 -4107 -9);"/>
+                            <Edge cubics="!-4112 -270(;-4112,-183 -4112,-96 -4112,-9q-4112 -270 -4112 -9);"/>
+                            <Edge cubics="!-3813 -570(;-3896,-568 -3966,-539 -4025,-482q-3813 -570Q-3937 -567q-4025 -482);"/>
+                            <Edge cubics="!-4025 -482(;-4083,-423 -4112,-352 -4112,-270q-4025 -482Q-4112 -393q-4112 -270);"/>
+                            <Edge cubics="!-4025 482(;-3968,540 -3897,569 -3814,570q-4025 482Q-3940 569q-3814 570);"/>
+                            <Edge cubics="!-4026 482(;-4026,482 -4025,482 -4025,482q-4026 482 -4025 482);"/>
+                            <Edge cubics="!-4103 301(;-4102,371 -4077,431 -4026,482q-4103 301Q-4101 407q-4026 482);"/>
+                            <Edge cubics="!7338 502(;7346,495 7354,489 7361,482q7338 502 7361 482);"/>
+                            <Edge cubics="!7361 482(;7420,423 7449,353 7450,271q7361 482Q7449 395q7450 271);"/>
+                            <Edge cubics="!7150 570(;7220,571 7283,549 7338,502q7150 570Q7257 572q7338 502);"/>
+                            <Edge cubics="!-3814 570(;-3814,570 7150,570 7150,570q-3814 570 7150 570);"/>
+                            <Edge cubics="!7151 -570(;7151,-570 -3813,-570 -3813,-570q7151 -570 -3813 -570);"/>
+                            <Edge cubics="!-4107 -9(;-4106,94 -4105,198 -4103,301q-4107 -9 -4103 301);"/>
+                            <Edge cubics="!7450 271(;7449,178 7449,84 7449,-9q7450 271 7449 -9);"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

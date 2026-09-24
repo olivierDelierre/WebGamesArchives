@@ -1,0 +1,29 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="teleCercleGFX" itemID="40449283-000008da" sourceFlashFilepath="..\mb2.fla" sourceLibraryItemHRef="_gfx/_bumpers/_teleport/teleCercleGFX" sourceLastModified="1078239145" lastModified="1078239145">
+  <timeline>
+    <DOMTimeline name="teleCercleGFX">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.501960784313725"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!228 -283.5|228 -284!228 -284|228.5 -283.5!228.5 -283.5[#140.9E #FFFF41.3F 320.5 -58!320.5 -58[#140.82 -51.890625 320.5 -46!320.5 -46[#13C.6E #4F.03 228.5 169!228.5 169|228 169.5!228 169.5[#85.6E #105.F1 0.5 262!0.5 262[#FFFF7B.A2 #105.DE
+ -225 169!-225 169[#FFFEC4.B6 #4E.E8 -319.5 -46.5!-319.5 -46.5[-319.5 #FFFFCB.DE -319.5 -58!-319.5 -58[-319.65625 #FFFF41.2B -225.5 -283.5!-225.5 -283.5|-225 -284!-225 -284[#FFFF7B.AB -378.15625 0.5 -378!0.5 -378[133.5 #FFFE86.05 228
+ -283.5!0 -420[#FFFF51.CB #FFFE5D.2D -297 -297!-297 -297[#FFFE5D.2D #FFFF51.CB -420 0!-420 0[#FFFE5D.2D #AF.42 -297 297!-297 297[#FFFF51.C7 #1A3.EC 0 420!0 420[#AF.46 #1A3.EC 297 297!297 297[#1A3.EC #AF.46 420 0!420 0[#1A3.EC #FFFF51.C7
+ 297 -297!297 -297[#AF.42 #FFFE5D.2D 0 -420"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

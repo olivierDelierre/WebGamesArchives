@@ -1,0 +1,74 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="deux" itemID="3f852b0b-000000a4" linkageExportForAS="true" linkageIdentifier="deux" sourceFlashFilepath="../mb2_menu_test.fla" sourceLibraryItemHRef="deux" sourceLastModified="1065695430" lastModified="1077544610" sourceItemID="3f852b0b-000000a4">
+  <timeline>
+    <DOMTimeline name="deux">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFF0C1"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!125 -865[#FFFF91.56 -882.96875 -327 -785!-327 -785[#FFFD9D.E9 #FFFD25.E1 -327 -890!-327 -890[#5.BB #FFFC0C.F9 185 -865!185 -865|125 -865!219 -5.5[#76.07 #2A.3B -15.5 122!-15.5 122[#FFFF6A.EF #C9.C8 -64 71.5!-64 71.5[#15.35 #FFFFC4.F2
+ 90.5 -72.5!90.5 -72.5[#9F.CC #FFFFAA.26 239 -144!239 -144[#13D.F4 #FFFF35.FD 370 -407.5!370 -407.5[#1A6.2C #FFFD9B.01 458 -426!458 -426[#1ED.D4 #FFFF11.06 407 -146!407 -146[#140.0E #FFFFCA.E5 219 -5.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFCC00"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!105 -612[25 -660 -51 -660!-51 -660[-186 -660 -336 -540!-336 -540[-487 -421 -543 -421!-543 -421[-610 -421 -661 -454!-661 -454[-724 -494 -724 -567!-724 -567[-724 -644 -661 -700!-661 -700[-507 -836 -393 -898!-393 -898[-228 -988 -51 -988
+!-51 -988[168 -988 345 -872!345 -872[546 -740 546 -527!546 -527[546 -311 447 -160!447 -160[370 -40 202 75!202 75[44 175 -115 274!-115 274[-356 431 -374 633!-374 633[-304 624 -168 613!-168 613[102 599 219 599!219 599[328 599 435 646!435
+ 646[567 704 567 796!567 796[567 862 520 911!520 911[470 965 397 965!397 965[365 965 299 954!299 954[232 943 202 943!202 943|-171 942!-171 942[-219 942 -317 954!-317 954[-415 966 -464 966!-464 966[-478 966 -505 961!-505 961[-531 956 -545
+ 956!-545 956[-660 956 -700 863!-700 863[-726 805 -726 683!-726 683[-726 445 -620 285!-620 285[-539 162 -357 39!-357 39[-186 -74 -16 -186!-16 -186[185 -332 185 -517!185 -517[185 -565 105 -612"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#896A01"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!606 -516[#25E.18 #FFFEE4.4C 499 -121.5!499 -121.5|499 -122!499 -122[#1A1.E7 #5.A6 240 127.5!240 127.5[#EF.33 #7F.F8 238.5 128.5!238.5 128.5[#50.F8 #E4.34 -77.5 327!-77.5 327[#FFFEFF.4A #1BB.BA -301 586.5!-301 586.5[#FFFF0C.C9 #244.A4
+ -162 574!-162 574[#FFFF5E.C7 #23D.FE -160.5 574!-160.5 574[#6F.42 #22F.F 229 560!229 560[#15C.1B #22F.BD 465 611!465 611[#278.E1 #2AC.DA 627 807!627 807[#273.27 #37C.7F 566.5 956!566.5 956|566 956.5!566 956.5[#1F5.57 #402.14 407 1026
+!407 1026[#174.68 #402.54 301 1014.5!301 1014.5[#EF.86 #3EC.55 212 1004!212 1004|-161 1003!-161 1003[#FFFF30.F7 #3EB.1 -301 1014.5!-301 1014.5[#FFFE6C.FF #403.0F -454 1027!-454 1027[#FFFE28.EC #403.2F -504 1021!-504 1021|-504.5 1021!-504.5
+ 1021[#FFFDF3.A4 #3F9.3A -535 1017!-535 1017[#FFFD53.01 #3F9.1F -736 894!-736 894|-735.5 894.5!-735.5 894.5[-765.9375 #33E.06 -766 694!-766 694[#FFFD02.17 #1B7.66 -651.5 268.5!-651.5 268.5|-652 268.5!-652 268.5[#FFFDC8.FE #8A.37 -375
+ 8.5!-375 8.5|-374.5 8.5!-374.5 8.5[#FFFF34.7F -104.75 -33.5 -217!-33.5 -217[#8E.15 #FFFEA6.AB 145 -506!145 -506[#8A.72 #FFFDEE.C2 89.5 -558!89.5 -558[#16.77 #FFFDA9.C9 -41 -599!-41 -599[-160.90625 #FFFDAA.D6 -295 -490!-295 -490|-295
+ -489.5!-295 -489.5[#FFFE2D.94 #FFFE9D.74 -533 -360!-533 -360[#FFFD98.B5 #FFFE97.9E -678 -401!-678 -401[#FFFD03.A4 #FFFE38.37 -764 -556!-764 -556[#FFFD03.5B #FFFD71.26 -684 -726.5!-684 -726.5[#FFFDF3.17 #FFFC9C.E2 -407 -931!-407 -931
+[#FFFF19.8E #FFFBFC.C3 -41 -1027!-41 -1027[#C1.3 #FFFBFD.0D 382.5 -903!382.5 -903[#25F.5D #FFFD0C.CB 606 -516"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

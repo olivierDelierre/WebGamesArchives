@@ -1,0 +1,67 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="blue" itemID="3f818b7f-000016c9" linkageExportForAS="true" linkageIdentifier="blue" sourceFlashFilepath="..\mb2.fla" sourceLibraryItemHRef="_bordel/blue" sourceLastModified="1060801840" sourceAutoUpdate="true" lastModified="1060801840">
+  <timeline>
+    <DOMTimeline name="blue">
+      <layers>
+        <DOMLayer name="Layer 2" color="#FF4F4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="8" name="hit" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[removeMovieClip(this);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4F80FF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#008AC6"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#006A99"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#62CCFF"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="!-112 -57.5[#FFFF95.BE -77.5 -88 -95.5!-88 -95.5[-69.75 #FFFF8E.3E -49.5 -119.5!-49.5 -119.5[#FFFFE2.82 #FFFF82.CC -19.5 -115!-19.5 -115[#FFFFF6.B3 #FFFF97.3E -15 -84.5!-15 -84.5[#FFFFEE.C7 -76.328125 -21.5 -68.5!-21.5 -68.5[#FFFFE3.EB
+ #FFFFC6.DA -39 -46.5!-39 -46.5[#FFFFC6.FE #FFFFE3.C1 -77 -22.5!-77 -22.5[#FFFF9E.BD #FFFFEF.33 -107.5 -27!-107.5 -27[#FFFF8E.3C #FFFFDE.FE -114.5 -42.5!-114.5 -42.5[#FFFF8D.6F -49.171875 -112 -57.5"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="
+!70 -134.5[#27.1F #FFFF69.FD 2 -150!2 -150[#FFFFC3.31 #FFFF69.EF -105.5 -105.5!-105.5 -105.5[#FFFF78.EC #FFFFB4.29 -145 -38!-145 -38[#FFFF69.FA -19.125 -150 2!-150 2[#FFFF69.FE #17.1A -145 42!-145 42[#FFFF72.CE #38.AC -134.5 70"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!-134.5 70[#FFFF98.5E #55.83 -66.5 85.5!-66.5 85.5[-3.6953125 #55.91 41 41!41 41[#55.91 -3.6953125 85.5 -66.5!85.5 -66.5[#55.83 #FFFF98.5E 70 -134.5"/>
+                    <Edge fillStyle0="2" strokeStyle="1" edges="
+!-134.5 70[#FFFF84.4E #5B.3A -105.5 109.5!-105.5 109.5[#FFFFC3.31 #9A.11 2 154!2 154[#40.CE #9A.11 109.5 109.5!109.5 109.5[#9A.11 #40.CE 154 2!154 2[#9A.11 #FFFFC3.31 109.5 -105.5!109.5 -105.5[#5B.3A #FFFF84.4E 70 -134.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

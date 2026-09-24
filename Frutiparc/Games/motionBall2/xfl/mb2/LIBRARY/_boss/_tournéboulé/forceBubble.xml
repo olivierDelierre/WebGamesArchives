@@ -1,0 +1,89 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_tournéboulé/forceBubble" itemID="409f5b83-00000808" linkageExportForAS="true" linkageIdentifier="forceBubble" lastModified="1084186982" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name="forceBubble">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-481.25" ty="-527.65"/>
+                  </matrix>
+                  <members>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="-481.25" ty="-527.65"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="-481.25" ty="-527.65"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <RadialGradient>
+                                <matrix>
+                                  <Matrix a="0.05963134765625" d="0.05963134765625" tx="479.75" ty="519.1"/>
+                                </matrix>
+                                <GradientEntry color="#FFFFFF" alpha="0" ratio="0"/>
+                                <GradientEntry color="#FFFFFF" alpha="0.4" ratio="1"/>
+                              </RadialGradient>
+                            </FillStyle>
+                          </fills>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal">
+                                <fill>
+                                  <SolidColor color="#FFFFFF" alpha="0.501960784313725"/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge fillStyle1="1" strokeStyle="1" edges="!10284 11010S6[10012 11283 9626 11283!9626 11283[9240 11283 8967 11010!8967 11010[8695 10738 8695 10352!8695 10352[8695 9966 8967 9693!8967 9693[9240 9421 9626 9421!9626 9421[10012 9421 10284 9693!10284 9693[10557 9966 10557 10352!10557
+ 10352[10557 10738 10284 11010"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix tx="-481.25" ty="-527.65"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix tx="-481.25" ty="-527.65"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <RadialGradient>
+                                <matrix>
+                                  <Matrix a="0.07037353515625" d="0.07037353515625" tx="482.35" ty="480.15"/>
+                                </matrix>
+                                <GradientEntry color="#FFFFFF" alpha="0.8" ratio="0"/>
+                                <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                              </RadialGradient>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!10473.5 10402.5[#28C6.33 #28DD.FF 10258 10519!10258 10519|10258 10519.5!10258 10519.5[#2709.61 #296B.2 9618 10603!9618 10603[#241A.9A #296B.23 8977 10519.5!8977 10519.5|8977 10519!8977 10519[#225D.C2 #28DE.4D 8762.5 10403!8762.5 10403
+[#222A.DE #288D.89 8747 10355!8747 10355[#222B.05 #286E.37 8747 10345.5!8747 10345.5|8747 10345!8747 10345[#222B.43 #2704.D7 8994.5 9735.5!8994.5 9735.5[#2325.9B #2603.D7 9001 9728.5!9001 9728.5|9001.5 9728!9001.5 9728[#232C.D7 #25FC.9B
+ 9008.5 9721.5!9008.5 9721.5[#242D.D7 #2502.43 9618 9474!9618 9474[#26FA.D4 #2502.3C 10233 9729!10233 9729[#28F8.B9 #2700.21 10489 10345!10489 10345|10489 10345.5!10489 10345.5[#28F8.FA #286D.F4 10489 10354.5!10489 10354.5[#28F9.1D #288D.15
+ 10473.5 10402.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

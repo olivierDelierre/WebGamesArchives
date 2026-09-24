@@ -1,0 +1,27 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_ a ranger/intro_bg" itemID="4035ec1f-00000216" linkageExportForAS="true" linkageIdentifier="intro_bg" lastModified="1077275731">
+  <timeline>
+    <DOMTimeline name="intro_bg">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#9241C2"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!3651 777|3641.5 787.5!3641.5 787.5|3632 778.5!3632 778.5|3651 777"/>
+                    <Edge fillStyle1="1" edges="!12200 8200|0 8200!0 8200|0 0!0 0|12200 0!12200 0|12200 8200"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

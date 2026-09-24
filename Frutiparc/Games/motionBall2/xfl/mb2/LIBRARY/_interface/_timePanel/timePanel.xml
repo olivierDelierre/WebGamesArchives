@@ -1,0 +1,147 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_interface/_timePanel/timePanel" itemID="40922632-0000015b" lastModified="1083332530">
+  <timeline>
+    <DOMTimeline name="timePanel">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="min_txt" fontRenderingMode="standard" width="41.7" height="28.05" includeOutlines="true" isSelectable="false">
+                  <matrix>
+                    <Matrix d="1.00001525878906" tx="-72.45" ty="-14"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="20.85" y="14"/>
+                  </transformationPoint>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>00</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="22" bitmapSize="440" face="Sweet as candy" fillColor="#DFFFD5"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="sec_txt" fontRenderingMode="standard" width="41.7" height="28.05" includeOutlines="true" isSelectable="false">
+                  <matrix>
+                    <Matrix d="1.00001525878906" tx="-23.45" ty="-14"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="20.85" y="14"/>
+                  </transformationPoint>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>00</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="22" bitmapSize="440" face="Sweet as candy" fillColor="#DFFFD5"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="mil_txt" fontRenderingMode="standard" width="41.7" height="28.05" includeOutlines="true" isSelectable="false">
+                  <matrix>
+                    <Matrix d="1.00001525878906" tx="30.75" ty="-14"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="20.85" y="14"/>
+                  </transformationPoint>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>00</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" autoKern="false" size="22" bitmapSize="440" face="Sweet as candy" fillColor="#DFFFD5"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.888885498046875" tx="462.45" ty="-61"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-552.05" y="52.2"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.888885498046875" tx="462.45" ty="-61"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-552.05" y="52.2"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#DFFFD5"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-11041 941.5[-11015 #3AD.7B -10997 971!-10997 971[-10978 #3E9.6B -10978 1044!-10978 1044[-10978 #43E.83 -10997 1116!-10997 1116[-11015 #47A.73 -11041 1146.5!-11041 1146.5[-11067 #47A.73 -11086 1116!-11086 1116[-11104 #43E.83 -11104 1044
+!-11104 1044[-11104 #3E9.6B -11086 971!-11086 971[-11067 #3AD.7B -11041 941.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.888885498046875" tx="511.25" ty="-61"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-552.05" y="52.2"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.888885498046875" tx="511.25" ty="-61"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-552.05" y="52.2"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#DFFFD5"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!-11041 941.5[-11015 #3AD.7B -10997 971!-10997 971[-10978 #3E9.6B -10978 1044!-10978 1044[-10978 #43E.83 -10997 1116!-10997 1116[-11015 #47A.73 -11041 1146.5!-11041 1146.5[-11067 #47A.73 -11086 1116!-11086 1116[-11104 #43E.83 -11104 1044
+!-11104 1044[-11104 #3E9.6B -11086 971!-11086 971[-11067 #3AD.7B -11041 941.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.888885498046875" tx="517.65" ty="-61"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-552.05" y="52.2"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="0.888885498046875" tx="517.65" ty="-61"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-552.05" y="52.2"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#DFFFD5"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!-11041 941.5[-11015 #3AD.7B -10997 971!-10997 971[-10978 #3E9.6B -10978 1044!-10978 1044[-10978 #43E.83 -10997 1116!-10997 1116[-11015 #47A.73 -11041 1146.5!-11041 1146.5[-11067 #47A.73 -11086 1116!-11086 1116[-11104 #43E.83 -11104 1044
+!-11104 1044[-11104 #3E9.6B -11086 971!-11086 971[-11067 #3AD.7B -11041 941.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

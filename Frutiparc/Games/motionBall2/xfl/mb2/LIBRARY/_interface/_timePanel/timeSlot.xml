@@ -1,0 +1,61 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_interface/_timePanel/timeSlot" itemID="409219d7-00000136" lastModified="1083341127" lastUniqueIdentifier="5">
+  <timeline>
+    <DOMTimeline name="timeSlot">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0" b="-0.01953125" c="0.11474609375" d="0" ty="7.75"/>
+                            </matrix>
+                            <GradientEntry color="#FFCC00" ratio="0"/>
+                            <GradientEntry color="#FCB40E" ratio="0.286274509803922"/>
+                          </LinearGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!1560 -165|-1560 -165!-1560 -165|-1560 -165.5!-1560 -165.5[#FFF963.B7 -165.40625 -1786 -71.5!-1786 -71.5[#FFF8A8.18 #16.37 -1880 154.5!-1880 154.5[#FFF8A8.18 #11E.C8 -1786 380.5!-1786 380.5[#FFF963.B7 #1DA.67 -1560 474.5!-1560 474.5|1560
+ 474.5!1560 474.5[#69C.88 #1DA.67 1786.5 380.5!1786.5 380.5[#758.27 #11E.C8 1880 154.5!1880 154.5[#758.27 #16.37 1786.5 -71.5!1786.5 -71.5[#69C.88 -165.40625 1560 -165.5!1560 -165.5|1560 -165"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="_interface/_timePanel/timeSlotBall" name="b1">
+                  <matrix>
+                    <Matrix tx="-120"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_interface/_timePanel/timeSlotBall" name="b2">
+                  <matrix>
+                    <Matrix a="-1" tx="120"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_interface/_timePanel/slot" name="slot">
+                  <matrix>
+                    <Matrix ty="0.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_ball/shadow" itemID="3f56f85b-0000004b" linkageExportForAS="true" linkageIdentifier="shadow" sourceFlashFilepath="../../ballFxTest2/testBall.fla" sourceLibraryItemHRef="shadow" sourceLastModified="1062664508" lastModified="1077731388" sourceItemID="3f56f85b-0000004b">
+  <timeline>
+    <DOMTimeline name="shadow">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0211181640625" d="0.0211181640625" tx="-3.6" ty="-3.6"/>
+                        </matrix>
+                        <GradientEntry alpha="0.4" ratio="0.796078431372549"/>
+                        <GradientEntry alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-0.5 -240[#62.C7 #FFFF0F.F2 169 -170!169 -170[#EF.9E #FFFF9C.CA 239.5 0!239.5 0[#EF.9E #63.46 169 169.5!169 169.5[#62.C7 #F0.1E -0.5 240!-0.5 240[#FFFF9C.8A #F0.1E -170 169.5!-170 169.5[#FFFF0F.B2 #63.46 -240.5 0!-240.5 0[#FFFF0F.B2
+ #FFFF9C.CA -170 -170!-170 -170[#FFFF9C.8A #FFFF0F.F2 -0.5 -240"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

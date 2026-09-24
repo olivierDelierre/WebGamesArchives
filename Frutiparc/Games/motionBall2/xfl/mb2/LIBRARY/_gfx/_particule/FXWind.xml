@@ -1,0 +1,35 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_particule/FXWind" itemID="40965a5a-00000b5b" linkageExportForAS="true" linkageIdentifier="FXWind" sourceFlashFilepath="../Copie de mb2.fla" sourceLibraryItemHRef="_FX/FXWind" sourceLastModified="1083596345" lastModified="1083827162" lastUniqueIdentifier="1" sourceItemID="40965a5a-00000b5b">
+  <timeline>
+    <DOMTimeline name="FXWind">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="-0.06170654296875" b="-0.00982666015625" d="-0.018829345703125" tx="-60.7" ty="0.6"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" alpha="0.4" ratio="0.380392156862745"/>
+                        <GradientEntry color="#FFFFFF" alpha="0.4" ratio="0.568627450980392"/>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-344 -155[-147 -129 31 -43!31 -43[53 -11 43 20!43 20[38 38 31 56!31 56[-434 -63 -914 -24!-914 -24[-1202 4 -1487 57!-1487 57[-1803 120 -2122 175!-2122 175|-2115 144!-2115 144[-1719 -9 -1299 -95!-1299 -95[-1053 -148 -805 -167!-805 -167
+[-572 -191 -344 -155"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

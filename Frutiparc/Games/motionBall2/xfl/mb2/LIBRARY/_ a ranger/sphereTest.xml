@@ -1,0 +1,30 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_ a ranger/sphereTest" itemID="40436b57-000000cf" lastModified="1078160215">
+  <timeline>
+    <DOMTimeline name="sphereTest">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <matrix>
+                    <Matrix tx="27.1" ty="26.65"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-384 -533S2[-384 -468 -431 -422!-431 -422[-477 -375 -542 -375!-542 -375[-607 -375 -654 -422!-654 -422[-700 -468 -700 -533!-700 -533[-700 -598 -654 -645!-654 -645[-607 -691 -542 -691!-542 -691[-477 -691 -431 -645!-431 -645[-384 -598 -384
+ -533"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

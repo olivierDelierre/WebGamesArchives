@@ -1,0 +1,661 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_tournéboulé/TBShadow" itemID="409f6133-00000810" linkageExportForAS="true" linkageIdentifier="TBShadow" lastModified="1084186979">
+  <timeline>
+    <DOMTimeline name="TBShadow">
+      <layers>
+        <DOMLayer name="Layer 9" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="22" name="kata1" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="32" duration="18" name="kata2" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="50" duration="22" name="kata3" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="72" duration="21" name="kata4" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="93" duration="22" name="kata5" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="115" duration="23" name="kata6" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="138" duration="4" name="startFly" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="142" duration="13" name="fly" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="155" duration="11" name="stopFly" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="166" duration="17" name="flyVanish" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="183" duration="65" name="death" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="m1" color="#FF4FFF" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.84518432617188" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.45582580566406" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="4" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.84518432617188" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="26" duration="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="34" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.9024658203125" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="36" duration="9" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.69264221191406" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="45" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre" selected="true">
+                  <matrix>
+                    <Matrix a="1.9024658203125" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="50" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="52" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="54" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.19273376464844" d="0.67864990234375" tx="5.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="65" duration="3" tweenType="motion" keyMode="17921" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="68" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="72" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="74" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.87678527832031" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="76" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.41331481933594" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="87" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.87678527832031" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="90" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="93" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="95" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.89572143554688" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="96" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="97" duration="12" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.56048583984375" d="0.67864990234375" tx="7.85" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="109" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre" selected="true">
+                  <matrix>
+                    <Matrix a="1.89572143554688" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="112" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="115" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="117" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.66824340820313" d="0.67864990234375" tx="-6.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="118" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="119" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.76130676269531" d="0.67864990234375" tx="-27" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="130" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.66824340820313" d="0.67864990234375" tx="-6.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="133" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="138" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre" selected="true">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="140" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.63664245605469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="142" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.40780639648438" d="0.583770751953125" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="145" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.27865600585938" d="0.53021240234375" tx="-1.2" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="148" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.14949035644531" d="0.476654052734375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="151" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.27865600585938" d="0.53021240234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="154" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.40780639648438" d="0.583770751953125" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="156" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.43475341796875" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="158" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="162" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="166" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.40780639648438" d="0.583770751953125" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="169" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.27865600585938" d="0.53021240234375" tx="-1.2" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="172" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.14949035644531" d="0.476654052734375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="175" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.27865600585938" d="0.53021240234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="178" duration="5" keyMode="15872">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.40780639648438" d="0.583770751953125" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="183" duration="4" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="2.07267761230469" d="0.67864990234375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="187" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.352294921875" d="0.442779541015625" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="190" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre">
+                  <matrix>
+                    <Matrix a="1.77922058105469" d="0.513275146484375" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="193" keyMode="15872">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/ombre" selected="true">
+                  <matrix>
+                    <Matrix a="2.20614624023438" d="0.583770751953125" tx="-1.15" ty="19.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="194" duration="54" keyMode="15872">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

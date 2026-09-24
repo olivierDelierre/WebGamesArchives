@@ -1,0 +1,31 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_poulpe/plorch" itemID="3facfe06-000000b4" lastModified="1068301830">
+  <timeline>
+    <DOMTimeline name="plorch">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <matrix>
+                    <Matrix tx="-3.2" ty="19.1"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#D9C4F7"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!716 -1130S2|732 -1104!732 -1104|597 -941!597 -941|599 -898!599 -898[937 -713 1276 -527!1276 -527|983 -239!983 -239|988 109!988 109|885 111!885 111[857 134 854 171!854 171[853 178 852 185!852 185[851 191 850 198!850 198[848 210 844 223
+!844 223[843 229 840 234!840 234[774 337 664 249!664 249[-89 309 -841 369!-841 369|-759 153!-759 153|-1078 -86!-1078 -86|-1022 -160!-1022 -160|-1105 -335!-1105 -335|-1013 -394!-1013 -394[-995 -615 -1148 -775!-1148 -775|-1127 -796!-1127
+ -796|-966 -705!-966 -705|-785 -710!-785 -710|-523 -1053!-523 -1053|-493 -1046!-493 -1046|-515 -937!-515 -937|-508 -925!-508 -925|-499 -962!-499 -962|-297 -1058!-297 -1058|-279 -1016!-279 -1016|702 -1134!702 -1134|716 -1130"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

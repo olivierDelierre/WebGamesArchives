@@ -1,0 +1,102 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_menu/menu balls" itemID="3f8a64c1-000000a8" linkageExportForAS="true" linkageIdentifier="menu balls" sourceFlashFilepath="../mb2_menu_test.fla" sourceLibraryItemHRef="menu balls" sourceLastModified="1066039548" lastModified="1083934693" lastUniqueIdentifier="6" sourceItemID="3f8a64c1-000000a8">
+  <timeline>
+    <DOMTimeline name="menu balls">
+      <layers>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="8" name="normal" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="8" duration="11" name="disable" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" duration="11" name="selected" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_menu/bouleMenu" name="ball" selected="true">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_menu/bouleMenu" name="ball">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_menu/bouleMenu" name="ball">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_menu/bouleMenu" symbolType="graphic" firstFrame="15" loop="single frame">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="19" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" duration="10" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFFFFF" alpha="0.501960784313725"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#FFFFFF" alpha="0.250980392156863"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="!939.5 -940.5[#531.B8 #FFFDD9.12 1330 -0.5!1330 -0.5[#531.BC #225.EE 940 939!940 939|940 939.5!940 939.5|939.5 940!939.5 940|939 940!939 940[#226.3 #531.7E 0 1329.5!0 1329.5[#FFFDD9.0F #531.75 -941 939.5!-941 939.5[#FFFACD.E1 #226.46
+ -1330 -0.5!-1330 -0.5[#FFFACD.E1 #FFFDD8.D3 -941 -941!-941 -941[#FFFDD9.12 #FFFACD.A4 0 -1330.5!0 -1330.5[#226.46 #FFFACD.A2 939 -941!939 -941|939.5 -940.5"/>
+                    <Edge fillStyle0="3" fillStyle1="2" edges="
+!1430 -0.5[#595.A6 591.5 1010.5 1010!1010.5 1010|1010 1010.5!1010 1010.5[#24F.C4 #595.6A 0 1429.5!0 1429.5[#FFFDAF.C5 #595.6 -1011.5 1010!-1011.5 1010[#FFFA69.FC #24F.9A -1430 -0.5!-1430 -0.5[-1430.25 #FFFDAF.87 -1012 -1011.5!-1012 -1011.5
+|-1011.5 -1012!-1011.5 -1012[#FFFDAF.C9 #FFFA69.86 0 -1430.5!0 -1430.5[#24F.DA #FFFA69.BA 1010 -1011.5!1010 -1011.5[#595.A3 #FFFDAF.85 1430 -0.5"/>
+                    <Edge fillStyle1="3" edges="
+!1460 -0.5[#5B3.CB #25C.12 1032 1031.5!1032 1031.5|1031.5 1031!1031.5 1031|1031 1031.5!1031 1031.5|1031.5 1032!1031.5 1032[#25C.55 #5B3.9 0 1459.5!0 1459.5[#FFFDA3.35 #5B3.86 -1033 1031.5!-1033 1031.5[#FFFA4B.DB #25C.2E -1460 -0.5!-1460
+ -0.5[#FFFA4B.9D -605.03125 -1033.5 -1033!-1033.5 -1033|-1033 -1032.5!-1033 -1032.5|-1032.5 -1033!-1032.5 -1033|-1033 -1033.5!-1033 -1033.5[#FFFDA3.39 #FFFA4B.65 0 -1460.5!0 -1460.5[#25C.6E #FFFA4B.94 1031.5 -1033!1031.5 -1033[#5B3.C9
+ #FFFDA2.F5 1460 -0.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

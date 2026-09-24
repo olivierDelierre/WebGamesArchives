@@ -1,0 +1,20 @@
+{
+  "name": "motionball2-rewrite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MotionBall 2 (Motion Twin / Frutiparc, 2005) rewritten in modern HTML5 / JavaScript.",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --format=iife --target=es2020 --outfile=dist/motionball2.js",
+    "watch": "esbuild src/main.js --bundle --format=iife --target=es2020 --sourcemap --outfile=dist/motionball2.js --watch",
+    "serve": "esbuild src/main.js --bundle --format=iife --target=es2020 --sourcemap --outfile=dist/motionball2.js --servedir=. --serve=8000",
+    "levels": "node tools/build_levels.js",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node tests/browser/smoke.js",
+    "xfl": "node tools/xfl/convert.js",
+    "gallery": "esbuild tools/xfl/gallery.js --bundle --format=iife --target=es2020 --outfile=dist/gallery.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

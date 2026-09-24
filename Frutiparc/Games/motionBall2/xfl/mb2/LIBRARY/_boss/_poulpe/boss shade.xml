@@ -1,0 +1,32 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_poulpe/boss shade" itemID="3f97877f-0000010d" linkageExportForAS="true" linkageIdentifier="boss shade" lastModified="1075809649">
+  <timeline>
+    <DOMTimeline name="boss shade">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.07147216796875" d="0.07147216796875" tx="2.25" ty="12.25"/>
+                        </matrix>
+                        <GradientEntry alpha="0.4" ratio="0.796078431372549"/>
+                        <GradientEntry alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!854 475[519 570 45 570!45 570[-429 570 -765 475!-765 475[-1100 380 -1100 245!-1100 245[-1100 110 -765 15!-765 15[-429 -80 45 -80!45 -80[519 -80 854 15!854 15[1190 110 1190 245!1190 245[1190 380 854 475"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

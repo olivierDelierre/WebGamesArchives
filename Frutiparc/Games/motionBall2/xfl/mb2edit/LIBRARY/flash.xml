@@ -1,0 +1,49 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="flash" itemID="40437bd5-0000015f" sourceFlashFilepath="..\mb2.fla" sourceLibraryItemHRef="_gfx/_bumpers/_interrupt/flash" sourceLastModified="1078166095" lastModified="1078166095">
+  <timeline>
+    <DOMTimeline name="flash">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!0 -400.5[#FFFF5A.36 #FFFE6F.6E -283 -283.5!-283 -283.5[#FFFE75.13 #FFFF54.8F -400 -15!-400 -15[#FFFE6F.FF #FFFFF8.35 -400 -0.5!-400 -0.5[#FFFE6F.ED #A5.09 -283 282!-283 282[#FFFF5A.36 #18F.52 0 399.5!0 399.5[#A5.C9 #18F.52 283 282!283
+ 282[#190.12 #A5.09 400 -0.5!400 -0.5[#190.01 #FFFFF8.35 400 -15!400 -15[#18A.EC #FFFF54.8F 283 -283.5!283 -283.5[#CD.01 #FFFE96.9A 105.5 -387.5!105.5 -387.5[#66.5F #FFFE79.89 97 -392!97 -392[#5F.A5 -391.0625 94.5 -390!94.5 -390[#31.63
+ #FFFE6F.7B 0 -400.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.501960784313725"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!96 -492[#6E.64 #FFFE13.FD 124.5 -488!124.5 -488[#88.B7 #FFFE1B.7A 147 -479.5!147 -479.5[#106.1D #FFFE42.4F 353.5 -354.5!353.5 -354.5|354 -354!354 -354[#1ED.E6 #FFFF2A.35 500 -18!500 -18[#1F4.06 #FFFFEF.C1 500 -15!500 -15[#1F4.01 #FFFFF8.35
+ 500 -0.5!500 -0.5[#1F3.FF #CE.5E 353.5 352.5!353.5 352.5[#CF.19 #1F3.31 0 499.5!0 499.5[#FFFF30.E6 #1F3.32 -353.5 352.5!-353.5 352.5[#FFFE0B.FF #CE.5E -500 -0.5!-500 -0.5[#FFFE0B.FF #FFFFF8.35 -500 -15!-500 -15[#FFFE0B.F9 #FFFFEF.C1
+ -500 -18!-500 -18[-493.90625 #FFFF2A.34 -354 -354!-354 -354|-353.5 -354.5!-353.5 -354.5[#FFFF30.E4 #FFFE0B.4D 0 -500.5!0 -500.5[#31.CC #FFFE0B.81 96 -492"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

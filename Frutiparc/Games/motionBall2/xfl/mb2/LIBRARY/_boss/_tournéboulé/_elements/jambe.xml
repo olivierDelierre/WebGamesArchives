@@ -1,0 +1,106 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_tournéboulé/_elements/jambe" itemID="40967edf-000003bb" lastModified="1083663561">
+  <timeline>
+    <DOMTimeline name="jambe">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#635283"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!215 0|235 0!235 0|358 377.5!358 377.5|369.5 401!369.5 401|348.5 401!348.5 401|361 428!361 428|352 440!352 440|292 456!292 456|267.5 403.5!267.5 403.5[#100.CB #19A.B4 240 406!240 406[146 381 64 326!64 326[#FFFFE8.EA #10B.FE -55.5 229
+!-55.5 229[#FFFFA8.3F #BE.05 -95.5 184.5!-95.5 184.5[#FFFF98.AA 179 -93.5 181.5!-93.5 181.5[#FFFFAC.56 #B7.F2 -80.5 186"/>
+                    <Edge fillStyle1="2" edges="
+!-80.5 186[#FFFFD8.CD #37.33 -39.5 77!-39.5 77[#9.29 #FFFFD0.25 215 0"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!215 0|340.5 384.5!340.5 384.5|266 365!266 365|258.5 385!258.5 385|195.5 364.5!195.5 364.5|-47 225.5!-47 225.5[#FFFFCE.4D #DD.A1 -81 188!-81 188[#FFFFAF.4F #BB.04 -80.5 186"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!303 424[320 418 339 415!339 415|345 401!345 401|356 394!356 394|360 377!360 377[377 377 388 392!388 392[408 417 400 446!400 446|392 451!392 451[383 483 347 484!347 484[309 480 272 477!272 477|266 469!266 469[266 465 267 461!267 461[268
+ 457 271 453!271 453[279 441 289 430!289 430[295 425 303 424"/>
+                  </edges>
+                </DOMShape>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!168.5 427.5[#FFFFED.9B #19B.EF -56.5 317!-56.5 317[-93.0625 #E8.0E -96 209.5!-96 209.5[#B.48 #A0.9F 236 22!236 22[#D5.FD #113.2D 354.5 367.5!354.5 367.5[#167.04 #172.91 361.5 375.5!361.5 375.5[#16B.DE #17C.34 363.5 385.5!363.5 385.5
+[#16E.87 #1A4.5A 302 429!302 429[#101.31 #1B3.07 168.5 427.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#635283"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!-41 309S1[#FFFFFB.5D #189.31 167 407.5!167 407.5[#152.B3 #1A5.F1 340.5 384.5!340.5 384.5[#B7.D8 #11C.3D 215 0!215 0[#9.29 #FFFFD0.25 -39.5 77!-39.5 77[#FFFFD8.CD #37.33 -80.5 186!-80.5 186[#FFFFAF.47 #BB.32 -79 206!-79 206[#FFFFB2.A5
+ #E0.BF -41 309"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#635283"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="2" edges="
+!-119 184.5[-58.875 #35.51 -61.5 75.5!-61.5 75.5[-31 #13.56 29 -2!29 -2|31 -4!31 -4|30.5 -4.5!30.5 -4.5[#3E.67 #FFFFEE.F9 113.5 -16.5!113.5 -16.5[#A0.27 #FFFFEE.39 226 -6"/>
+                    <Edge fillStyle1="1" edges="
+!226 -6|248 -6!248 -6|384.5 229!384.5 229|430 291!430 291|430 301!430 301|392 366!392 366|405 404!405 404|400 421!400 421[348 441 294 439!294 439|285 403!285 403[178 414 83 360!83 360[57 345 30.5 329.5!30.5 329.5[#1A.33 #146.C7 22 324
+!22 324[-66.65625 #109.6B -97 227.5!-97 227.5[#FFFF80.EF #BC.9 -135 182.5!-135 182.5|-138 180!-138 180[#FFFF75.E7 #B2.C4 -133 179.5!-133 179.5[#FFFF85.DC #B5.7A -119 184.5"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!-119 184.5[-119 185.5 -119 186.5!-119 186.5[#FFFFA6.BA #DB.6C -86.5 223.5!-86.5 223.5|78.5 316!78.5 316[132 349 189 369!189 369[202 373 216 376.5!216 376.5|327 315!327 315|331 303!331 303|365 309!365 309|216 376.5!216 376.5|243 390!243
+ 390[278 380 311 365!311 365[345 352 378 335!378 335|397 294!397 294|226 -6"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

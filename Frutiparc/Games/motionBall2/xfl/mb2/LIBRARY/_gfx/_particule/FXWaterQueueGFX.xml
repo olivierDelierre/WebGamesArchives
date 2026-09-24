@@ -1,0 +1,32 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_particule/FXWaterQueueGFX" itemID="4099eac4-000001f8" lastModified="1083830068">
+  <timeline>
+    <DOMTimeline name="FXWaterQueueGFX">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AEEAFF" alpha="0.501960784313725"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#DFF9FF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="2" edges="!2013 -140|0 -160!0 -160[#FFFFFD.A9 #FFFF60.82 -4 -157!-4 -157[-18 -145 -28 -129!-28 -129[-60 -80 -62 -21!-62 -21[-64 8 -57 37!-57 37[-44 98 -15 154!-15 154[-12.703125 #9E.23 -9.5 161!-9.5 161|7.5 161!7.5 161[#7.D6 #A0.7E 8 160!8 160
+|2000 139!2000 139|2020 127!2020 127[#80C.E8 #7.1F 2041 -57.5!2041 -57.5[#7E5.18 #FFFF85.E1 2013 -140"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!2000 -100[2072 -1 2000 99!2000 99|0 120!0 120[#FFFF93.47 #FFFFFA.2D 0 -120!0 -120|2000 -100"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

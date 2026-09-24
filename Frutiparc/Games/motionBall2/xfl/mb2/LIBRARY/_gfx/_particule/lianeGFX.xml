@@ -1,0 +1,113 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_particule/lianeGFX" itemID="4096679c-00000381" lastModified="1083600642">
+  <timeline>
+    <DOMTimeline name="lianeGFX">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop(random(_totalframes)+1);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#45BE10"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#27690A"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!2000 -20|1915 -20!1915 -20|1915 -19!1915 -19[1825 -19 1739 -23!1739 -23|1739 -22!1739 -22[1403 -15 1070 -4!1070 -4|1070 -5!1070 -5[975.5 #FFFFFB.4D 881 -5!881 -5|881 -4!881 -4[#33B.F4 #FFFFFC.07 624 5.5!624 5.5[#206.B7 #A.5C 376 3.5
+!376 3.5[#12F.5B #0.5B 221 -6!221 -6[#97.EC #FFFFF4.7B 76 -19!76 -19|76 -20!76 -20|0 -20"/>
+                    <Edge fillStyle1="2" edges="
+!0 -20|0 -40!0 -40|76 -40!76 -40[87 -40 102 -39!102 -39[#89.31 -37.25 221 -31.5!221 -31.5[#EC.6E #FFFFE1.59 253.5 -29.5!253.5 -29.5[#152.6A #FFFFE8.41 376 -21.5!376 -21.5[#183.0B #FFFFEB.25 394 -20.5!394 -20.5[#1A8.A #FFFFED.12 476.5
+ -20.5!476.5 -20.5[#210.95 #FFFFE9.D3 541 -18.5!541 -18.5[#229.67 #FFFFF1.62 586.5 -18!586.5 -18[#26B.BC #FFFFEA.A3 651.5 -19.5!651.5 -19.5[#2AB.13 #FFFFEE.1E 716 -19!716 -19[746 -19 779 -19!779 -19[828 -19 881 -18!881 -18|881 -19.5!881
+ -19.5[975.5 #FFFFED.73 1070 -19!1070 -19|1070 -18!1070 -18[1403 -41 1739 -48!1739 -48[1825 -40 1915 -40!1915 -40|2000 -40!2000 -40|2000 -20"/>
+                    <Edge fillStyle1="1" edges="
+!2000 -20|2000 20"/>
+                    <Edge fillStyle1="2" edges="
+!2000 20|2000 40!2000 40|1915 40!1915 40[1825 41 1739 46!1739 46[1403 53 1070 31!1070 31|1070 32!1070 32[975.5 #1F.D4 881 32!881 32|881 31!881 31[828 30 779 33!779 33[#241.04 #32.2A 376 50!376 50[#12A.6F #32.16 221 47.5!221 47.5[#94.71
+ #2C.C3 76 40!76 40|0 40!0 40|0 20"/>
+                    <Edge fillStyle1="1" edges="
+!0 20|0 -20"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!2000 20|1915 20!1915 20|1915 19!1915 19[1825 20 1739 21!1739 21|1739 20!1739 20[1403 27 1070 17!1070 17|1070 18!1070 18[975.5 #11.FB 881 18!881 18|881 17!881 17[828 16 779 18!779 18[#241.AB #1E.0B 376 28.5!376 28.5[#12A.87 #1C.0C 221
+ 25.5!221 25.5[#94.85 #17.1F 76 19!76 19|76 20!76 20|0 20"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#45BE10"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#27690A"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="2" edges="
+!2000 -19[2000 -28 2000 -40!2000 -40[#65E.C3 #FFFFF1.12 1294 -18.5!1294 -18.5|1294 -17!1294 -17[1117 -31 900 -97!900 -97[#360.91 #FFFF95.CD 826 -113!826 -113[800 -117 773 -120!773 -120[670 -129 569 -101!569 -101[#13D.93 -34.109375 98
+ -40!98 -40|98 -40.5!98 -40.5|0 -40.5!0 -40.5|0 -20"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!0 -20|98 -20!98 -20|98 -19!98 -19[#13B.1F -6.0390625 569 -64.5!569 -64.5[670 -92 775 -89!775 -89[801 -87 826 -85.5!826 -85.5[#361.6A #FFFFB0.5A 904 -70!904 -70[1117 -9 1294 1!1294 1[1294 #1.C1 1294 2.5!1294 2.5[#65C.6 #5.ED 2000 -19"/>
+                    <Edge fillStyle1="1" edges="
+!2000 -19[2000 0 2000 19"/>
+                    <Edge fillStyle1="2" edges="
+!2000 19[2000 28 2000 40!2000 40[#653.FE #43.B3 1294 64.5!1294 64.5|1294 65!1294 65[1114 48 915 6!915 6[#365.45 -2.6015625 826 -8.5!826 -8.5[722 -21 619 5!619 5[594 12 569 19!569 19[#13C.B6 #46.77 98 39!98 39|98 39.5!98 39.5|0 39.5!0
+ 39.5|0 20"/>
+                    <Edge fillStyle1="1" edges="
+!0 20|0 -20"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!0 20|98 20!98 20[98 #12.FB 98 18!98 18[#13B.27 #2B.98 569 -11!569 -11[597 -18 625 -24!625 -24[725 -47 826 -38.5!826 -38.5[#363.67 #FFFFE0.E3 911 -20!911 -20[1116 25 1294 42!1294 42|1294 43!1294 43[#656.B3 #2D.CA 2000 19"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#45BE10"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#27690A"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="2" edges="
+!0 -19[0 -28 0 -40!0 -40[77 -22 157 -15!157 -15[676 -16 1186 -48!1186 -48[1549 -118 2000 -40!2000 -40[2000 -28 2000 -19"/>
+                    <Edge fillStyle1="1" edges="
+!2000 -19[2000 0 2000 19"/>
+                    <Edge fillStyle1="2" edges="
+!2000 19[2000 28 2000 40!2000 40[1533 -35 1185 31!1185 31[677 68 157 72!157 72[77 62 0 40!0 40[0 28 0 19"/>
+                    <Edge fillStyle1="1" edges="
+!0 19[0 0 0 -19"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!0 -19[77 0 157 7!157 7|157 8!157 8[677 9 1185 -26!1185 -26|1185 -27!1185 -27[1545 -95 2000 -19"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!0 19[77 40 157 49!157 49|157 48!157 48[677 43 1185 9!1185 9|1185 10!1185 10[1537 -56 2000 19"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

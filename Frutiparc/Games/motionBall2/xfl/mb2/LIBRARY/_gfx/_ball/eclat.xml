@@ -1,0 +1,35 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_ball/eclat" itemID="3f5701e4-00000053" sourceFlashFilepath="../../ballFxTest2/testBall.fla" sourceLibraryItemHRef="eclat" sourceLastModified="1062666726" lastModified="1062666726" sourceItemID="3f5701e4-00000053">
+  <timeline>
+    <DOMTimeline name="eclat">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup selected="true">
+                      <members>
+                        <DOMShape selected="true">
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#7E5F01"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="!30 -0.5S2[#1E.05 #B.CC 20.5 20!20.5 20[#C.4B #1D.86 0 29.5!0 29.5[#FFFFF3.A3 #1D.86 -22 20!-22 20[-30.09375 #B.CC -30 -0.5!-30 -0.5[-30.09375 #FFFFF3.23 -22 -22.5!-22 -22.5[#FFFFF3.A3 #FFFFE1.69 0 -30.5!0 -30.5[#C.4B #FFFFE1.69 20.5
+ -22.5!20.5 -22.5[#1E.05 #FFFFF3.23 30 -0.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

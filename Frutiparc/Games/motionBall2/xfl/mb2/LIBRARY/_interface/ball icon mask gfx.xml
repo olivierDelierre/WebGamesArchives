@@ -1,0 +1,26 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_interface/ball icon mask gfx" itemID="3f3f517c-00000027" symbolType="graphic" lastModified="1083237961">
+  <timeline>
+    <DOMTimeline name="ball icon mask gfx">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#836501"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!148 -149[209 -87 209 0!209 0[209 87 148 149!148 149[87 211 0 211!0 211[-87 211 -148 149!-148 149[-209 87 -209 0!-209 0[-209 -87 -148 -149!-148 -149[-87 -211 0 -211!0 -211[87 -211 148 -149"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

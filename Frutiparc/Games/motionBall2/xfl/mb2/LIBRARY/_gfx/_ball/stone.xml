@@ -1,0 +1,262 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_ball/stone" itemID="3f56edfa-00000044" linkageExportForAS="true" linkageIdentifier="stone" sourceFlashFilepath="../../ballFxTest2/testBall.fla" sourceLibraryItemHRef="stone" sourceLastModified="1062667874" lastModified="1083238393" lastUniqueIdentifier="2" sourceItemID="3f56edfa-00000044">
+  <timeline>
+    <DOMTimeline name="stone">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#D19D03"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!0 -30[-12 -30 -21 -21!-21 -21[-30 -12 -30 0!-30 0[-30 12 -21 21!-21 21[-12 30 0 30!0 30[12 30 21 21!21 21[30 12 30 0!30 0[30 -12 21 -21!21 -21[12 -30 0 -30"/>
+                    <Edge cubics="!21 -22(;27,-16 30,-9 30,0q21 -22Q30 -13q30 0);"/>
+                    <Edge cubics="!0 -30(;8,-31 15,-28 21,-22q0 -30Q12 -31q21 -22);"/>
+                    <Edge cubics="!21 20(;15,27 8,30 0,30q21 20Q12 30q0 30);"/>
+                    <Edge cubics="!30 0(;30,8 27,15 21,20q30 0Q30 13q21 20);"/>
+                    <Edge cubics="!-30 0(;-30,-9 -27,-16 -22,-22q-30 0Q-30 -12q-22 -22);"/>
+                    <Edge cubics="!-22 20(;-27,15 -30,8 -30,0q-22 20Q-30 12q-30 0);"/>
+                    <Edge cubics="!0 30(;-8,30 -15,27 -22,20q0 30Q-12 30q-22 20);"/>
+                    <Edge cubics="!-22 -22(;-15,-28 -8,-31 0,-30q-22 -22Q-11 -31q0 -30);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#D19D03"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!16.5 -24|3 -9.5!3 -9.5|-24 -22.5!-24 -22.5|-9 0.5!-9 0.5|-30 34.5!-30 34.5|-4.5 29!-4.5 29|6 16!6 16|30 36!30 36[30 #3.1B 15 -15.5!15 -15.5|16.5 -24"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#D19D03"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!43 -29[41 -31 37 -29!37 -29|31 -15!31 -15[11 -4 -9 6!-9 6[-20 12 -25 23!-25 23[-28 30 -28 38!-28 38[-22 38 -20 35!-20 35[#FFFFEE.F3 #20.E8 -15 33.5!-15 33.5[-12.859375 #22.47 2 31!2 31[#10.DB #1B.B8 31 10!31 10[#2D.0C #FFFFF8.17 46 -24
+!46 -24[45 -28 43 -29"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" duration="6" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#D19D03"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="
+!25 -5[25 -6 25 -7!25 -7[19 -8 13 -9!13 -9[-14 -4 -30 10!-30 10|-27 10!-27 10[-1 8 22 -3!22 -3[24 -3 25 -5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="
+!0 -30[-12 -30 -21 -21!-21 -21[-30 -12 -30 0!-30 0[-30 12 -21 21!-21 21[-12 30 0 30!0 30[12 30 21 21!21 21[30 12 30 0!30 0[30 -12 21 -21!21 -21[12 -30 0 -30"/>
+                    <Edge cubics="!35 -7(;25,-9 13,-10 0,-10q35 -7Q20 -10q0 -10);"/>
+                    <Edge cubics="!-50 0(;-50,3 -45,5 -35,7q-50 0Q-50 4q-35 7);"/>
+                    <Edge cubics="!35 7(;45,5 50,3 50,0q35 7Q50 4q50 0);"/>
+                    <Edge cubics="!0 10(;13,10 25,9 35,7q0 10Q20 10q35 7);"/>
+                    <Edge cubics="!50 0(;50,-3 45,-5 35,-7q50 0Q50 -4q35 -7);"/>
+                    <Edge cubics="!-35 7(;-25,9 -13,10 0,10q-35 7Q-20 10q0 10);"/>
+                    <Edge cubics="!-35 -7(;-45,-5 -50,-3 -50,0q-35 -7Q-50 -4q-50 0);"/>
+                    <Edge cubics="!0 -10(;-13,-10 -25,-9 -35,-7q0 -10Q-20 -10q-35 -7);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="9" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!21 -21[#1E.0D #FFFFF3.FB 30 0!30 0[#1E.0D #C.05 21 21!21 21[#C.05 #1E.0D 0 30!0 30[#FFFFF3.FB #1E.0D -21 21!-21 21[#FFFFE1.F3 #C.05 -30 0!-30 0[#FFFFE1.F3 #FFFFF3.FB -21 -21!-21 -21[#FFFFF3.FB #FFFFE1.F3 0 -30!0 -30[#C.05 #FFFFE1.F3
+ 21 -21"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AC1717"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!44.5 -15.5[#30.F8 -6.3203125 42 11!42 11[#23.9E 26.75 28.5 32.5!28.5 32.5[#11.62 #2A.24 5.5 35.5!5.5 35.5|5.5 35!5.5 35[-3.203125 #1E.35 -9 30!-9 30[#FFFFEA.FB #1E.0D -30 21!-30 21[#FFFFD8.F3 #C.05 -39 0!-39 0[#FFFFD8.F3 #FFFFF3.FB -30
+ -21!-30 -21[#FFFFEA.A7 #FFFFE2.3D -8 -30.5!-8 -30.5[#1.4A #FFFFE1.03 22.5 -29.5!22.5 -29.5[#28.67 #FFFFE3.D9 44.5 -15.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AC1717"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!25 -37[#1C.DA -8.2109375 30.5 12!30.5 12[#20.D8 #27.BB 16.5 47.5!16.5 47.5[#3.14 #37.2F -7 55!-7 55[-21.140625 #39.18 -31.5 30!-31.5 30[#FFFFD8.A9 #9.19 -39 0!-39 0[#FFFFD8.F3 #FFFFF3.FB -30 -21!-30 -21[#FFFFE7.6D #FFFFE5.33 -11.5 -47.5
+!-11.5 -47.5[#1.54 #FFFFBC.89 12 -61!12 -61[#15.E3 #FFFFC4.57 25 -37"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AC1717"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!1.5 -46.5[#1C.5 #FFFFC9.C7 34.5 -44.5!34.5 -44.5[#2D.AB #FFFFDC.05 30 -12.5!30 -12.5[#15.BB #FFFFFF.AB 20.5 7.5!20.5 7.5[#14.0B #A.92 22.5 12!22.5 12[#27.66 #15.6B 34 31.5!34 31.5[#21.59 #27.FB 16 45.5!16 45.5[-6.8125 #34.A1 -20 51!-20
+ 51[#FFFFD6.B5 #32.03 -40 23.5!-40 23.5[#FFFFD8.9A #B.12 -43 4!-43 4[#FFFFCD.F7 #FFFFF6.AD -45.5 -21.5!-45.5 -21.5[#FFFFD5.27 #FFFFDE.2D 1 -46.5!1 -46.5|1.5 -46.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="7" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AC1717"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!7.5 -24.5[#14.05 #FFFFE7.06 19.5 -16!19.5 -16|19.5 -15!19.5 -15[#14.88 -16.671875 23.5 -15!23.5 -15[#28.66 #FFFFFA.6B 35 4.5!35 4.5[#22.59 #C.FB 17 18.5!17 18.5[-5.8125 #19.A1 -19 24!-19 24[#FFFFD8.62 #17.17 -39 -2!-39 -2[#FFFFD9.03
+ #FFFFFA.AB -37 -8!-37 -8[-34.8125 -10.625 -31.5 -11.5!-31.5 -11.5[-27.296875 #FFFFF3.27 -16 -17.5!-16 -17.5[-4.7265625 #FFFFEA.07 1 -23.5!1 -23.5[#5.3C #FFFFE7.71 7.5 -24.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_ball/eclatOrange" name="eclat">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" duration="20" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#99D5F9"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="
+!0 -20S1[-8 -20 -14 -14!-14 -14[-20 -8 -20 0!-20 0[-20 8 -14 14!-14 14[-8 20 0 20!0 20[8 20 14 14!14 14[20 8 20 0!20 0[20 -8 14 -14!14 -14[8 -20 0 -20"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_ball/eclatViolet" name="eclat">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="70" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#D2D2E1"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-1.5 -20S2[#27.AB -7.5078125 7.5 15!7.5 15[#FFFFFA.55 #17.C2 -13.5 12.5!-13.5 12.5[-29.5 #FFFFF4.BE -1.5 -20"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="71" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#D2D2E1"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!22 -23S2[23 -23 23 -22!23 -22|24 -21!24 -21[25 -19 24 -18!24 -18[#F.04 -8.4140625 6.5 1.5!6.5 1.5[#8.3 #2.A4 10 4!10 4[11 4 11 5!11 5[22 3 26 11!26 11[27 12 27 13!27 13[22 22 13 17!13 17[12 16 11 16!11 16[10 14 9 13!9 13[8 12 8 11!8
+ 11[#4.B2 #9.1D 1.5 7!1.5 7[#FFFFFE.41 #B.0D -5 15!-5 15[-5 16 -6 17!-6 17[-12 18 -14 13!-14 13[-14 12 -13 11!-13 11[-12 10 -11 10!-11 10[-8.3203125 #6.1A -5.5 2.5!-5.5 2.5[#FFFFF4.61 -2.109375 -17 -7!-17 -7[-18 -8 -16 -8!-16 -8[-8.5625
+ -6.40625 -1.5 -3!-1.5 -3[#4.FC #FFFFF3.C6 12 -21!12 -21[13 -22 14 -23!14 -23[15 -23 16 -24!16 -24|17 -24!17 -24[20 -24 22 -23"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="72" duration="21" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#D2D2E1"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="
+!2 -16[#1.1 #FFFFEA.61 1 -29!1 -29|-4 -7!-4 -7[-15 -19 -6 -4!-6 -4[-6 -3 -6 -2!-6 -2|-33 4!-33 4|-5 3!-5 3|-8 19!-8 19|-5 38!-5 38|10 12!10 12[23 12 11 4!11 4|10 4!10 4|38 -3!38 -3[38 -14 24 -10!24 -10[14 -5 14 -7!14 -7[15 -14 11 -19
+!11 -19[3 -1 2 -16"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

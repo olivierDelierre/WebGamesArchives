@@ -1,0 +1,26 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_ball/eclatOrangeGFX" itemID="3f57211c-00000040" lastModified="1062674716">
+  <timeline>
+    <DOMTimeline name="eclatOrangeGFX">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.501960784313725"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!0 -40S1[-16 -40 -28 -28!-28 -28[-40 -16 -40 0!-40 0[-40 16 -28 28!-28 28[-16 40 0 40!0 40[16 40 28 28!28 28[40 16 40 0!40 0[40 -16 28 -28!28 -28[16 -40 0 -40"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

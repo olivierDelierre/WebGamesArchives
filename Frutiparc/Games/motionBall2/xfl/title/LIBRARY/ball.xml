@@ -1,0 +1,102 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="ball" itemID="40aa3c9e-000016e7" lastModified="1084899241" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="ball">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFFFFF" alpha="0.501960784313725"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!237 -8|-243 -8!-243 -8[#FFFF0F.CB #FFFF99.75 -172.5 -170!-172.5 -170[#FFFF99.9E -240.375 -3 -240.5!-3 -240.5[#60.61 -240.375 166.5 -170!166.5 -170[#EA.33 #FFFF99.75 237 -8!237 -0.5[#EC.DE #5C.25 166.5 157.5!166.5 157.5[#60.62 #DF.3F
+ -3 223.5!-3 223.5[#FFFF99.9E #DF.3F -172.5 157.5!-172.5 157.5[-242.875 #5C.24 -243 -0.5!-243 -0.5[#FFFF0D.01 #FFFFFB.FB -243 -7.5!-243 -7.5|237 -7.5!237 -7.5[#EC.FF #FFFFFB.FB 237 -0.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#AE8322"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!220 -0.5[#DB.F1 #5A.AA 155.5 155!155.5 155[#5B.2A #DB.71 0 219.5!0 219.5[#FFFFA4.D6 #DB.71 -155.5 155!-155.5 155[#FFFF24.0E #5A.AA -220 -0.5!-220 -0.5[#FFFF24.0E #FFFFA4.56 -155.5 -156!-155.5 -156[#FFFFA4.D6 #FFFF23.8E 0 -220.5!0 -220.5
+[#5B.2A #FFFF23.8E 155.5 -156!155.5 -156[#DB.F1 #FFFFA4.56 220 -0.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient>
+                            <matrix>
+                              <Matrix a="0.0267333984375" d="0.0218505859375" tx="-0.55" ty="7.8"/>
+                            </matrix>
+                            <GradientEntry color="#FEE07A" ratio="0"/>
+                            <GradientEntry color="#FFCC00" ratio="0.494117647058824"/>
+                            <GradientEntry color="#DBAE00" ratio="1"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!200 -0.5[#C8.05 #52.72 141.5 141!141.5 141[#52.F2 #C7.85 0 199.5!0 199.5[#FFFFAD.0E #C7.85 -141.5 141!-141.5 141[#FFFF37.FB #52.72 -200 -0.5!-200 -0.5[#FFFF37.FB #FFFFAC.8E -141.5 -142!-141.5 -142[#FFFFAD.0E #FFFF37.7B 0 -200.5!0 -200.5
+[#52.F2 #FFFF37.7B 141.5 -142!141.5 -142[#C8.05 #FFFFAC.8E 200 -0.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="hehteht">
+                  <matrix>
+                    <Matrix tx="-0.05" ty="0.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient>
+                            <matrix>
+                              <Matrix a="0.0227813720703125" d="0.0227813720703125" tx="-0.65" ty="-7.2"/>
+                            </matrix>
+                            <GradientEntry color="#FFFFFF" ratio="0"/>
+                            <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!176.5 -11.5[#B0.A7 -8.859375 176.5 -6.5!176.5 -6.5|176.5 -6!176.5 -6[#AF.FC #FFFFFD.C1 174 1!174 1[#AD.C #1.8A 173.5 2!173.5 2[#AA.F7 #6.36 167 9!167 9[#A6.71 #9.6E 166 10!166 10[#9E.17 #E.9A 132 24!132 24|132.5 24!132.5 24[#83.B1 #18.47
+ 131 24.5!131 24.5[#4B.4D #2B.58 -3 43!-3 43[-81.296875 #2B.58 -137 24.5!-137 24.5[#FFFF76.4D #18.36 -138.5 24!-138.5 24|-138 24!-138 24[#FFFF5B.C3 #E.83 -171.5 10.5!-171.5 10.5[#FFFF53.75 #9.8F -173.5 9!-173.5 9[#FFFF4D.6A #5.F2 -181
+ 0.5!-181 0.5[-183.28125 #FFFFFB.6D -182.5 -10!-182.5 -10[#FFFF49.8B #FFFFF5.3E -182.5 -11.5!-182.5 -11.5|-182.5 -14!-182.5 -14[#FFFF49.A4 -15.671875 -182 -17.5!-182 -17.5|-182 -18!-182 -18[-175.5 #FFFFB0.BB -130 -124.5!-130 -124.5[#FFFFB2.83
+ #FFFF4E.A4 -3 -177.5!-3 -177.5[#47.79 #FFFF4E.A4 124 -124.5!124 -124.5[#AB.3D #FFFFB2.BB 176.5 -12.5!176.5 -12.5|176.5 -11.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

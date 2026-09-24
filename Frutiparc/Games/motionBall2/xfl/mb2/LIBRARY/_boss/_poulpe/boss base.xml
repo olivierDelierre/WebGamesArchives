@@ -1,0 +1,72 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_poulpe/boss base" itemID="3f979db5-0000010f" lastModified="1067325787">
+  <timeline>
+    <DOMTimeline name="boss base">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#6699FF"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#246BFF"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="4">
+                        <fill>
+                          <SolidColor color="#3300CC"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                    <StrokeStyle index="2">
+                      <SolidStroke scaleMode="normal" weight="4">
+                        <fill>
+                          <SolidColor color="#3300CC"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!1537 1231[#5D3.E6 #3EF.36 1631 920.5!1631 920.5[#6EA.08 #341.ED 1934 834!1934 834[2098 834 2214 950!2214 950[#8D9.B5 #3E9.B5 2294.5 1062.5"/>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="!2294.5 1062.5[2331 #473.7A 2331 1231!2331 1231[2331 1395 2214 1511!2214 1511[2098 1628 1934 1628!1934 1628[1770 1628 1653 1511!1653 1511[1537 1395 1537 1231"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="!1537 1231[#7CC.D4 #392.04 2294.5 1062.5"/>
+                    <Edge fillStyle0="3" fillStyle1="4" edges="!1959 1052[1997 1052 2024 1133!2024 1133[2051 1215 2051 1330!2051 1330[2051 1445 2024 1526!2024 1526[1997 1608 1959 1608!1959 1608[1921 1608 1894 1526!1894 1526[1867 1445 1867 1330!1867 1330[1867 1215 1894 1133!1894 1133[1921 1052 1959
+ 1052"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="
+!2479 1500[2479 #849.29 2116 2404!2116 2404[1753 #A7E.9E 1239.5 2699!1239.5 2699[726 #A97.61 363 2416!363 2416[0 #848.D6 0 1500!0 1500[0 #521.FE 32.5 1144!32.5 1144[#6C.BB #2EB.35 363 439!363 439[726 0 1239 0!1239 0[1753 0 2116 439!2116
+ 439[#92D.B2 #2D2.44 2433 1080.5!2433 1080.5[2479 #4FE.CA 2479 1500"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!913 1235[#337.9F #3D1.9F 796 950!796 950[680 834 516 834!516 834[352 834 235 950!235 950[#9D.56 #404.55 131.5 1127.5"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="
+!131.5 1127.5[#12B.DF #3FB.E1 483.5 1038"/>
+                    <Edge fillStyle0="2" fillStyle1="4" edges="
+!483.5 1038[#1EA.86 1036 498 1036!498 1036[#201.D3 1036 528 1044"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="
+!528 1044[#2C9.06 #435.33 913 1235"/>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="
+!913 1235[#38F.92 #574.6B 796 1511!796 1511[680 1628 516 1628!516 1628[352 1628 235 1511!235 1511[119 1395 119 1231!119 1231[119 #498.CD 131.5 1127.5"/>
+                    <Edge fillStyle0="3" fillStyle1="4" edges="
+!528 1044[#230.2C #426.11 585 1120!585 1120[622 1204 622 1323!622 1323[622 1442 585 1526!585 1526[549 1610 498 1610!498 1610[447 1610 410 1526!410 1526[374 1442 374 1323!374 1323[374 1204 410 1120!410 1120[#1B9.93 #418.5 483.5 1038"/>
+                    <Edge fillStyle0="1" fillStyle1="1" strokeStyle="2" edges="
+!905 1882|1495 1882"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

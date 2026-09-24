@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#1e0632">
+<title>MotionBall 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap">
+<style>
+	html, body {
+		margin: 0;
+		height: 100%;
+		background: #1e0632;
+		color: #e8d8f8;
+		font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
+		overflow: hidden;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+	#wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+	#game {
+		display: block;
+		touch-action: none;
+		background: #1e0632;
+		box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+		/* room left for the touch buttons (read by engine/screen.js) */
+		--reserved-height: 8px;
+	}
+	#touch { display: none; gap: 16px; padding: 6px; }
+	#touch button {
+		font: inherit;
+		font-size: 16px;
+		padding: 8px 18px;
+		border-radius: 20px;
+		border: 2px solid #a6ec6e;
+		background: #3c8f1d;
+		color: #fff;
+	}
+	#help {
+		position: fixed;
+		bottom: 4px;
+		left: 0;
+		right: 0;
+		text-align: center;
+		font-size: 12px;
+		opacity: 0.6;
+		pointer-events: none;
+	}
+	@media (pointer: coarse) {
+		#touch { display: flex; }
+		#game { --reserved-height: 60px; }
+		#help { display: none; }
+	}
+	@media (max-height: 480px) {
+		#help { display: none; }
+	}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<canvas id="game" width="610" height="410"></canvas>
+	<div id="touch">
+		<button id="tbBall" type="button">Changer de bille</button>
+		<button id="tbPause" type="button">Pause / carte</button>
+	</div>
+</div>
+<div id="help">
+	Flèches, WASD / ZQSD ou manette : diriger la bille — Espace : changer de bille — Échap / P : pause et carte
+</div>
+<!-- The game, bundled from src/ by `npm run build` (see README.md). -->
+<script src="dist/motionball2.js"></script>
+</body>
+</html>

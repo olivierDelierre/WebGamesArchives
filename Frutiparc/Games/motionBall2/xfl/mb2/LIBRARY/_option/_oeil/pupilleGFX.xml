@@ -1,0 +1,35 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_option/_oeil/pupilleGFX" itemID="3f840724-0000017a" lastModified="1065617188">
+  <timeline>
+    <DOMTimeline name="pupilleGFX">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#009900"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#01CD01"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!-46 -134S3[-6 -146 37 -149!37 -149[204 -78 107 76!107 76[62 149 -16 134!-16 134[-139 107 -134 -14!-134 -14[-130 -104 -46 -134"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="!-19 -82S3[13 -81 41 -65!41 -65[102 -5 30 44!30 44[-13 75 -46 36!-46 36[-81 -7 -47 -54!-47 -54[-36 -70 -19 -82"/>
+                    <Edge fillStyle1="1" edges="!-0.5 -180S2[#4A.5E #FFFF4B.F2 126.5 -128!126.5 -128[#B3.86 #FFFFB5.19 179.5 0!179.5 0[#B3.86 #4A.DD 126.5 127!126.5 127[#4A.5E #B4.06 -0.5 180!-0.5 180[#FFFFB4.DA #B4.06 -128 127!-128 127[#FFFF4B.B2 #4A.DD -180.5 0!-180.5 0[#FFFF4B.B2
+ #FFFFB5.19 -128 -128!-128 -128[#FFFFB4.DA #FFFF4B.F2 -0.5 -180"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

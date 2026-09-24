@@ -1,0 +1,38 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_option/_pastilleBleue/etincelle" itemID="3f853f6d-00000199" lastModified="1070039301">
+  <timeline>
+    <DOMTimeline name="etincelle">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFD5D5"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#D0FDFC"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="!-20 -12|-68 8!-68 8|-22 8!-22 8|-46 80!-46 80|-4 18!-4 18|42 40!42 40|18 11!18 11|78 -14!78 -14|8 -13!8 -13|25 -63!25 -63|-3 -22!-3 -22|-48 -73!-48 -73|-20 -12"/>
+                    <Edge fillStyle0="3" edges="!-259 23|-233 23!-233 23|-301 30.5!-301 30.5|-331 38!-331 38|-62 23!-62 23|-304.5 565.5!-304.5 565.5|-292 539!-292 539|-26 86!-26 86|-9 94!-9 94|66 357!66 357|25 65!25 65|32 58!32 58|192.5 173!192.5 173|60 33.5!60 33.5|719 -85!719 -85
+|37 -60!37 -60|156 -338!156 -338|4 -69!4 -69|-372 -471!-372 -471|-387 -482!-387 -482|-64 -28!-64 -28|-259.5 20.5"/>
+                    <Edge fillStyle0="3" fillStyle1="1" edges="
+!-259.5 20.5|-259 23"/>
+                    <Edge fillStyle1="1" edges="
+!-259 23|-298.5 30!-298.5 30|-259.5 20.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

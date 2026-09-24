@@ -1,0 +1,82 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_imports/_bordel/palette" itemID="3f5739cd-0000008f" sourceFlashFilepath="..\mb2.fla" sourceLibraryItemHRef="_bordel/palette" sourceLastModified="1062681037" lastModified="1062681037">
+  <timeline>
+    <DOMTimeline name="palette">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <matrix>
+                    <Matrix tx="-284.9" ty="-142.8"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#5B1E5B"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#7A287B"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#E6F7D7"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#993399"/>
+                    </FillStyle>
+                    <FillStyle index="5">
+                      <SolidColor color="#DA93DB"/>
+                    </FillStyle>
+                    <FillStyle index="6">
+                      <SolidColor color="#F5E2F5"/>
+                    </FillStyle>
+                    <FillStyle index="7">
+                      <SolidColor color="#52871D"/>
+                    </FillStyle>
+                    <FillStyle index="8">
+                      <SolidColor color="#73BD26"/>
+                    </FillStyle>
+                    <FillStyle index="9">
+                      <SolidColor color="#85D940"/>
+                    </FillStyle>
+                    <FillStyle index="10">
+                      <SolidColor color="#ADE67D"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="!5698 2795.5S3|5698 2915.5"/>
+                    <Edge fillStyle0="1" edges="!5698 2915.5S1|5818 2915.5"/>
+                    <Edge fillStyle0="2" edges="!5818 2915.5S1|5938 2915.5"/>
+                    <Edge fillStyle0="4" edges="!5938 2915.5S1|6058 2915.5"/>
+                    <Edge fillStyle0="5" edges="!6058 2915.5S1|6178 2915.5"/>
+                    <Edge fillStyle0="6" edges="!6178 2915.5S1|6298 2915.5!6298 2915.5|6298 2795.5!6298 2795.5|6178 2795.5"/>
+                    <Edge fillStyle0="5" edges="!6178 2795.5S1|6058 2795.5"/>
+                    <Edge fillStyle0="5" fillStyle1="4" edges="!6058 2795.5S3|6058 2915.5"/>
+                    <Edge fillStyle0="1" edges="!5818 2795.5S1|5698 2795.5"/>
+                    <Edge fillStyle0="3" edges="!5698 2795.5S1|5578 2795.5"/>
+                    <Edge fillStyle0="10" edges="!5578 2795.5S1|5458 2795.5"/>
+                    <Edge fillStyle0="10" fillStyle1="9" edges="!5458 2795.5S3|5458 2915.5"/>
+                    <Edge fillStyle1="9" edges="!5458 2915.5S2|5338 2915.5"/>
+                    <Edge fillStyle0="8" fillStyle1="9" edges="!5338 2915.5S3|5338 2795.5"/>
+                    <Edge fillStyle1="9" edges="!5338 2795.5S2|5458 2795.5"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!5818 2915.5S3|5818 2795.5"/>
+                    <Edge fillStyle1="2" edges="!5818 2795.5S2|5938 2795.5"/>
+                    <Edge fillStyle0="4" fillStyle1="2" edges="!5938 2795.5S3|5938 2915.5"/>
+                    <Edge fillStyle1="4" edges="!5938 2795.5S2|6058 2795.5"/>
+                    <Edge fillStyle0="5" fillStyle1="6" edges="!6178 2915.5S3|6178 2795.5"/>
+                    <Edge fillStyle0="8" fillStyle1="7" edges="!5218 2795.5S3|5218 2915.5"/>
+                    <Edge fillStyle1="7" edges="!5218 2915.5S2|5098 2915.5!5098 2915.5|5098 2795.5!5098 2795.5|5218 2795.5"/>
+                    <Edge fillStyle1="8" edges="!5218 2795.5S2|5338 2795.5"/>
+                    <Edge fillStyle0="10" fillStyle1="3" edges="!5578 2915.5S3|5578 2795.5"/>
+                    <Edge fillStyle0="10" edges="!5458 2915.5S1|5578 2915.5"/>
+                    <Edge fillStyle0="3" edges="!5578 2915.5S1|5698 2915.5"/>
+                    <Edge fillStyle0="8" edges="!5218 2915.5S1|5338 2915.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,28 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_bordel/aura gfx" itemID="3f3f6368-0000007e" symbolType="graphic" lastModified="1077649659">
+  <timeline>
+    <DOMTimeline name="aura gfx">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#3399FF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!634 -12[#1C9.22 #FFFF8C.E3 457 -15!457 -15[#1C9.14 #3C.D6 443.5 417.5!443.5 417.5[#192.7D #E7.0A 318.5 313.5!318.5 313.5[#10E.C4 #168.F4 -117 611.5!-117 611.5[#70.C7 #1C2.7A -15 450.5!-15 450.5[#FFFF93.31 #1C2.8D -498.5 403.5!-498.5
+ 403.5[#FFFEEB.31 #180.7F -349 313.5!-349 313.5[-424.71875 #EE.BD -633 30!-633 30[#FFFE19.01 #47.BE -487 -15!-487 -15[#FFFE19.04 #FFFFA3.9E -433 -536.5!-433 -536.5[#FFFE50.66 #FFFEF9.62 -349 -344.5!-349 -344.5[#FFFEF2.73 #FFFE59.75 35
+ -612.5!35 -612.5[#FFFF9D.87 -480.9375 -15 -481!-15 -481[#5C.D9 #FFFE1F.19 564.5 -322!564.5 -322[#100.AA #FFFE6A.57 318.5 -344.5!318.5 -344.5[#181.3 #FFFEE9.36 634 -12"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

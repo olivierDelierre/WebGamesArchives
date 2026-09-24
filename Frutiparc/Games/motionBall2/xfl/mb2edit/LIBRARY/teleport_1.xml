@@ -1,0 +1,39 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="teleport_1" itemID="403ca60d-00000151" sourceFlashFilepath="..\mb2.fla" sourceLibraryItemHRef="_gfx/_bumpers/_teleport/teleport_1" sourceLastModified="1077716610" symbolType="graphic" lastModified="1077716610">
+  <timeline>
+    <DOMTimeline name="teleport_1">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#00FFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!439.5 339.5[#1B7.A #17D.21 410.5 410.5!410.5 410.5[#17D.21 #1B7.A 339.5 439.5!339.5 439.5[#12A.1D #1B7.A 269 410.5!269 410.5[#EF.9E #17D.21 239.5 339.5!239.5 339.5[#EF.9E #12A.1E 269 269!269 269[#12A.1E #EF.9E 339.5 239.5!339.5 239.5
+[#17D.21 #EF.9E 410.5 269!410.5 269[#1B7.A #12A.1E 439.5 339.5"/>
+                    <Edge fillStyle0="1" edges="
+!499.5 339.5[#1F3.A7 #196.0F 453 453!453 453[#196.0F #1F3.A7 339.5 499.5!339.5 499.5[#110.EF #1F3.A7 226 453!226 453[#B3.57 #196.0F 179.5 339.5!179.5 339.5[#B3.57 #110.F 226 226!226 226[#110.F #B3.57 339.5 179.5!339.5 179.5[#196.0E #B3.57
+ 453 226!453 226[#1F3.A7 #110.F 499.5 339.5"/>
+                    <Edge fillStyle1="1" edges="
+!559.5 339.5[#22F.AE #1AE.FD 495.5 495.5!495.5 495.5[#1AE.FD #22F.AE 339.5 559.5!339.5 559.5[#F8.01 #22F.AE 183.5 495.5!183.5 495.5[#77.5 #1AE.FD 119.5 339.5!119.5 339.5[#77.5 #F8.02 183.5 183.5!183.5 183.5[#F8.02 #77.5 339.5 119.5!339.5
+ 119.5[#1AE.FC #77.5 495.5 183.5!495.5 183.5[#22F.AE #F8.02 559.5 339.5"/>
+                    <Edge fillStyle0="1" edges="
+!619.5 339.5[#26B.B5 #1C7.EB 538 538!538 538[#1C7.EB #26B.B5 339.5 619.5!339.5 619.5[#DF.14 #26B.B5 141 538!141 538[#3B.49 #1C7.EA 59.5 339.5!59.5 339.5[#3B.49 #DF.14 141 141!141 141[#DF.15 #3B.49 339.5 59.5!339.5 59.5[#1C7.EA #3B.49
+ 538 141!538 141[#26B.B5 #DF.13 619.5 339.5"/>
+                    <Edge fillStyle1="1" edges="
+!679.5 339.5[#2A7.BC #1E0.D9 580.5 580.5!580.5 580.5[#1E0.D9 #2A7.BC 339.5 679.5!339.5 679.5[#C6.26 #2A7.BC 98.5 580.5!98.5 580.5[-0.7421875 #1E0.D8 -0.5 339.5!-0.5 339.5[-0.7421875 #C6.27 98.5 98.5!98.5 98.5[#C6.27 -0.7421875 339.5 -0.5
+!339.5 -0.5[#1E0.D8 -0.7421875 580.5 98.5!580.5 98.5[#2A7.BC #C6.26 679.5 339.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

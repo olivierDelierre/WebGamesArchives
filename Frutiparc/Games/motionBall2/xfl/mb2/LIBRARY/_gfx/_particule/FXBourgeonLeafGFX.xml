@@ -1,0 +1,71 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_particule/FXBourgeonLeafGFX" itemID="409a3458-00000c92" lastModified="1083847768">
+  <timeline>
+    <DOMTimeline name="FXBourgeonLeafGFX">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-20.65" ty="-19"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-20.65" ty="-19"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#38700A"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!381.5 -209.5S2[#17E.95 -216.71875 388 -221.5!388 -221.5[#189.A6 #FFFF1D.E6 401 -226!401 -226|414.5 -226!414.5 -226[#1A4.7A -226.125 425.5 -223!425.5 -223[#1AE.8A #FFFF24.6E 433 -214!433 -214[#1BC.BD #FFFF44.B4 458.5 -161.5!458.5 -161.5
+|459 -161!459 -161[474.75 #FFFF7D.BF 490.5 -100.5!490.5 -100.5[#20A.01 -53.75 545.5 -1!545.5 -1[#239.4B #36.4A 566 115!566 115[#232.C6 #B1.DF 532.5 231!532.5 231[#1F5.15 #11C.7E 451.5 308.5!451.5 308.5|446 342!446 342[#1BC.B #15C.C4 439.5
+ 353.5!439.5 353.5[#1B2.AA #166.3F 428 359!428 359|388 363!388 363[#17C.38 #16B.CD 374 359!374 359[#16F.C4 #162.3F 366.5 346.5!366.5 346.5[#16B.3C #147.BF 361 309!361 309[#168.A #131.7C 360.5 302!360.5 302[#14F.C9 #121.9B 314 273!314
+ 273|315 273.5!315 273.5[#113.43 #F6.EF 251 206!251 206|251 206.5!251 206.5[#E3.9C #A7.FE 231 122.5!231 122.5|231 122!231 122[#EE.72 #26.E1 287.5 -32.5!287.5 -32.5[#12B.D #FFFFCC.46 315 -72!315 -72|315.5 -72.5!315.5 -72.5[#160.45 #FFFF89.3C
+ 372 -174.5!372 -174.5[#17A.3A #FFFF40.55 381.5 -209.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-0.55" ty="1.1"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-0.55" ty="1.1"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#45BE10"/>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <SolidColor color="#41970D"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" fillStyle1="2" edges="
+!18 -564S3[#26.15 #FFFE04.45 40 -455.5!40 -455.5[#29.F #FFFE6C.CC 39 -355!39 -355[#24.05 #FFFECD.11 57 -265!57 -265|107 -265!107 -265[126 -328 101 -392!101 -392[74 -461 42 -528!42 -528|18 -564"/>
+                        <Edge fillStyle1="2" edges="
+!39 -554S2[55 -523 71 -493!71 -493[102 -447 125 -395!125 -395[147 -344 144 -288!144 -288[141 -230 113 -181!113 -181[82 -128 31 -107!31 -107|24 -63!24 -63|-16 -59!-16 -59[-19 -77 -21 -95!-21 -95[-22 -104 -22 -113!-22 -113[-51 -126 -76
+ -145!-76 -145[-112 -169 -134 -206!-134 -206[-154 -239 -151 -278!-151 -278[-144 -356 -98 -423!-98 -423[-86 -442 -71 -462!-71 -462[-32 -511 -11 -570!-11 -570[#FFFFFB.9D #FFFDB3.5D -1 -608!-1 -608|12.5 -608!12.5 -608[#18.B6 #FFFDBB.77 39
+ -554"/>
+                        <Edge fillStyle0="1" fillStyle1="2" edges="
+!7 -452S3[#A.AF #FFFE06.F3 5 -549!5 -549[#FFFFE6.F6 #FFFE0A.E7 -56 -453.5!-56 -453.5[#FFFFA9.1B #FFFE6A.49 -106.5 -366.5!-106.5 -366.5[#FFFF81.E4 #FFFEB8.B6 -107 -286.5!-107 -286.5[#FFFFA7.FD #FFFF0A.1E -40.5 -261.5!-40.5 -261.5[#7.0D
+ #FFFEEA.D5 5 -338!5 -338[#3.16 #FFFE71.24 7 -452"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

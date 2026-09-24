@@ -1,0 +1,189 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_snake/snake" itemID="40962346-000004ec" linkageExportForAS="true" linkageIdentifier="snake" lastModified="1083852316" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name="snake">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_snake/_old/oeil" name="o1">
+                  <matrix>
+                    <Matrix a="0.699996948242188" d="0.699996948242188" tx="-33.45" ty="-36.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_boss/_snake/_old/oeil" name="o2">
+                  <matrix>
+                    <Matrix a="0.699996948242188" d="-0.699996948242188" tx="-33.3" ty="38.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_snake/crane" name="crane">
+                  <matrix>
+                    <Matrix tx="-58.55" ty="1.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-1"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="reflets" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AFB6C9"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#FFFFFF" alpha="0.501960784313725"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="3" edges="!328 -500.5[#16E.7E #FFFE3D.C6 370 -444!370 -444[#112.7F #FFFDED.75 167 -595.5!167 -595.5[#121.A5 #FFFDD9.1E 328 -500.5!188.5 -269|211 -331!211 -331|241 -341.5!241 -341.5|379 -233!379 -233[#EC.CE #FFFEAC.59 209.5 -262!209.5 -262|200.5
+ -258.5!200.5 -258.5|188.5 -269!588 139.5|573 135!573 135|628 71.5!628 71.5|641.5 78.5!641.5 78.5|643.5 93!643.5 93|623 97.5!623 97.5|588 139.5!53.5 164.5[#37.42 #97.8B 38 140!38 140[#34.06 #94.4B 66 157!66 157|53.5 164.5!-924 -444[-914
+ #FFFE47.3B -904 -438!-904 -438[-749.09375 #FFFE75.D6 -593 -444!-593 -444[#FFFDD9.BD #FFFE36.83 -507.5 -478!-507.5 -478|-497.5 -472.5!-497.5 -472.5[#FFFDEE.69 #FFFE37.C5 -562 -444!-562 -444[#FFFD2E.6E #FFFE81.24 -887.5 -420.5!-887.5 -420.5
+|-938 -426.5!-938 -426.5|-966.5 -459!-966.5 -459[#FFFC45.C1 #FFFE39.FD -942 -449.5!-942 -449.5[-940.5 #FFFE3E.F5 -939 -448.5!-939 -448.5[#FFFC5C.81 #FFFE41.C7 -924 -444!-64 -642[#44.CD #FFFDD4.36 121.5 -485!121.5 -485[#FFFFBF.EB -605.21875
+ -259.5 -572.5!-259.5 -572.5[#FFFED0.FF -564.96875 -347 -550!-347 -550[#FFFE7C.4C #FFFDE7.33 -423.5 -511!-423.5 -511|-431.5 -527!-431.5 -527[#FFFEAE.BC -607.96875 -259.5 -642.5!-259.5 -642.5[#FFFF70.7A #FFFD4A.52 -64 -642"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="
+!-53.5 -602[#FFFFA9.C7 #FFFD84.66 -129 -645.5!-129 -645.5[#FFFF54.47 #FFFD70.EF -206.5 -638.5!-206.5 -638.5[#FFFF0E.EF #FFFD91.E4 -256.5 -609.5!-256.5 -609.5[-174.5 -633.21875 -126 -622!-126 -622[-77.453125 #FFFD9D.5D -53.5 -602"/>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="
+!-693 59.5|-693 59"/>
+                    <Edge fillStyle1="3" edges="
+!-693 59[#FFFDB9.13 #2F.4D -473.5 40.5!-473.5 40.5[-459 #27.C9 -444.5 39!-444.5 39[-434.5 #26.88 -424.5 38!-424.5 38[#FFFFB7.22 #17.4B -36 71!-36 71[#0.A3 #76.D5 27 133.5!27 133.5[-126.4375 #3C.6F -444.5 55!-444.5 55[#FFFDD1.C7 #34.E5
+ -693 59.5"/>
+                    <Edge fillStyle1="1" edges="
+!-693 59.5|-696 59.5!-696 59.5[#FFFD49.81 #3B.42 -693 59"/>
+                    <Edge fillStyle1="3" edges="
+!-905 80|-910.5 68.5!-910.5 68.5|-842.5 79!-842.5 79|-882.5 93!-882.5 93|-917.5 119.5!-917.5 119.5|-905 80"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFFFFF" alpha="0.501960784313725"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!550.5 -732|422.5 -811!422.5 -811|379 -817.5!379 -817.5|385.5 -799.5!385.5 -799.5|535.5 -709!535.5 -709[#21A.1D #FFFD3A.DC 542 -708!542 -708[#232.78 #FFFD34.77 550.5 -732"/>
+                        <Edge fillStyle1="1" edges="
+!39.5 -746|24 -747.5!24 -747.5|12.5 -760!12.5 -760[#D8.33 #FFFCF1.06 383 -663!383 -663[#D9.91 #FFFD1A.F4 30.5 -754!30.5 -754|39.5 -746"/>
+                        <Edge fillStyle0="1" edges="
+!121 -880|172 -876.5!172 -876.5|165.5 -902!165.5 -902|116 -911.5!116 -911.5[#63.3C #FFFC7C.AE 113 -886.5!113 -886.5[117 #FFFC8C.1D 121 -880!43.5 -533[#FFFFA4.6A #FFFDC0.CA -202.5 -500!-202.5 -500[#FFFF0C.E9 #FFFE26.EE -259.5 -427!-259.5
+ -427|-243 -418!-243 -418[#FFFF83.42 #FFFDE3.79 49.5 -515!49.5 -515[#38.0B #FFFDEE.E5 43.5 -533!566 -207|580 -182!580 -182|804 -233!804 -233|797 -253!797 -253|578 -219!578 -219|566 -207!338.5 406.5[#115.5C #1A1.DD 217.5 430.5!217.5 430.5
+|152.5 447.5!152.5 447.5[#103.57 #1C2.08 356 413!356 413[347.25 #199.1D 338.5 406.5!-224 -750[#FFFE9A.64 #FFFD18.83 -464.5 -665.5!-464.5 -665.5|-464.5 -645.5!-464.5 -645.5|-453 -639!-453 -639[#FFFEA5.EA #FFFD31.E6 -215 -727!-215 -727
+|-224 -750!-224 -875|-233 -859.5!-233 -859.5[-222.75 #FFFCA5.9D -212.5 -856!-212.5 -856[-180.78125 #FFFCAB.E6 -188.5 -875!-188.5 -875|-198.5 -881.5!-198.5 -881.5|-224 -875!-575 -682.5[-573.75 -678.5 -572.5 -674.5!-572.5 -674.5[#FFFDD3.FA
+ #FFFD67.BD -537 -677!-537 -677[#FFFDE9.7F #FFFD58.63 -532 -683.5!-532 -683.5[#FFFDF1.2E -688.75 -528 -694!-528 -694[#FFFDEF.E3 #FFFD47.9C -529.5 -697.5!-529.5 -697.5[#FFFDEB.FA #FFFD39.C1 -546 -711.5!-546 -711.5[#FFFDCC.34 #FFFD3D.81
+ -576.5 -690!-576.5 -690[#FFFDBF.9D -686.25 -575 -682.5!-609.5 -136[#FFFD35.11 -138.53125 -814 -101.5!-814 -101.5|-604.5 -110.5!-604.5 -110.5|-594 -94!-594 -94|-566 -82.5!-566 -82.5|-563.5 -105.5!-563.5 -105.5|-609.5 -136!-384 235.5[#FFFE7E.85
+ #D9.88 -403.5 208.5!-403.5 208.5[-404.75 208.5 -406 208.5!-406 208.5[#FFFE61.1D #D5.88 -408.5 227.5!-408.5 227.5[#FFFE70.74 #F2.F6 -385.5 238!-385.5 238[#FFFE7F.E3 #EC.C -384 235.5!-337 64.5|-357.5 54!-357.5 54|-360 71!-360 71|-337 64.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="9" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFFFFF" alpha="0.501960784313725"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!716 -557[734 -571 754 -581!754 -581[758 -583 763 -582!763 -582|769.5 -574.5!769.5 -574.5[#290.2C #FFFDFF.42 545 -444!545 -444[502 -418 462 -400!462 -400[#1D7.D1 #FFFE66.4A 481.5 -419.5!481.5 -419.5|655 -528!655 -528[687 -536 716 -557
+!60 -448[61 -448 62 -447!62 -447[47 -375 6 -313!6 -313[5 -312 3 -311!3 -311[-4 -311 -6 -317!-6 -317[28 -382 53 -451!53 -451|55 -452!55 -452[58 -450 60 -448!299 -47[299 -48 299 -49!299 -49[299 -50 300 -51!300 -51[300 -52 301 -53!301 -53
+[301 -54 302 -54!302 -54[303 -55 304 -56!304 -56|305 -56!305 -56[309 -57 312 -57!312 -57[376 -59 440 -60!440 -60[454 -60 469 -60!469 -60[602 -61 736 -58!736 -58[798 -57 860 -56!860 -56[#3FA.61 #FFFFC9.A6 1177 -56!1177 -56|1367.5 -45!1367.5
+ -45[#552.AA -43 1356 -43!1356 -43[1301 -40 1244 -40!1244 -40[1052 -41 860 -38!860 -38[587 -34 316 -34!316 -34[313 -34 311 -35!311 -35[309 -36 308 -37!308 -37[306 -38 304 -39!304 -39[303 -39 302 -40!302 -40[301 -41 301 -42!301 -42[300
+ -43 300 -44!300 -44[299 -45 299 -46!299 -46|299 -47!594 390|787.5 531.5!787.5 531.5|781 527!781 527|779.5 529.5!779.5 529.5[#2AE.E5 490.25 602 430!602 430[520 370 430 321!430 321[400 304 378 281!378 281[378 278 381 276!381 276[383 275
+ 385 275!385 275[#1EB.A9 #145.F1 592 389!592 389[#251.09 #185.65 594 390!38 194[39 196 39 198!39 198[40 199 40 201!40 201[49 214 54 228!54 228[55 230 55 232!55 232[56 235 54 237!54 237[53 239 52 240!52 240[49 242 46 244!46 244[8 230 27
+ 189!27 189[27 188 29 187!29 187[33 189 37 192!37 192[37 193 38 194!-403 -17[-401 -23 -393 -22!-393 -22[-390 -27 -385 -31!-385 -31[-384 -31 -383 -32!-383 -32[-337 -38 -291 -43!-291 -43[-283 -41 -281 -33!-281 -33[-281 -32 -282 -31!-282
+ -31[-343 -10 -403 -17!-82 -81[-71 -47 -58 -14!-58 -14[-58 -13 -58 -11!-58 -11[-60 -6 -54 -2!-54 -2[-53 -1 -52 1!-52 1[-54 6 -59 7!-59 7[-62 7 -64 7!-64 7[-74 4 -74 -7!-74 -7[-74 -8 -74 -9!-74 -9[-77 -12 -80 -16!-80 -16[-81 -17 -82 -18
+!-82 -18[-84 -41 -96 -60!-96 -60[-97 -62 -98 -64!-98 -64[-101 -75 -94 -82!-94 -82[-92 -84 -90 -84!-90 -84[-87 -84 -85 -82!-85 -82[-83 -82 -82 -81"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_snake/_elements/head" name="gfx">
+                  <matrix>
+                    <Matrix tx="-6.9" ty="1.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_snake/_elements/ano" name="gfx">
+                  <matrix>
+                    <Matrix ty="0.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="9" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_snake/_elements/queue" name="gfx" selected="true">
+                  <matrix>
+                    <Matrix tx="23.4" ty="-0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
