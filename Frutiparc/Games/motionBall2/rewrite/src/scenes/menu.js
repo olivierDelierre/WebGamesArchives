@@ -1,283 +1,347 @@
 /**
- * The menu : the game modes, then a page per mode that needs a choice
- * (adventures, courses), the options and the help.
+ * The menu of the original (Menu.as), with its symbols : the balls of the
+ * page ("menu balls") turn around the hole of "fondMenu" ; the mouse on the
+ * left or the right turns them. Choosing a mode makes the balls fly away and
+ * the hole grow ; choosing a page makes them fly out and back with the new
+ * page. "cadreInfo" slides up with the description of the mode.
+ *
+ * Also playable with the keyboard, a gamepad or a touch screen : left / right
+ * go around the balls, "confirm" enters, "back" goes back.
  */
 
-import { WIDTH as W, BALLS } from "../config.js";
+import { WIDTH as W, HEIGHT as H } from "../config.js";
 import { Mode } from "../data/enums.js";
-import { sunburst, title, button, panel } from "../gfx/ui.js";
-import { text, image, circle, roundRect } from "../gfx/draw.js";
+import { clip } from "../gfx/xfl/index.js";
+import { text } from "../gfx/draw.js";
 import { formatTime } from "../engine/math.js";
-import { drawBall } from "../game/ball.js";
 import { app } from "../app.js";
 import { ButtonGroup } from "./widgets.js";
 import { PlayScene } from "./play.js";
 
-const MODE_INFO = {
-	challenge: "Un donjon au hasard : trouve les 4 billes\net bats le poulpe en moins de 15 minutes.",
-	course: "Trois tours de circuit, le plus vite possible.\nBats un record pour ouvrir le circuit suivant.",
-	aventure: "Cinq donjons faits main,\ngardés par les serpents des éléments.",
-	classique: "Descends le plus bas possible : prends les pastilles\nrouges et plonge dans la trappe avant la fin du temps.",
-	options: "La musique et les sons.",
-	aide: "Le tutoriel, et le rôle de chaque bille."
-};
+const FRAME = 1 / 40;
+const CX = 305;
+const CY = 205;
+const RADIUS = 136;
 
-const BALL_HELP = [
-	"La bille de départ.",
-	"Casse les blocs verts.",
-	"Attire les pastilles rouges.",
-	"Très rapide... et difficile à tenir !",
-	"Saute par-dessus les trous.",
-	"Lourde : ne craint ni les bumpers mortels,\nni les aimants.",
-	"Voit les bumpers invisibles."
-];
-const BALL_IMAGES = ["help_jaune", "help_verte", "help_rouge", "help_orange", "help_bleue", "help_metal", "help_violette"];
+/** The frame of "cadreInfo" of each main mode. */
+const INFOS = { challenge: 0, aventure: 1, course: 2, classique: 3 };
 
-const ADVENTURES = [
-	{ name: "Eau", icon: "donjon_eau" },
-	{ name: "Feu", icon: "donjon_feu" },
-	{ name: "Vent", icon: "donjon_vent" },
-	{ name: "Terre", icon: "donjon_terre" },
-	{ name: "Final", icon: null }
-];
+/** Left / right (or up / down) go around the ring. */
+class Ring extends ButtonGroup {
+
+	move(dx, dy) {
+		const n = this.buttons.length;
+		if (!n)
+			return;
+		this.focus = (this.focus + (dx + dy > 0 ? 1 : n - 1)) % n;
+		app.audio.play("menuMove");
+	}
+}
 
 export class MenuScene {
 
 	constructor(page = "main") {
 		this.time = 0;
+		this.clock = 0;
+		this.bg = clip("fondMenu");
+		this.holeScale = 1;
+		this.info = null;           // { art, y, dy, frame }
+
+		// the ring (original : it comes in from 450 px, accelerating)
+		this.ray = 450;
+		this.ang = 0;
+		this.raySpeed = -1;
+		this.rayAcc = 1.05;
+		this.angSpeed = 0.05;
+		this.angAcc = 1.01;
+		this.cosRay = 0;
+		this.cosSpeed = 0;
+		this.phase = 0;
+		this.menuTime = 0;
+		this.goHole = false;
+		this.next = null;
+
 		this.open(page);
 	}
 
+	/** Shows the balls of a page. */
 	open(page) {
 		// back on the main page, the focus stays on the mode that was opened
 		const mainFocus = this.page === "main" ? this.group.focus : this.mainFocus || 0;
 		this.mainFocus = mainFocus;
 		this.page = page;
-		this.group = this[page + "Page"]();
+		this.group = new Ring(this[page + "Page"](), page === "main" ? null : () => this.goto("main"));
 		if (page === "main")
 			this.group.focus = mainFocus;
+		const n = this.group.buttons.length;
+		this.group.buttons.forEach((b, i) => {
+			b.ang = i * 2 * Math.PI / n;
+			b.w = b.h = 100;
+		});
+		this.place();
 	}
 
-	start(mode, param = 0) {
-		if (app.scenes.busy)
-			return;
-		app.scenes.goto(new PlayScene(mode, param));
+	/**
+	 * A ball of the menu : `id` is its frame in the original (its title and
+	 * its picture).
+	 */
+	ball(id, name, action, enabled = true) {
+		const art = clip("menu balls");
+		art.gotoAndStop(enabled ? "normal" : "disable");
+		art.child("title")?.gotoAndStop(id - 1);
+		art.child("ball")?.gotoAndStop(id - 1);
+		const b = { name, id, art, enabled, action, x: CX, y: CY, selected: false };
+		b.draw = (ctx, focused) => this.drawBall(ctx, b, focused);
+		return b;
 	}
 
 	// ----- pages -----
 
 	mainPage() {
-		const modes = [
-			["challenge", () => this.start(Mode.CHALLENGE)],
-			["course", () => this.open("course")],
-			["aventure", () => this.open("adventure")],
-			["classique", () => this.start(Mode.CLASSIC)],
-			["options", () => this.open("options")],
-			["aide", () => this.open("help")]
+		return [
+			this.ball(1, "challenge", () => this.play(Mode.CHALLENGE)),
+			this.ball(2, "course", () => this.goto("course")),
+			this.ball(3, "aventure", () => this.goto("adventure")),
+			this.ball(4, "classique", () => this.play(Mode.CLASSIC)),
+			this.ball(5, "options", () => this.goto("options")),
+			this.ball(6, "aide", () => this.play(Mode.TUTORIAL))
 		];
-		const buttons = modes.map(([name, action], i) => ({
-			name,
-			x: 155 + (i % 3) * 150,
-			y: 155 + Math.floor(i / 3) * 128,
-			w: 112,
-			h: 112,
-			action,
-			draw: (ctx, focused) => {
-				const b = buttons[i];
-				const bounce = focused ? 1.12 + Math.sin(this.time * 6) * 0.03 : 1;
-				ctx.save();
-				ctx.translate(b.x, b.y);
-				ctx.scale(bounce, bounce);
-				if (focused) {
-					ctx.fillStyle = "rgba(255,255,255,0.35)";
-					circle(ctx, 0, 0, 62);
-					ctx.fill();
-				}
-				image(ctx, "menu_" + name, 112, 112);
-				ctx.restore();
-			}
-		}));
-		return new ButtonGroup(buttons);
-	}
-
-	adventurePage() {
-		const save = app.save;
-		const buttons = ADVENTURES.map((a, i) => {
-			const unlocked = save.adventureUnlocked(i);
-			return {
-				x: 95 + i * 105,
-				y: 185,
-				w: 96,
-				h: 120,
-				enabled: unlocked,
-				action: () => this.start(Mode.ADVENTURE, i),
-				draw: (ctx, focused) => this.drawAdventure(ctx, a, i, unlocked, focused)
-			};
-		});
-		buttons.push(this.backButton());
-		return new ButtonGroup(buttons, () => this.open("main"));
 	}
 
 	coursePage() {
-		const save = app.save;
-		const buttons = [];
+		const balls = [];
 		for (let i = 0; i < 7; i++) {
-			const unlocked = save.courseUnlocked(i);
-			const best = save.data.courses.records[i][0];
-			buttons.push({
-				x: 110 + (i % 4) * 130,
-				y: 150 + Math.floor(i / 4) * 110,
-				w: 112,
-				h: 90,
-				enabled: unlocked,
-				action: () => this.start(Mode.COURSE, i),
-				draw: (ctx, focused) => {
-					const b = buttons[i];
-					ctx.save();
-					ctx.translate(b.x, b.y);
-					if (focused)
-						ctx.scale(1.07, 1.07);
-					ctx.fillStyle = unlocked ? (focused ? "#c8ff9a" : "#a6ec6e") : "rgba(60,20,90,0.6)";
-					roundRect(ctx, -56, -45, 112, 90, 18);
-					ctx.fill();
-					ctx.strokeStyle = focused ? "#fff" : "rgba(255,255,255,0.5)";
-					ctx.lineWidth = 2;
-					ctx.stroke();
-					text(ctx, "Circuit " + (i + 1), 0, -20, { size: 18, color: "#fff", outline: "rgba(20,60,0,0.5)" });
-					text(ctx, unlocked ? "Record " + formatTime(best.time, true) : "Fermé", 0, 14,
-						{ size: 13, color: unlocked ? "#2a5a10" : "#d0c0e0", weight: "700" });
-					ctx.restore();
-				}
-			});
+			const b = this.ball(40 + i, "course" + i, () => this.play(Mode.COURSE, i), app.save.courseUnlocked(i));
+			b.info = () => "Record " + formatTime(app.save.data.courses.records[i][0].time, true);
+			balls.push(b);
 		}
-		buttons.push(this.backButton());
-		return new ButtonGroup(buttons, () => this.open("main"));
+		balls.push(this.ball(47, "back", () => this.goto("main")));
+		return balls;
+	}
+
+	adventurePage() {
+		const balls = [];
+		const adventures = app.save.data.adventures;
+		for (let i = 0; i < 5; i++) {
+			const b = this.ball(60 + i, "adventure" + i, () => this.play(Mode.ADVENTURE, i), app.save.adventureUnlocked(i));
+			const ball = b.art.child("ball");
+			// the dungeons done are marked ; the final one's logo waits until it is open
+			if (i < 4)
+				ball?.child("mask")?.gotoAndStop(adventures.won[i] ? 1 : 0);
+			if (i === 4 && !b.enabled)
+				ball?.child("logo")?.stop();
+			if (adventures.won[i])
+				b.info = () => "Gagné " + adventures.best[i] + " %";
+			balls.push(b);
+		}
+		balls.push(this.ball(65, "back", () => this.goto("main")));
+		return balls;
 	}
 
 	optionsPage() {
 		const s = app.save.settings;
-		const toggle = (key, label, y) => ({
-			x: W / 2, y, w: 260, h: 44,
-			action: () => {
-				s[key] = !s[key];
-				app.save.save();
-				applySettings();
-			},
-			draw: (ctx, focused) => button(ctx, label + (s[key] ? " : oui" : " : non"), W / 2, y, 260, 44, focused ? "focus" : "idle")
-		});
-		const buttons = [toggle("music", "Musique", 170), toggle("sounds", "Sons", 230), this.backButton()];
-		return new ButtonGroup(buttons, () => this.open("main"));
-	}
-
-	helpPage() {
-		const buttons = BALLS.map((b, i) => ({
-			x: 70 + i * 78, y: 150, w: 70, h: 70,
-			action: () => { },
-			draw: (ctx, focused) => {
-				ctx.save();
-				ctx.translate(70 + i * 78, 150);
-				ctx.scale(focused ? 1.1 : 0.9, focused ? 1.1 : 0.9);
-				image(ctx, BALL_IMAGES[i], 70, 70);
-				ctx.restore();
-			}
-		}));
-		buttons.push({
-			x: W / 2 - 100, y: 360, w: 180, h: 40,
-			action: () => this.start(Mode.TUTORIAL),
-			draw: (ctx, focused) => button(ctx, "Tutoriel", W / 2 - 100, 360, 180, 40, focused ? "focus" : "idle")
-		});
-		const back = this.backButton();
-		back.x = W / 2 + 100;
-		buttons.push(back);
-		return new ButtonGroup(buttons, () => this.open("main"));
-	}
-
-	backButton() {
-		const b = {
-			x: W / 2, y: 360, w: 180, h: 40,
-			action: () => this.open("main"),
-			draw: (ctx, focused) => button(ctx, "Retour", b.x, b.y, 180, 40, focused ? "focus" : "idle")
+		const toggle = key => {
+			s[key] = !s[key];
+			app.save.save();
+			applySettings();
+			this.goto("options");
 		};
-		return b;
+		return [
+			this.ball(s.music ? 20 : 21, "music", () => toggle("music")),
+			this.ball(s.sounds ? 22 : 23, "sounds", () => toggle("sounds")),
+			this.ball(24, "back", () => this.goto("main"))
+		];
+	}
+
+	// ----- transitions -----
+
+	/** The balls fly away, the hole grows, the game starts. */
+	play(mode, param = 0) {
+		if (this.phase > 1)
+			return;
+		this.phase = 2;
+		this.next = () => {
+			if (!app.scenes.busy)
+				app.scenes.goto(new PlayScene(mode, param));
+		};
+		this.raySpeed = 7;
+		this.rayAcc = 1.05;
+		this.angSpeed = 0.1;
+		this.angAcc = 1.05;
+		this.cosSpeed = 0;
+		this.cosRay = 0;
+		this.goHole = true;
+		this.showInfo(null);
+	}
+
+	/** The balls fly to the centre, and come back with another page. */
+	goto(page) {
+		if (this.phase > 1)
+			return;
+		this.phase = 3;
+		this.nextPage = page;
+		this.raySpeed = -5;
+		this.rayAcc = 1.1;
+		this.angSpeed = 0.2;
+		this.angAcc = 1.02;
+		this.cosSpeed = 0;
+		this.cosRay = 0;
+		this.showInfo(null);
 	}
 
 	// ----- every step -----
 
 	update(dt) {
 		this.time += dt;
-		if (!app.scenes.busy)
+		if (this.phase <= 1 && !app.scenes.busy) {
+			const hover = app.input.hover;
+			if (this.phase === 1 && hover && hover !== this.group.lastHover)
+				this.steer(hover.x);
 			this.group.update();
+		}
+		this.clock += dt;
+		while (this.clock >= FRAME) {
+			this.clock -= FRAME;
+			this.step();
+		}
+		this.select();
 	}
+
+	/** The mouse on the left or on the right turns the ring. */
+	steer(x) {
+		const delta = Math.min(200, Math.abs(CX - x));
+		this.angSpeed = (x > CX ? 1 : -1) * delta * 0.05 / 100;
+	}
+
+	/** The focused ball is "selected", its description comes up. */
+	select() {
+		this.group.buttons.forEach((b, i) => {
+			const selected = i === this.group.focus && b.enabled && this.phase <= 1;
+			if (selected !== b.selected) {
+				b.selected = selected;
+				b.art.gotoAndStop(selected ? "selected" : b.enabled ? "normal" : "disable");
+				if (this.page === "main")
+					this.showInfo(selected ? INFOS[b.name] : null);
+			}
+		});
+	}
+
+	showInfo(frame) {
+		if (frame === null || frame === undefined) {
+			if (this.info)
+				this.info.dy = 10;
+			return;
+		}
+		if (!this.info)
+			this.info = { art: clip("cadreInfo"), y: H + 50 };
+		this.info.art.gotoAndStop(frame);
+		this.info.dy = -10;
+	}
+
+	/** One frame of the original (40 per second). */
+	step() {
+		this.menuTime += 1 / 30;
+		this.bg.update(FRAME);
+		for (const b of this.group.buttons)
+			b.art.update(FRAME);
+
+		const info = this.info;
+		if (info) {
+			info.y += info.dy;
+			if (info.y > H + 50)
+				this.info = null;
+			else if (info.y < H - 40)
+				info.y = H - 40;
+		}
+
+		this.raySpeed *= this.rayAcc;
+		// (original : a minimum speed while leaving)
+		if (this.phase > 1 && Math.abs(this.raySpeed) < 3)
+			this.raySpeed = this.raySpeed < 0 ? -3 : 3;
+		this.angSpeed *= this.angAcc;
+		this.cosRay += this.cosSpeed;
+		this.ray += this.raySpeed;
+		this.ang = (this.ang + this.angSpeed) % (Math.PI * 2);
+		this.place();
+
+		switch (this.phase) {
+		case 0:
+			if (this.ray <= RADIUS) {
+				this.ray = RADIUS;
+				this.raySpeed = 0;
+				this.angAcc = 0.99;
+				this.cosSpeed = 0.1;
+				this.phase = 1;
+			}
+			break;
+		case 1:
+			if (Math.abs(this.cosRay) > 10)
+				this.cosSpeed *= -1;
+			break;
+		case 2:
+			if (this.ray > 450) {
+				this.phase = 5;
+				this.next();
+			}
+			break;
+		case 3:
+			if (this.ray < this.raySpeed || this.ray < 0) {
+				this.open(this.nextPage);
+				this.angSpeed *= -1;
+				this.raySpeed *= -1;
+				this.rayAcc = 1 / this.rayAcc;
+				this.angAcc = 0.97;
+				this.phase = 4;
+			}
+			break;
+		case 4:
+			if (this.ray >= 130) {
+				this.raySpeed = 0;
+				this.ray = RADIUS;
+				this.phase = 0;
+			}
+			break;
+		}
+		if (this.goHole)
+			this.holeScale *= 1.1;
+	}
+
+	/** The positions of the balls on the ring. */
+	place() {
+		for (const b of this.group.buttons) {
+			const a = b.ang + this.ang;
+			const r = Math.cos(b.ang + this.menuTime) * this.cosRay;
+			b.x = Math.cos(a) * (this.ray + r) + CX;
+			b.y = Math.sin(a) * (this.ray + r) + CY;
+		}
+	}
+
+	// ----- drawing -----
 
 	render(ctx) {
-		sunburst(ctx, this.time * 0.1);
-		const heading = { main: "MotionBall 2", adventure: "Aventure", course: "Course", options: "Options", help: "Aide" }[this.page];
-		title(ctx, heading, W / 2, 48, this.page === "main" ? 44 : 40, this.time);
+		this.bg.set("hole", { xscale: this.holeScale, yscale: this.holeScale });
+		this.bg.draw(ctx);
 		this.group.render(ctx);
 
-		if (this.page === "main")
-			this.renderInfo(ctx);
-		if (this.page === "help")
-			this.renderHelp(ctx);
-	}
-
-	renderInfo(ctx) {
+		// (a record, or the result of a dungeon, in the hole)
 		const b = this.group.focused;
-		panel(ctx, W / 2, 372, 470, 58);
-		text(ctx, MODE_INFO[b.name], W / 2, 372, { size: 14, color: "#6a3a00", weight: "700" });
-		const save = app.save.data;
-		if (b.name === "challenge" && save.challengeBest > 0)
-			badge(ctx, "Record : " + save.challengeBest);
-		if (b.name === "classique" && save.classicBest > 0)
-			badge(ctx, "Record : niveau " + save.classicBest);
+		if (this.phase <= 1 && b && b.enabled && b.info)
+			text(ctx, b.info(), CX, CY, { size: 15, color: "#fff", outline: "#4a1470" });
+
+		if (this.info) {
+			ctx.save();
+			ctx.translate(W / 2, this.info.y);
+			this.info.art.draw(ctx);
+			ctx.restore();
+		}
 	}
 
-	renderHelp(ctx) {
-		const i = this.group.focus;
-		if (i >= BALLS.length)
-			return;
-		panel(ctx, W / 2, 262, 440, 110);
-		ctx.save();
-		ctx.translate(W / 2 - 170, 262);
-		ctx.scale(2.4, 2.4);
-		drawBall(ctx, i, 0.8);
-		ctx.restore();
-		text(ctx, "Bille " + BALLS[i].name.toLowerCase(), W / 2 + 30, 235, { size: 22, color: "#fff", outline: "#c86a00" });
-		text(ctx, BALL_HELP[i], W / 2 + 30, 280, { size: 15, color: "#6a3a00", weight: "700" });
-	}
-
-	drawAdventure(ctx, a, i, unlocked, focused) {
-		const b = this.group ? this.group.buttons[i] : { x: 95 + i * 105, y: 185 };
-		const won = app.save.data.adventures.won[i];
+	drawBall(ctx, b) {
 		ctx.save();
 		ctx.translate(b.x, b.y);
-		if (focused)
-			ctx.scale(1.08, 1.08);
-		ctx.fillStyle = !unlocked ? "rgba(60,20,90,0.6)" : focused ? "#fff2a8" : "#ffe04a";
-		roundRect(ctx, -48, -60, 96, 120, 20);
-		ctx.fill();
-		ctx.strokeStyle = focused ? "#fff" : "#e08a00";
-		ctx.lineWidth = 3;
-		ctx.stroke();
-		if (a.icon) {
-			ctx.globalAlpha = unlocked ? 1 : 0.3;
-			image(ctx, a.icon, 64, 56, -32, -48);
-			ctx.globalAlpha = 1;
-		} else {
-			text(ctx, unlocked ? "!" : "?", 0, -20, { size: 48, color: unlocked ? "#e03a00" : "#d0c0e0", outline: "#fff" });
-		}
-		text(ctx, a.name, 0, 28, { size: 18, color: unlocked ? "#6a3a00" : "#d0c0e0" });
-		if (won)
-			text(ctx, "Gagné " + app.save.data.adventures.best[i] + " %", 0, 48, { size: 12, color: "#2a7a10", weight: "700" });
+		b.art.draw(ctx);
 		ctx.restore();
 	}
-}
-
-function badge(ctx, str) {
-	ctx.fillStyle = "rgba(40,0,70,0.6)";
-	roundRect(ctx, W / 2 - 90, 322, 180, 22, 11);
-	ctx.fill();
-	text(ctx, str, W / 2, 333, { size: 13, color: "#ffe060", weight: "700" });
 }
 
 /** Applies the sound settings. */
@@ -286,4 +350,3 @@ export function applySettings() {
 	app.audio.setMusicEnabled(s.music);
 	app.audio.setSoundsEnabled(s.sounds);
 }
-

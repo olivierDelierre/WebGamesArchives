@@ -1868,607 +1868,6 @@
     TUTORIAL: "tutorial"
   });
 
-  // src/gfx/ui.js
-  function sunburst(ctx, rotation, scale = 1) {
-    ctx.fillStyle = "#6e32a0";
-    ctx.fillRect(0, 0, WIDTH, HEIGHT);
-    const img = app.images.get("roue");
-    if (img) {
-      const s = 1.2 * scale;
-      ctx.save();
-      ctx.translate(WIDTH / 2, HEIGHT / 2);
-      ctx.rotate(rotation);
-      ctx.drawImage(img, -351 * s, -351 * s, 702 * s, 702 * s);
-      ctx.restore();
-    }
-    const g = ctx.createRadialGradient(WIDTH / 2, HEIGHT / 2, 60, WIDTH / 2, HEIGHT / 2, 380);
-    g.addColorStop(0, "rgba(255,255,255,0.15)");
-    g.addColorStop(1, "rgba(40,0,70,0.5)");
-    ctx.fillStyle = g;
-    ctx.fillRect(0, 0, WIDTH, HEIGHT);
-  }
-  function titleLetter(ctx, ch, size) {
-    ctx.font = "800 " + size + "px " + FONT;
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.lineJoin = "round";
-    ctx.lineWidth = size / 5;
-    ctx.strokeStyle = "#4a1470";
-    ctx.strokeText(ch, 0, 0);
-    ctx.lineWidth = size / 9;
-    ctx.strokeStyle = "#ffffff";
-    ctx.strokeText(ch, 0, 0);
-    const g = ctx.createLinearGradient(0, -size / 2, 0, size / 2);
-    g.addColorStop(0, "#e9c4ff");
-    g.addColorStop(0.5, "#b060e8");
-    g.addColorStop(1, "#7a2ab8");
-    ctx.fillStyle = g;
-    ctx.fillText(ch, 0, 0);
-    ctx.fillStyle = "rgba(255,255,255,0.45)";
-    ctx.fillText(ch, 0, -size * 0.06);
-    ctx.fillStyle = g;
-    ctx.fillText(ch, 0, size * 0.03);
-  }
-  function title(ctx, word, x, y, size, time2 = 0) {
-    ctx.font = "800 " + size + "px " + FONT;
-    const widths = [...word].map((ch) => ctx.measureText(ch).width * 0.92);
-    let cx = x - widths.reduce((a, b) => a + b, 0) / 2;
-    [...word].forEach((ch, i) => {
-      ctx.save();
-      ctx.translate(cx + widths[i] / 2, y + Math.sin(time2 * 3 + i * 0.6) * 3);
-      ctx.rotate(Math.sin(time2 * 2 + i) * 0.05);
-      titleLetter(ctx, ch, size);
-      ctx.restore();
-      cx += widths[i];
-    });
-  }
-  function panel(ctx, x, y, w, h, s = 1) {
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.scale(s, s);
-    ctx.fillStyle = "rgba(90,40,0,0.3)";
-    roundRect(ctx, -w / 2 + 6, -h / 2 + 8, w, h, 22);
-    ctx.fill();
-    const g = ctx.createLinearGradient(0, -h / 2, 0, h / 2);
-    g.addColorStop(0, "#ffe04a");
-    g.addColorStop(1, "#ffb400");
-    ctx.fillStyle = g;
-    roundRect(ctx, -w / 2, -h / 2, w, h, 22);
-    ctx.fill();
-    ctx.lineWidth = 4;
-    ctx.strokeStyle = "#e08a00";
-    ctx.stroke();
-    ctx.lineWidth = 2;
-    ctx.strokeStyle = "rgba(255,255,255,0.6)";
-    roundRect(ctx, -w / 2 + 6, -h / 2 + 6, w - 12, h - 12, 17);
-    ctx.stroke();
-    ctx.restore();
-  }
-  function bubbleTitle(ctx, str, x, y, size) {
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.font = "800 " + size + "px " + FONT;
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.lineJoin = "round";
-    ctx.lineWidth = size / 4;
-    ctx.strokeStyle = "#c86a00";
-    ctx.strokeText(str, 0, 0);
-    ctx.lineWidth = size / 9;
-    ctx.strokeStyle = "#fff6c0";
-    ctx.strokeText(str, 0, 0);
-    const g = ctx.createLinearGradient(0, -size / 2, 0, size / 2);
-    g.addColorStop(0, "#fff7a0");
-    g.addColorStop(1, "#ffc000");
-    ctx.fillStyle = g;
-    ctx.fillText(str, 0, 0);
-    ctx.restore();
-  }
-  function button(ctx, label, x, y, w, h, state = "idle") {
-    const focus = state === "focus";
-    const disabled = state === "disabled";
-    ctx.save();
-    ctx.translate(x, y);
-    if (focus)
-      ctx.scale(1.06, 1.06);
-    ctx.fillStyle = "rgba(40,0,70,0.35)";
-    roundRect(ctx, -w / 2 + 3, -h / 2 + 4, w, h, h / 2);
-    ctx.fill();
-    const g = ctx.createLinearGradient(0, -h / 2, 0, h / 2);
-    if (disabled) {
-      g.addColorStop(0, "#b8a8c4");
-      g.addColorStop(1, "#8a7a98");
-    } else if (focus) {
-      g.addColorStop(0, "#c8ff9a");
-      g.addColorStop(1, "#5cc22c");
-    } else {
-      g.addColorStop(0, "#a6ec6e");
-      g.addColorStop(1, "#3c8f1d");
-    }
-    ctx.fillStyle = g;
-    roundRect(ctx, -w / 2, -h / 2, w, h, h / 2);
-    ctx.fill();
-    ctx.lineWidth = 2;
-    ctx.strokeStyle = focus ? "#fff" : "rgba(255,255,255,0.6)";
-    ctx.stroke();
-    text(ctx, label, 0, 1, { size: Math.min(20, h * 0.55), color: disabled ? "#e8e0f0" : "#fff", outline: "rgba(20,60,0,0.5)" });
-    ctx.restore();
-  }
-  var Pop = class {
-    constructor() {
-      this.value = 0;
-      this.speed = 0;
-    }
-    update(dt) {
-      const frames = dt * 40;
-      this.speed += (1 - this.value) * 0.35 * frames;
-      this.speed *= Math.pow(0.6, frames);
-      this.value += this.speed * frames;
-      return this.value;
-    }
-  };
-
-  // src/game/entity.js
-  var Layer = Object.freeze({
-    FLOOR: 0,
-    // holes, teleports, lowered blocks, beams
-    SHADOW: 1,
-    // shadows of the objects
-    ITEM: 2,
-    // pastilles, hatch, balls to collect
-    BLOCK: 3,
-    // green, pink and blue blocks
-    BALL: 4,
-    // the player's ball
-    OBJECT: 5,
-    // bumpers (above the ball, as in the original)
-    EFFECT: 6,
-    // sparks, debris
-    BOSS: 7,
-    TOP: 8
-  });
-  var Entity = class {
-    constructor(x = 0, y = 0, layer = Layer.OBJECT) {
-      this.x = x;
-      this.y = y;
-      this.layer = layer;
-      this.dead = false;
-      this.shape = null;
-      this.solid = false;
-      this.bounce = null;
-    }
-    update(dt, game) {
-    }
-    render(ctx, game) {
-    }
-  };
-
-  // src/game/physics.js
-  function circleContact(cx, cy, radius, shape) {
-    if (shape.kind === "circle") {
-      const dx2 = cx - shape.x;
-      const dy2 = cy - shape.y;
-      const d22 = dx2 * dx2 + dy2 * dy2;
-      const r = radius + shape.r;
-      if (d22 >= r * r)
-        return null;
-      const d = Math.sqrt(d22);
-      if (d < 1e-6)
-        return { nx: 0, ny: -1, depth: r };
-      return { nx: dx2 / d, ny: dy2 / d, depth: r - d };
-    }
-    if (shape.kind === "arc")
-      return arcContact(cx, cy, radius, shape);
-    const px = Math.max(shape.x, Math.min(cx, shape.x + shape.w));
-    const py = Math.max(shape.y, Math.min(cy, shape.y + shape.h));
-    const dx = cx - px;
-    const dy = cy - py;
-    const d2 = dx * dx + dy * dy;
-    if (d2 > 1e-9) {
-      if (d2 >= radius * radius)
-        return null;
-      const d = Math.sqrt(d2);
-      return { nx: dx / d, ny: dy / d, depth: radius - d };
-    }
-    const left = cx - shape.x;
-    const right = shape.x + shape.w - cx;
-    const top = cy - shape.y;
-    const bottom = shape.y + shape.h - cy;
-    const m = Math.min(left, right, top, bottom);
-    if (m === left)
-      return { nx: -1, ny: 0, depth: left + radius };
-    if (m === right)
-      return { nx: 1, ny: 0, depth: right + radius };
-    if (m === top)
-      return { nx: 0, ny: -1, depth: top + radius };
-    return { nx: 0, ny: 1, depth: bottom + radius };
-  }
-  function arcContact(cx, cy, radius, arc) {
-    const dx = cx - arc.x;
-    const dy = cy - arc.y;
-    if (dx * arc.sx <= 0 || dy * arc.sy <= 0)
-      return null;
-    const d = Math.hypot(dx, dy);
-    const max = arc.r - radius;
-    if (d <= max)
-      return null;
-    return { nx: -dx / d, ny: -dy / d, depth: d - max };
-  }
-  function circleTouchesSegment(cx, cy, radius, x1, y1, x2, y2) {
-    const dx = x2 - x1;
-    const dy = y2 - y1;
-    const len2 = dx * dx + dy * dy;
-    let t = len2 > 0 ? ((cx - x1) * dx + (cy - y1) * dy) / len2 : 0;
-    t = Math.max(0, Math.min(1, t));
-    const px = x1 + dx * t - cx;
-    const py = y1 + dy * t - cy;
-    return px * px + py * py < radius * radius;
-  }
-  function collideBall(ball, colliders, game) {
-    let contacts = 0;
-    for (const c of colliders) {
-      if (!c.solid || !c.shape)
-        continue;
-      const hit = circleContact(ball.x, ball.y, ball.radius, c.shape);
-      if (!hit)
-        continue;
-      contacts++;
-      ball.x += hit.nx * hit.depth;
-      ball.y += hit.ny * hit.depth;
-      const vn = ball.vx * hit.nx + ball.vy * hit.ny;
-      if (vn >= 0)
-        continue;
-      const speed = Math.hypot(ball.vx, ball.vy);
-      let rx = ball.vx - 2 * vn * hit.nx;
-      let ry = ball.vy - 2 * vn * hit.ny;
-      const rlen = Math.hypot(rx, ry) || 1;
-      const bounce = c.bounce || DEFAULT_BOUNCE;
-      const out = Math.max(speed * bounce.coef, bounce.min);
-      ball.vx = rx / rlen * out;
-      ball.vy = ry / rlen * out;
-      if (c.onHit)
-        c.onHit(game, { x: ball.x - hit.nx * ball.radius, y: ball.y - hit.ny * ball.radius, nx: hit.nx, ny: hit.ny, speed });
-    }
-    return contacts;
-  }
-  var DEFAULT_BOUNCE = { coef: 1, min: 0 };
-  var BOUNCE = {
-    border: { coef: 1.1, min: 160 },
-    bumper: { coef: 1.5, min: 800 },
-    clock: { coef: 1.5, min: 600 },
-    death: { coef: 1.2, min: 200 },
-    magnet: { coef: 1, min: 200 },
-    ghost: { coef: 3, min: 600 },
-    block: { coef: 1.2, min: 0 },
-    zapper: { coef: 1.1, min: 400 },
-    itemBox: { coef: 0.1, min: 0 },
-    boss: { coef: 1.2, min: 300 }
-  };
-
-  // src/game/ball.js
-  var MAX_SUBSTEP = 4;
-  var SPOTS = [
-    { count: 6, min: 10, max: 20, color: "#fff4a0" },
-    { count: 20, min: 0, max: 20, color: "#2a7a10" },
-    { count: 4, min: 14, max: 14, color: "#ffd0b0" },
-    { count: 10, min: 0, max: 12, color: "#ffe070" },
-    { count: 10, min: 6, max: 20, color: "#ffffff" },
-    { count: 0, min: 0, max: 20, color: "#ffffff" },
-    { count: 20, min: 0, max: 20, color: "#f0d0ff" }
-  ];
-  var Ball = class extends Entity {
-    constructor() {
-      super(0, 0, Layer.BALL);
-      this.radius = BALL_RADIUS;
-      this.type = BallType.YELLOW;
-      this.vx = 0;
-      this.vy = 0;
-      this.spawnX = 0;
-      this.spawnY = 0;
-      this.controlled = true;
-      this.speedLimit = true;
-      this.water = false;
-      this.invulnerable = 0;
-      this.fall = null;
-      this.jump = null;
-      this.justLanded = false;
-      this.height = 0;
-      this.hidden = false;
-      this.spots = [];
-      this.setType(BallType.YELLOW);
-    }
-    get speed() {
-      return Math.hypot(this.vx, this.vy);
-    }
-    get specs() {
-      return BALLS[this.type];
-    }
-    /**
-     * Changes the colour : the "marble" symbol shows it, and a few "stone"
-     * clips roll on it (frames random(4) + 10 x colour), like Ball.as.
-     */
-    setType(type) {
-      this.type = type;
-      const s = SPOTS[type];
-      this.spots = [];
-      for (let i = 0; i < s.count; i++) {
-        const art = clip("stone");
-        art.gotoAndStop(randInt(4) + type * 10);
-        if (type === BallType.VIOLET) {
-          const sparkle = art.child("eclat");
-          if (sparkle)
-            sparkle.gotoAndPlay(randInt(30));
-        }
-        this.spots.push({
-          u: Math.random() * TAU,
-          v: Math.random() * TAU,
-          ray: s.min + randInt(s.max - s.min + 1),
-          rotation: Math.random() * TAU,
-          art
-        });
-      }
-    }
-    placeAt(x, y) {
-      this.x = x;
-      this.y = y;
-      this.vx = 0;
-      this.vy = 0;
-    }
-    /** Remembers the current position as the place to come back to after a death. */
-    setSpawn() {
-      this.spawnX = this.x;
-      this.spawnY = this.y;
-    }
-    get falling() {
-      return this.fall !== null;
-    }
-    // ----- every step -----
-    update(dt, game) {
-      if (this.invulnerable > 0)
-        this.invulnerable = Math.max(0, this.invulnerable - dt);
-      this.updateJump(dt);
-      if (this.fall) {
-        this.updateFall(dt, game);
-        return;
-      }
-      this.steer(dt, game);
-      this.move(dt, game);
-      this.roll(dt);
-    }
-    /** Controls and speed. */
-    steer(dt, game) {
-      const specs = this.specs;
-      let accel = specs.accel;
-      let inertia = specs.inertia;
-      if (this.water) {
-        accel *= WATER.accelFactor;
-        inertia = WATER.inertia;
-      }
-      const k = decay(inertia, dt);
-      this.vx *= k;
-      this.vy *= k;
-      const rest = PHYSICS.restSpeed * dt * ORIGINAL_FPS;
-      if (Math.abs(this.vx) < rest)
-        this.vx = 0;
-      if (Math.abs(this.vy) < rest)
-        this.vy = 0;
-      if (this.controlled && !this.jump) {
-        const axis = app.input.axis();
-        this.vx += axis.x * accel * dt;
-        this.vy += axis.y * accel * dt;
-      }
-      const max = specs.maxSpeed;
-      let speed = this.speed;
-      if (this.speedLimit && speed > max) {
-        let f = decay(PHYSICS.overSpeedDamping, dt);
-        if (speed > 3 * max)
-          f /= 3;
-        this.vx *= f;
-        this.vy *= f;
-      }
-      if (this.type === BallType.RED)
-        this.attractReds(dt, game);
-    }
-    /** Moves in sub-steps, testing the holes and the collisions. */
-    move(dt, game) {
-      const dx = this.vx * dt;
-      const dy = this.vy * dt;
-      const steps = 1 + Math.floor(Math.hypot(dx, dy) / MAX_SUBSTEP);
-      const colliders = game.colliders();
-      for (let i = 0; i < steps; i++) {
-        this.x += dx / steps;
-        this.y += dy / steps;
-        collideBall(this, colliders, game);
-        game.room.touchBeams(this, game);
-        if (this.testHole(dt / steps, game))
-          return;
-      }
-    }
-    /** The red ball attracts the red pastilles within 200 pixels. */
-    attractReds(dt, game) {
-      for (const e of game.room.entities) {
-        if (e.itemType !== Item.RED || e.taken)
-          continue;
-        const dx = this.x - e.x;
-        const dy = this.y - e.y;
-        const d2 = dx * dx + dy * dy;
-        if (d2 < 200 * 200 && d2 > 1) {
-          const pull = 150 * 40 * dt / d2;
-          e.x += dx * pull;
-          e.y += dy * pull;
-        }
-      }
-    }
-    /** Fakes the rolling : each spot turns around the ball with the speed. */
-    roll(dt) {
-      for (const s of this.spots) {
-        s.art.update(dt);
-        s.u = (s.u + this.vx * dt * 0.1) % TAU;
-        s.v = (s.v + this.vy * dt * 0.1) % TAU;
-      }
-    }
-    // ----- holes -----
-    /**
-     * Holes are 40 x 40 tiles of the room. On a hole, the ball is pulled toward
-     * the middle of the hole, away from the edges touching the floor. Once it
-     * is far enough from those edges, it falls. The blue ball jumps instead.
-     * Returns true when the ball starts falling.
-     */
-    testHole(dt, game) {
-      const tiles = game.room.tiles;
-      const tx = Math.floor((this.x - TILE_ORIGIN) / TILE);
-      const ty = Math.floor((this.y - TILE_ORIGIN) / TILE);
-      const isHole = (x, y) => tiles.get(x, y) === Item.HOLE;
-      if (!isHole(tx, ty) || this.jump) {
-        this.justLanded = false;
-        return false;
-      }
-      const cx = TILE_ORIGIN + (tx + 0.5) * TILE;
-      const cy = TILE_ORIGIN + (ty + 0.5) * TILE;
-      const half = TILE / 2;
-      const R = this.radius;
-      const boost = decay(PHYSICS.holeBoost, dt);
-      this.vx *= boost;
-      this.vy *= boost;
-      let left = this.x < cx && !isHole(tx - 1, ty);
-      let right = this.x > cx && !isHole(tx + 1, ty);
-      let up = this.y < cy && !isHole(tx, ty - 1);
-      let down = this.y > cy && !isHole(tx, ty + 1);
-      if (left && right && up && down)
-        left = right = up = down = false;
-      const pull = PHYSICS.holePull * dt;
-      if (left) this.vx += pull;
-      if (right) this.vx -= pull;
-      if (up) this.vy += pull;
-      if (down) this.vy -= pull;
-      const inside = this.x > cx - half + (left ? R : 0) && this.x < cx + half - (right ? R : 0) && this.y > cy - half + (up ? R : 0) && this.y < cy + half - (down ? R : 0);
-      if (inside) {
-        this.startFall("hole", 1, game.room.holeClip());
-        return true;
-      }
-      if (this.type === BallType.BLUE && !this.justLanded)
-        this.jump = { size: 0, way: 1 };
-      return false;
-    }
-    /** The blue ball's jump : it goes up and down in ~0.17 s, higher when fast. */
-    updateJump(dt) {
-      const j = this.jump;
-      if (!j) {
-        this.height = 0;
-        return;
-      }
-      j.size += j.way * 60 * 40 * dt;
-      if (j.size > 200)
-        j.way = -1;
-      if (j.size < 0) {
-        this.jump = null;
-        this.height = 0;
-        this.justLanded = true;
-        return;
-      }
-      this.height = Math.sqrt(Math.max(0, j.size * this.speed / 40)) / 6;
-    }
-    // ----- falling and dying -----
-    /**
-     * Starts falling : the ball shrinks, clipped by `clip` (a function adding
-     * the visible area to a path), then game.ballFell(kind) is called.
-     */
-    startFall(kind, speed, clip2) {
-      this.fall = { kind, scale: 1, speed, clip: clip2 };
-      this.jump = null;
-      this.height = 0;
-      this.invulnerable = 0;
-    }
-    /** Killed (death bumper, laser, boss...). Ignored while invulnerable. */
-    die() {
-      if (this.invulnerable > 0 || this.fall)
-        return false;
-      this.vx = 0;
-      this.vy = 0;
-      this.startFall("death", 5, null);
-      return true;
-    }
-    updateFall(dt, game) {
-      const f = this.fall;
-      const k = decay(0.9, dt);
-      this.vx *= k;
-      this.vy *= k;
-      this.x += this.vx * dt / 5;
-      this.y += this.vy * dt / 5;
-      f.scale *= decay(Math.pow(0.92, f.speed), dt);
-      if (f.scale >= 0.03)
-        return;
-      this.fall = null;
-      game.ballFell(f.kind);
-    }
-    /** Back to the entrance of the room, blinking. */
-    respawn() {
-      this.placeAt(this.spawnX, this.spawnY);
-      this.fall = null;
-      this.jump = null;
-      this.height = 0;
-      this.invulnerable = INVULNERABLE_TIME;
-    }
-    // ----- drawing -----
-    renderShadow(ctx) {
-      if (this.hidden || this.fall)
-        return;
-      drawClip(ctx, shadowClip || (shadowClip = clip("shadow")), this.x + 3, this.y + 3);
-    }
-    render(ctx) {
-      if (this.hidden)
-        return;
-      if (this.invulnerable > 0 && Math.floor(this.invulnerable * 40) % 2 === 0)
-        ctx.globalAlpha = 0.3;
-      else if (this.invulnerable > 0)
-        ctx.globalAlpha = 0.6;
-      ctx.save();
-      if (this.fall && this.fall.clip) {
-        ctx.beginPath();
-        this.fall.clip(ctx);
-        ctx.clip();
-      }
-      const scale = (this.fall ? this.fall.scale : 1) * (1 + this.height * 0.03);
-      ctx.translate(this.x, this.y - this.height);
-      ctx.scale(scale, scale);
-      drawBall(ctx, this.type, 1, this.spots);
-      ctx.restore();
-      ctx.globalAlpha = 1;
-    }
-  };
-  var shadowClip = null;
-  var marbles = [];
-  var light = null;
-  function drawBall(ctx, type, scale = 1, spots = null) {
-    const marble = marbles[type] || (marbles[type] = clip("marble"));
-    marble.gotoAndStop(type);
-    ctx.save();
-    if (scale !== 1)
-      ctx.scale(scale, scale);
-    marble.draw(ctx);
-    if (spots && spots.length) {
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(0, 0, 12, 0, TAU);
-      ctx.clip();
-      for (const s of spots) {
-        const front = Math.cos(s.u + Math.PI / 2) + Math.cos(s.v + Math.PI / 2);
-        const alpha = 0.5 + front * (s.ray / BALL_RADIUS) * 0.5;
-        if (alpha <= 0.01)
-          continue;
-        ctx.save();
-        ctx.globalAlpha *= Math.min(1, alpha);
-        ctx.translate(Math.cos(s.u) * s.ray / 2, Math.sin(s.v) * s.ray / 2);
-        ctx.rotate(s.rotation);
-        s.art.draw(ctx);
-        ctx.restore();
-      }
-      ctx.restore();
-    }
-    (light || (light = clip("light"))).draw(ctx);
-    ctx.restore();
-  }
-
   // src/scenes/widgets.js
   var DIRS = { left: [-1, 0], right: [1, 0], up: [0, -1], down: [0, 1] };
   var ButtonGroup = class {
@@ -4709,6 +4108,467 @@
       return -1;
     }
   };
+
+  // src/game/entity.js
+  var Layer = Object.freeze({
+    FLOOR: 0,
+    // holes, teleports, lowered blocks, beams
+    SHADOW: 1,
+    // shadows of the objects
+    ITEM: 2,
+    // pastilles, hatch, balls to collect
+    BLOCK: 3,
+    // green, pink and blue blocks
+    BALL: 4,
+    // the player's ball
+    OBJECT: 5,
+    // bumpers (above the ball, as in the original)
+    EFFECT: 6,
+    // sparks, debris
+    BOSS: 7,
+    TOP: 8
+  });
+  var Entity = class {
+    constructor(x = 0, y = 0, layer = Layer.OBJECT) {
+      this.x = x;
+      this.y = y;
+      this.layer = layer;
+      this.dead = false;
+      this.shape = null;
+      this.solid = false;
+      this.bounce = null;
+    }
+    update(dt, game) {
+    }
+    render(ctx, game) {
+    }
+  };
+
+  // src/game/physics.js
+  function circleContact(cx, cy, radius, shape) {
+    if (shape.kind === "circle") {
+      const dx2 = cx - shape.x;
+      const dy2 = cy - shape.y;
+      const d22 = dx2 * dx2 + dy2 * dy2;
+      const r = radius + shape.r;
+      if (d22 >= r * r)
+        return null;
+      const d = Math.sqrt(d22);
+      if (d < 1e-6)
+        return { nx: 0, ny: -1, depth: r };
+      return { nx: dx2 / d, ny: dy2 / d, depth: r - d };
+    }
+    if (shape.kind === "arc")
+      return arcContact(cx, cy, radius, shape);
+    const px = Math.max(shape.x, Math.min(cx, shape.x + shape.w));
+    const py = Math.max(shape.y, Math.min(cy, shape.y + shape.h));
+    const dx = cx - px;
+    const dy = cy - py;
+    const d2 = dx * dx + dy * dy;
+    if (d2 > 1e-9) {
+      if (d2 >= radius * radius)
+        return null;
+      const d = Math.sqrt(d2);
+      return { nx: dx / d, ny: dy / d, depth: radius - d };
+    }
+    const left = cx - shape.x;
+    const right = shape.x + shape.w - cx;
+    const top = cy - shape.y;
+    const bottom = shape.y + shape.h - cy;
+    const m = Math.min(left, right, top, bottom);
+    if (m === left)
+      return { nx: -1, ny: 0, depth: left + radius };
+    if (m === right)
+      return { nx: 1, ny: 0, depth: right + radius };
+    if (m === top)
+      return { nx: 0, ny: -1, depth: top + radius };
+    return { nx: 0, ny: 1, depth: bottom + radius };
+  }
+  function arcContact(cx, cy, radius, arc) {
+    const dx = cx - arc.x;
+    const dy = cy - arc.y;
+    if (dx * arc.sx <= 0 || dy * arc.sy <= 0)
+      return null;
+    const d = Math.hypot(dx, dy);
+    const max = arc.r - radius;
+    if (d <= max)
+      return null;
+    return { nx: -dx / d, ny: -dy / d, depth: d - max };
+  }
+  function circleTouchesSegment(cx, cy, radius, x1, y1, x2, y2) {
+    const dx = x2 - x1;
+    const dy = y2 - y1;
+    const len2 = dx * dx + dy * dy;
+    let t = len2 > 0 ? ((cx - x1) * dx + (cy - y1) * dy) / len2 : 0;
+    t = Math.max(0, Math.min(1, t));
+    const px = x1 + dx * t - cx;
+    const py = y1 + dy * t - cy;
+    return px * px + py * py < radius * radius;
+  }
+  function collideBall(ball, colliders, game) {
+    let contacts = 0;
+    for (const c of colliders) {
+      if (!c.solid || !c.shape)
+        continue;
+      const hit = circleContact(ball.x, ball.y, ball.radius, c.shape);
+      if (!hit)
+        continue;
+      contacts++;
+      ball.x += hit.nx * hit.depth;
+      ball.y += hit.ny * hit.depth;
+      const vn = ball.vx * hit.nx + ball.vy * hit.ny;
+      if (vn >= 0)
+        continue;
+      const speed = Math.hypot(ball.vx, ball.vy);
+      let rx = ball.vx - 2 * vn * hit.nx;
+      let ry = ball.vy - 2 * vn * hit.ny;
+      const rlen = Math.hypot(rx, ry) || 1;
+      const bounce = c.bounce || DEFAULT_BOUNCE;
+      const out = Math.max(speed * bounce.coef, bounce.min);
+      ball.vx = rx / rlen * out;
+      ball.vy = ry / rlen * out;
+      if (c.onHit)
+        c.onHit(game, { x: ball.x - hit.nx * ball.radius, y: ball.y - hit.ny * ball.radius, nx: hit.nx, ny: hit.ny, speed });
+    }
+    return contacts;
+  }
+  var DEFAULT_BOUNCE = { coef: 1, min: 0 };
+  var BOUNCE = {
+    border: { coef: 1.1, min: 160 },
+    bumper: { coef: 1.5, min: 800 },
+    clock: { coef: 1.5, min: 600 },
+    death: { coef: 1.2, min: 200 },
+    magnet: { coef: 1, min: 200 },
+    ghost: { coef: 3, min: 600 },
+    block: { coef: 1.2, min: 0 },
+    zapper: { coef: 1.1, min: 400 },
+    itemBox: { coef: 0.1, min: 0 },
+    boss: { coef: 1.2, min: 300 }
+  };
+
+  // src/game/ball.js
+  var MAX_SUBSTEP = 4;
+  var SPOTS = [
+    { count: 6, min: 10, max: 20, color: "#fff4a0" },
+    { count: 20, min: 0, max: 20, color: "#2a7a10" },
+    { count: 4, min: 14, max: 14, color: "#ffd0b0" },
+    { count: 10, min: 0, max: 12, color: "#ffe070" },
+    { count: 10, min: 6, max: 20, color: "#ffffff" },
+    { count: 0, min: 0, max: 20, color: "#ffffff" },
+    { count: 20, min: 0, max: 20, color: "#f0d0ff" }
+  ];
+  var Ball = class extends Entity {
+    constructor() {
+      super(0, 0, Layer.BALL);
+      this.radius = BALL_RADIUS;
+      this.type = BallType.YELLOW;
+      this.vx = 0;
+      this.vy = 0;
+      this.spawnX = 0;
+      this.spawnY = 0;
+      this.controlled = true;
+      this.speedLimit = true;
+      this.water = false;
+      this.invulnerable = 0;
+      this.fall = null;
+      this.jump = null;
+      this.justLanded = false;
+      this.height = 0;
+      this.hidden = false;
+      this.spots = [];
+      this.setType(BallType.YELLOW);
+    }
+    get speed() {
+      return Math.hypot(this.vx, this.vy);
+    }
+    get specs() {
+      return BALLS[this.type];
+    }
+    /**
+     * Changes the colour : the "marble" symbol shows it, and a few "stone"
+     * clips roll on it (frames random(4) + 10 x colour), like Ball.as.
+     */
+    setType(type) {
+      this.type = type;
+      const s = SPOTS[type];
+      this.spots = [];
+      for (let i = 0; i < s.count; i++) {
+        const art = clip("stone");
+        art.gotoAndStop(randInt(4) + type * 10);
+        if (type === BallType.VIOLET) {
+          const sparkle = art.child("eclat");
+          if (sparkle)
+            sparkle.gotoAndPlay(randInt(30));
+        }
+        this.spots.push({
+          u: Math.random() * TAU,
+          v: Math.random() * TAU,
+          ray: s.min + randInt(s.max - s.min + 1),
+          rotation: Math.random() * TAU,
+          art
+        });
+      }
+    }
+    placeAt(x, y) {
+      this.x = x;
+      this.y = y;
+      this.vx = 0;
+      this.vy = 0;
+    }
+    /** Remembers the current position as the place to come back to after a death. */
+    setSpawn() {
+      this.spawnX = this.x;
+      this.spawnY = this.y;
+    }
+    get falling() {
+      return this.fall !== null;
+    }
+    // ----- every step -----
+    update(dt, game) {
+      if (this.invulnerable > 0)
+        this.invulnerable = Math.max(0, this.invulnerable - dt);
+      this.updateJump(dt);
+      if (this.fall) {
+        this.updateFall(dt, game);
+        return;
+      }
+      this.steer(dt, game);
+      this.move(dt, game);
+      this.roll(dt);
+    }
+    /** Controls and speed. */
+    steer(dt, game) {
+      const specs = this.specs;
+      let accel = specs.accel;
+      let inertia = specs.inertia;
+      if (this.water) {
+        accel *= WATER.accelFactor;
+        inertia = WATER.inertia;
+      }
+      const k = decay(inertia, dt);
+      this.vx *= k;
+      this.vy *= k;
+      const rest = PHYSICS.restSpeed * dt * ORIGINAL_FPS;
+      if (Math.abs(this.vx) < rest)
+        this.vx = 0;
+      if (Math.abs(this.vy) < rest)
+        this.vy = 0;
+      if (this.controlled && !this.jump) {
+        const axis = app.input.axis();
+        this.vx += axis.x * accel * dt;
+        this.vy += axis.y * accel * dt;
+      }
+      const max = specs.maxSpeed;
+      let speed = this.speed;
+      if (this.speedLimit && speed > max) {
+        let f = decay(PHYSICS.overSpeedDamping, dt);
+        if (speed > 3 * max)
+          f /= 3;
+        this.vx *= f;
+        this.vy *= f;
+      }
+      if (this.type === BallType.RED)
+        this.attractReds(dt, game);
+    }
+    /** Moves in sub-steps, testing the holes and the collisions. */
+    move(dt, game) {
+      const dx = this.vx * dt;
+      const dy = this.vy * dt;
+      const steps = 1 + Math.floor(Math.hypot(dx, dy) / MAX_SUBSTEP);
+      const colliders = game.colliders();
+      for (let i = 0; i < steps; i++) {
+        this.x += dx / steps;
+        this.y += dy / steps;
+        collideBall(this, colliders, game);
+        game.room.touchBeams(this, game);
+        if (this.testHole(dt / steps, game))
+          return;
+      }
+    }
+    /** The red ball attracts the red pastilles within 200 pixels. */
+    attractReds(dt, game) {
+      for (const e of game.room.entities) {
+        if (e.itemType !== Item.RED || e.taken)
+          continue;
+        const dx = this.x - e.x;
+        const dy = this.y - e.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < 200 * 200 && d2 > 1) {
+          const pull = 150 * 40 * dt / d2;
+          e.x += dx * pull;
+          e.y += dy * pull;
+        }
+      }
+    }
+    /** Fakes the rolling : each spot turns around the ball with the speed. */
+    roll(dt) {
+      for (const s of this.spots) {
+        s.art.update(dt);
+        s.u = (s.u + this.vx * dt * 0.1) % TAU;
+        s.v = (s.v + this.vy * dt * 0.1) % TAU;
+      }
+    }
+    // ----- holes -----
+    /**
+     * Holes are 40 x 40 tiles of the room. On a hole, the ball is pulled toward
+     * the middle of the hole, away from the edges touching the floor. Once it
+     * is far enough from those edges, it falls. The blue ball jumps instead.
+     * Returns true when the ball starts falling.
+     */
+    testHole(dt, game) {
+      const tiles = game.room.tiles;
+      const tx = Math.floor((this.x - TILE_ORIGIN) / TILE);
+      const ty = Math.floor((this.y - TILE_ORIGIN) / TILE);
+      const isHole = (x, y) => tiles.get(x, y) === Item.HOLE;
+      if (!isHole(tx, ty) || this.jump) {
+        this.justLanded = false;
+        return false;
+      }
+      const cx = TILE_ORIGIN + (tx + 0.5) * TILE;
+      const cy = TILE_ORIGIN + (ty + 0.5) * TILE;
+      const half = TILE / 2;
+      const R = this.radius;
+      const boost = decay(PHYSICS.holeBoost, dt);
+      this.vx *= boost;
+      this.vy *= boost;
+      let left = this.x < cx && !isHole(tx - 1, ty);
+      let right = this.x > cx && !isHole(tx + 1, ty);
+      let up = this.y < cy && !isHole(tx, ty - 1);
+      let down = this.y > cy && !isHole(tx, ty + 1);
+      if (left && right && up && down)
+        left = right = up = down = false;
+      const pull = PHYSICS.holePull * dt;
+      if (left) this.vx += pull;
+      if (right) this.vx -= pull;
+      if (up) this.vy += pull;
+      if (down) this.vy -= pull;
+      const inside = this.x > cx - half + (left ? R : 0) && this.x < cx + half - (right ? R : 0) && this.y > cy - half + (up ? R : 0) && this.y < cy + half - (down ? R : 0);
+      if (inside) {
+        this.startFall("hole", 1, game.room.holeClip());
+        return true;
+      }
+      if (this.type === BallType.BLUE && !this.justLanded)
+        this.jump = { size: 0, way: 1 };
+      return false;
+    }
+    /** The blue ball's jump : it goes up and down in ~0.17 s, higher when fast. */
+    updateJump(dt) {
+      const j = this.jump;
+      if (!j) {
+        this.height = 0;
+        return;
+      }
+      j.size += j.way * 60 * 40 * dt;
+      if (j.size > 200)
+        j.way = -1;
+      if (j.size < 0) {
+        this.jump = null;
+        this.height = 0;
+        this.justLanded = true;
+        return;
+      }
+      this.height = Math.sqrt(Math.max(0, j.size * this.speed / 40)) / 6;
+    }
+    // ----- falling and dying -----
+    /**
+     * Starts falling : the ball shrinks, clipped by `clip` (a function adding
+     * the visible area to a path), then game.ballFell(kind) is called.
+     */
+    startFall(kind, speed, clip2) {
+      this.fall = { kind, scale: 1, speed, clip: clip2 };
+      this.jump = null;
+      this.height = 0;
+      this.invulnerable = 0;
+    }
+    /** Killed (death bumper, laser, boss...). Ignored while invulnerable. */
+    die() {
+      if (this.invulnerable > 0 || this.fall)
+        return false;
+      this.vx = 0;
+      this.vy = 0;
+      this.startFall("death", 5, null);
+      return true;
+    }
+    updateFall(dt, game) {
+      const f = this.fall;
+      const k = decay(0.9, dt);
+      this.vx *= k;
+      this.vy *= k;
+      this.x += this.vx * dt / 5;
+      this.y += this.vy * dt / 5;
+      f.scale *= decay(Math.pow(0.92, f.speed), dt);
+      if (f.scale >= 0.03)
+        return;
+      this.fall = null;
+      game.ballFell(f.kind);
+    }
+    /** Back to the entrance of the room, blinking. */
+    respawn() {
+      this.placeAt(this.spawnX, this.spawnY);
+      this.fall = null;
+      this.jump = null;
+      this.height = 0;
+      this.invulnerable = INVULNERABLE_TIME;
+    }
+    // ----- drawing -----
+    renderShadow(ctx) {
+      if (this.hidden || this.fall)
+        return;
+      drawClip(ctx, shadowClip || (shadowClip = clip("shadow")), this.x + 3, this.y + 3);
+    }
+    render(ctx) {
+      if (this.hidden)
+        return;
+      if (this.invulnerable > 0 && Math.floor(this.invulnerable * 40) % 2 === 0)
+        ctx.globalAlpha = 0.3;
+      else if (this.invulnerable > 0)
+        ctx.globalAlpha = 0.6;
+      ctx.save();
+      if (this.fall && this.fall.clip) {
+        ctx.beginPath();
+        this.fall.clip(ctx);
+        ctx.clip();
+      }
+      const scale = (this.fall ? this.fall.scale : 1) * (1 + this.height * 0.03);
+      ctx.translate(this.x, this.y - this.height);
+      ctx.scale(scale, scale);
+      drawBall(ctx, this.type, 1, this.spots);
+      ctx.restore();
+      ctx.globalAlpha = 1;
+    }
+  };
+  var shadowClip = null;
+  var marbles = [];
+  var light = null;
+  function drawBall(ctx, type, scale = 1, spots = null) {
+    const marble = marbles[type] || (marbles[type] = clip("marble"));
+    marble.gotoAndStop(type);
+    ctx.save();
+    if (scale !== 1)
+      ctx.scale(scale, scale);
+    marble.draw(ctx);
+    if (spots && spots.length) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(0, 0, 12, 0, TAU);
+      ctx.clip();
+      for (const s of spots) {
+        const front = Math.cos(s.u + Math.PI / 2) + Math.cos(s.v + Math.PI / 2);
+        const alpha = 0.5 + front * (s.ray / BALL_RADIUS) * 0.5;
+        if (alpha <= 0.01)
+          continue;
+        ctx.save();
+        ctx.globalAlpha *= Math.min(1, alpha);
+        ctx.translate(Math.cos(s.u) * s.ray / 2, Math.sin(s.v) * s.ray / 2);
+        ctx.rotate(s.rotation);
+        s.art.draw(ctx);
+        ctx.restore();
+      }
+      ctx.restore();
+    }
+    (light || (light = clip("light"))).draw(ctx);
+    ctx.restore();
+  }
 
   // src/game/entities/effects.js
   var ClipEffect = class extends Entity {
@@ -7841,6 +7701,93 @@
     }
   };
 
+  // src/gfx/ui.js
+  function panel(ctx, x, y, w, h, s = 1) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.scale(s, s);
+    ctx.fillStyle = "rgba(90,40,0,0.3)";
+    roundRect(ctx, -w / 2 + 6, -h / 2 + 8, w, h, 22);
+    ctx.fill();
+    const g = ctx.createLinearGradient(0, -h / 2, 0, h / 2);
+    g.addColorStop(0, "#ffe04a");
+    g.addColorStop(1, "#ffb400");
+    ctx.fillStyle = g;
+    roundRect(ctx, -w / 2, -h / 2, w, h, 22);
+    ctx.fill();
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = "#e08a00";
+    ctx.stroke();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "rgba(255,255,255,0.6)";
+    roundRect(ctx, -w / 2 + 6, -h / 2 + 6, w - 12, h - 12, 17);
+    ctx.stroke();
+    ctx.restore();
+  }
+  function bubbleTitle(ctx, str, x, y, size) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.font = "800 " + size + "px " + FONT;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.lineJoin = "round";
+    ctx.lineWidth = size / 4;
+    ctx.strokeStyle = "#c86a00";
+    ctx.strokeText(str, 0, 0);
+    ctx.lineWidth = size / 9;
+    ctx.strokeStyle = "#fff6c0";
+    ctx.strokeText(str, 0, 0);
+    const g = ctx.createLinearGradient(0, -size / 2, 0, size / 2);
+    g.addColorStop(0, "#fff7a0");
+    g.addColorStop(1, "#ffc000");
+    ctx.fillStyle = g;
+    ctx.fillText(str, 0, 0);
+    ctx.restore();
+  }
+  function button(ctx, label, x, y, w, h, state = "idle") {
+    const focus = state === "focus";
+    const disabled = state === "disabled";
+    ctx.save();
+    ctx.translate(x, y);
+    if (focus)
+      ctx.scale(1.06, 1.06);
+    ctx.fillStyle = "rgba(40,0,70,0.35)";
+    roundRect(ctx, -w / 2 + 3, -h / 2 + 4, w, h, h / 2);
+    ctx.fill();
+    const g = ctx.createLinearGradient(0, -h / 2, 0, h / 2);
+    if (disabled) {
+      g.addColorStop(0, "#b8a8c4");
+      g.addColorStop(1, "#8a7a98");
+    } else if (focus) {
+      g.addColorStop(0, "#c8ff9a");
+      g.addColorStop(1, "#5cc22c");
+    } else {
+      g.addColorStop(0, "#a6ec6e");
+      g.addColorStop(1, "#3c8f1d");
+    }
+    ctx.fillStyle = g;
+    roundRect(ctx, -w / 2, -h / 2, w, h, h / 2);
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = focus ? "#fff" : "rgba(255,255,255,0.6)";
+    ctx.stroke();
+    text(ctx, label, 0, 1, { size: Math.min(20, h * 0.55), color: disabled ? "#e8e0f0" : "#fff", outline: "rgba(20,60,0,0.5)" });
+    ctx.restore();
+  }
+  var Pop = class {
+    constructor() {
+      this.value = 0;
+      this.speed = 0;
+    }
+    update(dt) {
+      const frames = dt * 40;
+      this.speed += (1 - this.value) * 0.35 * frames;
+      this.speed *= Math.pow(0.6, frames);
+      this.value += this.speed * frames;
+      return this.value;
+    }
+  };
+
   // src/scenes/map_view.js
   var MAP_W = 440;
   var MAP_H = 360;
@@ -8170,268 +8117,292 @@
   };
 
   // src/scenes/menu.js
-  var MODE_INFO = {
-    challenge: "Un donjon au hasard : trouve les 4 billes\net bats le poulpe en moins de 15 minutes.",
-    course: "Trois tours de circuit, le plus vite possible.\nBats un record pour ouvrir le circuit suivant.",
-    aventure: "Cinq donjons faits main,\ngard\xE9s par les serpents des \xE9l\xE9ments.",
-    classique: "Descends le plus bas possible : prends les pastilles\nrouges et plonge dans la trappe avant la fin du temps.",
-    options: "La musique et les sons.",
-    aide: "Le tutoriel, et le r\xF4le de chaque bille."
+  var FRAME2 = 1 / 40;
+  var CX = 305;
+  var CY = 205;
+  var RADIUS = 136;
+  var INFOS = { challenge: 0, aventure: 1, course: 2, classique: 3 };
+  var Ring = class extends ButtonGroup {
+    move(dx, dy) {
+      const n = this.buttons.length;
+      if (!n)
+        return;
+      this.focus = (this.focus + (dx + dy > 0 ? 1 : n - 1)) % n;
+      app.audio.play("menuMove");
+    }
   };
-  var BALL_HELP = [
-    "La bille de d\xE9part.",
-    "Casse les blocs verts.",
-    "Attire les pastilles rouges.",
-    "Tr\xE8s rapide... et difficile \xE0 tenir !",
-    "Saute par-dessus les trous.",
-    "Lourde : ne craint ni les bumpers mortels,\nni les aimants.",
-    "Voit les bumpers invisibles."
-  ];
-  var BALL_IMAGES = ["help_jaune", "help_verte", "help_rouge", "help_orange", "help_bleue", "help_metal", "help_violette"];
-  var ADVENTURES = [
-    { name: "Eau", icon: "donjon_eau" },
-    { name: "Feu", icon: "donjon_feu" },
-    { name: "Vent", icon: "donjon_vent" },
-    { name: "Terre", icon: "donjon_terre" },
-    { name: "Final", icon: null }
-  ];
   var MenuScene = class {
     constructor(page = "main") {
       this.time = 0;
+      this.clock = 0;
+      this.bg = clip("fondMenu");
+      this.holeScale = 1;
+      this.info = null;
+      this.ray = 450;
+      this.ang = 0;
+      this.raySpeed = -1;
+      this.rayAcc = 1.05;
+      this.angSpeed = 0.05;
+      this.angAcc = 1.01;
+      this.cosRay = 0;
+      this.cosSpeed = 0;
+      this.phase = 0;
+      this.menuTime = 0;
+      this.goHole = false;
+      this.next = null;
       this.open(page);
     }
+    /** Shows the balls of a page. */
     open(page) {
       const mainFocus = this.page === "main" ? this.group.focus : this.mainFocus || 0;
       this.mainFocus = mainFocus;
       this.page = page;
-      this.group = this[page + "Page"]();
+      this.group = new Ring(this[page + "Page"](), page === "main" ? null : () => this.goto("main"));
       if (page === "main")
         this.group.focus = mainFocus;
+      const n = this.group.buttons.length;
+      this.group.buttons.forEach((b, i) => {
+        b.ang = i * 2 * Math.PI / n;
+        b.w = b.h = 100;
+      });
+      this.place();
     }
-    start(mode, param = 0) {
-      if (app.scenes.busy)
-        return;
-      app.scenes.goto(new PlayScene(mode, param));
+    /**
+     * A ball of the menu : `id` is its frame in the original (its title and
+     * its picture).
+     */
+    ball(id, name, action, enabled = true) {
+      const art = clip("menu balls");
+      art.gotoAndStop(enabled ? "normal" : "disable");
+      art.child("title")?.gotoAndStop(id - 1);
+      art.child("ball")?.gotoAndStop(id - 1);
+      const b = { name, id, art, enabled, action, x: CX, y: CY, selected: false };
+      b.draw = (ctx, focused) => this.drawBall(ctx, b, focused);
+      return b;
     }
     // ----- pages -----
     mainPage() {
-      const modes = [
-        ["challenge", () => this.start(Mode.CHALLENGE)],
-        ["course", () => this.open("course")],
-        ["aventure", () => this.open("adventure")],
-        ["classique", () => this.start(Mode.CLASSIC)],
-        ["options", () => this.open("options")],
-        ["aide", () => this.open("help")]
+      return [
+        this.ball(1, "challenge", () => this.play(Mode.CHALLENGE)),
+        this.ball(2, "course", () => this.goto("course")),
+        this.ball(3, "aventure", () => this.goto("adventure")),
+        this.ball(4, "classique", () => this.play(Mode.CLASSIC)),
+        this.ball(5, "options", () => this.goto("options")),
+        this.ball(6, "aide", () => this.play(Mode.TUTORIAL))
       ];
-      const buttons = modes.map(([name, action], i) => ({
-        name,
-        x: 155 + i % 3 * 150,
-        y: 155 + Math.floor(i / 3) * 128,
-        w: 112,
-        h: 112,
-        action,
-        draw: (ctx, focused) => {
-          const b = buttons[i];
-          const bounce = focused ? 1.12 + Math.sin(this.time * 6) * 0.03 : 1;
-          ctx.save();
-          ctx.translate(b.x, b.y);
-          ctx.scale(bounce, bounce);
-          if (focused) {
-            ctx.fillStyle = "rgba(255,255,255,0.35)";
-            circle(ctx, 0, 0, 62);
-            ctx.fill();
-          }
-          image(ctx, "menu_" + name, 112, 112);
-          ctx.restore();
-        }
-      }));
-      return new ButtonGroup(buttons);
-    }
-    adventurePage() {
-      const save = app.save;
-      const buttons = ADVENTURES.map((a, i) => {
-        const unlocked = save.adventureUnlocked(i);
-        return {
-          x: 95 + i * 105,
-          y: 185,
-          w: 96,
-          h: 120,
-          enabled: unlocked,
-          action: () => this.start(Mode.ADVENTURE, i),
-          draw: (ctx, focused) => this.drawAdventure(ctx, a, i, unlocked, focused)
-        };
-      });
-      buttons.push(this.backButton());
-      return new ButtonGroup(buttons, () => this.open("main"));
     }
     coursePage() {
-      const save = app.save;
-      const buttons = [];
+      const balls = [];
       for (let i = 0; i < 7; i++) {
-        const unlocked = save.courseUnlocked(i);
-        const best = save.data.courses.records[i][0];
-        buttons.push({
-          x: 110 + i % 4 * 130,
-          y: 150 + Math.floor(i / 4) * 110,
-          w: 112,
-          h: 90,
-          enabled: unlocked,
-          action: () => this.start(Mode.COURSE, i),
-          draw: (ctx, focused) => {
-            const b = buttons[i];
-            ctx.save();
-            ctx.translate(b.x, b.y);
-            if (focused)
-              ctx.scale(1.07, 1.07);
-            ctx.fillStyle = unlocked ? focused ? "#c8ff9a" : "#a6ec6e" : "rgba(60,20,90,0.6)";
-            roundRect(ctx, -56, -45, 112, 90, 18);
-            ctx.fill();
-            ctx.strokeStyle = focused ? "#fff" : "rgba(255,255,255,0.5)";
-            ctx.lineWidth = 2;
-            ctx.stroke();
-            text(ctx, "Circuit " + (i + 1), 0, -20, { size: 18, color: "#fff", outline: "rgba(20,60,0,0.5)" });
-            text(
-              ctx,
-              unlocked ? "Record " + formatTime(best.time, true) : "Ferm\xE9",
-              0,
-              14,
-              { size: 13, color: unlocked ? "#2a5a10" : "#d0c0e0", weight: "700" }
-            );
-            ctx.restore();
-          }
-        });
+        const b = this.ball(40 + i, "course" + i, () => this.play(Mode.COURSE, i), app.save.courseUnlocked(i));
+        b.info = () => "Record " + formatTime(app.save.data.courses.records[i][0].time, true);
+        balls.push(b);
       }
-      buttons.push(this.backButton());
-      return new ButtonGroup(buttons, () => this.open("main"));
+      balls.push(this.ball(47, "back", () => this.goto("main")));
+      return balls;
+    }
+    adventurePage() {
+      const balls = [];
+      const adventures = app.save.data.adventures;
+      for (let i = 0; i < 5; i++) {
+        const b = this.ball(60 + i, "adventure" + i, () => this.play(Mode.ADVENTURE, i), app.save.adventureUnlocked(i));
+        const ball = b.art.child("ball");
+        if (i < 4)
+          ball?.child("mask")?.gotoAndStop(adventures.won[i] ? 1 : 0);
+        if (i === 4 && !b.enabled)
+          ball?.child("logo")?.stop();
+        if (adventures.won[i])
+          b.info = () => "Gagn\xE9 " + adventures.best[i] + " %";
+        balls.push(b);
+      }
+      balls.push(this.ball(65, "back", () => this.goto("main")));
+      return balls;
     }
     optionsPage() {
       const s = app.save.settings;
-      const toggle = (key, label, y) => ({
-        x: WIDTH / 2,
-        y,
-        w: 260,
-        h: 44,
-        action: () => {
-          s[key] = !s[key];
-          app.save.save();
-          applySettings();
-        },
-        draw: (ctx, focused) => button(ctx, label + (s[key] ? " : oui" : " : non"), WIDTH / 2, y, 260, 44, focused ? "focus" : "idle")
-      });
-      const buttons = [toggle("music", "Musique", 170), toggle("sounds", "Sons", 230), this.backButton()];
-      return new ButtonGroup(buttons, () => this.open("main"));
-    }
-    helpPage() {
-      const buttons = BALLS.map((b, i) => ({
-        x: 70 + i * 78,
-        y: 150,
-        w: 70,
-        h: 70,
-        action: () => {
-        },
-        draw: (ctx, focused) => {
-          ctx.save();
-          ctx.translate(70 + i * 78, 150);
-          ctx.scale(focused ? 1.1 : 0.9, focused ? 1.1 : 0.9);
-          image(ctx, BALL_IMAGES[i], 70, 70);
-          ctx.restore();
-        }
-      }));
-      buttons.push({
-        x: WIDTH / 2 - 100,
-        y: 360,
-        w: 180,
-        h: 40,
-        action: () => this.start(Mode.TUTORIAL),
-        draw: (ctx, focused) => button(ctx, "Tutoriel", WIDTH / 2 - 100, 360, 180, 40, focused ? "focus" : "idle")
-      });
-      const back = this.backButton();
-      back.x = WIDTH / 2 + 100;
-      buttons.push(back);
-      return new ButtonGroup(buttons, () => this.open("main"));
-    }
-    backButton() {
-      const b = {
-        x: WIDTH / 2,
-        y: 360,
-        w: 180,
-        h: 40,
-        action: () => this.open("main"),
-        draw: (ctx, focused) => button(ctx, "Retour", b.x, b.y, 180, 40, focused ? "focus" : "idle")
+      const toggle = (key) => {
+        s[key] = !s[key];
+        app.save.save();
+        applySettings();
+        this.goto("options");
       };
-      return b;
+      return [
+        this.ball(s.music ? 20 : 21, "music", () => toggle("music")),
+        this.ball(s.sounds ? 22 : 23, "sounds", () => toggle("sounds")),
+        this.ball(24, "back", () => this.goto("main"))
+      ];
+    }
+    // ----- transitions -----
+    /** The balls fly away, the hole grows, the game starts. */
+    play(mode, param = 0) {
+      if (this.phase > 1)
+        return;
+      this.phase = 2;
+      this.next = () => {
+        if (!app.scenes.busy)
+          app.scenes.goto(new PlayScene(mode, param));
+      };
+      this.raySpeed = 7;
+      this.rayAcc = 1.05;
+      this.angSpeed = 0.1;
+      this.angAcc = 1.05;
+      this.cosSpeed = 0;
+      this.cosRay = 0;
+      this.goHole = true;
+      this.showInfo(null);
+    }
+    /** The balls fly to the centre, and come back with another page. */
+    goto(page) {
+      if (this.phase > 1)
+        return;
+      this.phase = 3;
+      this.nextPage = page;
+      this.raySpeed = -5;
+      this.rayAcc = 1.1;
+      this.angSpeed = 0.2;
+      this.angAcc = 1.02;
+      this.cosSpeed = 0;
+      this.cosRay = 0;
+      this.showInfo(null);
     }
     // ----- every step -----
     update(dt) {
       this.time += dt;
-      if (!app.scenes.busy)
+      if (this.phase <= 1 && !app.scenes.busy) {
+        const hover = app.input.hover;
+        if (this.phase === 1 && hover && hover !== this.group.lastHover)
+          this.steer(hover.x);
         this.group.update();
+      }
+      this.clock += dt;
+      while (this.clock >= FRAME2) {
+        this.clock -= FRAME2;
+        this.step();
+      }
+      this.select();
     }
-    render(ctx) {
-      sunburst(ctx, this.time * 0.1);
-      const heading = { main: "MotionBall 2", adventure: "Aventure", course: "Course", options: "Options", help: "Aide" }[this.page];
-      title(ctx, heading, WIDTH / 2, 48, this.page === "main" ? 44 : 40, this.time);
-      this.group.render(ctx);
-      if (this.page === "main")
-        this.renderInfo(ctx);
-      if (this.page === "help")
-        this.renderHelp(ctx);
+    /** The mouse on the left or on the right turns the ring. */
+    steer(x) {
+      const delta = Math.min(200, Math.abs(CX - x));
+      this.angSpeed = (x > CX ? 1 : -1) * delta * 0.05 / 100;
     }
-    renderInfo(ctx) {
-      const b = this.group.focused;
-      panel(ctx, WIDTH / 2, 372, 470, 58);
-      text(ctx, MODE_INFO[b.name], WIDTH / 2, 372, { size: 14, color: "#6a3a00", weight: "700" });
-      const save = app.save.data;
-      if (b.name === "challenge" && save.challengeBest > 0)
-        badge(ctx, "Record : " + save.challengeBest);
-      if (b.name === "classique" && save.classicBest > 0)
-        badge(ctx, "Record : niveau " + save.classicBest);
+    /** The focused ball is "selected", its description comes up. */
+    select() {
+      this.group.buttons.forEach((b, i) => {
+        const selected = i === this.group.focus && b.enabled && this.phase <= 1;
+        if (selected !== b.selected) {
+          b.selected = selected;
+          b.art.gotoAndStop(selected ? "selected" : b.enabled ? "normal" : "disable");
+          if (this.page === "main")
+            this.showInfo(selected ? INFOS[b.name] : null);
+        }
+      });
     }
-    renderHelp(ctx) {
-      const i = this.group.focus;
-      if (i >= BALLS.length)
+    showInfo(frame) {
+      if (frame === null || frame === void 0) {
+        if (this.info)
+          this.info.dy = 10;
         return;
-      panel(ctx, WIDTH / 2, 262, 440, 110);
-      ctx.save();
-      ctx.translate(WIDTH / 2 - 170, 262);
-      ctx.scale(2.4, 2.4);
-      drawBall(ctx, i, 0.8);
-      ctx.restore();
-      text(ctx, "Bille " + BALLS[i].name.toLowerCase(), WIDTH / 2 + 30, 235, { size: 22, color: "#fff", outline: "#c86a00" });
-      text(ctx, BALL_HELP[i], WIDTH / 2 + 30, 280, { size: 15, color: "#6a3a00", weight: "700" });
+      }
+      if (!this.info)
+        this.info = { art: clip("cadreInfo"), y: HEIGHT + 50 };
+      this.info.art.gotoAndStop(frame);
+      this.info.dy = -10;
     }
-    drawAdventure(ctx, a, i, unlocked, focused) {
-      const b = this.group ? this.group.buttons[i] : { x: 95 + i * 105, y: 185 };
-      const won = app.save.data.adventures.won[i];
+    /** One frame of the original (40 per second). */
+    step() {
+      this.menuTime += 1 / 30;
+      this.bg.update(FRAME2);
+      for (const b of this.group.buttons)
+        b.art.update(FRAME2);
+      const info = this.info;
+      if (info) {
+        info.y += info.dy;
+        if (info.y > HEIGHT + 50)
+          this.info = null;
+        else if (info.y < HEIGHT - 40)
+          info.y = HEIGHT - 40;
+      }
+      this.raySpeed *= this.rayAcc;
+      if (this.phase > 1 && Math.abs(this.raySpeed) < 3)
+        this.raySpeed = this.raySpeed < 0 ? -3 : 3;
+      this.angSpeed *= this.angAcc;
+      this.cosRay += this.cosSpeed;
+      this.ray += this.raySpeed;
+      this.ang = (this.ang + this.angSpeed) % (Math.PI * 2);
+      this.place();
+      switch (this.phase) {
+        case 0:
+          if (this.ray <= RADIUS) {
+            this.ray = RADIUS;
+            this.raySpeed = 0;
+            this.angAcc = 0.99;
+            this.cosSpeed = 0.1;
+            this.phase = 1;
+          }
+          break;
+        case 1:
+          if (Math.abs(this.cosRay) > 10)
+            this.cosSpeed *= -1;
+          break;
+        case 2:
+          if (this.ray > 450) {
+            this.phase = 5;
+            this.next();
+          }
+          break;
+        case 3:
+          if (this.ray < this.raySpeed || this.ray < 0) {
+            this.open(this.nextPage);
+            this.angSpeed *= -1;
+            this.raySpeed *= -1;
+            this.rayAcc = 1 / this.rayAcc;
+            this.angAcc = 0.97;
+            this.phase = 4;
+          }
+          break;
+        case 4:
+          if (this.ray >= 130) {
+            this.raySpeed = 0;
+            this.ray = RADIUS;
+            this.phase = 0;
+          }
+          break;
+      }
+      if (this.goHole)
+        this.holeScale *= 1.1;
+    }
+    /** The positions of the balls on the ring. */
+    place() {
+      for (const b of this.group.buttons) {
+        const a = b.ang + this.ang;
+        const r = Math.cos(b.ang + this.menuTime) * this.cosRay;
+        b.x = Math.cos(a) * (this.ray + r) + CX;
+        b.y = Math.sin(a) * (this.ray + r) + CY;
+      }
+    }
+    // ----- drawing -----
+    render(ctx) {
+      this.bg.set("hole", { xscale: this.holeScale, yscale: this.holeScale });
+      this.bg.draw(ctx);
+      this.group.render(ctx);
+      const b = this.group.focused;
+      if (this.phase <= 1 && b && b.enabled && b.info)
+        text(ctx, b.info(), CX, CY, { size: 15, color: "#fff", outline: "#4a1470" });
+      if (this.info) {
+        ctx.save();
+        ctx.translate(WIDTH / 2, this.info.y);
+        this.info.art.draw(ctx);
+        ctx.restore();
+      }
+    }
+    drawBall(ctx, b) {
       ctx.save();
       ctx.translate(b.x, b.y);
-      if (focused)
-        ctx.scale(1.08, 1.08);
-      ctx.fillStyle = !unlocked ? "rgba(60,20,90,0.6)" : focused ? "#fff2a8" : "#ffe04a";
-      roundRect(ctx, -48, -60, 96, 120, 20);
-      ctx.fill();
-      ctx.strokeStyle = focused ? "#fff" : "#e08a00";
-      ctx.lineWidth = 3;
-      ctx.stroke();
-      if (a.icon) {
-        ctx.globalAlpha = unlocked ? 1 : 0.3;
-        image(ctx, a.icon, 64, 56, -32, -48);
-        ctx.globalAlpha = 1;
-      } else {
-        text(ctx, unlocked ? "!" : "?", 0, -20, { size: 48, color: unlocked ? "#e03a00" : "#d0c0e0", outline: "#fff" });
-      }
-      text(ctx, a.name, 0, 28, { size: 18, color: unlocked ? "#6a3a00" : "#d0c0e0" });
-      if (won)
-        text(ctx, "Gagn\xE9 " + app.save.data.adventures.best[i] + " %", 0, 48, { size: 12, color: "#2a7a10", weight: "700" });
+      b.art.draw(ctx);
       ctx.restore();
     }
   };
-  function badge(ctx, str) {
-    ctx.fillStyle = "rgba(40,0,70,0.6)";
-    roundRect(ctx, WIDTH / 2 - 90, 322, 180, 22, 11);
-    ctx.fill();
-    text(ctx, str, WIDTH / 2, 333, { size: 13, color: "#ffe060", weight: "700" });
-  }
   function applySettings() {
     const s = app.save.settings;
     app.audio.setMusicEnabled(s.music);
@@ -8439,7 +8410,7 @@
   }
 
   // src/scenes/title.js
-  var FRAME2 = 1 / 40;
+  var FRAME3 = 1 / 40;
   var rgb = (r, g, b) => ({ am: 1, rm: 0, gm: 0, bm: 0, ao: 0, ro: r, go: g, bo: b });
   var Mc = class {
     constructor(name, frame = 0) {
@@ -8507,8 +8478,8 @@
         return;
       }
       this.clock += dt;
-      while (this.clock >= FRAME2) {
-        this.clock -= FRAME2;
+      while (this.clock >= FRAME3) {
+        this.clock -= FRAME3;
         this.step();
       }
     }

@@ -50,28 +50,43 @@ test("title : a tap goes to the menu too", () => {
 	assert.ok(app.scenes.current instanceof MenuScene);
 });
 
-test("menu : the arrows move between the modes, confirm opens them", () => {
+/** Runs the menu until its transition is over (the balls fly out and back). */
+function settle(menu) {
+	for (let i = 0; i < 400 && menu.phase > 1 && !(app.scenes.current instanceof PlayScene); i++)
+		play(menu, STEP);
+}
+
+test("menu : the arrows go around the ring of modes, confirm opens them", () => {
 	setup();
 	const menu = new MenuScene();
 	assert.equal(menu.group.focused.name, "challenge");
 	press(menu, "right");
 	assert.equal(menu.group.focused.name, "course");
-	press(menu, "down");
-	assert.equal(menu.group.focused.name, "options");
-	press(menu, "up");
+	press(menu, "left");
+	press(menu, "left");
+	assert.equal(menu.group.focused.name, "aide", "the ring goes round");
+	press(menu, "right");
+	press(menu, "right");
 	press(menu, "confirm");
+	settle(menu);
 	assert.equal(menu.page, "course");
 	press(menu, "back");
+	settle(menu);
 	assert.equal(menu.page, "main");
 	assert.equal(menu.group.focused.name, "course", "the focus stays on the mode");
 });
 
-test("menu : clicking a mode starts it", () => {
+test("menu : the balls come in, turn, and a click on a mode starts it once they fly away", () => {
 	setup();
 	const menu = new MenuScene();
+	play(menu, 1.5);
+	assert.equal(menu.phase, 1, "the ring is in place");
 	const classic = menu.group.buttons.find(b => b.name === "classique");
+	assert.ok(Math.abs(Math.hypot(classic.x - 305, classic.y - 205) - 136) < 12);
 	app.input.pointer = { x: classic.x, y: classic.y };
 	play(menu, STEP);
+	assert.equal(menu.phase, 2, "the balls fly away");
+	settle(menu);
 	assert.ok(app.scenes.current instanceof PlayScene);
 	assert.equal(app.scenes.current.mode, Mode.CLASSIC);
 	assert.ok(app.scenes.current.game, "the game is created");
@@ -82,9 +97,12 @@ test("menu : locked adventures and courses can't be started", () => {
 	const menu = new MenuScene("adventure");
 	menu.group.focus = 4;
 	press(menu, "confirm");
+	settle(menu);
 	assert.ok(!(app.scenes.current instanceof PlayScene));
+	assert.equal(menu.phase <= 1, true);
 	menu.group.focus = 0;
 	press(menu, "confirm");
+	settle(menu);
 	assert.ok(app.scenes.current instanceof PlayScene);
 	assert.equal(app.scenes.current.mode, Mode.ADVENTURE);
 });
@@ -93,9 +111,12 @@ test("menu : the options toggle the music and the sounds", () => {
 	setup();
 	const menu = new MenuScene("options");
 	press(menu, "confirm");
+	settle(menu);
 	assert.equal(app.save.settings.music, false);
-	press(menu, "down");
+	assert.equal(menu.page, "options");
+	press(menu, "right");
 	press(menu, "confirm");
+	settle(menu);
 	assert.equal(app.save.settings.sounds, false);
 });
 
@@ -146,7 +167,7 @@ test("end of the game : the panel, then back to the menu", () => {
 test("drawing : every menu page", () => {
 	setup();
 	play(new TitleScene(), 0.2);
-	for (const page of ["main", "adventure", "course", "options", "help"]) {
+	for (const page of ["main", "adventure", "course", "options"]) {
 		const menu = new MenuScene(page);
 		for (let i = 0; i < menu.group.buttons.length; i++) {
 			menu.group.focus = i;
