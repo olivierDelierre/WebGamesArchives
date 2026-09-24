@@ -2,14 +2,12 @@
 
 A rewrite of **MotionBall 2** (Motion Twin, Frutiparc, 2005) for modern browsers.
 
-`../html5/` holds a faithful, line-by-line port of the Flash game, which emulates the
-Flash runtime (movie clips, timelines, depths). This folder is different: a new
-codebase with the same rules, levels and graphics, organised as a modern game:
+A new codebase with the rules, levels, graphics and sounds of the original Flash
+game (its ActionScript is in `../mb2/`), organised as a modern game:
 
 - the original art and animations: every symbol of `mb2.fla`, converted from
   its XFL export (`npm run xfl`, see [docs/XFL_INTEGRATION.md](docs/XFL_INTEGRATION.md))
   and played by a small timeline player;
-
 - ES modules, bundled into a single file (`dist/motionball2.js`) by esbuild;
 - a fixed-step simulation (120 steps per second) independent of the screen rate;
 - geometric collisions (circles, boxes and rounded corners) instead of the

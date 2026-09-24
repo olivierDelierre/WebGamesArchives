@@ -25,8 +25,8 @@ doors, find the coloured balls, beat the boss).
   [XFL_INTEGRATION.md](XFL_INTEGRATION.md)), played by a small timeline player
   (`gfx/xfl/clip.js`). The game code drives the symbols the way the original
   ActionScript did (`gotoAndPlay("hit")`, a needle's rotation, a text), but the
-  rules are the rewrite's own code : the faithful port in `../html5/` is the
-  one that runs the original code on an emulated Flash runtime.
+  rules are the rewrite's own code : the original ActionScript (`../mb2/`) is
+  a reference, it is not run.
 
 ## Layout
 
