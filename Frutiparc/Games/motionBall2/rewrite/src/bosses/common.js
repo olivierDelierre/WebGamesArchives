@@ -9,8 +9,8 @@
  */
 
 import { WIDTH as W, HEIGHT as H, TILE, TILE_ORIGIN, BORDER } from "../config.js";
-import { Entity, Effect, Layer } from "../game/entity.js";
-import { roundRect } from "../gfx/draw.js";
+import { Entity, Layer } from "../game/entity.js";
+import { ClipEffect } from "../game/entities/effects.js";
 
 export class Boss extends Entity {
 
@@ -28,38 +28,22 @@ export const redOffset = red => ({ am: 1, rm: 1, gm: 1, bm: 1, ao: 0, ro: Math.m
 
 // ----- new holes -----
 
-/** A floor tile falling into a new hole. */
-export class FallingTile extends Effect {
+/** A floor tile falling into a new hole ("dalle", it removes itself). */
+export class FallingTile extends ClipEffect {
 
 	constructor(tx, ty) {
-		super(TILE_ORIGIN + tx * TILE + 1 + TILE / 2, TILE_ORIGIN + ty * TILE + 1 + TILE / 2, 0.6, Layer.ITEM);
-	}
-
-	render(ctx) {
-		const k = this.t;
-		ctx.save();
-		ctx.translate(this.x, this.y);
-		ctx.rotate(k * 0.8);
-		ctx.scale(1 - k * 0.8, 1 - k * 0.8);
-		ctx.globalAlpha = 1 - k * 0.6;
-		ctx.fillStyle = "#c9a2e6";
-		ctx.strokeStyle = "#8a5ab0";
-		ctx.lineWidth = 2;
-		roundRect(ctx, -19, -19, 38, 38, 4);
-		ctx.fill();
-		ctx.stroke();
-		ctx.restore();
+		super("dalle", TILE_ORIGIN + tx * TILE, TILE_ORIGIN + ty * TILE, Layer.ITEM, 1);
 	}
 }
 
 /**
- * The floor cracking : after `duration` seconds the tile falls and becomes
- * a hole (`onDone`).
+ * The floor cracking ("FXDalleCut") : when its animation ends, the tile falls
+ * and becomes a hole (`onDone`).
  */
-export class CrackingTile extends Effect {
+export class CrackingTile extends ClipEffect {
 
-	constructor(tx, ty, duration, onDone) {
-		super(TILE_ORIGIN + tx * TILE + 1, TILE_ORIGIN + ty * TILE + 1, duration, Layer.FLOOR);
+	constructor(tx, ty, onDone) {
+		super("FXDalleCut", TILE_ORIGIN + tx * TILE, TILE_ORIGIN + ty * TILE, Layer.FLOOR);
 		this.tx = tx;
 		this.ty = ty;
 		this.onDone = onDone;
@@ -69,28 +53,6 @@ export class CrackingTile extends Effect {
 		super.update(dt);
 		if (this.dead)
 			this.onDone(game, this.tx, this.ty);
-	}
-
-	render(ctx) {
-		const k = this.t;
-		ctx.save();
-		ctx.translate(this.x, this.y);
-		ctx.strokeStyle = Math.floor(this.age * 10) % 2 ? "rgba(60,0,80,0.9)" : "rgba(255,255,255,0.8)";
-		ctx.lineWidth = 1 + k * 2;
-		ctx.beginPath();
-		ctx.moveTo(4, 20);
-		ctx.lineTo(14, 16);
-		ctx.lineTo(20, 24);
-		ctx.lineTo(30, 14);
-		ctx.lineTo(37, 18);
-		ctx.moveTo(20, 4);
-		ctx.lineTo(18, 14);
-		ctx.lineTo(24, 22);
-		ctx.lineTo(20, 36);
-		ctx.stroke();
-		ctx.strokeStyle = "rgba(255,80,80," + (0.3 + 0.4 * k) + ")";
-		ctx.strokeRect(1, 1, 38, 38);
-		ctx.restore();
 	}
 }
 

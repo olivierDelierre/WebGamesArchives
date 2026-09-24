@@ -334,7 +334,7 @@ export class Tourneboule extends Boss {
 				if (!cell)
 					break;
 				room.reserved.add(cell.tx + "," + cell.ty);
-				room.add(new CrackingTile(cell.tx, cell.ty, 1.25, (g, tx, ty) => {
+				room.add(new CrackingTile(cell.tx, cell.ty, (g, tx, ty) => {
 					room.reserved.delete(tx + "," + ty);
 					app.audio.play("crash");
 					breakFloor(g, tx, ty);

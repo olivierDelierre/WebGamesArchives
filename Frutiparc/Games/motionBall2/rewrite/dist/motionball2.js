@@ -953,12 +953,6 @@
     circle(ctx, x, y, r);
     ctx.fill();
   }
-  function shine(ctx, x, y, r, alpha = 0.7) {
-    ctx.fillStyle = "rgba(255,255,255," + alpha + ")";
-    ctx.beginPath();
-    ctx.ellipse(x - r * 0.3, y - r * 0.45, r * 0.45, r * 0.25, -0.5, 0, Math.PI * 2);
-    ctx.fill();
-  }
   function ballSphere(ctx, x, y, r, type) {
     const c = BALL_COLORS[type] || BALL_COLORS[0];
     sphere(ctx, x, y, r, c[0], c[1], c[2]);
@@ -1250,21 +1244,6 @@
     update(dt, game) {
     }
     render(ctx, game) {
-    }
-  };
-  var Effect = class extends Entity {
-    constructor(x, y, duration, layer = Layer.EFFECT) {
-      super(x, y, layer);
-      this.duration = duration;
-      this.age = 0;
-    }
-    get t() {
-      return Math.min(1, this.age / this.duration);
-    }
-    update(dt) {
-      this.age += dt;
-      if (this.age >= this.duration)
-        this.dead = true;
     }
   };
 
@@ -6037,29 +6016,14 @@
     }
   };
   var redOffset = (red) => ({ am: 1, rm: 1, gm: 1, bm: 1, ao: 0, ro: Math.min(255, red), go: 0, bo: 0 });
-  var FallingTile = class extends Effect {
+  var FallingTile = class extends ClipEffect {
     constructor(tx, ty) {
-      super(TILE_ORIGIN + tx * TILE + 1 + TILE / 2, TILE_ORIGIN + ty * TILE + 1 + TILE / 2, 0.6, Layer.ITEM);
-    }
-    render(ctx) {
-      const k = this.t;
-      ctx.save();
-      ctx.translate(this.x, this.y);
-      ctx.rotate(k * 0.8);
-      ctx.scale(1 - k * 0.8, 1 - k * 0.8);
-      ctx.globalAlpha = 1 - k * 0.6;
-      ctx.fillStyle = "#c9a2e6";
-      ctx.strokeStyle = "#8a5ab0";
-      ctx.lineWidth = 2;
-      roundRect(ctx, -19, -19, 38, 38, 4);
-      ctx.fill();
-      ctx.stroke();
-      ctx.restore();
+      super("dalle", TILE_ORIGIN + tx * TILE, TILE_ORIGIN + ty * TILE, Layer.ITEM, 1);
     }
   };
-  var CrackingTile = class extends Effect {
-    constructor(tx, ty, duration, onDone) {
-      super(TILE_ORIGIN + tx * TILE + 1, TILE_ORIGIN + ty * TILE + 1, duration, Layer.FLOOR);
+  var CrackingTile = class extends ClipEffect {
+    constructor(tx, ty, onDone) {
+      super("FXDalleCut", TILE_ORIGIN + tx * TILE, TILE_ORIGIN + ty * TILE, Layer.FLOOR);
       this.tx = tx;
       this.ty = ty;
       this.onDone = onDone;
@@ -6068,27 +6032,6 @@
       super.update(dt);
       if (this.dead)
         this.onDone(game, this.tx, this.ty);
-    }
-    render(ctx) {
-      const k = this.t;
-      ctx.save();
-      ctx.translate(this.x, this.y);
-      ctx.strokeStyle = Math.floor(this.age * 10) % 2 ? "rgba(60,0,80,0.9)" : "rgba(255,255,255,0.8)";
-      ctx.lineWidth = 1 + k * 2;
-      ctx.beginPath();
-      ctx.moveTo(4, 20);
-      ctx.lineTo(14, 16);
-      ctx.lineTo(20, 24);
-      ctx.lineTo(30, 14);
-      ctx.lineTo(37, 18);
-      ctx.moveTo(20, 4);
-      ctx.lineTo(18, 14);
-      ctx.lineTo(24, 22);
-      ctx.lineTo(20, 36);
-      ctx.stroke();
-      ctx.strokeStyle = "rgba(255,80,80," + (0.3 + 0.4 * k) + ")";
-      ctx.strokeRect(1, 1, 38, 38);
-      ctx.restore();
     }
   };
   function breakFloor(game, tx, ty) {
@@ -6566,16 +6509,18 @@
       this.drops = [];
       this.trail = [];
       this.clock = new FrameClock();
+      this.art = clip("FXWater");
     }
     update(dt, game) {
       const ball = game.ball;
+      this.art.update(dt);
       this.updateSplash(dt);
       if (this.hit) {
         this.wet -= dt;
         ball.water = this.wet > 0;
         this.clock.run(dt, () => {
           if (this.wet > 0 && !ball.falling && ball.speed > 20)
-            this.trail.push({ x: ball.x + 2, y: ball.y + 2, a: Math.atan2(ball.vy, ball.vx) + Math.PI, len: ball.speed / 40 * 0.3, age: 0, alpha: Math.min(this.wet, 1) });
+            this.trail.push({ x: ball.x + 2, y: ball.y + 2, a: Math.atan2(ball.vy, ball.vx) + Math.PI, len: ball.speed / 40 * 0.3, alpha: Math.min(this.wet, 1), art: clip("FXWaterQueue") });
         });
         if (this.wet <= 0 && this.drops.length === 0 && this.trail.length === 0) {
           ball.water = false;
@@ -6598,7 +6543,7 @@
       this.hit = true;
       this.wet = 10 + randInt(5);
       for (const dx of [-1, -2, 1, 2])
-        this.drops.push({ x: this.x, y: this.y, vx: dx * 40, vy: -(3 + randInt(2)) * 40, size: 1, r: 3 + randInt(3) });
+        this.drops.push({ x: this.x, y: this.y, vx: dx * 40, vy: -(3 + randInt(2)) * 40, size: 1, frame: randInt(3) });
     }
     updateSplash(dt) {
       for (const d of this.drops) {
@@ -6609,61 +6554,68 @@
       }
       this.drops = this.drops.filter((d) => d.size > 0.05);
       for (const t of this.trail)
-        t.age += dt;
-      this.trail = this.trail.filter((t) => t.age < 0.25);
+        t.art.update(dt);
+      this.trail = this.trail.filter((t) => !t.art.removed);
     }
     destroy() {
       this.wet = 0;
       if (!this.hit)
         this.dead = true;
     }
+    /** "FXWater" (the drop), "FXWaterParticule" (the splash), "FXWaterQueue" (the marks). */
     render(ctx) {
       for (const t of this.trail) {
         ctx.save();
         ctx.translate(t.x, t.y);
         ctx.rotate(t.a);
-        ctx.globalAlpha = 0.5 * (1 - t.age / 0.25) * t.alpha;
-        ctx.fillStyle = "#6ac8ff";
-        ctx.beginPath();
-        ctx.ellipse(t.len / 2, 0, t.len / 2 + 2, 4, 0, 0, TAU);
-        ctx.fill();
+        ctx.scale(t.len * 10 / 100, 1);
+        ctx.globalAlpha = t.alpha;
+        t.art.draw(ctx);
         ctx.restore();
       }
-      for (const d of this.drops)
-        sphere(ctx, d.x, d.y, d.r * d.size, "#9adcff", "#2a7ac8", "#fff");
+      for (const d of this.drops) {
+        const art = drop(d.frame);
+        ctx.save();
+        ctx.translate(d.x, d.y);
+        ctx.scale(d.size, d.size);
+        art.draw(ctx);
+        ctx.restore();
+      }
       if (this.hit)
         return;
       ctx.save();
       ctx.translate(this.x, this.y);
-      ctx.fillStyle = "rgba(120,200,255,0.5)";
-      circle(ctx, 0, 0, 13 + Math.sin(app.time * 8) * 2);
-      ctx.fill();
-      ctx.fillStyle = "#6ac8ff";
-      ctx.beginPath();
-      ctx.moveTo(0, -12);
-      ctx.quadraticCurveTo(9, 0, 7, 5);
-      ctx.arc(0, 5, 7, 0, Math.PI);
-      ctx.quadraticCurveTo(-9, 0, 0, -12);
-      ctx.fill();
-      shine(ctx, 0, 3, 7, 0.8);
+      this.art.draw(ctx);
       ctx.restore();
     }
   };
+  var drops = [];
+  function drop(frame) {
+    if (!drops[frame]) {
+      drops[frame] = clip("FXWaterParticule");
+      drops[frame].gotoAndStop(frame);
+    }
+    return drops[frame];
+  }
   var Fire = class extends Power {
     constructor(boss) {
       super(boss.x, boss.y, Layer.OBJECT);
       this.age = 0;
       this.life = 10 + randInt(10);
       this.ending = -1;
+      this.art = clip("FXFire");
+      this.art.vars.flLoopv = true;
     }
     get burning() {
       return this.age > 0.375 && this.ending < 0;
     }
     update(dt, game) {
       this.age += dt;
+      this.art.update(dt);
       if (this.ending >= 0) {
+        this.art.vars.flLoopv = false;
         this.ending += dt;
-        if (this.ending > 0.375)
+        if (this.art.removed || this.ending > 1)
           this.dead = true;
         return;
       }
@@ -6684,36 +6636,9 @@
         this.ending = 0;
     }
     render(ctx) {
-      const t = app.time * 13;
       ctx.save();
       ctx.translate(this.x, this.y);
-      ctx.fillStyle = "rgba(60,0,0,0.3)";
-      ctx.beginPath();
-      ctx.ellipse(0, 0, 16, 7, 0, 0, TAU);
-      ctx.fill();
-      if (this.age < 0.375) {
-        ctx.fillStyle = "rgba(255," + (100 + this.age * 320) + ",0,0.8)";
-        for (let i = 0; i < 5; i++) {
-          circle(ctx, Math.cos(i * 1.3 + t) * 8, Math.sin(i * 1.3 + t) * 3, 2);
-          ctx.fill();
-        }
-      } else {
-        const height = this.ending < 0 ? 1 : 1 - this.ending / 0.375;
-        const WIDTHS = [14, 10, 6];
-        const HEIGHTS = [48, 38, 26];
-        const COLORS = ["#ff4a10", "#ff9a20", "#ffe860"];
-        for (let i = 0; i < 3; i++) {
-          const w = WIDTHS[i] * (0.8 + 0.2 * Math.sin(t + i));
-          const h = HEIGHTS[i] * height;
-          ctx.fillStyle = COLORS[i];
-          ctx.beginPath();
-          ctx.moveTo(-w, 0);
-          ctx.quadraticCurveTo(-w, -h * 0.5, Math.sin(t + i) * 4, -h);
-          ctx.quadraticCurveTo(w, -h * 0.5, w, 0);
-          ctx.ellipse(0, 0, w, w * 0.45, 0, 0, Math.PI);
-          ctx.fill();
-        }
-      }
+      this.art.draw(ctx);
       ctx.restore();
     }
   };
@@ -6731,13 +6656,18 @@
       this.breaking = -1;
       this.withering = -1;
       this.clock = new FrameClock();
+      this.art = clip("FXbourgeon");
+      this.links = [];
     }
     update(dt, game) {
       this.age += dt;
       const ball = game.ball;
+      this.art.update(dt);
       if (this.withering >= 0) {
+        if (this.withering === 0)
+          this.art.gotoAndPlay("death");
         this.withering += dt;
-        if (this.withering > 0.4)
+        if (this.art.removed || this.withering > 1)
           this.dead = true;
         return;
       }
@@ -6761,8 +6691,12 @@
       }
       if (dist(this.x, this.y, ball.x, ball.y) < 30) {
         this.vine = [];
-        for (let i = 0; i < VINE_SEGMENTS; i++)
+        this.links = [];
+        for (let i = 0; i < VINE_SEGMENTS; i++) {
           this.vine.push({ x: this.x, y: this.y, vx: 0, vy: 0 });
+          this.links.push(clip("FXLiane"));
+        }
+        this.art.gotoAndPlay("explode");
       }
     }
     /**
@@ -6805,60 +6739,27 @@
         this.withering = 0;
     }
     render(ctx, game) {
+      ctx.save();
+      ctx.translate(this.x, this.y);
+      this.art.draw(ctx);
+      ctx.restore();
       if (this.vine) {
         ctx.save();
-        ctx.globalAlpha = this.breaking < 0 ? 1 : 1 - this.breaking / 0.25;
+        ctx.globalAlpha = this.breaking < 0 ? 1 : Math.max(0, 1 - this.breaking / 0.25);
         const points = this.vine.concat([game.ball]);
-        ctx.strokeStyle = "#5a8a1a";
-        ctx.lineWidth = 4;
-        ctx.lineCap = "round";
-        ctx.beginPath();
-        ctx.moveTo(points[0].x, points[0].y);
-        for (const p of points)
-          ctx.lineTo(p.x, p.y);
-        ctx.stroke();
-        ctx.fillStyle = "#8ac040";
-        for (let i = 0; i < points.length - 1; i++) {
+        for (let i = 0; i < this.vine.length; i++) {
           const a = points[i];
           const b = points[i + 1];
+          const link = this.links[i];
+          link.set("liane", { xscale: Math.hypot(b.x - a.x, b.y - a.y) / 100 });
           ctx.save();
-          ctx.translate((a.x + b.x) / 2, (a.y + b.y) / 2);
+          ctx.translate(a.x, a.y);
           ctx.rotate(Math.atan2(b.y - a.y, b.x - a.x));
-          ctx.beginPath();
-          ctx.ellipse(0, -4, 4, 2, 0.5, 0, TAU);
-          ctx.fill();
+          link.draw(ctx);
           ctx.restore();
         }
         ctx.restore();
       }
-      let s = 1 + 0.08 * Math.sin(this.age / 0.225 * TAU);
-      let alpha = 1;
-      if (this.vine)
-        s = 1.4;
-      if (this.withering >= 0) {
-        const k = Math.min(1, this.withering / 0.4);
-        s = 1.4 - k * 1.2;
-        alpha = 1 - k;
-      }
-      ctx.save();
-      ctx.translate(this.x, this.y);
-      ctx.globalAlpha = alpha;
-      ctx.fillStyle = "rgba(60,30,0,0.35)";
-      ctx.beginPath();
-      ctx.ellipse(0, 4, 16 * s, 7 * s, 0, 0, TAU);
-      ctx.fill();
-      ctx.scale(s, s);
-      ctx.fillStyle = "#6a9a2a";
-      for (let i = 0; i < 4; i++) {
-        ctx.save();
-        ctx.rotate(i * Math.PI / 2 + (this.vine ? 0.4 : 0));
-        ctx.beginPath();
-        ctx.ellipse(0, -9, 5, 10, 0, 0, TAU);
-        ctx.fill();
-        ctx.restore();
-      }
-      sphere(ctx, 0, 0, 7, "#b8e070", "#3a6a10");
-      ctx.restore();
     }
   };
   var Wind = class extends Power {
@@ -6868,7 +6769,7 @@
       this.angle = 0;
       this.time = 2;
       this.strength = strong ? 30 : 10;
-      this.gusts = [0, 1, 2, 3, 4].map((i) => ({ a: TAU * i / 5 }));
+      this.gusts = [0, 1, 2, 3, 4].map((i) => ({ a: TAU * i / 5, ox: this.x, oy: this.y, rot: 0, art: clip("FXWind") }));
     }
     update(dt, game) {
       this.radius += 200 * dt;
@@ -6891,27 +6792,22 @@
     render(ctx) {
       if (this.radius <= 0)
         return;
-      const s = Math.min(this.radius, 100) / 100;
-      ctx.save();
-      ctx.strokeStyle = "rgba(255,255,255,0.8)";
-      ctx.lineCap = "round";
+      const scale = Math.min(this.radius, 100) / 100;
       for (const g of this.gusts) {
         const a = g.a + this.angle;
+        const x = this.x + Math.cos(a) * this.radius;
+        const y = this.y + Math.sin(a) * this.radius;
+        if (x !== g.ox || y !== g.oy)
+          g.rot = Math.atan2(y - g.oy, x - g.ox);
+        g.ox = x;
+        g.oy = y;
         ctx.save();
-        ctx.translate(this.x + Math.cos(a) * this.radius, this.y + Math.sin(a) * this.radius);
-        ctx.rotate(a + Math.PI / 2 - 0.3);
-        ctx.scale(s, s);
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.arc(-10, 12, 22, -1.6, -0.6);
-        ctx.stroke();
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(-14, 18, 24, -1.5, -0.8);
-        ctx.stroke();
+        ctx.translate(x, y);
+        ctx.rotate(g.rot);
+        ctx.scale(scale, scale);
+        g.art.draw(ctx);
         ctx.restore();
       }
-      ctx.restore();
     }
   };
 
@@ -7555,7 +7451,7 @@
             if (!cell)
               break;
             room2.reserved.add(cell.tx + "," + cell.ty);
-            room2.add(new CrackingTile(cell.tx, cell.ty, 1.25, (g, tx, ty) => {
+            room2.add(new CrackingTile(cell.tx, cell.ty, (g, tx, ty) => {
               room2.reserved.delete(tx + "," + ty);
               app.audio.play("crash");
               breakFloor(g, tx, ty);
