@@ -187,6 +187,18 @@ test("audio : music and effects can be switched off separately", () => {
 	assert.deepEqual(audio.backend.buses, { music: 0, sfx: 1 });
 });
 
+test("audio : music and effects have their own volume, while switched on", () => {
+	const { audio } = makeAudio();
+	audio.setMusicVolume(0.4);
+	audio.setSoundsVolume(0.7);
+	assert.deepEqual(audio.backend.buses, { music: 0.4, sfx: 0.7 });
+	audio.setMusicEnabled(false);
+	assert.deepEqual(audio.backend.buses, { music: 0, sfx: 0.7 });
+	audio.setMusicEnabled(true);
+	audio.setSoundsVolume(3);
+	assert.deepEqual(audio.backend.buses, { music: 0.4, sfx: 1 }, "at most 1");
+});
+
 // ----- loop -----
 
 test("loop : fixed steps, whatever the frame rate ; a long pause is not caught up", () => {

@@ -74,6 +74,8 @@ differs:
   (40 frames per second) is converted to pixels per second. The animations
   keep the original 40 frames per second but are drawn in between (motion
   tweens, the intro, the menu), so they are smooth at 60, 120 or 144 Hz.
+- Separate volumes for the music and the sound effects (sliders in the
+  options page of the menu, saved with the settings).
 - Keyboard, gamepad and touch controls: the menu's ring of balls can be walked
   with the arrows, the pause has "Continuer" / "Abandonner" buttons, a finger
   drives the ball with a virtual joystick.

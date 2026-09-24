@@ -16,7 +16,10 @@ const DEFAULTS = {
 	version: 1,
 	settings: {
 		music: true,
-		sounds: true
+		sounds: true,
+		// (0 .. 1, while switched on)
+		musicVolume: 1,
+		soundsVolume: 1
 	},
 	adventures: {
 		won: [false, false, false, false, false],

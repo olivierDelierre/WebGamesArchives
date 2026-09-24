@@ -203,6 +203,8 @@ export class AudioEngine {
 		this.volume = 1;
 		this.musicOn = true;
 		this.soundsOn = true;
+		this.musicVolume = 1;
+		this.soundsVolume = 1;
 	}
 
 	/** Loads every sound. `progress(p)` is called with p in [0, 1]. */
@@ -210,8 +212,7 @@ export class AudioEngine {
 		const useWebAudio = location.protocol !== "file:" && (window.AudioContext || window.webkitAudioContext);
 		this.backend = useWebAudio ? new WebAudioBackend() : new ElementBackend();
 
-		this.setMusicEnabled(this.musicOn);
-		this.setSoundsEnabled(this.soundsOn);
+		this.applyBuses();
 
 		const names = Object.keys(this.files);
 		let done = 0;
@@ -243,14 +244,31 @@ export class AudioEngine {
 
 	setMusicEnabled(on) {
 		this.musicOn = on;
-		if (this.backend)
-			this.backend.setBus("music", on ? 1 : 0);
+		this.applyBuses();
 	}
 
 	setSoundsEnabled(on) {
 		this.soundsOn = on;
-		if (this.backend)
-			this.backend.setBus("sfx", on ? 1 : 0);
+		this.applyBuses();
+	}
+
+	/** The volume of the music, 0 .. 1 (while it is switched on). */
+	setMusicVolume(v) {
+		this.musicVolume = Math.max(0, Math.min(1, v));
+		this.applyBuses();
+	}
+
+	/** The volume of the sound effects, 0 .. 1 (while they are switched on). */
+	setSoundsVolume(v) {
+		this.soundsVolume = Math.max(0, Math.min(1, v));
+		this.applyBuses();
+	}
+
+	applyBuses() {
+		if (!this.backend)
+			return;
+		this.backend.setBus("music", this.musicOn ? this.musicVolume : 0);
+		this.backend.setBus("sfx", this.soundsOn ? this.soundsVolume : 0);
 	}
 
 	/** Must be called every simulation step. */

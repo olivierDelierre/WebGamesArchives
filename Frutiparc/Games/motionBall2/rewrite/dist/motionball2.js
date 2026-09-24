@@ -141,12 +141,20 @@
       this.padPrevious = /* @__PURE__ */ new Set();
       this.pointer = null;
       this.hover = null;
+      this.mouseHeld = false;
       this.touchStick = null;
       this.listeners = [];
       this.bindKeyboard();
       this.bindPointer();
     }
     // ----- queries -----
+    /** Where the mouse (button held) or a finger drags, in game coordinates, or null. */
+    drag() {
+      if (this.mouseHeld && this.hover)
+        return this.hover;
+      const t = this.touchStick;
+      return t ? { x: t.x, y: t.y } : null;
+    }
     /** Was the action triggered since the last step ? */
     pressed(action) {
       return this.queue.has(action);
@@ -254,6 +262,8 @@
         const p = this.screen.toGame(e.clientX, e.clientY);
         if (e.pointerType === "mouse") {
           this.pointer = p;
+          this.hover = p;
+          this.mouseHeld = true;
           return;
         }
         if (!this.touchStick) {
@@ -272,6 +282,8 @@
         }
       });
       const release = (e) => {
+        if (e.pointerType === "mouse")
+          this.mouseHeld = false;
         const t = this.touchStick;
         if (!t || t.id !== e.pointerId)
           return;
@@ -281,6 +293,11 @@
         this.touchStick = null;
       };
       this.on(canvas, "pointerup", release);
+      if (typeof window !== "undefined" && window.addEventListener)
+        this.on(window, "pointerup", (e) => {
+          if (e.pointerType === "mouse")
+            this.mouseHeld = false;
+        });
       this.on(canvas, "pointercancel", release);
       this.on(canvas, "contextmenu", (e) => e.preventDefault());
     }
@@ -459,13 +476,14 @@
       this.volume = 1;
       this.musicOn = true;
       this.soundsOn = true;
+      this.musicVolume = 1;
+      this.soundsVolume = 1;
     }
     /** Loads every sound. `progress(p)` is called with p in [0, 1]. */
     async load(progress) {
       const useWebAudio = location.protocol !== "file:" && (window.AudioContext || window.webkitAudioContext);
       this.backend = useWebAudio ? new WebAudioBackend() : new ElementBackend();
-      this.setMusicEnabled(this.musicOn);
-      this.setSoundsEnabled(this.soundsOn);
+      this.applyBuses();
       const names = Object.keys(this.files);
       let done = 0;
       await Promise.all(names.map(async (name) => {
@@ -492,13 +510,27 @@
     }
     setMusicEnabled(on) {
       this.musicOn = on;
-      if (this.backend)
-        this.backend.setBus("music", on ? 1 : 0);
+      this.applyBuses();
     }
     setSoundsEnabled(on) {
       this.soundsOn = on;
-      if (this.backend)
-        this.backend.setBus("sfx", on ? 1 : 0);
+      this.applyBuses();
+    }
+    /** The volume of the music, 0 .. 1 (while it is switched on). */
+    setMusicVolume(v) {
+      this.musicVolume = Math.max(0, Math.min(1, v));
+      this.applyBuses();
+    }
+    /** The volume of the sound effects, 0 .. 1 (while they are switched on). */
+    setSoundsVolume(v) {
+      this.soundsVolume = Math.max(0, Math.min(1, v));
+      this.applyBuses();
+    }
+    applyBuses() {
+      if (!this.backend)
+        return;
+      this.backend.setBus("music", this.musicOn ? this.musicVolume : 0);
+      this.backend.setBus("sfx", this.soundsOn ? this.soundsVolume : 0);
     }
     /** Must be called every simulation step. */
     update(dt) {
@@ -758,7 +790,10 @@
     version: 1,
     settings: {
       music: true,
-      sounds: true
+      sounds: true,
+      // (0 .. 1, while switched on)
+      musicVolume: 1,
+      soundsVolume: 1
     },
     adventures: {
       won: [false, false, false, false, false],
@@ -8091,10 +8126,19 @@
   var CY = 205;
   var RADIUS = 136;
   var INFOS = { challenge: 0, aventure: 1, course: 2, classique: 3 };
+  var SLIDERS = [
+    { key: "music", label: "Musique", y: 190 },
+    { key: "sounds", label: "Sons", y: 238 }
+  ];
+  var SLIDER_X = 250;
+  var SLIDER_W = 110;
+  var VOLUME_STEP = 0.1;
   var Ring = class extends ButtonGroup {
     move(dx, dy) {
       const n = this.buttons.length;
       if (!n)
+        return;
+      if (dy && this.adjust && this.adjust(-dy))
         return;
       this.focus = (this.focus + (dx + dy > 0 ? 1 : n - 1)) % n;
       app.audio.play("menuMove");
@@ -8127,6 +8171,15 @@
       this.mainFocus = mainFocus;
       this.page = page;
       this.group = new Ring(this[page + "Page"](), page === "main" ? null : () => this.goto("main"));
+      this.dragging = null;
+      if (page === "options")
+        this.group.adjust = (way) => {
+          const key = this.group.focused.name;
+          if (key !== "music" && key !== "sounds")
+            return false;
+          this.setVolume(key, app.save.settings[key + "Volume"] + way * VOLUME_STEP, true);
+          return true;
+        };
       if (page === "main")
         this.group.focus = mainFocus;
       const n = this.group.buttons.length;
@@ -8205,6 +8258,40 @@
         this.ball(24, "back", () => this.goto("main"))
       ];
     }
+    /**
+     * Sets the volume of the music or of the sounds (0 .. 1). `done` : saves it
+     * (and plays a sound, to hear the new volume of the sounds).
+     */
+    setVolume(key, v, done) {
+      const s = app.save.settings;
+      s[key + "Volume"] = Math.round(Math.max(0, Math.min(1, v)) * 100) / 100;
+      applySettings();
+      if (done) {
+        app.save.save();
+        if (key === "sounds")
+          app.audio.play("menuMove");
+      }
+    }
+    /** Dragging a slider (the mouse or a finger). */
+    updateSliders() {
+      const d = app.input.drag ? app.input.drag() : null;
+      if (!d) {
+        if (this.dragging)
+          this.setVolume(this.dragging, app.save.settings[this.dragging + "Volume"], true);
+        this.dragging = null;
+        return;
+      }
+      if (!this.dragging) {
+        const hit = SLIDERS.find((sl) => Math.abs(d.y - sl.y) < 16 && d.x > SLIDER_X - 12 && d.x < SLIDER_X + SLIDER_W + 12);
+        if (!hit)
+          return;
+        this.dragging = hit.key;
+        const i = this.group.buttons.findIndex((b) => b.name === hit.key);
+        if (i >= 0)
+          this.group.focus = i;
+      }
+      this.setVolume(this.dragging, (d.x - SLIDER_X) / SLIDER_W, false);
+    }
     // ----- transitions -----
     /** The balls fly away, the hole grows, the game starts. */
     play(mode, param = 0) {
@@ -8246,6 +8333,8 @@
         if (this.phase === 1 && hover && hover !== this.group.lastHover)
           this.steer(hover.x);
         this.group.update();
+        if (this.page === "options")
+          this.updateSliders();
       }
       this.clock += dt;
       while (this.clock >= FRAME2) {
@@ -8375,6 +8464,8 @@
       const b = this.group.focused;
       if (this.phase <= 1 && b && b.enabled && b.info)
         text(ctx, b.info(), CX, CY, { size: 15, color: "#fff", outline: "#4a1470" });
+      if (this.page === "options" && this.phase <= 1)
+        this.renderSliders(ctx);
       if (this.info) {
         const py = this.info.py ?? this.info.y;
         ctx.save();
@@ -8382,6 +8473,40 @@
         this.info.art.draw(ctx);
         ctx.restore();
       }
+    }
+    /** The two volume sliders, in the hole. */
+    renderSliders(ctx) {
+      const s = app.save.settings;
+      const focused = this.group.focused && this.group.focused.name;
+      for (const sl of SLIDERS) {
+        const on = s[sl.key];
+        const v = s[sl.key + "Volume"];
+        const active = focused === sl.key || this.dragging === sl.key;
+        ctx.save();
+        ctx.globalAlpha = on ? 1 : 0.5;
+        text(
+          ctx,
+          sl.label + " " + (on ? Math.round(v * 100) + " %" : ": coup\xE9"),
+          CX,
+          sl.y - 16,
+          { size: 14, color: active ? "#ffe060" : "#fff", outline: "#4a1470" }
+        );
+        ctx.fillStyle = "rgba(40,0,70,0.6)";
+        roundRect(ctx, SLIDER_X, sl.y - 4, SLIDER_W, 8, 4);
+        ctx.fill();
+        ctx.fillStyle = active ? "#ffe060" : "#b4f08a";
+        roundRect(ctx, SLIDER_X, sl.y - 4, Math.max(8, SLIDER_W * v), 8, 4);
+        ctx.fill();
+        ctx.fillStyle = "#fff";
+        circle(ctx, SLIDER_X + SLIDER_W * v, sl.y, active ? 8 : 6);
+        ctx.fill();
+        ctx.strokeStyle = "#4a1470";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.restore();
+      }
+      if (focused === "music" || focused === "sounds")
+        text(ctx, "\u2191 \u2193 : volume", CX, 268, { size: 11, color: "rgba(255,255,255,0.8)", weight: "700" });
     }
     drawBall(ctx, b) {
       const k = this.k;
@@ -8395,6 +8520,8 @@
     const s = app.save.settings;
     app.audio.setMusicEnabled(s.music);
     app.audio.setSoundsEnabled(s.sounds);
+    app.audio.setMusicVolume(s.musicVolume);
+    app.audio.setSoundsVolume(s.soundsVolume);
   }
 
   // src/scenes/title.js

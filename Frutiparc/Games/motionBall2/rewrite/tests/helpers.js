@@ -45,10 +45,15 @@ export class FakeInput {
 		this.pointer = null;
 		this.hover = null;
 		this.stick = null;
+		this.dragging = null;        // { x, y } : the mouse or a finger drags there
 	}
 
 	axis() {
 		return this.dir;
+	}
+
+	drag() {
+		return this.dragging;
 	}
 
 	pressed(action) {
@@ -103,6 +108,13 @@ export class FakeAudio {
 	update() { }
 	setMusicEnabled() { }
 	setSoundsEnabled() { }
+	setMusicVolume(v) {
+		this.musicVolume = v;
+	}
+
+	setSoundsVolume(v) {
+		this.soundsVolume = v;
+	}
 
 	/** How many times a sound was played since the last call. */
 	count(name) {
