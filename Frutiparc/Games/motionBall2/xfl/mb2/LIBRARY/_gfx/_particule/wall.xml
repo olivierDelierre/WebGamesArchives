@@ -1,0 +1,188 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_particule/wall" itemID="3f7d3347-00000213" linkageExportForAS="true" linkageIdentifier="wallpart" lastModified="1083597233">
+  <timeline>
+    <DOMTimeline name="wall">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#DFF7D0"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#AEED87"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#88E450"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#63B81D"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="!-28 -107|28 -50!28 -50|-40 3!-40 3|-93 -22!-93 -22|-67 -79!-67 -79|-28 -107"/>
+                    <Edge fillStyle1="2" edges="!-51.5 72.5|-93.5 53!-93.5 53|-126 -31.5!-126 -31.5|-89 -88!-89 -88|-30.5 -110!-30.5 -110|89 -110!89 -110|126 -23"/>
+                    <Edge fillStyle1="4" edges="!126 -23|126 22"/>
+                    <Edge fillStyle1="3" edges="!126 22|104.5 91!104.5 91|28 110!28 110|-45.5 75.5"/>
+                    <Edge fillStyle1="4" edges="!-45.5 75.5|-51.5 72.5"/>
+                    <Edge fillStyle0="2" fillStyle1="4" edges="!-51.5 72.5|126 -23"/>
+                    <Edge fillStyle0="3" fillStyle1="4" edges="!126 22|-45.5 75.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AEED87"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#DFF7D0"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#88E450"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#63B81D"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!115 -65|37.5 -126.5!37.5 -126.5|-114.5 -35.5!-114.5 -35.5|-114.5 34.5!-114.5 34.5|-45 81"/>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="!-45 81|24 71!24 71|61 -65.5!61 -65.5|115 -65"/>
+                    <Edge fillStyle1="3" edges="!115 -65|82 96.5!82 96.5|20 125!20 125|-45 81"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="!18.5 -103|-99.5 -26.5!-99.5 -26.5|-99.5 21!-99.5 21|35 -85!35 -85|18.5 -103"/>
+                    <Edge fillStyle0="3" fillStyle1="4" edges="!20 115|-17 88!-17 88|26.5 80!26.5 80|65.5 94.5!65.5 94.5|20 115"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AEED87"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#DFF7D0"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#88E450"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#63B81D"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!107 23|107 -67!107 -67|41 -100!41 -100|-125 -67!-125 -67|-125 65"/>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="!-125 65|-39 65!-39 65|75 -34!75 -34|87 -19!87 -19|53 42!53 42|74 54!74 54|107 23"/>
+                    <Edge fillStyle1="3" edges="!107 23|107 73!107 73|2 122!2 122|-125 65"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!70 -51|-102 56!-102 56|-111 -52!-111 -52|53 -83!53 -83|70 -51"/>
+                    <Edge fillStyle0="3" fillStyle1="4" edges="!51 22|11 102!11 102|-13 75!-13 75|54 4!54 4|51 22"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AEED87"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#88E450"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#63B81D"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#DFF7D0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="2" edges="!14.5 -72.5|31.5 -68.5"/>
+                    <Edge fillStyle1="1" edges="!31.5 -68.5|112 -27!112 -27|112 1!112 1|107.5 10.5!107.5 10.5|96 48.5"/>
+                    <Edge fillStyle1="2" edges="!96 48.5|87.5 74!87.5 74|58.5 98.5!58.5 98.5|-67 116.5!-67 116.5|-78 59!-78 59|-111 11.5!-111 11.5|-111 -49.5!-111 -49.5|-80.5 -73"/>
+                    <Edge fillStyle1="1" edges="!-80.5 -73|-44 -112!-44 -112|-17 -112!-17 -112|14.5 -72.5"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="!14.5 -72.5|-54 -49.5!-54 -49.5|-80.5 -73"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!31.5 -68.5|8.5 -54!8.5 -54|-26 38.5!-26 38.5|54 35!54 35|60 49.5!60 49.5|96 48.5"/>
+                    <Edge fillStyle0="4" fillStyle1="1" edges="!19.5 -15|106.5 -9.5!106.5 -9.5|21 -45!21 -45|19.5 -15"/>
+                    <Edge fillStyle0="3" fillStyle1="2" edges="!46.5 57.5|-37 72!-37 72|-49.5 96.5!-49.5 96.5|22 91!22 91|46.5 57.5!-73 -21.5|-48.5 28.5!-48.5 28.5|-22.5 -21.5!-22.5 -21.5|-73 -21.5"/>
+                    <Edge fillStyle0="4" fillStyle1="1" edges="!-48.5 -86|-22.5 -80.5!-22.5 -80.5|-29.5 -107.5!-29.5 -107.5|-48.5 -86"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AEED87"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#88E450"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#63B81D"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#DFF7D0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-67 -5.5|-67 -39!-67 -39|10 -115!10 -115|103 -39!103 -39|103 -20"/>
+                    <Edge fillStyle1="2" edges="!103 -20|103 35"/>
+                    <Edge fillStyle1="1" edges="!103 35|103 66!103 66|44 182!44 182|20.5 160.5"/>
+                    <Edge fillStyle1="2" edges="!20.5 160.5|8 149!8 149|8 92!8 92|-67 37!-67 37|-67 -5.5"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!-67 -5.5|-14 16!-14 16|60 16!60 16|103 -20"/>
+                    <Edge fillStyle0="1" fillStyle1="4" edges="!29 -27|-41 -38!-41 -38|16 -95!16 -95|29 -27"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!103 35|83 42!83 42|20.5 160.5"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="!31 93|-27 47!-27 47|59 47!59 47|31 93"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AEED87"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#88E450"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#63B81D"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#DFF7D0"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-1.5 -78|44 -129!44 -129|127 -86!127 -86|162.5 -2"/>
+                    <Edge fillStyle1="2" edges="!162.5 -2|180.5 41!180.5 41|127 78!127 78|28 69!28 69|27.5 69"/>
+                    <Edge fillStyle1="3" edges="!27.5 69|-30.5 99!-30.5 99|-71 99"/>
+                    <Edge fillStyle1="2" edges="!-71 99|-116 99!-116 99|-145.5 46!-145.5 46|-145.5 6.5"/>
+                    <Edge fillStyle1="1" edges="!-145.5 6.5|-145.5 -7!-145.5 -7|-115 -62!-115 -62|-102 -86!-102 -86|-52.5 -61.5"/>
+                    <Edge fillStyle1="2" edges="!-52.5 -61.5|-27 -49!-27 -49|-1.5 -78"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!-1.5 -78|0 -13!0 -13[#32.DF #9.14 104 24!104 24[#68.C 24 105.5 24!105.5 24[#86.F3 #C.A2 162.5 -2"/>
+                    <Edge fillStyle0="1" fillStyle1="4" edges="!40 -108|62.5 -108!62.5 -108|116 -67!116 -67|23.5 -75!23.5 -75|40 -108!-115 -62|-75.5 -63!-75.5 -63|-115 -17!-115 -17|-115 -62"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="!-71 99|-63.5 85!-63.5 85|-28 68!-28 68|-26.5 -33!-26.5 -33|-9 37!-9 37|27.5 69"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="!-52.5 -61.5|-52 5!-52 5|-43.5 53!-43.5 53|-93.5 73!-93.5 73|-145.5 6.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

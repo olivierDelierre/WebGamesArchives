@@ -1,0 +1,178 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_poulpe/oeil" itemID="3facd82b-000000aa" lastModified="1083238505" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="oeil">
+      <layers>
+        <DOMLayer name="Layer 6" color="#808080" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="6" name="close" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="11" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/paupiere" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix a="1.05999755859375" d="1.05999755859375" ty="-0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/paupiere" symbolType="graphic" firstFrame="3" loop="single frame">
+                  <matrix>
+                    <Matrix a="1.05999755859375" d="1.05999755859375" ty="-0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/paupiere" symbolType="graphic" firstFrame="2" loop="single frame">
+                  <matrix>
+                    <Matrix a="1.05999755859375" d="1.05999755859375" ty="-0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/paupiere" symbolType="graphic" firstFrame="1" loop="single frame">
+                  <matrix>
+                    <Matrix a="1.05999755859375" d="1.05999755859375" ty="-0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/paupiere" symbolType="graphic" loop="single frame">
+                  <matrix>
+                    <Matrix a="1.05999755859375" d="1.05999755859375" ty="-0.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/pupille" name="p">
+                  <matrix>
+                    <Matrix d="0.79998779296875" ty="14.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="11" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-0.85" ty="-47.6"/>
+                  </matrix>
+                  <members>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix tx="-0.85" ty="-46.6"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix tx="-0.85" ty="-46.6"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#666666"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="!854.5 984.5|855 984.5!855 984.5[#35B.45 #3B9.E6 859 922!859 922[#35C.F6 #2AE.49 606.5 519.5!606.5 519.5[#16B.4A #167.9C 18 359.5!18 359.5[#FFFEB8.BF #167.A1 -571.5 519.5!-571.5 519.5[#FFFCC6.09 #2AE.49 -824 922!-824 922[#FFFCC7.BB #3B9.E6
+ -820 984.5!-820 984.5|-819.5 984.5!-819.5 984.5|-820 985!-820 985[#FFFCE8.7B #4A4.2A -571.5 1337!-571.5 1337[#FFFEB8.BB #5DF.F7 18 1504!18 1504[#16B.4D #5DF.FD 606.5 1337!606.5 1337[#33A.85 #4A4.2A 855 985!855 985|854.5 984.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix tx="-0.85" ty="-46.6"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix tx="-0.85" ty="-46.6"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#FFFFFF"/>
+                            </FillStyle>
+                            <FillStyle index="2">
+                              <SolidColor color="#DDDDDD"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="2" fillStyle1="1" edges="
+!509 655[#15C.D3 #3C0.C9 68.5 1063.5!68.5 1063.5[-326.4375 #455.B1 -513 970.5!-513 970.5[#FFFD58.E7 #34E.A3 -686.5 802.5!-686.5 802.5[#FFFD49.C5 #3B3.81 -641 1083!-641 1083[-436 1454 72 1424!72 1424[#28C.C5 #524.7C 657.5 997.5!657.5 997.5
+[#296.26 #2A6.98 583 675!583 675|509 655"/>
+                            <Edge fillStyle1="1" edges="
+!584 530[819 690 819 915!819 915[819 1140 584 1299!584 1299[350 1459 18 1459!18 1459[-314 1459 -549 1299!-549 1299[-784 1140 -784 915!-784 915[-784 690 -549 530!-549 530[-314 371 18 371!18 371[350 371 584 530"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

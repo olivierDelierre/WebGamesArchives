@@ -1,0 +1,333 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_trappe/trappe" itemID="405863cc-00001396" linkageExportForAS="true" linkageIdentifier="exit" lastModified="1083749541" lastUniqueIdentifier="5">
+  <timeline>
+    <DOMTimeline name="trappe">
+      <layers>
+        <DOMLayer name="Layer 7" color="#4F80FF">
+          <frames>
+            <DOMFrame index="0" duration="5" name="close" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="12" name="anim_open" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="17" duration="7" name="open" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="2" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[compt=16]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="12" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[compt-=_global.tmod
+if( compt>0 )gotoAndPlay(_currentframe-1);
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="17" duration="7" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[flOpen = true;
+stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 10" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="24" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0006103515625" d="0.0006103515625" tx="-19.45" ty="-19.45"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0009002685546875" d="0.0009002685546875" tx="19.7" ty="19.7"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-382 -396|-382 -382!-382 -382|-396 -382!-396 -382|-396 -396!-396 -396|-382 -396"/>
+                    <Edge fillStyle1="2" edges="!404 404|384 404!384 404|384 384!384 384|404 384!404 384|404 404"/>
+                    <Edge cubics="!-396 -396(;-396,-396 -382,-396 -382,-396q-396 -396 -382 -396);"/>
+                    <Edge cubics="!-396 -382(;-396,-382 -396,-396 -396,-396q-396 -382 -396 -396);"/>
+                    <Edge cubics="!-382 -382(;-382,-382 -396,-382 -396,-382q-382 -382 -396 -382);"/>
+                    <Edge cubics="!-382 -396(;-382,-396 -382,-382 -382,-382q-382 -396 -382 -382);"/>
+                    <Edge cubics="!404 384(;404,384 404,404 404,404q404 384 404 404);"/>
+                    <Edge cubics="!404 404(;404,404 384,404 384,404q404 404 384 404);"/>
+                    <Edge cubics="!384 404(;384,404 384,384 384,384q384 404 384 384);"/>
+                    <Edge cubics="!384 384(;384,384 404,384 404,384q384 384 404 384);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF" locked="true" outline="true" useOutlineView="true" layerType="mask">
+          <frames>
+            <DOMFrame index="0" duration="24" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!359.5 -0.5[#167.76 #94.9E 254 254!254 254[#94.9E #167.74 -0.5 359.5!-0.5 359.5[#FFFF6A.A2 #167.74 -254.5 254!-254.5 254[-360.21875 #94.9E -360.5 -0.5!-360.5 -0.5[-360.21875 #FFFF6A.A2 -254.5 -254.5!-254.5 -254.5[#FFFF6A.A2 #FFFE97.CA
+ -0.5 -360.5!-0.5 -360.5[#94.9E #FFFE97.CA 254 -254.5!254 -254.5[#167.76 #FFFF6A.A2 359.5 -0.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF" parentLayerIndex="3">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="15872" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 1" name="d1">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 1" name="d1">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 1" name="d1">
+                  <matrix>
+                    <Matrix a="0.707107543945313" b="0.707107543945313" c="-0.707107543945313" d="0.707107543945313"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 1" name="d1">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 1" name="d1">
+                  <matrix>
+                    <Matrix ty="-10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="7" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 1" name="d1">
+                  <matrix>
+                    <Matrix ty="-20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" parentLayerIndex="3">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="15872" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 2" name="d2">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 2" name="d2">
+                  <matrix>
+                    <Matrix a="0" b="1" c="-1" d="0"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 2" name="d2">
+                  <matrix>
+                    <Matrix a="0.707107543945313" b="0.707107543945313" c="-0.707107543945313" d="0.707107543945313"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 2" name="d2">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 2" name="d2" selected="true">
+                  <matrix>
+                    <Matrix ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" duration="7" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_trappe/door 2" name="d2">
+                  <matrix>
+                    <Matrix ty="20"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="24" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <BitmapFill bitmapPath="_bitmap/bgHole.jpg" bitmapIsClipped="false">
+                            <matrix>
+                              <Matrix a="20" d="20" tx="303.25" ty="220.9"/>
+                            </matrix>
+                          </BitmapFill>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0" b="0.021514892578125" c="-0.02197265625" d="0" ty="0.2"/>
+                            </matrix>
+                            <GradientEntry color="#A77DD0" ratio="0"/>
+                            <GradientEntry color="#C2A4DF" ratio="1"/>
+                          </LinearGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="2" fillStyle1="1" edges="
+!319.5 -0.5[#13F.9B #84.2F 226 226!226 226[#84.2F #13F.97 -0.5 319.5!-0.5 319.5[#FFFF7B.0F #13F.97 -226.5 226!-226.5 226[#FFFEBF.A4 #84.2F -320.5 -0.5!-320.5 -0.5[#FFFEBF.A4 -132.9375 -226.5 -226.5!-226.5 -226.5[#FFFF7B.0F #FFFEBF.A6
+ -0.5 -320.5!-0.5 -320.5[#84.2F #FFFEBF.A6 226 -226.5!226 -226.5[#13F.9B -132.9375 319.5 -0.5"/>
+                        <Edge fillStyle1="2" edges="
+!359.5 -0.5[#167.76 #94.9D 254 254!254 254[#94.9F #167.72 -0.5 359.5!-0.5 359.5[#FFFF71.81 #167.74 -245 264!-245 264[#FFFF06.09 #103.0A -255 254!-255 254[#FFFE97.8A #94.9D -360.5 -0.5!-360.5 -0.5[#FFFE97.8A #FFFF6A.62 -255 -255!-255 -255
+[#FFFF6A.61 #FFFE97.8C -0.5 -360.5!-0.5 -360.5[#94.9F #FFFE97.8C 254 -255!254 -255[#103.09 #FFFF06.09 264 -245!264 -245[#167.75 #FFFF71.81 359.5 -0.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" layerType="guide">
+          <frames>
+            <DOMFrame index="0" duration="24" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-164.9" ty="-454.15"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-164.9" ty="-454.15"/>
+                      </matrix>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                            <fill>
+                              <SolidColor color="#E72929"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="
+!3698 9482.5|2898 9482.5!2898 9482.5|2898 8682.5!2898 8682.5|3698 8682.5!3698 8682.5|3698 9482.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_option/_itemBox/haloGFX" itemID="3f83f771-00000174" lastModified="1065613208">
+  <timeline>
+    <DOMTimeline name="haloGFX">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.498039215686275"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!-0.5 -801.5[#14C.33 #FFFCDE.7A 567 -567!567 -567[#321.48 #FFFEB3.89 801 0!801 0[#321.44 #14C.B4 567 567.5!567 567.5[#14C.33 #321.C5 -0.5 801.5!-0.5 801.5[#FFFEB3.09 #321.C8 -567.5 567.5!-567.5 567.5[#FFFCDD.F9 #14C.B4 -802 0!-802 0[#FFFCDD.F6
+ #FFFEB3.89 -567.5 -567!-567.5 -567[#FFFEB3.09 #FFFCDE.77 -0.5 -801.5"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!-0.5 -771[#13F.14 #FFFCFD.7B 544.5 -544.5!544.5 -544.5[#302.47 #FFFEC0.AB 770.5 0!770.5 0[#302.44 #13F.92 544.5 545!544.5 545[#13F.13 #302.C4 -0.5 771!-0.5 771[#FFFEC0.2C #302.C7 -545 545!-545 545[#FFFCFC.FB #13F.93 -771.5 0!-771.5 0
+[#FFFCFC.F9 #FFFEC0.AA -545 -544.5!-545 -544.5[#FFFEC0.2B #FFFCFD.79 -0.5 -771"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

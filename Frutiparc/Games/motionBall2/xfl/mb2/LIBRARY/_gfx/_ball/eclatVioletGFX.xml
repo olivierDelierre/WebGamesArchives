@@ -1,0 +1,26 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_ball/eclatVioletGFX" itemID="3f572462-00000044" lastModified="1062675554">
+  <timeline>
+    <DOMTimeline name="eclatVioletGFX">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!0 -20S1[-8 -20 -14 -14!-14 -14[-20 -8 -20 0!-20 0[-20 8 -14 14!-14 14[-8 20 0 20!0 20[8 20 14 14!14 14[20 8 20 0!20 0[20 -8 14 -14!14 -14[8 -20 0 -20"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_imports/_gfx/_bumpers/_normal/sommet" itemID="40615150-000002c8" sourceFlashFilepath="..\mb2.fla" sourceLibraryItemHRef="_gfx/_bumpers/_normal/sommet" sourceLastModified="1080120013" lastModified="1080120013">
+  <timeline>
+    <DOMTimeline name="sommet">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_imports/_gfx/_bumpers/_normal/_bitmap/sommet.png">
+                  <matrix>
+                    <Matrix tx="-11" ty="-11"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

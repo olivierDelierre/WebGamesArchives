@@ -1,0 +1,45 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_bordel/itembox opened gfx" itemID="3f4e07a0-00000027" symbolType="graphic" lastModified="1062078368">
+  <timeline>
+    <DOMTimeline name="itembox opened gfx">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <matrix>
+                    <Matrix tx="-0.5" ty="-5.95"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#CC6600"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#996600"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#330000"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!310 -60S6|310 -47"/>
+                    <Edge fillStyle1="2" strokeStyle="1" edges="!310 -47S6|310 299!310 299|-290 299!-290 299|-290 -47"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!-290 -47S6|-290 -60"/>
+                    <Edge fillStyle1="1" edges="!-290 -60S2|310 -60"/>
+                    <Edge fillStyle0="2" fillStyle1="1" strokeStyle="1" edges="!310 -47S7|-290 -47"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

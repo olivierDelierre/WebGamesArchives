@@ -1,0 +1,32 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="background" itemID="3f27c3d3-000000c2" linkageExportForAS="true" linkageIdentifier="background" sourceFlashFilepath="..\mb2.fla" sourceLibraryItemHRef="_gfx/_decor/background" sourceLastModified="1080117977" sourceAutoUpdate="true" lastModified="1080117977">
+  <timeline>
+    <DOMTimeline name="background">
+      <layers>
+        <DOMLayer name="Layer 2" color="#FF4F4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_imports/_bitmap/bg01.jpg"/>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_imports/_bitmap/bg04.jpg"/>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_imports/_bitmap/bg02.jpg"/>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_imports/_bitmap/bg03.jpg"/>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

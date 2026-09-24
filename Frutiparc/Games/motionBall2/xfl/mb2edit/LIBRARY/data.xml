@@ -1,0 +1,136 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="data" itemID="3f81973c-000006ae" linkageExportForAS="true" linkageIdentifier="data" lastModified="1077713743" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="data">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" width="48" height="13.6" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="209.95" ty="340.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>OK</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" face="MicrosoftSansSerif" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="ok" symbolType="button">
+                  <matrix>
+                    <Matrix tx="200.95" ty="338"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[on(press) {
+	_parent.editor.data_action(data,mode);
+}]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+                <DOMCompiledClipInstance libraryItemName="TextArea" name="text" uniqueID="1">
+                  <matrix>
+                    <Matrix a="4.13978576660156" d="7.01760864257813" tx="22.95" ty="18"/>
+                  </matrix>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath=''>
+	<dataBindingInfo>
+		<property name="editEvents" value="&quot;focusIn;focusOut&quot;" />
+	</dataBindingInfo>
+	<eventMap>
+		<property name="text" value="change" />
+	</eventMap>
+	<property name="text">
+<schema name="String" base="String" class="mx.data.types.Str" required="true" readonly="false" writeonly="false" category="simple" original="true">
+			<properties>
+				<property name="defaultLabel" value="" />
+				<property name="defaultUIControl" value="" />
+				<property name="maxLength" value="" />
+				<property name="minLength" value="" />
+			</properties>
+		</schema>
+	</property>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="editable">
+      <Inspectable name="editable" variable="editable" category="" verbose="0" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="html">
+      <Inspectable name="html" variable="html" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="text">
+      <Inspectable name="text" variable="text" category="" verbose="0" defaultValue="" type="String"/>
+   </property>
+   <property id="wordWrap">
+      <Inspectable name="wordWrap" variable="wordWrap" category="" verbose="0" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="maxChars">
+      <Inspectable name="maxChars" variable="maxChars" category="Limits" verbose="1" defaultValue="null" type="Number"/>
+   </property>
+   <property id="restrict">
+      <Inspectable name="restrict" variable="restrict" category="Limits" verbose="1" defaultValue="" type="String"/>
+   </property>
+   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="Other" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="password">
+      <Inspectable name="password" variable="password" category="Other" verbose="1" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="Other" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="minHeight">
+      <Inspectable name="minHeight" variable="minHeight" category="Size" verbose="1" defaultValue="0" type="Number"/>
+   </property>
+   <property id="minWidth">
+      <Inspectable name="minWidth" variable="minWidth" category="Size" verbose="1" defaultValue="0" type="Number"/>
+   </property>
+]]></parametersAsXML>
+                </DOMCompiledClipInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="6">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!9036.5 121[#2321.2F #3E.2 8932 62!8932 62|208.5 62!208.5 62[#93.9 #3E.2 103 121!103 121[#3B.AA #B5.9B 59.5 264.5!59.5 264.5|59.5 7355.5!59.5 7355.5[#3B.AA #1D0E.68 103 7497!103 7497[#93.9 #1D85.E3 208.5 7558!208.5 7558|8932 7558!8932
+ 7558[#2321.2F #1D85.E3 9036.5 7497!9036.5 7497[#2379.15 #1D0E.68 9081 7355.5!9081 7355.5|9081 264.5!9081 264.5[#2379.15 #B5.9B 9036.5 121"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

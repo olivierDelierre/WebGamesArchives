@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_imports/_gfx/_bumpers/_normal/base" itemID="3f5727ea-0000008c" sourceFlashFilepath="..\mb2.fla" sourceLibraryItemHRef="_gfx/_bumpers/_normal/base" sourceLastModified="1080119501" sourceAutoUpdate="true" lastModified="1080119501">
+  <timeline>
+    <DOMTimeline name="base">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_normal/_bitmap/base.png">
+                  <matrix>
+                    <Matrix tx="-22" ty="-22"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

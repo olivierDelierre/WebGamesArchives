@@ -1,0 +1,500 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_interface/Time Counter" itemID="3f85303d-00000072" linkageExportForAS="true" linkageIdentifier="time counter" lastModified="1083336031" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="Time Counter">
+      <layers>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="10" name="score" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="14" name="time" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="24" duration="14" name="classic" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080">
+          <frames>
+            <DOMFrame index="0" duration="21" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="21" duration="17" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndStop("time");
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_interface/_timePanel/timePanel" name="timerPanel">
+                  <matrix>
+                    <Matrix tx="-522.8" ty="23.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="5" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_interface/_timePanel/timePanel" name="timerPanel">
+                  <matrix>
+                    <Matrix a="1.07998657226563" d="1.07998657226563" tx="-522.8" ty="23.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="1"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_interface/_timePanel/timePanel" name="timerPanel">
+                  <matrix>
+                    <Matrix a="0.899993896484375" d="0.899993896484375" tx="-522.8" ty="23.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="19" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_interface/_timePanel/timePanel" name="timerPanel">
+                  <matrix>
+                    <Matrix a="1.04998779296875" d="1.04998779296875" tx="-522.8" ty="23.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_interface/_timePanel/timePanel" name="timerPanel">
+                  <matrix>
+                    <Matrix tx="-522.8" ty="23.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="24" duration="14" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="tview_txt" fontRenderingMode="standard" width="119.65" height="33.1" includeOutlines="true" isSelectable="false">
+                  <matrix>
+                    <Matrix d="1.00001525878906" tx="-606" ty="8.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="53.9" y="14.1"/>
+                  </transformationPoint>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>3567</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="22" bitmapSize="440" face="Sweet as candy" fillColor="#DFFFD5"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="14" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="lap_txt" fontRenderingMode="standard" width="31.8" height="28.05" includeOutlines="true" isSelectable="false">
+                  <matrix>
+                    <Matrix d="1.00001525878906" tx="-413.25" ty="8.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="53.9" y="14.1"/>
+                  </transformationPoint>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>9</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="22" bitmapSize="440" face="Sweet as candy" fillColor="#DFFFD5"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="1.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-425.45" y="22.1"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.921463012695313" d="0.921463012695313" tx="-33.9" ty="1.9"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-422.3" y="13"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.921463012695313" d="0.921463012695313" tx="-33.9" ty="1.9"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point x="-422.3" y="13"/>
+                          </transformationPoint>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#DFFFD5"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="!-8352.5 242S2[#FFDF64.31 #FE.E9 -8352 268!-8352 268[#FFDF5C.07 #118.D2 -8367 288.5!-8367 288.5|-8478 366.5!-8478 366.5[#FFDED5.78 #177.87 -8505.5 374!-8505.5 374[#FFDEB7.53 #174.12 -8531 360.5!-8531 360.5[#FFDEA2.E9 #15D.25 -8541 334
+!-8541 334|-8541 187!-8541 187[#FFDEA2.ED #AC.39 -8531.5 161!-8531.5 161[#FFDEB6.44 #95.C4 -8507 147.5!-8507 147.5[#FFDED3.83 #91.32 -8480 153!-8480 153|-8369 222!-8369 222[#FFDF5A.9E #E5.31 -8352.5 242"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix tx="1.05"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix tx="1.05"/>
+                          </matrix>
+                          <strokes>
+                            <StrokeStyle index="1">
+                              <SolidStroke scaleMode="normal" weight="4">
+                                <fill>
+                                  <SolidColor color="#DFFFD5"/>
+                                </fill>
+                              </SolidStroke>
+                            </StrokeStyle>
+                          </strokes>
+                          <edges>
+                            <Edge strokeStyle="1" edges="
+!-8327 444S4[#FFDF79.01 #1C1.07 -8327 454!-8327 454[#FFDF79.15 #211.55 -8380.5 582.5!-8380.5 582.5[#FFDF0E.55 #27C.15 -8509 636!-8509 636[#FFDE77.B6 #27C.15 -8638 582.5!-8638 582.5[#FFDE0C.F6 #211.55 -8691 454!-8691 454[#FFDE0C.F6 #17A.B6
+ -8638 325!-8638 325[#FFDE60.5 #127.11 -8570.5 282"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="14" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="tview_txt" fontRenderingMode="standard" width="119.65" height="33.1" includeOutlines="true" isSelectable="false">
+                  <matrix>
+                    <Matrix d="1.00001525878906" tx="-606" ty="8.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="53.9" y="14.1"/>
+                  </transformationPoint>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>3567</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="22" bitmapSize="440" face="Sweet as candy" fillColor="#DFFFD5"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMDynamicText name="niv_txt" fontRenderingMode="standard" width="50.05" height="28.05" includeOutlines="true" isSelectable="false">
+                  <matrix>
+                    <Matrix d="1.00001525878906" tx="-448.5" ty="8.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="53.9" y="14.1"/>
+                  </transformationPoint>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>99</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="22" bitmapSize="440" face="Sweet as candy" fillColor="#DFFFD5"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-461.65" y="22.05"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-2"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="-461.65" y="22.05"/>
+                      </transformationPoint>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="4">
+                            <fill>
+                              <SolidColor color="#DFFFD5"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                        <StrokeStyle index="2">
+                          <SolidStroke scaleMode="normal" weight="4">
+                            <fill>
+                              <SolidColor color="#DFFFD5"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="
+!-9233 259[#FFDC3A.55 #102.F6 -9104.5 312!-9104.5 312[#FFDCA5.15 #16D.B6 -9051 441!-9051 441[#FFDCA5.15 #204.55 -9104.5 569.5!-9104.5 569.5[#FFDC3A.55 #26F.15 -9233 623!-9233 623[#FFDBA3.B6 #26F.15 -9362 569.5!-9362 569.5[#FFDB38.F6 #204.55
+ -9415 441!-9415 441[#FFDB38.F6 #16D.B6 -9362 312!-9362 312[#FFDBA3.B6 #102.F6 -9233 259"/>
+                        <Edge strokeStyle="2" edges="
+!-9233 259|-9233 623"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AFFF97" alpha="0.6"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#DFFFD5" alpha="0.8"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#DFFFD5" alpha="0.501960784313725"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!-9958 183|-11423 182!-11423 182|-11423 195!-11423 195|-9957 222!-9957 222[#FFD93F.6B #E7.CB -9915 257!-9915 257|-9903 677!-9903 677|-9879 627!-9879 627|-9879 248!-9879 248[#FFD962.55 #BC.76 -9958 183"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="
+!-9879.5 179[#FFD969.C7 #B4.0E -9877 181!-9877 181[#FFD98D.2A #D2.BD -9843 252!-9843 252|-9843 626!-9843 626[#FFD98D.2A #29B.41 -9877 697!-9877 697[#FFD969.C7 #2B9.F2 -9879.5 699!-9879.5 699[-9916.375 #2D9.0F -9968.5 729!-9968.5 729|-11893.5
+ 729!-11893.5 729[#FFD178.BC #2D9.02 -11928.5 728.5!-11928.5 728.5|-11929 728.5!-11929 728.5[#FFD13A.3B #2D5.C9 -12006.5 699!-12006.5 699[#FFD0F5.34 #29C.BE -12042.5 626!-12042.5 626|-12042.5 252!-12042.5 252[#FFD0F5.34 #D1.4 -12006.5
+ 179!-12006.5 179[#FFD13A.3B #98.33 -11929 149.5!-11929 149.5|-11928.5 149.5!-11928.5 149.5[#FFD178.BC #94.FE -11893.5 149!-11893.5 149|-9968.5 149!-9968.5 149[#FFD943.A1 #94.ED -9879.5 179"/>
+                    <Edge cubics="!-9534 261(;-9534,261 -9576,226 -9576,226q-9534 261p-9576 226);"/>
+                    <Edge cubics="!-9498 183(;-9474,203 -9462,227 -9462,256q-9498 183Q-9462 213q-9462 256);"/>
+                    <Edge cubics="!-9587 153(;-9552,153 -9523,163 -9498,183q-9587 153Q-9535 153q-9498 183);"/>
+                    <Edge cubics="!-9462 630(;-9462,659 -9474,683 -9498,703q-9462 630Q-9462 673q-9498 703);"/>
+                    <Edge cubics="!-9498 703(;-9523,723 -9552,733 -9587,733q-9498 703Q-9535 733q-9587 733);"/>
+                    <Edge cubics="!-9462 256(;-9462,256 -9462,630 -9462,630q-9462 256 -9462 630);"/>
+                    <Edge cubics="!-11980 154(;-11969,153 -11957,153 -11945,153q-11980 154 -11945 153);"/>
+                    <Edge cubics="!-11981 154(;-11981,154 -11980,154 -11980,154q-11981 154 -11980 154);"/>
+                    <Edge cubics="!-12058 183(;-12037,165 -12011,155 -11981,154q-12058 183Q-12026 156q-11981 154);"/>
+                    <Edge cubics="!-12094 256(;-12095,227 -12083,203 -12058,183q-12094 256Q-12095 213q-12058 183);"/>
+                    <Edge cubics="!-12058 703(;-12083,683 -12095,659 -12094,630q-12058 703Q-12095 673q-12094 630);"/>
+                    <Edge cubics="!-11981 733(;-12011,731 -12037,721 -12058,703q-11981 733Q-12027 730q-12058 703);"/>
+                    <Edge cubics="!-11980 733(;-11980,733 -11981,733 -11981,733q-11980 733 -11981 733);"/>
+                    <Edge cubics="!-11945 733(;-11957,733 -11969,733 -11980,733q-11945 733 -11980 733);"/>
+                    <Edge cubics="!-12094 630(;-12094,630 -12094,256 -12094,256q-12094 630 -12094 256);"/>
+                    <Edge cubics="!-9587 733(;-9587,733 -11945,733 -11945,733q-9587 733 -11945 733);"/>
+                    <Edge cubics="!-11945 153(;-11945,153 -9587,153 -9587,153q-11945 153 -9587 153);"/>
+                    <Edge cubics="!-9577 187(;-9577,187 -9498,252 -9498,252q-9577 187 -9498 252);"/>
+                    <Edge cubics="!-9498 631(;-9498,631 -9522,681 -9522,681q-9498 631 -9522 681);"/>
+                    <Edge cubics="!-9522 681(;-9522,681 -9534,261 -9534,261q-9522 681 -9534 261);"/>
+                    <Edge cubics="!-9498 252(;-9498,252 -9498,631 -9498,631q-9498 252 -9498 631);"/>
+                    <Edge cubics="!-11042 199(;-11042,199 -11042,186 -11042,186q-11042 199 -11042 186);"/>
+                    <Edge cubics="!-11042 186(;-10339,189 -9851,189 -9577,187q-11042 186Q-10031 190q-9577 187);"/>
+                    <Edge cubics="!-9576 226(;-9576,226 -11042,199 -11042,199q-9576 226 -11042 199);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="14" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AFFF97" alpha="0.6"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#DFFFD5" alpha="0.8"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#DFFFD5" alpha="0.501960784313725"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!-8885 224.5[-8901.375 #BB.46 -8958 183!-8958 183|-10423 182!-10423 182|-10423 195!-10423 195|-8957 222!-8957 222[#FFDD27.6B #E7.CB -8915 257!-8915 257|-8903 677!-8903 677|-8879 627!-8879 627|-8879 248!-8879 248[#FFDD4F.8D #EB.12 -8885
+ 224.5"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="
+!-8877 181[#FFDD75.2A #D2.BD -8843 252!-8843 252|-8843 626!-8843 626[#FFDD75.2A #29B.41 -8877 697!-8877 697[#FFDD51.C7 #2B9.F2 -8879.5 699!-8879.5 699[#FFDD4D.CB #2BD.35 -8885 703.5!-8885 703.5[#FFDD27.CD #2D9.0E -8968.5 729!-8968.5 729
+|-11893.5 729!-11893.5 729[#FFD178.BC #2D9.02 -11928.5 728.5!-11928.5 728.5|-11929 728.5!-11929 728.5[#FFD158.E8 #2D7.A5 -11956 724.5!-11956 724.5[#FFD12F.ED #2CD.5A -12006.5 699!-12006.5 699[#FFD0F5.34 #29C.BE -12042.5 626!-12042.5 626
+|-12042.5 252!-12042.5 252[#FFD0F5.34 #D1.4 -12006.5 179!-12006.5 179[#FFD12F.ED #A0.A3 -11956 153.5!-11956 153.5[#FFD158.E8 #96.5A -11929 149.5!-11929 149.5|-11928.5 149.5!-11928.5 149.5[#FFD178.BC #94.FE -11893.5 149!-11893.5 149|-8968.5
+ 149!-8968.5 149[#FFDD27.CE #94.EE -8885 174.5!-8885 174.5[#FFDD4D.CB #B0.CB -8879.5 179!-8879.5 179[#FFDD51.C7 #B4.0E -8877 181"/>
+                  </edges>
+                </DOMShape>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#DFFFD5" alpha="0.8"/>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <SolidColor color="#AFFF97" alpha="0.6"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal">
+                            <fill>
+                              <SolidColor color="#DFFFD5" alpha="0.501960784313725"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="2" strokeStyle="1" edges="
+!-7569 252|-7569 626!-7569 626[#FFE26F.2A #29B.41 -7603 697!-7603 697[#FFE24B.C7 #2B9.F2 -7605.5 699!-7605.5 699[-7642.375 #2D9.0F -7694.5 729!-7694.5 729|-8600.5 729!-8600.5 729[#FFDE55.BC #2D9.02 -8635.5 728.5!-8635.5 728.5|-8636 728.5
+!-8636 728.5[#FFDE17.3B #2D5.C9 -8713.5 699!-8713.5 699[#FFDDD2.34 #29C.BE -8749.5 626!-8749.5 626|-8749.5 252!-8749.5 252[#FFDDD2.34 #D1.4 -8713.5 179!-8713.5 179[#FFDE17.3B #98.33 -8636 149.5!-8636 149.5|-8635.5 149.5!-8635.5 149.5
+[#FFDE55.BC #94.FE -8600.5 149!-8600.5 149|-7694.5 149!-7694.5 149[#FFE225.A1 #94.ED -7605.5 179!-7605.5 179[#FFE24B.C7 #B4.0E -7603 181!-7603 181[#FFE26F.2A #D2.BD -7569 252"/>
+                        <Edge fillStyle0="1" fillStyle1="2" edges="
+!-7641 257|-7629 677!-7629 677|-7605 627!-7605 627|-7605 248!-7605 248[#FFE244.55 #BC.76 -7684 183!-7684 183|-8534 183!-8534 183|-7683 222!-7683 222[#FFE221.6B #E7.CB -7641 257"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="24" duration="14" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#AFFF97" alpha="0.6"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#DFFFD5" alpha="0.8"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#DFFFD5" alpha="0.501960784313725"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="
+!-9879.5 179[#FFD969.C7 #B4.0E -9877 181!-9877 181[#FFD98D.2A #D2.BD -9843 252!-9843 252|-9843 626!-9843 626[#FFD98D.2A #29B.41 -9877 697!-9877 697[#FFD969.C7 #2B9.F2 -9879.5 699!-9879.5 699[-9916.375 #2D9.0F -9968.5 729!-9968.5 729|-11893.5
+ 729!-11893.5 729[#FFD178.BC #2D9.02 -11928.5 728.5!-11928.5 728.5|-11929 728.5!-11929 728.5[#FFD13A.3B #2D5.C9 -12006.5 699!-12006.5 699[#FFD0F5.34 #29C.BE -12042.5 626!-12042.5 626|-12042.5 252!-12042.5 252[#FFD0F5.34 #D1.4 -12006.5
+ 179!-12006.5 179[#FFD13A.3B #98.33 -11929 149.5!-11929 149.5|-11928.5 149.5!-11928.5 149.5[#FFD178.BC #94.FE -11893.5 149!-11893.5 149|-9968.5 149!-9968.5 149[#FFD943.A1 #94.ED -9879.5 179"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!-9915 257|-9903 677!-9903 677|-9879 627!-9879 627|-9879 248!-9879 248[#FFD962.55 #BC.76 -9958 183!-9958 183|-11423 182!-11423 182|-11423 195!-11423 195|-9957 222!-9957 222[#FFD93F.6B #E7.CB -9915 257"/>
+                    <Edge cubics="!-9534 261(;-9534,261 -9576,226 -9576,226q-9534 261 -9576 226);"/>
+                    <Edge cubics="!-9498 183(;-9474,203 -9462,227 -9462,256q-9498 183Q-9462 213q-9462 256);"/>
+                    <Edge cubics="!-9587 153(;-9552,153 -9523,163 -9498,183q-9587 153Q-9535 153q-9498 183);"/>
+                    <Edge cubics="!-9462 630(;-9462,659 -9474,683 -9498,703q-9462 630Q-9462 673q-9498 703);"/>
+                    <Edge cubics="!-9498 703(;-9523,723 -9552,733 -9587,733q-9498 703Q-9535 733q-9587 733);"/>
+                    <Edge cubics="!-9462 256(;-9462,256 -9462,630 -9462,630q-9462 256 -9462 630);"/>
+                    <Edge cubics="!-11980 154(;-11969,153 -11957,153 -11945,153q-11980 154 -11945 153);"/>
+                    <Edge cubics="!-11981 154(;-11981,154 -11980,154 -11980,154q-11981 154 -11980 154);"/>
+                    <Edge cubics="!-12058 183(;-12037,165 -12011,155 -11981,154q-12058 183Q-12026 156q-11981 154);"/>
+                    <Edge cubics="!-12094 256(;-12095,227 -12083,203 -12058,183q-12094 256Q-12095 213q-12058 183);"/>
+                    <Edge cubics="!-12058 703(;-12083,683 -12095,659 -12094,630q-12058 703Q-12095 673q-12094 630);"/>
+                    <Edge cubics="!-11981 733(;-12011,731 -12037,721 -12058,703q-11981 733Q-12027 730q-12058 703);"/>
+                    <Edge cubics="!-11980 733(;-11980,733 -11981,733 -11981,733q-11980 733 -11981 733);"/>
+                    <Edge cubics="!-11945 733(;-11957,733 -11969,733 -11980,733q-11945 733 -11980 733);"/>
+                    <Edge cubics="!-12094 630(;-12094,630 -12094,256 -12094,256q-12094 630 -12094 256);"/>
+                    <Edge cubics="!-9587 733(;-9587,733 -11945,733 -11945,733q-9587 733 -11945 733);"/>
+                    <Edge cubics="!-11945 153(;-11945,153 -9587,153 -9587,153q-11945 153 -9587 153);"/>
+                    <Edge cubics="!-9577 187(;-9577,187 -9498,252 -9498,252q-9577 187 -9498 252);"/>
+                    <Edge cubics="!-9498 631(;-9498,631 -9522,681 -9522,681q-9498 631 -9522 681);"/>
+                    <Edge cubics="!-9522 681(;-9522,681 -9534,261 -9534,261q-9522 681 -9534 261);"/>
+                    <Edge cubics="!-9498 252(;-9498,252 -9498,631 -9498,631q-9498 252 -9498 631);"/>
+                    <Edge cubics="!-11042 199(;-11042,199 -11042,186 -11042,186q-11042 199 -11042 186);"/>
+                    <Edge cubics="!-11042 186(;-10339,189 -9851,189 -9577,187q-11042 186Q-10031 190q-9577 187);"/>
+                    <Edge cubics="!-9576 226(;-9576,226 -11042,199 -11042,199q-9576 226 -11042 199);"/>
+                  </edges>
+                </DOMShape>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#DFFFD5" alpha="0.8"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#AFFF97" alpha="0.6"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#DFFFD5" alpha="0.501960784313725"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!-7891 257S3|-7879 677!-7879 677|-7855 627!-7855 627|-7855 248!-7855 248[#FFE14A.55 #BC.76 -7934 183!-7934 183|-9399 182!-9399 182|-9399 195!-9399 195|-7933 222!-7933 222[#FFE127.6B #E7.CB -7891 257"/>
+                    <Edge fillStyle1="2" strokeStyle="1" edges="
+!-7853 181S6[#FFE175.2A #D2.BD -7819 252!-7819 252|-7819 626!-7819 626[#FFE175.2A #29B.41 -7853 697!-7853 697[#FFE151.C7 #2B9.F2 -7855.5 699!-7855.5 699[-7892.375 #2D9.0F -7944.5 729!-7944.5 729|-9549.5 729!-9549.5 729[#FFDAA0.BC #2D9.02
+ -9584.5 728.5!-9584.5 728.5|-9585 728.5!-9585 728.5[#FFDA62.3B #2D5.C9 -9662.5 699!-9662.5 699[#FFDA1D.34 #29C.BE -9698.5 626!-9698.5 626|-9698.5 252!-9698.5 252[#FFDA1D.34 #D1.4 -9662.5 179!-9662.5 179[#FFDA62.3B #98.33 -9585 149.5
+!-9585 149.5|-9584.5 149.5!-9584.5 149.5[#FFDAA0.BC #94.FE -9549.5 149!-9549.5 149|-7944.5 149!-7944.5 149[#FFE12B.A1 #94.ED -7855.5 179!-7855.5 179[#FFE151.C7 #B4.0E -7853 181"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

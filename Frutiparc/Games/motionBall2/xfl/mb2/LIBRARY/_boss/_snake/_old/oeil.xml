@@ -1,0 +1,185 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_snake/_old/oeil" itemID="409104cb-0000111a" lastModified="1083247226">
+  <timeline>
+    <DOMTimeline name="oeil">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="79.9" ty="53.65"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="79.9" ty="53.65"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient>
+                            <matrix>
+                              <Matrix a="0.0325927734375" d="0.0325927734375" tx="-87.45" ty="-54.8"/>
+                            </matrix>
+                            <GradientEntry color="#FFFFFF" alpha="0.8" ratio="0"/>
+                            <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-1759 -1210.5[#FFF990.BC #FFFB0D.A8 -1520.5 -1262.5!-1520.5 -1262.5[#FFFAB5.F3 -1257.25 -1233.5 -1152.5!-1233.5 -1152.5|-1232.5 -1153!-1232.5 -1153[#FFFB30.3D #FFFB7F.0E -1231 -1153!-1231 -1153|-1229 -1145.5!-1229 -1145.5[#FFFB32.5 #FFFB87.09
+ -1230.5 -1144.5!-1230.5 -1144.5[#FFFAB6.8F #FFFBCB.1 -1514.5 -1031!-1514.5 -1031[#FFF973.97 #FFFC27.F4 -1834 -958.5!-1834 -958.5[#FFF895.2E #FFFC4B.DE -1952.5 -948!-1952.5 -948|-1953 -948.5!-1953 -948.5[#FFF84F.C9 #FFFC4B.1B -1973 -953
+!-1973 -953|-1973.5 -953!-1973.5 -953[#FFF843.A3 #FFFC35.3C -1972 -996.5!-1972 -996.5[#FFF87B.73 #FFFB84.5D -1763 -1208.5!-1763 -1208.5[#FFF91E.EE #FFFB46.9B -1759 -1210.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#664700"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFB711"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#FFCC00"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#FEDC67"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-208 239[#FFFE76.BC #FA.22 -414 220.5!-414 220.5[#FFFE46.AF #B5.7C -445 162!-445 162|-445 161.5!-445 161.5[#FFFE3C.99 #78.BF -439.5 87.5!-439.5 87.5[#FFFE58.B6 #2B.F8 -402 4.5!-402 4.5|-402 4!-402 4[#FFFE83.A4 #FFFFDD.2B -350.5 -67.5
+!-350.5 -67.5|-350 -68!-350 -68[-318.34375 #FFFF9B.24 -279.5 -125.5!-279.5 -125.5[#FFFF10.45 #FFFF66.46 -195 -174!-195 -174|-195.5 -174!-195.5 -174[#FFFF6B.3B #FFFF3B.B6 -99 -212.5!-99 -212.5[#FFFFCD.7E #FFFF1D.3E 0 -238!0 -238|1 -238
+!1 -238[#23.3F #FFFF0E.FF 70.5 -243!70.5 -243[#47.3D #FFFF0C.F2 72 -243!72 -243[#76.C #FFFF11.32 165.5 -227.5!165.5 -227.5|164 -228!164 -228[#D1.03 #FFFF21.26 253 -208.5!253 -208.5|253.5 -208.5!253.5 -208.5[#127.44 -192.0625 335 -168.5
+!335 -168.5[#175.81 #FFFF6D.BB 411 -120!411 -120|411.5 -119.5!411.5 -119.5[#1A3.0B #FFFF8E.F6 425.5 -105.5!425.5 -105.5[#1B3.BE #FFFFA2.D1 441.5 -77.5!441.5 -77.5[#1BD.21 #FFFFBB.B3 446 -59.5!446 -59.5[#1B4.0E #FFFFE3.55 422.5 -0.5!422.5
+ -0.5[#F9.1D #BD.16 -52 225.5"/>
+                    <Edge fillStyle1="2" edges="
+!-52 225.5[#FFFF7E.CF #EE.4B -208 239"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!-208 239[#FFFF2B.6B 239 -217 239!-217 239[-293 239 -361 213!-361 213[-437 182 -412 95!-412 95[-364 -76 -185 -149!-185 -149[-66 -213 71 -213!71 -213[256 -212 392 -97!392 -97[434 -63 401 -21!401 -21[291 120 122 180!122 180[#24.03 #D2.9
+ -52 225.5"/>
+                    <Edge fillStyle0="3" fillStyle1="2" edges="
+!250 73[#107.1C #1B.1A 229 8!229 8[65 -88 -120 -16!-120 -16[-213 19 -271 94!-271 94[-282 108 -292 123!-292 123[#FFFF00.E4 #C6.E6 -128 202!-128 202[-0.671875 #CD.4E 118 162!118 162[#EC.AC #76.B2 250 73"/>
+                    <Edge fillStyle0="4" fillStyle1="3" edges="
+!136 101[69 22 -35 91!-35 91[-65 112 -92 140!-92 140|-88 155!-88 155|-84 164!-84 164[43 208 124 117!124 117[131 110 136 101"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#664700"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#81B456"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#6F9E47"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#9DC57C"/>
+                    </FillStyle>
+                    <FillStyle index="5">
+                      <SolidColor color="#465F2C"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="5" edges="
+!-218 239.5[#FFFE76.2B #F9.53 -414 220.5!-414 220.5[#FFFE46.AF #B5.7C -445 162!-445 162|-445 161.5!-445 161.5[#FFFE3C.99 #78.BF -439.5 87.5!-439.5 87.5[#FFFE58.B6 #2B.F8 -402 4.5!-402 4.5|-402 4!-402 4[#FFFE83.A4 #FFFFDD.2B -350.5 -67.5
+!-350.5 -67.5|-350 -68!-350 -68[-318.34375 #FFFF9B.24 -279.5 -125.5!-279.5 -125.5[#FFFF10.45 #FFFF66.46 -195 -174!-195 -174|-195.5 -174!-195.5 -174[#FFFF6B.3B #FFFF3B.B6 -99 -212.5!-99 -212.5[#FFFFCD.7E #FFFF1D.3E 0 -238!0 -238|1 -238
+!1 -238[#23.3F #FFFF0E.FF 70.5 -243!70.5 -243[#47.3D #FFFF0C.F2 72 -243!72 -243[#76.C #FFFF11.32 165.5 -227.5"/>
+                    <Edge fillStyle1="1" edges="
+!165.5 -227.5|164 -228!164 -228[#A4.C #FFFF1C.16 165.5 -228"/>
+                    <Edge fillStyle1="5" edges="
+!165.5 -228[#D1.BF #FFFF21.63 253 -208.5!253 -208.5|253.5 -208.5!253.5 -208.5[#127.44 -192.0625 335 -168.5!335 -168.5[#175.81 #FFFF6D.BB 411 -120!411 -120|411.5 -119.5!411.5 -119.5[#1A3.0B #FFFF8E.F6 425.5 -105.5!425.5 -105.5[#1B3.BE
+ #FFFFA2.D1 441.5 -77.5!441.5 -77.5[#1BD.21 #FFFFBB.B3 446 -59.5!446 -59.5[#1B4.0E #FFFFE3.55 422.5 -0.5!422.5 -0.5[#F9.1D #BD.16 -52 225.5"/>
+                    <Edge fillStyle1="3" edges="
+!-52 225.5[#FFFF7E.CF #EE.4B -208 239"/>
+                    <Edge fillStyle1="1" edges="
+!-208 239[#FFFF2A.F1 #EF.4E -218 239.5"/>
+                    <Edge fillStyle0="5" fillStyle1="1" edges="
+!-218 239.5|-217 239"/>
+                    <Edge fillStyle0="5" fillStyle1="3" edges="
+!-217 239[-293 239 -361 213!-361 213[-437 182 -412 95!-412 95[-364 -76 -185 -149!-185 -149[-66 -213 71 -213!71 -213[256 -212 392 -97!392 -97[434 -63 401 -21!401 -21[291 120 122 180!122 180[#24.03 #D2.9 -52 225.5"/>
+                    <Edge fillStyle0="1" fillStyle1="5" edges="
+!165.5 -227.5|165.5 -228"/>
+                    <Edge fillStyle0="4" fillStyle1="2" edges="
+!136 101[69 22 -35 91!-35 91[-65 112 -92 140!-92 140|-88 155!-88 155|-84 164!-84 164[43 208 124 117!124 117[131 110 136 101"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="
+!250 73[#107.1C #1B.1A 229 8!229 8[65 -88 -120 -16!-120 -16[-213 19 -271 94!-271 94[-282 108 -292 123!-292 123[#FFFF00.E4 #C6.E6 -128 202!-128 202[-0.671875 #CD.4E 118 162!118 162[#EC.AC #76.B2 250 73"/>
+                    <Edge fillStyle0="3" fillStyle1="1" edges="
+!-217 239[#FFFF2B.6B 239 -208 239"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#465F2C"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#664700"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#840000"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#C10000"/>
+                    </FillStyle>
+                    <FillStyle index="5">
+                      <SolidColor color="#FF0404"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!-218 239.5[#FFFE76.2B #F9.53 -414 220.5!-414 220.5[#FFFE46.AF #B5.7C -445 162!-445 162|-445 161.5!-445 161.5[#FFFE3C.99 #78.BF -439.5 87.5!-439.5 87.5[#FFFE58.B6 #2B.F8 -402 4.5!-402 4.5|-402 4!-402 4[#FFFE83.A4 #FFFFDD.2B -350.5 -67.5
+!-350.5 -67.5|-350 -68!-350 -68[-318.34375 #FFFF9B.24 -279.5 -125.5!-279.5 -125.5[#FFFF10.45 #FFFF66.46 -195 -174!-195 -174|-195.5 -174!-195.5 -174[#FFFF6B.3B #FFFF3B.B6 -99 -212.5!-99 -212.5[#FFFFCD.7E #FFFF1D.3E 0 -238!0 -238|1 -238
+!1 -238[#23.3F #FFFF0E.FF 70.5 -243!70.5 -243[#47.3D #FFFF0C.F2 72 -243!72 -243[#76.C #FFFF11.32 165.5 -227.5"/>
+                    <Edge fillStyle1="2" edges="
+!165.5 -227.5|164 -228!164 -228[#A4.C #FFFF1C.16 165.5 -228"/>
+                    <Edge fillStyle1="1" edges="
+!165.5 -228[#D1.BF #FFFF21.63 253 -208.5!253 -208.5|253.5 -208.5!253.5 -208.5[#127.44 -192.0625 335 -168.5!335 -168.5[#175.81 #FFFF6D.BB 411 -120!411 -120|411.5 -119.5!411.5 -119.5[#1A3.0B #FFFF8E.F6 425.5 -105.5!425.5 -105.5[#1B3.BE
+ #FFFFA2.D1 441.5 -77.5!441.5 -77.5[#1BD.21 #FFFFBB.B3 446 -59.5!446 -59.5[#1B4.0E #FFFFE3.55 422.5 -0.5!422.5 -0.5[#F9.1D #BD.16 -52 225.5"/>
+                    <Edge fillStyle1="3" edges="
+!-52 225.5[#FFFF7E.CF #EE.4B -208 239"/>
+                    <Edge fillStyle1="2" edges="
+!-208 239[#FFFF2A.F1 #EF.4E -218 239.5"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!-218 239.5|-217 239"/>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="
+!-217 239[-293 239 -361 213!-361 213[-437 182 -412 95!-412 95[-364 -76 -185 -149!-185 -149[-66 -213 71 -213!71 -213[256 -212 392 -97!392 -97[434 -63 401 -21!401 -21[291 120 122 180!122 180[#24.03 #D2.9 -52 225.5"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!165.5 -227.5|165.5 -228"/>
+                    <Edge fillStyle0="5" fillStyle1="4" edges="
+!136 101[69 22 -35 91!-35 91[-65 112 -92 140!-92 140|-88 155!-88 155|-84 164!-84 164[43 208 124 117!124 117[131 110 136 101"/>
+                    <Edge fillStyle0="4" fillStyle1="3" edges="
+!229 8[65 -88 -120 -16!-120 -16[-213 19 -271 94!-271 94[-282 108 -292 123!-292 123[#FFFF00.E4 #C6.E6 -128 202!-128 202[-0.671875 #CD.4E 118 162!118 162[#EC.AC #76.B2 250 73!250 73[#107.1C #1B.1A 229 8"/>
+                    <Edge fillStyle0="3" fillStyle1="2" edges="
+!-217 239[#FFFF2B.6B 239 -208 239"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

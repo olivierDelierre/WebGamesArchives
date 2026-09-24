@@ -1,0 +1,35 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_death/pointeGFX" itemID="3f5746ad-000000a5" lastModified="1062684333">
+  <timeline>
+    <DOMTimeline name="pointeGFX">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <matrix>
+                    <Matrix tx="-0.1" ty="24.7"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#DA93DB"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#F9F0F9"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!62 -325S2[#3E.99 #FFFEC0.C1 60 -314!60 -314[#39.79 #FFFECB.4F 52.5 -305.5!52.5 -305.5[#2F.AB -302.4375 42 -302.5!42 -302.5|-38 -302.5!-38 -302.5[#FFFFD4.55 -302.4375 -48.5 -305.5!-48.5 -305.5[#FFFFCA.87 #FFFECB.4F -56 -314!-56 -314[#FFFFC5.67
+ #FFFEC0.C1 -58 -325!-58 -325|1 -686!1 -686|62 -325"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!40 -318.5S3|-40 -318.5!-40 -318.5|0 -637.5!0 -637.5|40 -318.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

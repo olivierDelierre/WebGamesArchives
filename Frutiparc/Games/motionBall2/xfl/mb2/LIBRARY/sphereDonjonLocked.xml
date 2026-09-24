@@ -1,0 +1,77 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="sphereDonjonLocked" itemID="409a56c4-00000530" lastModified="1083858014" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="sphereDonjonLocked">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMShape selected="true">
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient>
+                            <matrix>
+                              <Matrix a="0.0565643310546875" b="-0.00030517578125" c="0.00030517578125" d="0.0565643310546875" tx="-9.8" ty="-8.3"/>
+                            </matrix>
+                            <GradientEntry color="#F38B8B" ratio="0.0823529411764706"/>
+                            <GradientEntry color="#EA1A1A" ratio="0.305882352941176"/>
+                            <GradientEntry color="#EA1A1A" ratio="0.549019607843137"/>
+                            <GradientEntry color="#CD1212" ratio="0.729411764705882"/>
+                            <GradientEntry color="#CD1212" ratio="0.870588235294118"/>
+                            <GradientEntry color="#A51010" ratio="1"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!494.5 -495.5[#2BB.DF #FFFEDD.EB 700 0!700 0[#2BB.DF #122.03 494.5 495!494.5 495[#121.C3 #2BC.1E 0 700!0 700[#FFFEDD.EA #2BC.1E -495.5 495!-495.5 495[#FFFD43.CF #122.03 -700 0!-700 0[#FFFD43.CF #FFFEDD.EB -495.5 -495.5!-495.5 -495.5[#FFFEDD.EA
+ #FFFD43.CE 0 -700!0 -700[#121.C3 #FFFD43.CE 494.5 -495.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 4" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.075927734375" d="0.075927734375" tx="-0.65" ty="-0.65"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" ratio="0.596078431372549"/>
+                        <GradientEntry color="#FFD955" alpha="0.701960784313725" ratio="0.772549019607843"/>
+                        <GradientEntry color="#FFC600" alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!1213 -13[1213 495 854 854!854 854[495 1213 -13 1213!-13 1213[-521 1213 -880 854!-880 854[-1239 495 -1239 -13!-1239 -13[-1239 -521 -880 -880!-880 -880[-521 -1239 -13 -1239!-13 -1239[495 -1239 854 -880!854 -880[1213 -521 1213 -13"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

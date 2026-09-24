@@ -1,0 +1,80 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="grzzgrzgr" itemID="409f699b-00000b36" lastModified="1084189083" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="grzzgrzgr">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/main" selected="true" symbolType="graphic" loop="single frame">
+                  <matrix>
+                    <Matrix a="-1" tx="13.65" ty="18.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/manche" selected="true" symbolType="graphic" firstFrame="5" loop="single frame">
+                  <matrix>
+                    <Matrix a="0.462158203125" b="0.8271484375" c="-0.870590209960938" d="0.486434936523438" tx="7.6" ty="-5.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/main" selected="true" symbolType="graphic" loop="single frame">
+                  <matrix>
+                    <Matrix tx="-13.75" ty="18.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/manche" selected="true" symbolType="graphic" firstFrame="5" loop="single frame">
+                  <matrix>
+                    <Matrix a="-0.539199829101563" b="0.839523315429688" c="0.839523315429688" d="0.539215087890625" tx="-5.4" ty="-5.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/base" name="base" selected="true">
+                  <matrix>
+                    <Matrix d="0.85528564453125" tx="-11.85" ty="-35.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="12.95" y="26.95"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/jambe" selected="true" symbolType="graphic" loop="single frame">
+                  <matrix>
+                    <Matrix a="0.979965209960938" b="0.195816040039063" c="-0.231948852539063" d="1.16079711914063" tx="2.25" ty="4.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/jambe" selected="true" symbolType="graphic" loop="single frame">
+                  <matrix>
+                    <Matrix a="-0.972442626953125" b="0.229812622070313" c="0.25299072265625" d="1.07054138183594" tx="0.25" ty="6.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_boss/_tournéboulé/_elements/visage" selected="true" symbolType="graphic" firstFrame="1" loop="single frame">
+                  <matrix>
+                    <Matrix tx="1.4" ty="-12.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

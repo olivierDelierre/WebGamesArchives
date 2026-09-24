@@ -1,0 +1,108 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_death/bdeath" itemID="3f3caebb-00000024" linkageExportForAS="true" linkageIdentifier="bdeath" lastModified="1080124000" lastUniqueIdentifier="7">
+  <timeline>
+    <DOMTimeline name="bdeath">
+      <layers>
+        <DOMLayer name="Layer 4" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="7" name="hit" labelType="name" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[b0.play()
+b1.play()
+b2.play()
+b3.play()
+b4.play()
+b5.play()]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="8" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#808080" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_death/base.png">
+                  <matrix>
+                    <Matrix tx="-17.5" ty="-18"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 12" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_death/deathPike" name="b1">
+                  <matrix>
+                    <Matrix a="0.869491577148438" b="0.501998901367188" c="-0.501998901367188" d="0.869491577148438"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_death/deathPike" name="b2">
+                  <matrix>
+                    <Matrix a="9.1552734375e-005" b="1.00398254394531" c="-1.00398254394531" d="9.1552734375e-005"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_death/deathPike" name="b3">
+                  <matrix>
+                    <Matrix a="-0.869491577148438" b="0.501998901367188" c="-0.501998901367188" d="-0.869491577148438"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_death/deathPike" name="b4">
+                  <matrix>
+                    <Matrix a="-0.869491577148438" b="-0.501998901367188" c="0.501998901367188" d="-0.869491577148438"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_death/deathPike" name="b5">
+                  <matrix>
+                    <Matrix a="-9.1552734375e-005" b="-1.00398254394531" c="1.00398254394531" d="-9.1552734375e-005"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_death/deathPike" name="b0">
+                  <matrix>
+                    <Matrix a="0.869491577148438" b="-0.501998901367188" c="0.501998901367188" d="0.869491577148438"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_dalle/dalle" itemID="40614b18-000001c9" linkageExportForAS="true" linkageIdentifier="dalle" lastModified="1080141623" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="dalle">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_dalle/mcSquare" selected="true">
+                  <matrix>
+                    <Matrix a="1.25" d="1.25" tx="19.5" ty="19.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-15.6" y="-15.9"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

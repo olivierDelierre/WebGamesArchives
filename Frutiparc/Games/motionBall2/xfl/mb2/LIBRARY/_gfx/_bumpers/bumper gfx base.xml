@@ -1,0 +1,36 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/bumper gfx base" itemID="3f3caef5-0000002b" symbolType="graphic" lastModified="1060941557">
+  <timeline>
+    <DOMTimeline name="bumper gfx base">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#993399"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!127 -127.5[#B4.0C #FFFFB5.72 180 0!180 0[#B4.0C 74.75 127 127!127 127[74.75 #B4.0C 0 180!0 180[#FFFFB5.72 #B4.0C -127.5 127!-127.5 127[#FFFF4C.26 74.75 -180 0!-180 0[#FFFF4C.26 #FFFFB5.72 -127.5 -127.5!-127.5 -127.5[#FFFFB5.72 #FFFF4C.25
+ 0 -180!0 -180[74.75 #FFFF4C.25 127 -127.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

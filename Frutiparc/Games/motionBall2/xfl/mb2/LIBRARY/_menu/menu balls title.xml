@@ -1,0 +1,387 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_menu/menu balls title" itemID="3f8a64ca-000000a9" sourceFlashFilepath="../mb2_menu_test.fla" sourceLibraryItemHRef="menu balls title" sourceLastModified="1066039147" lastModified="1083158064" sourceItemID="3f8a64ca-000000a9">
+  <timeline>
+    <DOMTimeline name="menu balls title">
+      <layers>
+        <DOMLayer name="Layer 4" color="#FF4FFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="21" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <elements>
+                <DOMShape isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF3333"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!660 -845S2[776 -846 801 -740!801 -740[803 -733 805 -725!805 -725[581 -494 296 -278!296 -278[#B7.3 #FFFF3F.81 85 -92!85 -92[#14B.4A #90.B2 535 422!535 422[568 468 536 519!536 519[408 719 297 515!297 515[173 287 -54 128!-54 128[-69.109375
+ #75.63 -84 106.5!-84 106.5[#FFFF91.DA #8E.12 -135 179!-135 179[-352 502 -641 716!-641 716[-677 743 -692 693!-692 693[-752 496 -602 293!-602 293[-458.4375 #63.36 -299 -78.5!-299 -78.5[#FFFE2C.CF #FFFF06.9F -571 -457!-571 -457[-592 -499
+ -540 -530!-540 -530[-510 -535 -480 -543!-480 -543|-480 -545!-480 -545[#FFFEDF.89 #FFFE5E.B1 -115.5 -272!-115.5 -272[#18.5B #FFFE64.6E 175 -540!175 -540[372 -707 600 -830!600 -830[630 -835 660 -843!660 -843|660 -845"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF3333"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!783 -830[785 -823 787 -815!787 -815[563 -584 278 -368!278 -368[#A5.3 #FFFEE5.81 67 -182!67 -182[#139.4A #36.B2 517 332!517 332[550 378 518 429!518 429[390 629 279 425!279 425[155 197 -72 38!-72 38[-87.109375 #1B.63 -102 16.5!-102 16.5
+[#FFFF7F.DA #34.12 -153 89!-153 89[-370 412 -659 626!-659 626[-695 653 -710 603!-710 603[-770 406 -620 203!-620 203[-476.4375 #9.36 -317 -168.5!-317 -168.5[#FFFE1A.CF #FFFEAC.9F -589 -547!-589 -547[-610 -589 -558 -620!-558 -620[-528 -625
+ -498 -633!-498 -633|-498 -635!-498 -635[#FFFECD.89 #FFFE04.B1 -133.5 -362!-133.5 -362[#6.5B #FFFE0A.6E 157 -630!157 -630[354 -797 582 -920!582 -920[612 -925 642 -933!642 -933|642 -935!642 -935[758 -936 783 -830"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="41" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" left="37.35" width="112" height="75.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-90" ty="-32.35"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>CHAL&#xD;LENGE</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="33" face="Kiloton Condensed" fillColor="#FF0000"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" width="245.8" height="48.05" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-119.8" ty="-18.2"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>RUN</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="43" face="Kiloton Condensed" fillColor="#33CC00"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" width="169" height="84.7" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-81.8" ty="-32.2"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>AVEN&#xD;TURE</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="37" face="Kiloton Condensed" fillColor="#CC6600"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" left="25.2" width="93.6" height="91.4" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-68.45" ty="-37.2"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>CLA&#xD;SSIC</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" left="39.65" width="64.7" height="91.4" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-70.9" ty="-35"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>opti&#xD;ons</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#CC0066"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" fontRenderingMode="standard" left="31.85" width="80.3" height="44.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-68.9" ty="-19"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Aide</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#FF6600"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" left="40.8" width="62.4" height="91.4" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-68.9" ty="-36"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Ret&#xD;our</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#330099"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" duration="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" left="19.7" width="104.6" height="44.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-71" ty="-18.1"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Music</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#330099"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" width="158" height="91.4" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-71" ty="-31"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Sound&#xD;FX</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#330099"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" left="19.7" width="104.6" height="44.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-71.5" ty="-17.05"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Music</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#330099"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" width="158" height="91.4" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-78.5" ty="-35.6"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Sound&#xD;FX</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#330099"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="23" duration="16" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="39" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" left="-9.25" width="162.5" height="44.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-68.9" ty="-19"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Course 1</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#FF6600"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" fontRenderingMode="standard" left="-9.25" width="162.5" height="44.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-68.9" ty="-19"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Course 2</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#FF6600"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" fontRenderingMode="standard" left="-9.25" width="162.5" height="44.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-68.9" ty="-19"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Course 3</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#FF6600"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="42" duration="17" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="59" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" left="-25.95" width="195.9" height="44.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-68.9" ty="-19"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Dungeon 1</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#FF6600"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="60" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" left="-25.95" width="195.9" height="44.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-68.9" ty="-19"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Dungeon 2</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#FF6600"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="61" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" fontRenderingMode="standard" left="-25.95" width="195.9" height="44.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-68.9" ty="-19"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Dungeon 3</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#FF6600"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="62" keyMode="9728">
+              <elements>
+                <DOMStaticText selected="true" fontRenderingMode="standard" left="-25.95" width="195.9" height="44.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-68.9" ty="-19"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Dungeon 4</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#FF6600"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="63" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" left="-25.95" width="195.9" height="44.7" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-68.9" ty="-19"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Dungeon 5</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="40" face="Kiloton Condensed" fillColor="#FF6600"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

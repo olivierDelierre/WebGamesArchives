@@ -1,0 +1,40 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_bordel/itembox gfx" itemID="3f3f4b89-00000024" symbolType="graphic" lastModified="1062078342">
+  <timeline>
+    <DOMTimeline name="itembox gfx">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#CC6600"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#996600"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#330000"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!-300 -46|-300 -115.5!-300 -115.5[#17.F3 #FFFE1B.FE 300 -115.5!300 -115.5|300 -46"/>
+                    <Edge fillStyle1="2" strokeStyle="1" edges="!300 -46|300 300!300 300|-300 300!-300 300|-300 -46"/>
+                    <Edge fillStyle0="1" fillStyle1="2" strokeStyle="1" edges="!-300 -46|300 -46"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

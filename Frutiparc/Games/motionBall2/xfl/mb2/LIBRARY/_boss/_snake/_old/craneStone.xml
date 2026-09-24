@@ -1,0 +1,63 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_snake/_old/craneStone" itemID="40910b78-0000111e" lastModified="1083580034">
+  <timeline>
+    <DOMTimeline name="craneStone">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#232732"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#4F5473"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#888888"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#AAAAAA"/>
+                    </FillStyle>
+                    <FillStyle index="5">
+                      <SolidColor color="#DDDDDD"/>
+                    </FillStyle>
+                    <FillStyle index="6">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="6" fillStyle1="5" edges="!16 -486|-63 -470!-63 -470[-129 -312 -143 -137!-143 -137[-149 -68 -153 1!-153 1[-149 70 -143 139!-143 139[-129 314 -63 472!-63 472|16 488!16 488[82 426 113 339!113 339[171 173 195.5 1!195.5 1[171 -171 113 -337!113 -337[82 -424 16 -486"/>
+                    <Edge fillStyle1="5" edges="!-83.5 -504|-21.5 -529!-21.5 -529|-20 -529!-20 -529|49 -560!49 -560[56 -540 67 -520!67 -520[#BE.BF #FFFED4.B7 271 -54.5!271 -54.5[#115.A6 #FFFFDD.93 284 -14!284 -14|282 40!282 40|85 539!85 539|69 560!69 560|37 558.5"/>
+                    <Edge fillStyle1="2" edges="!37 558.5|36 558.5"/>
+                    <Edge fillStyle1="4" edges="!36 558.5|-33.5 555.5!-33.5 555.5|-34 554.5!-34 554.5[#FFFFDD.83 #22A.F8 -35 555.5!-35 555.5|-90.5 553"/>
+                    <Edge fillStyle1="3" edges="!-90.5 553|-114 552!-114 552|-114 551!-114 551[#FFFF3B.B5 #1F2.E8 -221 426!-221 426[#FFFEDD.61 #DC.BB -284 4!-284 4[#FFFEE3.F3 2.5 -284 1!-284 1[#FFFEE3.F4 -0.5 -284 -2!-284 -2[#FFFEDD.5F #FFFF25.45 -221 -424!-221 -424[#FFFF3A.CD #FFFE12.49
+ -126 -548"/>
+                    <Edge fillStyle1="1" edges="
+!-126 -548[#FFFF82.07 #FFFDDB.3E -126 -549.5!-126 -549.5|-125.5 -549"/>
+                    <Edge fillStyle1="3" edges="
+!-125.5 -549|-107.5 -534.5"/>
+                    <Edge fillStyle1="4" edges="
+!-107.5 -534.5|-77 -509.5!-77 -509.5[#FFFFAF.B9 #FFFE05.53 -83.5 -504"/>
+                    <Edge fillStyle0="5" fillStyle1="4" edges="
+!-83.5 -504[#FFFF74.29 #FFFE36.3A -160 -398!-160 -398[-226 -204 -219 1!-219 1[-226 206 -160 400!-160 400[#FFFF73.A3 #1CA.0E -32 532!-32 532|-20 531!-20 531[7 545 36 558"/>
+                    <Edge fillStyle0="5" fillStyle1="2" edges="
+!36 558[#24.9C #22E.2D 37 558.5"/>
+                    <Edge fillStyle0="3" fillStyle1="4" edges="
+!-90.5 553[#FFFFA7.6B #223.81 -86 542!-86 542[#FFFF57.C2 #1DF.DF -191 413!-191 413[#FFFEFD.2F #D5.5E -252 2.5!-252 2.5[#FFFF03.F3 #1.01 -252 -0.5!-252 -0.5[#FFFEFD.2E #FFFF2C.A2 -191 -411!-191 -411[-178.25 #FFFE3F.67 -154.5 -480.5!-154.5
+ -480.5[-135.03125 #FFFE04.C5 -108 -530!-108 -530[#FFFF94.47 #FFFDEB.D6 -107.5 -534.5"/>
+                    <Edge fillStyle0="3" fillStyle1="1" edges="
+!-125.5 -549|-126 -548"/>
+                    <Edge fillStyle0="2" fillStyle1="4" edges="
+!36 558|36 558.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

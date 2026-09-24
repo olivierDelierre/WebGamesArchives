@@ -1,0 +1,83 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_zapper/flashLine" itemID="4044adad-00000153" linkageExportForAS="true" linkageIdentifier="flashLine" lastModified="1078242738">
+  <timeline>
+    <DOMTimeline name="flashLine">
+      <layers>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="30" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[removeMovieClip("");
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="2" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_zapper/flashLineGfx" name="gfx">
+                  <matrix>
+                    <Matrix d="-0.1199951171875"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="6" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_zapper/flashLineGfx" name="gfx">
+                  <matrix>
+                    <Matrix d="1.67999267578125"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_zapper/flashLineGfx" name="gfx" selected="true">
+                  <matrix>
+                    <Matrix d="0.0999908447265625"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" duration="30" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" visible="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" duration="39" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!1999.5 100|-0.5 100!-0.5 100|-0.5 -100!-0.5 -100|1999.5 -100!1999.5 -100|1999.5 100"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

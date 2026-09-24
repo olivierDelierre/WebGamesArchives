@@ -1,0 +1,42 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_magnet/_src/miniBumper src" itemID="406162f6-000003c6" lastModified="1080124150">
+  <timeline>
+    <DOMTimeline name="miniBumper src">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#73BD26"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#85D940"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#52871D"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!154 -183[80 -252 -20 -248!-20 -248[-117 -241 -184 -170!-184 -170[-255 -97 -247 2!-247 2[-241 78 -199 144!-199 144|-180 137!-180 137[-234 56 -208 -38!-208 -38[-182 -132 -100 -188!-100 -188[-34 -232 39 -214!39 -214[96 -203 143 -167!143
+ -167|154 -183"/>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="
+!-136 291[-109 299 -82 308!-82 308[13 340 109 304!109 304[205 268 263 185!263 185[321 102 316 -1!316 -1[311 -102 258.5 -188.5"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="
+!258.5 -188.5[241 -206 223 -223!223 -223[154 -290 63 -309!63 -309[-32 -328 -121 -291!-121 -291[-210 -252 -264 -174!-264 -174[-317 -96 -317 0!-317 0[-318 96 -265 175!-265 175[-217 249 -136 291"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!-136 291|-136 279!-136 279|-123 271!-123 271[-18 305 83 283!83 283[132 272 172 239!172 239[238 185 265 105!265 105[293 24 275 -61!275 -61[266 -105 258 -152!258 -152[255 -170 258.5 -188.5"/>
+                    <Edge fillStyle1="3" edges="
+!282.5 -189[#153.5E #FFFF95.CF 339.5 0!339.5 0[#153.4A #8C.8A 239.5 240!239.5 240[#8C.0A #153.CA -0.5 340!-0.5 340[#FFFF7C.75 #153.FE -227 254!-227 254[#FFFF15.DC #F7.34 -241 240!-241 240[#FFFEAB.73 #8C.8A -340.5 0!-340.5 0[#FFFEAB.73
+ #FFFF73.73 -241 -240!-241 -240[#FFFF72.B3 #FFFEAC.33 -0.5 -340!-0.5 -340[#8C.0A #FFFEAC.33 239.5 -240!239.5 -240[#108.18 #FFFF28.7F 282.5 -188.5!282.5 -188.5|282.5 -189"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

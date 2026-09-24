@@ -1,0 +1,48 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_poulpe/bossParticule" itemID="405882af-00000252" linkageExportForAS="true" linkageIdentifier="bossParticule" lastModified="1083237938">
+  <timeline>
+    <DOMTimeline name="bossParticule">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#F7D2C6"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FCECE9"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!103.5 -112[143 -73 143 -17!143 -17[143 39 103.5 78!103.5 78[64 117 8 117!8 117[-48 117 -87.5 78!-87.5 78[-127 39 -127 -17!-127 -17[-127 -73 -87.5 -112!-87.5 -112[-48 -151 8 -151!8 -151[64 -151 103.5 -112"/>
+                    <Edge fillStyle1="1" edges="!89 275[22 308 -53 284!-53 284[-393 167 -218 -167!-218 -167[-155 -286 -16 -293!-16 -293[117 -299 219 -211!219 -211[417 111 89 275"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FCECE9"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!103.5 -112[143 -73 143 -17!143 -17[143 39 103.5 78!103.5 78[64 117 8 117!8 117[-48 117 -87.5 78!-87.5 78[-127 39 -127 -17!-127 -17[-127 -73 -87.5 -112!-87.5 -112[-48 -151 8 -151!8 -151[64 -151 103.5 -112"/>
+                    <Edge fillStyle1="1" edges="!89 275[22 308 -53 284!-53 284[-393 167 -218 -167!-218 -167[-155 -286 -16 -293!-16 -293[117 -299 219 -211!219 -211[417 111 89 275"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,93 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_time/_src/boutGFX src" itemID="40615445-00000301" lastModified="1080120389">
+  <timeline>
+    <DOMTimeline name="boutGFX src">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <matrix>
+                    <Matrix tx="-14.85" ty="21"/>
+                  </matrix>
+                  <members>
+                    <DOMShape selected="true">
+                      <matrix>
+                        <Matrix tx="-14.85" ty="21"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#52871D"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!395.5 -579.5S2[#1B2.C1 #FFFDE3.AA 436.5 -485!436.5 -485[#1B4.FB #FFFE1D.07 437 -480.5!437 -480.5|437 -240.5!437 -240.5[#1B4.EE #FFFF17.B7 431 -226.5!431 -226.5[#1A9.37 #FFFF23.6E 417 -220.5!417 -220.5|177 -220.5!177 -220.5[#A8.C9 #FFFF23.6E
+ 163 -226.5!163 -226.5[#9D.12 #FFFF17.B7 157 -240.5!157 -240.5|157 -475.5!157 -475.5[#9C.85 #FFFE22.4D 156.5 -480!156.5 -480|156.5 -480.5!156.5 -480.5[#9C.92 #FFFDE5.55 197.5 -579.5!197.5 -579.5[#EE.54 #FFFD93.92 296.5 -620.5!296.5 -620.5
+[#162.AB #FFFD93.92 395.5 -579.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup selected="true">
+                  <matrix>
+                    <Matrix ty="21"/>
+                  </matrix>
+                  <members>
+                    <DOMShape selected="true">
+                      <matrix>
+                        <Matrix ty="21"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#73BD26"/>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <SolidColor color="#85D940"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="2" edges="
+!119.5 -486[#77.1A #FFFE12.96 118 -500.5!118 -500.5[#70.4A #FFFDE6.53 84.5 -565.5!84.5 -565.5[#31.6F #FFFDA7.7A -0.5 -600.5!-0.5 -600.5[-50.4375 #FFFDA7.7A -85.5 -565.5!-85.5 -565.5[#FFFF8C.1F #FFFDE8.EA -120 -493.5!-120 -493.5[#FFFF87.7F
+ #FFFE18.E1 -120.5 -480.5!-120.5 -480.5|-120.5 -480!-120.5 -480|-120 -480!-120 -480|-120 -479.5"/>
+                        <Edge fillStyle0="1" edges="
+!-120 -479.5|-120 -240.5!-120 -240.5|120 -240.5!120 -240.5|120 -480.5!120 -480.5|119.5 -480.5!119.5 -480.5[119.5 #FFFE1C.BB 119.5 -486"/>
+                        <Edge fillStyle0="1" fillStyle1="2" edges="
+!119.5 -486[#75.A4 -486.34375 116 -487!116 -487[106 -490 96 -492!96 -492[37 -503 -23 -500!-23 -500[-61 -499 -97 -490!-97 -490[#FFFF92.41 #FFFE18.BB -120 -479.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup selected="true">
+                  <matrix>
+                    <Matrix tx="-0.1" ty="20.6"/>
+                  </matrix>
+                  <members>
+                    <DOMShape selected="true">
+                      <matrix>
+                        <Matrix tx="-0.1" ty="20.6"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#ADE67D"/>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <SolidColor color="#E6F7D7"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!31 -581S1[-31 -598 -74 -555!-74 -555[-91 -537 -100 -518!-100 -518[-96 -512 -91 -507!-91 -507[-88 -504 -83 -501!-83 -501[-33 -507 13 -538!13 -538[40 -556 39 -574!39 -574|31 -581"/>
+                        <Edge fillStyle0="1" fillStyle1="2" edges="
+!-15 -569S3[-4 -565 -10 -555!-10 -555[-24 -532 -51 -530!-51 -530[-61 -530 -59 -539!-59 -539[-59 -542 -57 -545!-57 -545[-52 -554 -42 -560!-42 -560[-29 -568 -15 -569"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

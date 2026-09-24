@@ -1,0 +1,329 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_poulpe/bossGFX" itemID="3facc0cb-000000a0" lastModified="1079541973" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="bossGFX">
+      <layers>
+        <DOMLayer name="Layer 12" color="#FF4FFF">
+          <frames>
+            <DOMFrame index="0" duration="15" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="skin" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="15" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#F1B098"/>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <SolidColor color="#F7D1C4"/>
+                        </FillStyle>
+                        <FillStyle index="3">
+                          <SolidColor color="#FCECE9"/>
+                        </FillStyle>
+                        <FillStyle index="4">
+                          <SolidColor color="#E87559"/>
+                        </FillStyle>
+                        <FillStyle index="5">
+                          <SolidColor color="#B52D1A"/>
+                        </FillStyle>
+                        <FillStyle index="6">
+                          <SolidColor color="#741410"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!-1468.5 365S2[#FFFA5A.B3 #11C.6 -1413 206!-1413 206[-1352 56 -1277 -89!-1277 -89[-1218 -204 -1155 -318!-1155 -318[-1087 -440 -1018 -560!-1018 -560[-949 -681 -880 -801!-880 -801[-811 -919 -740 -1035!-740 -1035[-666 -1159 -595 -1287!-595
+ -1287[-575 -1322 -549 -1352!-549 -1352[-461 -1452 -359 -1534!-359 -1534[-257 -1617 -142 -1684!-142 -1684[-136 -1688 -128 -1690!-128 -1690[39 -1738 203 -1668!203 -1668[252 -1646 300 -1620!300 -1620[#1C2.1C #FFF9F9.D8 540.5 -1403.5!540.5
+ -1403.5[#276.CA #FFFB0F.4A 652.5 -1219!652.5 -1219[#2A2.2A #FFFB6A.C8 706 -1115!706 -1115[#2E1.D6 #FFFBDF.2F 816.5 -915.5!816.5 -915.5[#37F.13 #FFFCF9.EB 983 -624!983 -624[1072 -472 1157 -320!1157 -320[1235 -180 1308 -35!1308 -35[#523.AF
+ #FFFFEC.77 1323 -4!1323 -4[#53C.54 #1F.8E 1356.5 67.5"/>
+                        <Edge fillStyle1="4" edges="
+!1356.5 67.5S2|1439 271.5!1439 271.5[#5A2.93 #119.4F 1446 291!1446 291[1459 332 1470 374!1470 374[1491 457 1505 542!1505 542[1514 600 1515 659!1515 659[1516 691 1510 723!1510 723[1503 754 1489 783!1489 783[1476 813 1453 837!1453 837[1395
+ 900 1330 958!1330 958[#507.E5 #3E4.22 1244.5 1033!1244.5 1033[#4D1.4F #412.8B 1222 1052!1222 1052[1156 1105 1087 1154!1087 1154[#43C.01 #484.16 1081 1158!1081 1158[#3F6.EA 1204 947 1248!947 1248[#3A7.1E #4E7.CC 923 1263.5!923 1263.5
+[#371.5D #509.A1 837 1313.5!837 1313.5[#338.9C #528.6F 812 1327!812 1327[#308.D4 #541.14 740 1362!740 1362[673 1394 608 1429!608 1429[528 1470 438 1503!438 1503[353 1531 261 1548!261 1548[148 1572 34 1571!34 1571[-67 1570 -172 1558!-172
+ 1558[-269 1545 -363 1518!-363 1518[-456 1493 -547 1453!-547 1453[-641 1408 -733 1362!-733 1362[#FFFCF8.65 #53C.3E -818 1318!-818 1318[#FFFCC7.FF #523.1F -830 1312!-830 1312[#FFFCA6.75 #511.BE -885 1283.5!-885 1283.5[#FFFC79.7B #4FA.36
+ -920 1265!-920 1265[-1013 1214 -1096 1149!-1096 1149[-1165 1095 -1231 1040!-1231 1040[-1299 985 -1364 928!-1364 928[-1429 869 -1479 796!-1479 796[-1499 769 -1504 737!-1504 737[-1517 659 -1511 584!-1511 584[-1502 473 -1468.5 365"/>
+                        <Edge fillStyle0="1" fillStyle1="4" edges="
+!-1468.5 365S3[-1468 390 -1470 416!-1470 416[-1476 500 -1454 581!-1454 581[-1426 684 -1354 765!-1354 765[-1302 822 -1243 867!-1243 867[-1240.5 #364.FE -1238 871!-1238 871[#FFFB66.FF #37B.C5 -1114 916!-1114 916[#FFFC28.AB #3C5.BB -885
+ 868!-885 868[#FFFC8D.83 #361.96 -880 863!-880 863[#FFFCA9.86 #344.8C -830 809!-830 809[-823.96875 #322.3C -818 795.5!-818 795.5[#FFFCD4.09 #314.7C -806 781.5!-806 781.5[#FFFCF7.2B #2B5.F4 -726 614!-726 614[-656 504 -544 434!-544 434
+[-398 345 -225 319!-225 319[110 261 424 391!424 391[492 418 553 455!553 455[608 489 654 532!654 532[#294.9D #219.E6 667 544!667 544[#2F0.2C #251.45 812 669.5!812 669.5[#339.1C #2AE.0B 837 704!837 704[#350.94 #2D1.54 859 740!859 740[860
+ 742 861 744!861 744[871 752 881 759!881 759[883 761 885 763!885 763[898 768 914 771!914 771[917 773 920 776!920 776[921.5 777.5 923 779!923 779[923.5 779.5 924 780!924 780[925 782 927 783!927 783[#3D9.06 #324.2E 1042 812.5!1042 812.5
+[#425.9 #32F.5D 1081 816.5!1081 816.5[#462.C9 #333.9B 1164 815.5!1164 815.5[#49E.ED #320.91 1201 784!1201 784[1249 741 1291 693!1291 693[1334 644 1368 588!1368 588[1380 570 1383 549!1383 549[1391 488 1395 428!1395 428[1400 336 1390 247
+!1390 247[1379 156 1356.5 67.5"/>
+                        <Edge fillStyle0="2" fillStyle1="3" edges="
+!-30 -1387S3|373 -1347!373 -1347|380 -1335!380 -1335|308 -1300!308 -1300|289 -1286!289 -1286|276 -1289!276 -1289|238 -1270!238 -1270|246 -1263!246 -1263|416 -1244!416 -1244|422 -1228!422 -1228|400 -1178!400 -1178|436 -1160!436 -1160|431
+ -1127!431 -1127|221 -1086!221 -1086|301 -1071!301 -1071|307 -1042!307 -1042|263 -1021!263 -1021|542 -968!542 -968|283 -858!283 -858|291 -837!291 -837|272 -817!272 -817|275 -809!275 -809|461 -777!461 -777|285 -677!285 -677|293 -674!293
+ -674|283 -655!283 -655|304 -638!304 -638|251 -588!251 -588|249 -566!249 -566|501 -521!501 -521|347 -448!347 -448|337 -438!337 -438|337 -423!337 -423|329 -411!329 -411|347 -375!347 -375|282 -340!282 -340|360 -307!360 -307|327 -226!327
+ -226|335 -209!335 -209|304 -149!304 -149|359 -149!359 -149|367 -132!367 -132|307 -73!307 -73|219 -97!219 -97|218 -122!218 -122|153 -128!153 -128|168 -149!168 -149|241 -153!241 -153|196 -211!196 -211|206 -227!206 -227|221 -222!221 -222
+|156 -265!156 -265|157 -281!157 -281|192 -364!192 -364|233 -352!233 -352|258 -376!258 -376|239 -390!239 -390|243 -422!243 -422|140 -455!140 -455|136 -465!136 -465|-2 -511!-2 -511|182 -544!182 -544|150 -589!150 -589|195 -620!195 -620|142
+ -658!142 -658|-20 -685!-20 -685|-18 -709!-18 -709|-120 -725!-120 -725|-122 -752!-122 -752|172 -801!172 -801|164 -820!164 -820|187 -844!187 -844|178 -847!178 -847|-57 -857!-57 -857|-96 -876!-96 -876|25 -962!25 -962|-70 -947!-70 -947|-164
+ -976!-164 -976|141 -1024!141 -1024|133 -1050!133 -1050|106 -1067!106 -1067|-308 -1083!-308 -1083|-304 -1126!-304 -1126|48 -1224!48 -1224|-65 -1243!-65 -1243|-74 -1267!-74 -1267|-54 -1283!-54 -1283|173 -1269!173 -1269|176 -1298!176 -1298
+|168 -1304!168 -1304|26 -1308!26 -1308|22 -1324!22 -1324|-74 -1339!-74 -1339|-68 -1359!-68 -1359|-44 -1367!-44 -1367|-30 -1387"/>
+                        <Edge fillStyle0="1" fillStyle1="2" edges="
+!-812.5 -163S3[#FFFCF3.1F #FFFEBD.8D -731.5 -476.5!-731.5 -476.5[#FFFDB5.E1 #FFFC5E.E6 -305 -1304!-305 -1304[-161 -1496 64 -1604!64 -1604[#F8.17 #FFF96B.9F 488.5 -1391.5!488.5 -1391.5[#280.74 #FFFBAE.4C 894 -639.5!894 -639.5[#430.61 #FFFEC7.EE
+ 1143 -4!1143 -4[#494.E3 #7E.3C 1183.5 253!1183.5 253[#4B2.AE #1E3.C5 1081 503!1081 503[#427.0A #1F9.C8 1042 504!1042 504[#3DF.65 #1F3.CC 923 469!923 469[#373.0B #1C2.DB 837 423.5!837 423.5[#338.B8 #1A0.67 812 408.5!812 408.5[792.75 #18C.77
+ 772.5 383!772.5 383[#146.4F #56.04 -459 265!-459 265[#FFFE16.F1 #114.16 -518 287.5!-518 287.5[#FFFDC6.E4 #123.FA -617 315!-617 315[-689 319 -765 325!-765 325[-784 326 -794 313!-794 313[#FFFCD8.9D #127.3B -818 276.5!-818 276.5[#FFFCC7.7A
+ #108.9C -830 252.5!-830 252.5[#FFFCAD.1A #CE.B1 -856.5 154.5!-856.5 154.5[#FFFCA8.3B #91.BE -855 137!-855 137[#FFFCB5.3F #0.17 -818 -133!-818 -133[#FFFCD0.CA #FFFF6B.FA -812.5 -163"/>
+                        <Edge fillStyle0="4" fillStyle1="1" edges="
+!859 935S3[849 929 840 924!840 924[#346.F2 #38E.7D 837.5 897!837.5 897[#346.55 #387.8B 839 910!839 910[#355.02 #3A0.6D 874.5 941.5!874.5 941.5[#362.69 #3AA.5E 859 935"/>
+                        <Edge fillStyle0="1" fillStyle1="4" edges="
+!1079 872.5S3[#438.02 #367.DC 1081 871.5!1081 871.5|1081.5 871!1081.5 871|1081 871!1081 871[#435.1 #366.D1 1073 871!1073 871[#433.EA #367.AC 1079 872.5"/>
+                        <Edge fillStyle0="4" fillStyle1="1" edges="
+!721 694S3[753 775 764 857!764 857[777 952 747 1040!747 1040[712 1142 632 1212!632 1212[556 1279 469 1325!469 1325[340 1395 194 1431!194 1431[147 1444 100 1453!100 1453[-21 1469 -146 1459!-146 1459[-258 1448 -363 1420!-363 1420[-485 1387
+ -576 1302!-576 1302[-679 1205 -698 1061!-698 1061[-709 982 -702 898!-702 898|-737 848!-737 848|-724 782!-724 782|-702 779!-702 779[-697 881 -662 977!-662 977[-624 1084 -544 1167!-544 1167[-463 1249 -355 1293!-355 1293[-262 1333 -168
+ 1352!-168 1352[-57 1373 56 1369!56 1369[166 1365 271 1328!271 1328[381 1291 479 1229!479 1229[552 1183 610 1118!610 1118[678 1043 707 948!707 948[737 848 726 741!726 741[724 717 721 694"/>
+                        <Edge fillStyle0="5" fillStyle1="6" edges="
+!534 611S3|533.5 611"/>
+                        <Edge fillStyle0="4" fillStyle1="6" edges="
+!533.5 611S3|534 610.5!534 610.5|534 611"/>
+                        <Edge fillStyle0="4" fillStyle1="5" edges="
+!534 611S3[#225.07 #276.79 563 651.5!563 651.5|563 652!563 652[#224.DA #276.A2 533.5 611"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 13" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="15" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/pince2" name="p1">
+                  <matrix>
+                    <Matrix tx="0.9" ty="79.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#E87559"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!646 1219.5S1|646 1191!646 1191|612 1162!612 1162[#274.BC #4A6.E3 646 1219.5"/>
+                        <Edge fillStyle1="1" edges="
+!-575 1364.5S2|-575 1268!-575 1268|-450 1162!-450 1162[#FFFE02.CA #4F0.33 -575 1364.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#FF4F4F">
+          <frames>
+            <DOMFrame index="0" duration="15" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/pince" name="p2">
+                  <matrix>
+                    <Matrix tx="0.85" ty="79.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#E87559"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!609 1364.5S1|609 1268!609 1268|484 1162!484 1162[#21F.36 #4F0.33 609 1364.5"/>
+                        <Edge fillStyle1="1" edges="
+!-612 1219.5S2|-612 1191!-612 1191|-578 1162!-578 1162[#FFFDAD.44 #4A6.E3 -612 1219.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="tentacule1" color="#FFFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/tentacule" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix a="0.800491333007813" d="0.79998779296875" ty="16.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="14" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/tentacule" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix a="0.800491333007813" d="0.79998779296875" ty="16.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="tentacule2" color="#4FFFFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="15" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/tentacule" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix a="-0.800491333007813" d="0.79998779296875" ty="16.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="contour" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="15" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#8F2D14"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!333.5 -1671|332.5 -1671!332.5 -1671[#1F1.BF #FFF9CE.D8 592.5 -1425.5!592.5 -1425.5|593 -1425!593 -1425[652 #FFFAD5.3F 710.5 -1219!710.5 -1219|710.5 -1219.5!710.5 -1219.5[#2C7.B6 #FFFB3E.C5 713 -1215!713 -1215[#2C9.4B #FFFB41.7A 713.5
+ -1214!713.5 -1214[#319.0B #FFFBC2.F9 866.5 -954.5!866.5 -954.5[#3B8.41 #FFFCDD.FF 1040 -652.5!1040 -652.5[#469.41 -500 1214.5 -347.5!1214.5 -347.5|1214.5 -347!1214.5 -347[#50D.04 #FFFF31.FB 1366.5 -60!1366.5 -60|1366.5 -59.5!1366.5 -59.5
+[#5A7.34 #66.AB 1507.5 273!1507.5 273|1507.5 272.5!1507.5 272.5[#620.42 #1B8.F4 1583 623!1583 623|1583 623.5!1583 623.5[#634.CA #2BB.56 1566.5 774!1566.5 774|1566.5 774.5!1566.5 774.5[#606.FE #353.A4 1479.5 910!1479.5 910|1480.5 909.5
+!1480.5 909.5[#563.14 #3EE.C5 1266.5 1101!1266.5 1101[#46C.2 #4BC.B7 983.5 1301!983.5 1301[#3D7.07 #515.4B 982.5 1301.5!982.5 1301.5[#34D.DE #56A.3 698 1453.5!698 1453.5|697.5 1453.5!697.5 1453.5[#229.FA #5EE.5 414.5 1572!414.5 1572|414
+ 1572!414 1572[#F4.AE #664.0A 61.5 1634!61.5 1634|61 1634!61 1634[#FFFFCF.C1 1632 -159.5 1629!-159.5 1629[-161.96875 #65C.D5 -164.5 1628.5!-164.5 1628.5[#FFFF00.E6 #653.09 -342.5 1592.5!-342.5 1592.5[#FFFEA8.D6 #638.3B -344 1592!-344
+ 1592[#FFFE32.BB #611.1A -576.5 1504!-576.5 1504|-577.5 1503.5!-577.5 1503.5[#FFFD23.77 #599.D2 -882.5 1353!-882.5 1353|-882 1353!-882 1353[#FFFC0E.15 #505.04 -1126.5 1199.5!-1126.5 1199.5|-1127 1199!-1127 1199[#FFFB0A.EE #445.93 -1399
+ 975!-1399 975|-1399.5 974.5!-1399.5 974.5[#FFFA43.0D #390.3A -1524.5 835!-1524.5 835[#FFFA0A.FC #342.19 -1525.5 833.5!-1525.5 833.5[#FFF9F0.4C #31A.F2 -1560 749.5!-1560 749.5|-1560 748.5!-1560 748.5[#FFF9D4.3A #272.62 -1557 501!-1557
+ 501[#FFFA09.1F #152.D7 -1463.5 185!-1463.5 185|-1463.5 185.5!-1463.5 185.5[#FFFA86.62 #20.F5 -1325.5 -114.5!-1325.5 -114.5[#FFFB0D.FC #FFFF19.BF -1202.5 -345!-1202.5 -345[#FFFB91.BF #FFFE2C.7F -1065 -588!-1065 -588|-1065 -587.5!-1065
+ -587.5[#FFFC1B.FF #FFFD3B.3F -927 -829!-927 -829|-927 -829.5!-927 -829.5[#FFFCA6.37 #FFFC4C.7B -786.5 -1063.5!-786.5 -1063.5[#FFFCED.C9 #FFFBD8.05 -786 -1064.5!-786 -1064.5[#FFFD37.43 #FFFB5C.BE -642.5 -1314!-642.5 -1314|-642 -1315!-642
+ -1315[#FFFD94.CE #FFFAB4.E1 -589.5 -1389.5!-589.5 -1389.5|-589 -1389.5!-589 -1389.5[#FFFE0E.3C #FFFA2A.AA -392 -1578.5!-392 -1578.5|-391.5 -1579!-391.5 -1579[-287.46875 #FFF980.8B -170.5 -1732!-170.5 -1732[#FFFF62.DA #FFF933.0C -139.5
+ -1745.5!-139.5 -1745.5[#FFFF75.7E #FFF92E.37 -137.5 -1746!-137.5 -1746[#30.AA #FFF8F8.EC 231.5 -1721!231.5 -1721|232.5 -1720.5!232.5 -1720.5[#11B.85 #FFF95E.2A 333.5 -1671"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="tentacule3" color="#808080" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/tentacule" symbolType="graphic" loop="single frame">
+                  <matrix>
+                    <Matrix a="0.690673828125" b="0.401962280273438" c="-0.401687622070313" d="0.690231323242188" tx="17.85" ty="44.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" duration="9" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/tentacule" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix a="0.690673828125" b="0.401962280273438" c="-0.401687622070313" d="0.690231323242188" tx="17.85" ty="44.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/tentacule" symbolType="graphic" firstFrame="8" loop="play once">
+                  <matrix>
+                    <Matrix a="0.785675048828125" b="0.150665283203125" c="-0.150558471679688" d="0.785171508789063" tx="25" ty="4.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="-0.2"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="tentacule4" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/tentacule" symbolType="graphic" loop="single frame">
+                  <matrix>
+                    <Matrix a="-0.746002197265625" b="0.287628173828125" c="0.287445068359375" d="0.745529174804688" tx="-14.8" ty="34.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="10" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/tentacule" symbolType="graphic" loop="play once">
+                  <matrix>
+                    <Matrix a="-0.746002197265625" b="0.287628173828125" c="0.287445068359375" d="0.745529174804688" tx="-14.8" ty="34.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="4" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/tentacule" symbolType="graphic" firstFrame="8" loop="play once">
+                  <matrix>
+                    <Matrix a="-0.774276733398438" b="0.200592041015625" c="0.200469970703125" d="0.773773193359375" tx="-29.5" ty="6.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="-0.2"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

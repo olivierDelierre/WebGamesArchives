@@ -1,0 +1,27 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_trappe/maskHole" itemID="4098b4ba-00000773" linkageExportForAS="true" linkageIdentifier="maskHole" lastModified="1084883763">
+  <timeline>
+    <DOMTimeline name="maskHole">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!319.5 -0.5S2[#13F.9B #84.2F 226 226!226 226[#84.2F #13F.97 -0.5 319.5!-0.5 319.5[#FFFF7B.0F #13F.97 -226.5 226!-226.5 226[#FFFEBF.A4 #84.2F -320.5 -0.5!-320.5 -0.5[#FFFEBF.A4 -132.9375 -226.5 -226.5!-226.5 -226.5[#FFFF7B.0F #FFFEBF.A6
+ -0.5 -320.5!-0.5 -320.5[#84.2F #FFFEBF.A6 226 -226.5!226 -226.5[#13F.9B -132.9375 319.5 -0.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

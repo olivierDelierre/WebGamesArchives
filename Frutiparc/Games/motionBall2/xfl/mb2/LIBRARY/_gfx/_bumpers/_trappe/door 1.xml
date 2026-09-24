@@ -1,0 +1,81 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_trappe/door 1" itemID="40586688-00001398" lastModified="1083314644">
+  <timeline>
+    <DOMTimeline name="door 1">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#C2A4DF"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.037109375" d="0.037109375" tx="-14.95"/>
+                        </matrix>
+                        <GradientEntry color="#8851BF" ratio="0.0823529411764706"/>
+                        <GradientEntry color="#C2A4DF" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#9F74CD"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!359.5 -0.5|359.5 0!359.5 0|-360.5 0!-360.5 0|-360.5 -0.5!-360.5 -0.5[#FFFE97.81 -8.8984375 -360 -17!-360 -17[#FFFE98.99 #FFFFDF.ED -357.5 -46.5!-357.5 -46.5[#FFFEA7.9F #FFFF5F.63 -263.5 -246.5!-263.5 -246.5[#FFFEFC.B9 #FFFF05.46 -255
+ -255!-255 -255[#FFFF04.C5 #FFFEFD.3B -247.5 -262.5!-247.5 -262.5[#FFFF13.8C #FFFEEF.39 -225 -282!-225 -282[-216.15625 #FFFEDE.A5 -207 -296!-207 -296[#FFFF3B.8B #FFFED0.47 -185.5 -310.5!-185.5 -310.5[#FFFF50.97 #FFFEC3.5E -165 -322!-165
+ -322[#FFFFA5.4F #FFFE97.87 -0.5 -360.5!-0.5 -360.5[#94.9F #FFFE97.8C 254 -255!254 -255[#103.0A #FFFF06.09 264 -245!264 -245[#167.76 #FFFF71.82 359.5 -0.5"/>
+                    <Edge fillStyle0="1" fillStyle1="2" strokeStyle="1" edges="
+!235.5 -217.5|236 -217!236 -217[#EC.E6 #FFFF27.FA 238 -215!238 -215|238.5 -214.5!238.5 -214.5[#132.68 #FFFF75.06 317.5 -40!317.5 -40|-318.5 -40!-318.5 -40[-307 #FFFF72.52 -235.5 -218.5!-235.5 -218.5[#FFFF18.BA #FFFF21.49 -227 -227!-227
+ -227[#FFFF20.C7 #FFFF19.3B -219.5 -234.5!-219.5 -234.5[#FFFF2F.95 -244.78125 -197 -254!-197 -254[#FFFF44.2C #FFFEFA.F2 -178.5 -267.5!-178.5 -267.5[#FFFF58.9F #FFFEED.51 -156 -281!-156 -281[#FFFF6E.5C #FFFEE1.1A -135 -292!-135 -292[#FFFFB6.4B
+ #FFFEBF.72 -0.5 -320.5!-0.5 -320.5[#84.32 #FFFEBF.67 226 -227!226 -227[#E6.C9 -222.21875 235.5 -217.5"/>
+                  </edges>
+                </DOMShape>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient>
+                            <matrix>
+                              <Matrix a="0.0305023193359375" b="0.002288818359375" c="0.002288818359375" d="-0.0305023193359375" tx="-16.45" ty="-0.55"/>
+                            </matrix>
+                            <GradientEntry color="#FFFFFF" alpha="0.8" ratio="0"/>
+                            <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!52.5 -186.5[#34.9B #FFFF46.C3 53 -184!53 -184[#37.03 #FFFF4D.6F 57 -173!57 -173[#39.73 #FFFF54.5F 58 -170!58 -170|58 -169.5!58 -169.5[#3A.43 #FFFF57.B6 58.5 -167!58.5 -167[#3A.D7 #FFFF5A.C9 59.5 -163.5!59.5 -163.5[#3C.0C #FFFF5C.EA 60.5
+ -162.5!60.5 -162.5[#3D.58 -161.40625 62.5 -160.5!62.5 -160.5[#3F.BA #FFFF60.87 65 -159!65 -159|61.5 -157.5!61.5 -157.5[#3D.38 #FFFF61.C6 61 -159!61 -159[#3D.0B #FFFF62.86 61.5 -156!61.5 -156[#3E.7F #FFFF67.5B 63.5 -149.5!63.5 -149.5
+[#3F.B7 #FFFF6B.5F 64 -148!64 -148[#3F.ED -147.15625 64 -146.5!64 -146.5[#41.13 #FFFF72.61 66 -136.5!66 -136.5[#42.51 #FFFF78.CF 67 -134!67 -134[#43.F9 #FFFF7B.CF 68 -130!68 -130|68 -129.5!68 -129.5[#43.E4 #FFFF7F.7D 68 -127.5!68 -127.5
+[#47.6F #FFFF90.AF 74 -94.5!74 -94.5|74 -94!74 -94[#4A.2F #FFFFA4.95 73 -89!73 -89|73 -88.5!73 -88.5[#47.D5 #FFFFAA.05 69.5 -84.5!69.5 -84.5|70 -84.5!70 -84.5[#43.3C -82.9375 64 -83!64 -83|-277 -83!-277 -83[#FFFEE7.AE #FFFFAC.FE -283
+ -85!-283 -85[#FFFEE2.75 #FFFFA9.11 -286.5 -90!-286.5 -90[#FFFEE0.8F #FFFFA3.03 -286.5 -96!-286.5 -96[#FFFEE5.DE #FFFF92.47 -276 -123!-276 -123[-275.65625 #FFFF84.41 -275.5 -124.5!-275.5 -124.5[-275.125 #FFFF82.8B -274.5 -126.5!-274.5
+ -126.5[#FFFEF3.64 #FFFF75.B4 -261.5 -149.5!-261.5 -149.5|-261.5 -150!-261.5 -150|-261 -150.5!-261 -150.5[#FFFEFB.41 #FFFF68.FF -260.5 -151.5!-260.5 -151.5|-259.5 -152.5!-259.5 -152.5[#FFFF09.CC -173.78125 -229 -193!-229 -193|-229 -192.5
+!-229 -192.5[#FFFF1C.17 #FFFF3E.0D -226.5 -195!-226.5 -195[#FFFF1E.94 #FFFF3C.5E -224.5 -196.5!-224.5 -196.5[#FFFF21.C6 #FFFF39.3A -219.5 -201.5!-219.5 -201.5[-215.5 -205.5 -211.5 -209.5!-211.5 -209.5[-210.75 -210.25 -210 -211!-210 -211
+|-208.5 -212.5!-208.5 -212.5[#FFFF30.86 #FFFF2A.97 -207 -214.5!-207 -214.5|-206.5 -215!-206.5 -215[#FFFF77.AE #FFFEEB.24 -43.5 -283!-43.5 -283|-41.5 -283!-41.5 -283[#FFFFD7.3F #FFFEE5.0E -40 -283!-40 -283[#FFFFDD.79 #FFFEE4.5C -28.5 -284
+!-28.5 -284|-26.5 -284!-26.5 -284[#FFFFE6.3E #FFFEE4.01 -25 -284!-25 -284[#FFFFE7.B7 -284 -23.5 -284!-23.5 -284[-22.25 #FFFEE4.1E -21 -283.5!-21 -283.5|-20.5 -283.5!-20.5 -283.5[#A.F1 #FFFEEA.E5 37.5 -222.5!37.5 -222.5[#25.C2 #FFFF21.FE
+ 38 -221.5!38 -221.5[#26.3C #FFFF22.FF 38.5 -220.5!38.5 -220.5[#28.93 #FFFF28.BF 42.5 -211!42.5 -211[#2A.FB #FFFF2E.EE 44 -207.5!44 -207.5[#2D.13 #FFFF32.86 46 -203.5!46 -203.5|46 -203!46 -203[#2E.2F #FFFF35.C2 46.5 -201.5!46.5 -201.5
+[#31.3B -195.0625 52 -189!52 -189[#34.71 #FFFF44.36 52.5 -186.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

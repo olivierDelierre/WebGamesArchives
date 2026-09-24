@@ -1,0 +1,197 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_option/_time/time" itemID="3f8519d0-00000069" lastModified="1065774838">
+  <timeline>
+    <DOMTimeline name="time">
+      <layers>
+        <DOMLayer name="Layer 6" color="#808080">
+          <frames>
+            <DOMFrame index="0" duration="31" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="31" duration="11" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[_rotation+=random(40)]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F" locked="true" layerType="guide">
+          <frames>
+            <DOMFrame index="0" duration="42" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                        <fill>
+                          <SolidColor color="#FF0000"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="!-9.5 -191[#E9.15 #FFFF40.F7 404.5 -135.5!404.5 -135.5[#240.0A #FFFFB0.CA 576 0!576 0[#240.0A #4F.0E 404.5 134.5!404.5 134.5[#E9.15 #BE.E1 -9.5 191!-9.5 191[#FFFF03.AB #BE.E1 -424 134.5!-424 134.5[#FFFDAC.75 #4F.0E -595.5 0!-595.5 0[#FFFDAC.75
+ #FFFFB0.CA -424 -135.5!-424 -135.5[#FFFF03.AB #FFFF40.F7 -9.5 -191"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" parentLayerIndex="1" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="10" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="80">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_option/_time/haloSpark" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="-29.6" ty="-0.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" duration="10" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-80">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_option/_time/haloSpark" symbolType="graphic" firstFrame="10" loop="loop">
+                  <matrix>
+                    <Matrix a="1.31001281738281" d="0.782608032226563" tx="-0.2" ty="9.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="20" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="6.15" ty="60.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="22.45" y="-59.25"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="6.15" ty="60.4"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="22.45" y="-59.25"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient>
+                            <matrix>
+                              <Matrix a="0.01129150390625" d="0.01129150390625" tx="22.45" ty="-59.25"/>
+                            </matrix>
+                            <GradientEntry color="#FFFFFF" ratio="0"/>
+                            <GradientEntry color="#FFFFFF" ratio="0.317647058823529"/>
+                            <GradientEntry color="#33FFFF" alpha="0" ratio="1"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!579 -1055S2[525 -1001 449 -1001!449 -1001[373 -1001 319 -1055!319 -1055[265 -1109 265 -1185!265 -1185[265 -1261 319 -1315!319 -1315[373 -1369 449 -1369!449 -1369[525 -1369 579 -1315!579 -1315[633 -1261 633 -1185!633 -1185[633 -1109 579
+ -1055"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="21" duration="21" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" parentLayerIndex="1" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="42" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_option/_time/timeHalo" selected="true">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#FF4FFF" parentLayerIndex="1" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="21" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="21" duration="10" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="80">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_option/_time/haloSpark" symbolType="graphic" loop="loop">
+                  <matrix>
+                    <Matrix tx="28.3" ty="-1.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="31" duration="10" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-80">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_option/_time/haloSpark" symbolType="graphic" firstFrame="10" loop="loop">
+                  <matrix>
+                    <Matrix ty="-9.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="41" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-51.2" ty="56.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="22.45" y="-59.25"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-51.2" ty="56.7"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="22.45" y="-59.25"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient>
+                            <matrix>
+                              <Matrix a="0.01129150390625" d="0.01129150390625" tx="22.45" ty="-59.25"/>
+                            </matrix>
+                            <GradientEntry color="#FFFFFF" ratio="0"/>
+                            <GradientEntry color="#FFFFFF" ratio="0.317647058823529"/>
+                            <GradientEntry color="#33FFFF" alpha="0" ratio="1"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!579 -1055S2[525 -1001 449 -1001!449 -1001[373 -1001 319 -1055!319 -1055[265 -1109 265 -1185!265 -1185[265 -1261 319 -1315!319 -1315[373 -1369 449 -1369!449 -1369[525 -1369 579 -1315!579 -1315[633 -1261 633 -1185!633 -1185[633 -1109 579
+ -1055"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_tournéboulé/flaque" itemID="4097bb5a-000003e6" lastModified="1083687434">
+  <timeline>
+    <DOMTimeline name="flaque">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#635283"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#8C80AE"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!787 -168|193 -210!193 -210|-324 -221!-324 -221|-324 -230!-324 -230|-351 -231!-351 -231|-876 -196!-876 -196[-940 -180 -991 -146!-991 -146[-1124 -53 -1000 39!-1000 39[-725 246 -389 230!-389 230[-91 219 206 228!206 228[457 235 696 183!696
+ 183[854 148 1017 103!1017 103[1083 88 1048 38!1048 38[954 -99 787 -120!787 -120|787 -168!689 43|673 49!673 49|682 31!682 31|689 43"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!-896 -112[-885 -55 -834 -23!-834 -23[-786 8 -730 32!-730 32[-679 54 -624 70!-624 70[#FFFDAA.AC #4D.C2 -569.5 83.5!-569.5 83.5[#FFFD5B.0A #33.AE -772 -2!-772 -2[-774 -12 -778 -21!-778 -21[-782 -30 -773 -29!-773 -29[#FFFD5D.82 #13.0E -564
+ 40.5!-564 40.5[#FFFDB0.E7 #21.61 -617 25!-617 25[-670 10 -725 -12!-725 -12[-786 -37 -842 -72!-842 -72[-872 -90 -896 -112"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

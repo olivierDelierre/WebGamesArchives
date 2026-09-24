@@ -1,0 +1,36 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_menu/_icones Menu/glow" itemID="40977434-0000029e" sourceFlashFilepath="../Copie de mb2.fla" sourceLibraryItemHRef="glow" sourceLastModified="1083667508" lastModified="1083667508" sourceItemID="40977434-0000029e">
+  <timeline>
+    <DOMTimeline name="glow">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <matrix>
+                    <Matrix tx="-0.1"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.0641021728515625" d="0.0641021728515625" tx="0.15"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" ratio="0.588235294117647"/>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!730 -728S2[#407.2B #FFFE55.6B 1031 0!1031 0[#407.2B #1AA.52 730 727.5!730 727.5[#1AC.92 #404.EC 2 1029!2 1029[#FFFE57.2B #404.EC -726.5 727.5!-726.5 727.5[#FFFBFC.93 #1AA.52 -1027 0!-1027 0[#FFFBFC.93 #FFFE55.6B -726.5 -728!-726.5 -728
+[#FFFE57.2B #FFFBFA.53 2 -1030!2 -1030[#1AC.92 #FFFBFA.53 730 -728"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

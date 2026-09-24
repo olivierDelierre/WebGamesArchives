@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_poulpe/tache" itemID="406062c1-0000314a" lastModified="1080118374">
+  <timeline>
+    <DOMTimeline name="tache">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#F1B098"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!1417 -44[1452 -34 1487 -24!1487 -24|805 -118!805 -118|913 -116!913 -116[1170 -111 1417 -44"/>
+                    <Edge fillStyle1="1" edges="!1940 77[1204 346 411 246!411 246[-423 150 -1264 179!-1264 179[-1553 203 -1831 115!-1831 115|-1834 89!-1834 89|-1917 73!-1917 73|-1941 44!-1941 44|-1939 2!-1939 2[-1085 -332 -148 -260!-148 -260[425 -221 1000 -196!1000 -196[1475 -187 1887
+ 46!1887 46[1913 61 1940 77"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!-1674 -24[-1190 -169 -679 -169!-679 -169[-354 -169 -29 -144!-29 -144|-366 -136!-366 -136|-390 -120!-390 -120[-914 -102 -1432 -35!-1432 -35[-1552 -21 -1672 -6!-1672 -6|-1674 -24"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

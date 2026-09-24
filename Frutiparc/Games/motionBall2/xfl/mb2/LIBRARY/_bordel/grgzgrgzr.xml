@@ -1,0 +1,51 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_bordel/grgzgrgzr" itemID="3f7c2d8d-0000095e" lastModified="1065102768">
+  <timeline>
+    <DOMTimeline name="grgzgrgzr">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#782101"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="0.05" solidStyle="hairline">
+                        <fill>
+                          <SolidColor color="#FF0000"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!0 -80.5[#FFFFE7.BE -80.359375 -43.5 -67.5!-43.5 -67.5[-50.65625 #FFFFC0.DA -57 -57!-57 -57[#FFFFAF.F1 #FFFFDE.CE -80 -0.5!-80 -0.5|-80 0"/>
+                    <Edge strokeStyle="1" edges="!-80 0|-120.5 0!-120.5 0[#FFFF87.97 #31.03 -86 83.5!-86 83.5[#FFFFCE.15 119.5 -0.5 119.5!-0.5 119.5|0 119.5!0 119.5|0 79.5"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!0 79.5[#20.E4 79.5 56 55.5!56 55.5[#4A.7F #25.B1 78.5 14!78.5 14[#4F.F3 #7.46 80 0"/>
+                    <Edge strokeStyle="1" edges="!80 0|119.5 0!119.5 0[#77.51 #31.03 83.5 83.5!83.5 83.5[#4A.E5 #5C.72 65 99!65 99[#24.BA #77.3D 0 119.5!0 119.5|0 151!-151 0|-120.5 0!-120.5 0[#FFFF87.9A #FFFFF3.7A -118 -23.5!-118 -23.5[#FFFF8F.D7 #FFFFC5.83 -86 -85.5!-86 -85.5[#FFFFCE.15
+ #FFFF87.69 0 -121!0 -121|0 -151!0 -121[#31.03 #FFFF87.97 83.5 -85.5!83.5 -85.5[119.5 -49.671875 119.5 -0.5!119.5 -0.5|119.5 0!119.5 0|151 0"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="
+!0 -80.5[#20.E4 #FFFFAF.B1 56 -57!56 -57[80 #FFFFDE.CE 80 -0.5!80 -0.5|80 0"/>
+                    <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="
+!80 0|0 0!0 0|0 -80.5"/>
+                    <Edge strokeStyle="1" edges="
+!0 -121|0 -80.5!274 22|384 22!384 22|553 22"/>
+                    <Edge fillStyle0="1" fillStyle1="1" strokeStyle="1" edges="
+!0 79.5|0 0!0 0|-80 0"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="
+!-80 0[#FFFFB0.1E #20.91 -57 55.5!-57 55.5[#FFFFDF.0E 79.5 0 79.5"/>
+                    <Edge strokeStyle="1" edges="
+!384 22|384 294"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

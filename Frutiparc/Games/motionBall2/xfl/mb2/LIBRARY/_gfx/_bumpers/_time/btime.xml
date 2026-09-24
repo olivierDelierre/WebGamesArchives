@@ -1,0 +1,429 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_time/btime" itemID="3f3caeb1-00000022" linkageExportForAS="true" linkageIdentifier="btime" lastModified="1083154816" lastUniqueIdentifier="10">
+  <timeline>
+    <DOMTimeline name="btime">
+      <layers>
+        <DOMLayer name="Layer 4" color="#9933CC" locked="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="9" name="hit" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#808080" locked="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[b0.play()
+b1.play()
+b2.play()
+b3.play()
+b4.play()
+b5.play()]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 10" color="#FF4F4F" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_time/aiguille src" name="aig">
+                  <matrix>
+                    <Matrix a="1.00970458984375" d="1.00311279296875"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 9" color="#4F80FF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="15872">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_gfx/_bumpers/_time/aiguille src" name="aig2">
+                  <matrix>
+                    <Matrix a="1.00999450683594" d="1.00297546386719"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#FF4F4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="10" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/base.png">
+                  <matrix>
+                    <Matrix tx="-25" ty="-25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#FF4FFF" locked="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-32.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.5" b="0.86602783203125" c="-0.86602783203125" d="0.5" tx="23.7" ty="-23.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.499984741210938" b="0.86602783203125" c="-0.866012573242188" d="-0.499984741210938" tx="32.2" ty="8.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.999984741210938" b="-1.52587890625e-005" d="-0.999984741210938" tx="8.5" ty="32.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.5" b="-0.866043090820313" c="0.86602783203125" d="-0.5" tx="-23.7" ty="23.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.499984741210938" b="-0.866012573242188" c="0.86602783203125" d="0.499984741210938" tx="-32.2" ty="-8.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-38.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.5" b="0.86602783203125" c="-0.86602783203125" d="0.5" tx="29.15" ty="-26.6"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.499984741210938" b="0.86602783203125" c="-0.866012573242188" d="-0.499984741210938" tx="37.65" ty="11.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.999984741210938" b="-1.52587890625e-005" d="-0.999984741210938" tx="8.5" ty="38.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.5" b="-0.866043090820313" c="0.86602783203125" d="-0.5" tx="-29.15" ty="26.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.499984741210938" b="-0.866012573242188" c="0.86602783203125" d="0.499984741210938" tx="-37.65" ty="-11.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-37.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.5" b="0.86602783203125" c="-0.86602783203125" d="0.5" tx="27.85" ty="-25.85"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.499984741210938" b="0.86602783203125" c="-0.866012573242188" d="-0.499984741210938" tx="36.35" ty="11.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.999984741210938" b="-1.52587890625e-005" d="-0.999984741210938" tx="8.5" ty="37.05"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.5" b="-0.866043090820313" c="0.86602783203125" d="-0.5" tx="-27.85" ty="25.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.499984741210938" b="-0.866012573242188" c="0.86602783203125" d="0.499984741210938" tx="-36.35" ty="-11.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-35.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.5" b="0.86602783203125" c="-0.86602783203125" d="0.5" tx="26.75" ty="-25.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.499984741210938" b="0.86602783203125" c="-0.866012573242188" d="-0.499984741210938" tx="35.25" ty="10.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.999984741210938" b="-1.52587890625e-005" d="-0.999984741210938" tx="8.5" ty="35.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.5" b="-0.866043090820313" c="0.86602783203125" d="-0.5" tx="-26.75" ty="25.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.499984741210938" b="-0.866012573242188" c="0.86602783203125" d="0.499984741210938" tx="-35.25" ty="-10.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-34.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.5" b="0.86602783203125" c="-0.86602783203125" d="0.5" tx="25.8" ty="-24.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.499984741210938" b="0.86602783203125" c="-0.866012573242188" d="-0.499984741210938" tx="34.3" ty="9.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.999984741210938" b="-1.52587890625e-005" d="-0.999984741210938" tx="8.5" ty="34.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.5" b="-0.866043090820313" c="0.86602783203125" d="-0.5" tx="-25.8" ty="24.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.499984741210938" b="-0.866012573242188" c="0.86602783203125" d="0.499984741210938" tx="-34.3" ty="-9.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-33.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.5" b="0.86602783203125" c="-0.86602783203125" d="0.5" tx="25.05" ty="-24.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.499984741210938" b="0.86602783203125" c="-0.866012573242188" d="-0.499984741210938" tx="33.55" ty="9.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.999984741210938" b="-1.52587890625e-005" d="-0.999984741210938" tx="8.5" ty="33.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.5" b="-0.866043090820313" c="0.86602783203125" d="-0.5" tx="-25.05" ty="24.3"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.499984741210938" b="-0.866012573242188" c="0.86602783203125" d="0.499984741210938" tx="-33.55" ty="-9.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-33.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.5" b="0.86602783203125" c="-0.86602783203125" d="0.5" tx="24.45" ty="-23.9"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.499984741210938" b="0.86602783203125" c="-0.866012573242188" d="-0.499984741210938" tx="32.95" ty="9.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.999984741210938" b="-1.52587890625e-005" d="-0.999984741210938" tx="8.5" ty="33.15"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.5" b="-0.866043090820313" c="0.86602783203125" d="-0.5" tx="-24.45" ty="23.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.499984741210938" b="-0.866012573242188" c="0.86602783203125" d="0.499984741210938" tx="-32.95" ty="-9.2"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-32.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.5" b="0.86602783203125" c="-0.86602783203125" d="0.5" tx="24.05" ty="-23.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.499984741210938" b="0.86602783203125" c="-0.866012573242188" d="-0.499984741210938" tx="32.55" ty="8.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.999984741210938" b="-1.52587890625e-005" d="-0.999984741210938" tx="8.5" ty="32.65"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.5" b="-0.866043090820313" c="0.86602783203125" d="-0.5" tx="-24.05" ty="23.7"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.499984741210938" b="-0.866012573242188" c="0.86602783203125" d="0.499984741210938" tx="-32.55" ty="-8.95"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-32.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.5" b="0.86602783203125" c="-0.86602783203125" d="0.5" tx="23.75" ty="-23.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.499984741210938" b="0.86602783203125" c="-0.866012573242188" d="-0.499984741210938" tx="32.25" ty="8.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.999984741210938" b="-1.52587890625e-005" d="-0.999984741210938" tx="8.5" ty="32.35"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.5" b="-0.866043090820313" c="0.86602783203125" d="-0.5" tx="-23.75" ty="23.55"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.499984741210938" b="-0.866012573242188" c="0.86602783203125" d="0.499984741210938" tx="-32.25" ty="-8.8"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix tx="-8.5" ty="-32.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.5" b="0.86602783203125" c="-0.86602783203125" d="0.5" tx="23.7" ty="-23.45"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.499984741210938" b="0.86602783203125" c="-0.866012573242188" d="-0.499984741210938" tx="32.2" ty="8.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.999984741210938" b="-1.52587890625e-005" d="-0.999984741210938" tx="8.5" ty="32.25"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="-0.5" b="-0.866043090820313" c="0.86602783203125" d="-0.5" tx="-23.7" ty="23.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMBitmapInstance libraryItemName="_gfx/_bumpers/_time/_bitmap/bout.png">
+                  <matrix>
+                    <Matrix a="0.499984741210938" b="-0.866012573242188" c="0.86602783203125" d="0.499984741210938" tx="-32.2" ty="-8.75"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

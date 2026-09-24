@@ -1,0 +1,89 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_snake/_old/crane" itemID="40910900-0000111c" lastModified="1083582444" lastUniqueIdentifier="4">
+  <timeline>
+    <DOMTimeline name="crane">
+      <layers>
+        <DOMLayer name="Layer 4" color="#FF4FFF" locked="true" visible="false">
+          <frames>
+            <DOMFrame index="0" duration="8" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 5" color="#4FFFFF" outline="true" useOutlineView="true" layerType="mask">
+          <frames>
+            <DOMFrame index="0" duration="8" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!44 -519[#A7.BF #FFFED5.B7 248 -53.5!248 -53.5[#FE.A6 #FFFFDE.93 261 -13!261 -13|259 41!259 41|62 540!62 540|46 561!46 561|-363 561!-363 561|-363 -559!-363 -559|26 -559!26 -559[33 -539 44 -519"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC" parentLayerIndex="1" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_snake/_old/craneStone">
+                  <matrix>
+                    <Matrix tx="-1.15" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_snake/_old/craneStone">
+                  <matrix>
+                    <Matrix tx="8.65" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" duration="3" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065" acceleration="-100">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_snake/_old/craneStone">
+                  <matrix>
+                    <Matrix tx="3.75" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_boss/_snake/_old/craneStone">
+                  <matrix>
+                    <Matrix tx="-1.15" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-0.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

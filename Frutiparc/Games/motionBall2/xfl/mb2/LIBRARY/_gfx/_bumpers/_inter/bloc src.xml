@@ -1,0 +1,125 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_inter/bloc src" itemID="406168bb-000003f0" lastModified="1080125627">
+  <timeline>
+    <DOMTimeline name="bloc src">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#402FB7"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="-3.0517578125e-005" b="-0.023834228515625" c="0.0244140625" d="-3.0517578125e-005" ty="0.25"/>
+                        </matrix>
+                        <GradientEntry color="#9293F1" ratio="0.0666666666666667"/>
+                        <GradientEntry color="#402FB7" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!365 -365[#190.13 -329.78125 400 -280!400 -280|400 280!400 280[#190.13 #149.C8 365 365!365 365[#149.C8 #190.13 280 400!280 400|-280 400!-280 400[-329.78125 #190.13 -365 365!-365 365[#FFFE6F.ED #149.C8 -400 280!-400 280|-400 -280!-400
+ -280[#FFFE6F.ED -329.78125 -365 -365!-365 -365[-329.78125 #FFFE6F.ED -280 -400!-280 -400|280 -400!280 -400[#149.C8 #FFFE6F.ED 365 -365"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!380 -280|380 280!380 280[#17C.27 #141.92 351 351!351 351[#141.92 #17C.27 280 380!280 380|-280 380!-280 380[#FFFEBE.6D #17C.27 -351 351!-351 351[#FFFE83.D9 #141.92 -380 280!-380 280|-380 -280!-380 -280[#FFFE83.D9 #FFFEBE.6D -351 -351
+!-351 -351[#FFFEBE.6D #FFFE83.D9 -280 -380!-280 -380|280 -380!280 -380[#141.92 #FFFE83.D9 351 -351!351 -351[#17C.27 #FFFEBE.6D 380 -280"/>
+                  </edges>
+                </DOMShape>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-0.25"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-0.25"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0" b="0.0167236328125" c="-0.02197265625" d="0" ty="-3.95"/>
+                            </matrix>
+                            <GradientEntry color="#FFFFFF" alpha="0.701960784313725" ratio="0"/>
+                            <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                          </LinearGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!360 -282|360 -108!360 -108[#167.43 #FFFFB3.BD 337 -53.5!337 -53.5|336.5 -53!336.5 -53[#139.01 #FFFFE1.FB 280 -30!280 -30|-280 -30!-280 -30[#FFFEC6.FE #FFFFE1.FB -336.5 -53!-336.5 -53|-337 -53.5!-337 -53.5[#FFFE98.BD #FFFFB3.BD -360 -108
+!-360 -108|-360 -282!-360 -282[#FFFE98.BD #FFFEC6.42 -337 -336.5!-337 -336.5|-336.5 -337!-336.5 -337[#FFFEC6.FE #FFFE98.05 -280 -360!-280 -360|280 -360!280 -360[#139.01 #FFFE98.05 336.5 -337!336.5 -337|337 -336.5!337 -336.5[#167.43 #FFFEC6.42
+ 360 -282"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="-3.0517578125e-005" b="-0.023834228515625" c="0.0244140625" d="-3.0517578125e-005" ty="0.25"/>
+                        </matrix>
+                        <GradientEntry color="#FF93F1" ratio="0"/>
+                        <GradientEntry color="#FF35BA" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FF36BA"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="2" edges="
+!400 -280|400 280!400 280[#190.13 #149.C8 365 365!365 365[#149.C8 #190.13 280 400!280 400|-280 400!-280 400[-329.78125 #190.13 -365 365!-365 365[#FFFE6F.ED #149.C8 -400 280!-400 280|-400 -280!-400 -280[#FFFE6F.ED -329.78125 -365 -365
+!-365 -365[-329.78125 #FFFE6F.ED -280 -400!-280 -400|280 -400!280 -400[#149.C8 #FFFE6F.ED 365 -365!365 -365[#190.13 -329.78125 400 -280"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!351 -351[#17C.27 #FFFEBE.6D 380 -280!380 -280|380 280!380 280[#17C.27 #141.92 351 351!351 351[#141.92 #17C.27 280 380!280 380|-280 380!-280 380[#FFFEBE.6D #17C.27 -351 351!-351 351[#FFFE83.D9 #141.92 -380 280!-380 280|-380 -280!-380
+ -280[#FFFE83.D9 #FFFEBE.6D -351 -351!-351 -351[#FFFEBE.6D #FFFE83.D9 -280 -380!-280 -380|280 -380!280 -380[#141.92 #FFFE83.D9 351 -351"/>
+                  </edges>
+                </DOMShape>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix ty="-0.25"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix ty="-0.25"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0" b="0.0167236328125" c="-0.02197265625" d="0" ty="-3.95"/>
+                            </matrix>
+                            <GradientEntry color="#FFFFFF" alpha="0.701960784313725" ratio="0"/>
+                            <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                          </LinearGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!360 -282|360 -108!360 -108[#167.43 #FFFFB3.BD 337 -53.5!337 -53.5|336.5 -53!336.5 -53[#139.01 #FFFFE1.FB 280 -30!280 -30|-280 -30!-280 -30[#FFFEC6.FE #FFFFE1.FB -336.5 -53!-336.5 -53|-337 -53.5!-337 -53.5[#FFFE98.BD #FFFFB3.BD -360 -108
+!-360 -108|-360 -282!-360 -282[#FFFE98.BD #FFFEC6.42 -337 -336.5!-337 -336.5|-336.5 -337!-336.5 -337[#FFFEC6.FE #FFFE98.05 -280 -360!-280 -360|280 -360!280 -360[#139.01 #FFFE98.05 336.5 -337!336.5 -337|337 -336.5!337 -336.5[#167.43 #FFFEC6.42
+ 360 -282"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

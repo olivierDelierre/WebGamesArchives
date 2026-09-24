@@ -1,0 +1,40 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_bordel/palette2" itemID="3f83ef23-0000016e" lastModified="1065611043">
+  <timeline>
+    <DOMTimeline name="palette2">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <matrix>
+                    <Matrix tx="51.3" ty="-117.85"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFCC00"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FEDA61"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#FEE798"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="!-866 2273.5S3|-1026 2273.5"/>
+                    <Edge fillStyle0="2" edges="!-1026 2273.5S1|-1026 2439.5"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="!-1026 2439.5S3|-866 2439.5"/>
+                    <Edge fillStyle0="2" edges="!-866 2439.5S1|-866 2273.5"/>
+                    <Edge fillStyle0="1" edges="!-866 2273.5S1|-866 2107.5!-866 2107.5|-1026 2107.5!-1026 2107.5|-1026 2273.5"/>
+                    <Edge fillStyle0="3" edges="!-1026 2439.5S1|-1026 2605.5!-1026 2605.5|-866 2605.5!-866 2605.5|-866 2439.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

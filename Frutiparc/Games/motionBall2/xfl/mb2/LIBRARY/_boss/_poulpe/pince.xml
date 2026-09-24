@@ -1,0 +1,60 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_poulpe/pince" itemID="3fe32260-000000cb" lastModified="1071856809">
+  <timeline>
+    <DOMTimeline name="pince">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-0.05" ty="-79.5"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-0.05" ty="-79.5"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#8F2D14"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!142 1778[#81.64 #6CC.7D 102 1713!102 1713[#39.5F #682.C 0 1644.5!0 1644.5|0 1501!0 1501|7.5 1503.5!7.5 1503.5[#117.AF #579.BF 423.5 1463!423.5 1463[#237.8C #5F4.47 594.5 1581!594.5 1581[#26D.2A #665.D1 512.5 1773.5!512.5 1773.5|512.5
+ 1773!512.5 1773[#193.D4 #760.EF 268 1963.5!268 1963.5[#C9.9F #7CF.CC 157.5 2015!157.5 2015|83 1987.5!83 1987.5[#51.1C #7AD.A6 80.5 1931.5!80.5 1931.5[#4E.EE #73F.65 142 1778"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-0.05" ty="-79.5"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-0.05" ty="-79.5"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#E87559"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!233 1497.5[#F8.E7 #5DA.28 265 1500!265 1500|417 1509.5!417 1509.5[#1E0.DF #5EF.D2 512.5 1543!512.5 1543[#213.8F #614.B3 539 1575!539 1575[#233.95 #663.FC 459 1747!459 1747[#FB.93 #7AF.18 166 1964.5!166 1964.5[#97.04 #7AD.08 139.5 1959
+!139.5 1959[#65.EA #789.08 190 1784!190 1784|158 1697!158 1697[#66.C4 #657.A6 -5 1582!-5 1582|-5 1547!-5 1547[-1.75 #609.8A 1.5 1544!1.5 1544[#6.DD #605.42 12 1539!12 1539|15 1537.5!15 1537.5[#21.2F #5F9.25 52 1522.5!52 1522.5|70 1516.5
+!70 1516.5[#75.97 #5DD.A6 168 1498!168 1498[#AE.3D #5D9.4F 180.5 1497!180.5 1497[#C0.F2 #5D8.72 205.5 1496.5!205.5 1496.5|233 1497.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

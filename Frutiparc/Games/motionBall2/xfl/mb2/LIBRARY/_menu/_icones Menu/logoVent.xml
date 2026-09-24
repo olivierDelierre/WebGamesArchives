@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_menu/_icones Menu/logoVent" itemID="40977202-00000292" sourceFlashFilepath="../Copie de mb2.fla" sourceLibraryItemHRef="logoVent" sourceLastModified="1083666946" lastModified="1083666946" sourceItemID="40977202-00000292">
+  <timeline>
+    <DOMTimeline name="logoVent">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="_menu/_icones Menu/iconeDonjonVent.png">
+                  <matrix>
+                    <Matrix a="0.931427001953125" d="0.931427001953125" tx="-49.85" ty="-32.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="53.5" y="35.05"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

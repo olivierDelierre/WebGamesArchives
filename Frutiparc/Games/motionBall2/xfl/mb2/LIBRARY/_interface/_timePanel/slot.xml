@@ -1,0 +1,127 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_interface/_timePanel/slot" itemID="409221ad-0000013a" lastModified="1083319536" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="slot">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <LinearGradient>
+                            <matrix>
+                              <Matrix a="0" b="0.020263671875" c="-0.11474609375" d="0" tx="1.2" ty="-0.65"/>
+                            </matrix>
+                            <GradientEntry color="#FFFFFF" alpha="0.501960784313725" ratio="0"/>
+                            <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                          </LinearGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!1566.5 -298.5[#68E.29 #FFFED7.FE 1758 -216!1758 -216[#730.05 #FFFF79.E2 1840 -18.5!1840 -18.5[#72F.FC #FFFFF5.6B 1839.5 -3!1839.5 -3[#725.C2 #18.55 1771.5 48!1771.5 48[#693.B7 #53.0C 1560 83!1560 83|-1560 83!-1560 83[#FFF96C.89 #53.0A
+ -1771 48!-1771 48[#FFF8DA.4E #18.13 -1839.5 -3.5!-1839.5 -3.5[#FFF8D0.08 #FFFFF5.1F -1840 -18.5!-1840 -18.5[#FFF8D0.38 #FFFF79.E1 -1757.5 -216!-1757.5 -216[#FFF972.17 #FFFED8.05 -1566.5 -298.5!-1566.5 -298.5[#FFF9E4.B #FFFED6.06 -1560
+ -298!-1560 -298|1560 -298!1560 -298[#61B.5 #FFFED6.06 1566.5 -298.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMDynamicText name="time_text" fontRenderingMode="standard" width="173.4" height="30.6" includeOutlines="true" isSelectable="false">
+                  <matrix>
+                    <Matrix d="1.00001525878906" tx="-86.75" ty="-14.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="53.9" y="14.1"/>
+                  </transformationPoint>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>0:00'00</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="22" bitmapSize="440" face="Sweet as candy" fillColor="#FEEF9E"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix ty="47.15"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix ty="47.15"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#D09304"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!1560 -1283.5S2[#6A4.BC #FFFAFC.AB 1800.5 -1183.5!1800.5 -1183.5[#76C.18 #FFFBC4.01 1900 -943.5!1900 -943.5[#76C.18 #FFFCDC.FD 1800.5 -703.5!1800.5 -703.5[#6A4.BC #FFFDA4.54 1560 -603.5!1560 -603.5|-1560 -603.5!-1560 -603.5[#FFF95B.82
+ #FFFDA4.57 -1800 -703.5!-1800 -703.5[#FFF894.27 #FFFCDC.FD -1900 -943.5!-1900 -943.5[#FFF894.27 #FFFBC4.02 -1800 -1183.5!-1800 -1183.5[#FFF95B.82 #FFFAFC.A7 -1560 -1283.5!-1560 -1283.5[#FFF9EA.4D #FFFAFC.84 -1555.5 -1283!-1555.5 -1283
+|1555.5 -1283!1555.5 -1283[#615.B3 #FFFAFC.84 1560 -1283.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <matrix>
+                        <Matrix ty="-0.2"/>
+                      </matrix>
+                      <members>
+                        <DOMShape selected="true">
+                          <matrix>
+                            <Matrix ty="-0.2"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <LinearGradient>
+                                <matrix>
+                                  <Matrix a="0" b="-0.01953125" c="0.11474609375" d="0"/>
+                                </matrix>
+                                <GradientEntry color="#FFE100" ratio="0"/>
+                                <GradientEntry color="#FFCE00" ratio="0.301960784313725"/>
+                                <GradientEntry color="#FFCC00" ratio="0.698039215686274"/>
+                                <GradientEntry color="#FCB40E" ratio="1"/>
+                              </LinearGradient>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="
+!1560 -320|-1560 -320!-1560 -320|-1560 -320.5!-1560 -320.5[#FFF963.B7 -320.40625 -1786 -226.5!-1786 -226.5[#FFF8A8.18 #FFFF7B.37 -1880 -0.5!-1880 -0.5[#FFF8A8.18 #83.C8 -1786 225.5!-1786 225.5[#FFF963.B7 #13F.67 -1560 319.5!-1560 319.5
+|1560 319.5!1560 319.5[#69C.88 #13F.67 1786.5 225.5!1786.5 225.5[#758.27 #83.C8 1880 -0.5!1880 -0.5[#758.27 #FFFF7B.37 1786.5 -226.5!1786.5 -226.5[#69C.88 -320.40625 1560 -320.5!1560 -320.5|1560 -320"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

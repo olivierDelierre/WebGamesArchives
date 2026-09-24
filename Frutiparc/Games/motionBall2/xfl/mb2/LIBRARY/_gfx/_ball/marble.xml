@@ -1,0 +1,626 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_ball/marble" itemID="3f56f705-00000047" linkageExportForAS="true" linkageIdentifier="marble" sourceFlashFilepath="../../ballFxTest2/testBall.fla" sourceLibraryItemHRef="marble" sourceLastModified="1062667654" lastModified="1083238328" sourceItemID="3f56f705-00000047">
+  <timeline>
+    <DOMTimeline name="marble">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4F80FF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.846160888671875" d="0.846160888671875"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.846160888671875" d="0.846160888671875"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#FDC92D"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="!-0.5 -260[#6A.FD #FFFEFC.05 183 -184!183 -184[#103.91 #FFFF94.9A 259.5 0!259.5 0[#103.95 #6B.7E 183 183.5!183 183.5[#6A.FF #104.15 -0.5 260!-0.5 260[#FFFF94.59 #104.15 -184 183.5!-184 183.5[#FFFEFB.C7 #6B.7C -260.5 0!-260.5 0[#FFFEFB.CA
+ #FFFF94.9C -184 -184!-184 -184[#FFFF94.5A #FFFEFC.06 -0.5 -260"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.846160888671875" d="0.846160888671875"/>
+                      </matrix>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.846160888671875" d="0.846160888671875"/>
+                          </matrix>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#FEDF85"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -240[#62.C7 #FFFF0F.F2 169 -170!169 -170[#EF.9E #FFFF9C.CA 239.5 0!239.5 0[#EF.9E #63.46 169 169.5!169 169.5[#62.C7 #F0.1E -0.5 240!-0.5 240[#FFFF9C.8A #F0.1E -170 169.5!-170 169.5[#FFFF0F.B2 #63.46 -240.5 0!-240.5 0[#FFFF0F.B2
+ #FFFF9C.CA -170 -170!-170 -170[#FFFF9C.8A #FFFF0F.F2 -0.5 -240"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <members>
+                        <DOMShape selected="true">
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#FFCC00"/>
+                            </FillStyle>
+                            <FillStyle index="2">
+                              <SolidColor color="#EDB101"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-119.5 144.5[#FFFF6C.64 #78.D2 -164 86.5!-164 86.5[#FFFF46.CF #29.71 -181 -7!-181 -7[#FFFF4F.04 #FFFFC8.13 -155 -96.5!-155 -96.5[#FFFF7B.63 #FFFF76.B6 -96 -162.5!-96 -162.5[-59.703125 #FFFF44.5C 23.5 -187!23.5 -187[#34.C5 #FFFF47.9E
+ 83.5 -165.5"/>
+                            <Edge fillStyle1="2" edges="
+!83.5 -165.5[#64.CE #FFFF67.B1 116 -137!116 -137[#C2.C5 -62.578125 172 44!172 44[#96.A3 #8E.4 56.5 174.5!56.5 174.5[#FFFFD9.BB #D0.FF -119.5 144.5"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!-119.5 144.5[-60.078125 #9E.F1 -1.5 137!-1.5 137[#5E.D8 #61.62 112.5 -4!112.5 -4[#80.AC #FFFFA4.B1 83.5 -165.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#6FDF2B"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -220[#5A.91 #FFFF24.1D 155 -155.5!155 -155.5[#DB.AC #FFFFA5.39 219.5 0!219.5 0[#DB.AF #5B.12 155 155.5!155 155.5[#5A.92 #DC.2F -0.5 220!-0.5 220[-91.03125 #DC.2F -155.5 155.5!-155.5 155.5[#FFFF23.DE #5B.1 -220.5 0!-220.5 0[#FFFF23.E1
+ #FFFFA5.3A -155.5 -155.5!-155.5 -155.5[-91.03125 #FFFF24.1E -0.5 -220"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#C0F1A3"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -203[#53.8B #FFFF34.D6 143 -144!143 -144[#CA.AD #FFFFAB.F9 202.5 0!202.5 0[#CA.AD #54.09 143 143.5!143 143.5[#53.8B #CB.2D -0.5 203!-0.5 203[#FFFFAB.B9 #CB.2D -144 143.5!-144 143.5[#FFFF34.96 #54.09 -203.5 0!-203.5 0[#FFFF34.96
+ #FFFFAB.F9 -144 -144!-144 -144[#FFFFAB.B9 #FFFF34.D6 -0.5 -203"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <members>
+                        <DOMShape selected="true">
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#88E450"/>
+                            </FillStyle>
+                            <FillStyle index="2">
+                              <SolidColor color="#AEED87"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="2" edges="
+!-119.5 144.5[#FFFF6C.64 #78.D2 -164 86.5!-164 86.5[#FFFF46.CF #29.71 -181 -7!-181 -7[#FFFF4F.04 #FFFFC8.13 -155 -96.5!-155 -96.5[#FFFF7B.63 #FFFF76.B6 -96 -162.5!-96 -162.5[-59.703125 #FFFF44.5C 23.5 -187!23.5 -187[#34.C5 #FFFF47.9E
+ 83.5 -165.5"/>
+                            <Edge fillStyle1="1" edges="
+!83.5 -165.5[#64.CE #FFFF67.B1 116 -137!116 -137[#C2.C5 -62.578125 172 44!172 44[#96.A3 #8E.4 56.5 174.5!56.5 174.5[#FFFFD9.BB #D0.FF -119.5 144.5"/>
+                            <Edge fillStyle0="2" fillStyle1="1" edges="
+!-119.5 144.5[-60.078125 #9E.F1 -1.5 137!-1.5 137[#5E.D8 #61.62 112.5 -4!112.5 -4[#80.AC #FFFFA4.B1 83.5 -165.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#AC1717"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -220[#5A.91 #FFFF24.1D 155 -155.5!155 -155.5[#DB.AC #FFFFA5.39 219.5 0!219.5 0[#DB.AF #5B.12 155 155.5!155 155.5[#5A.92 #DC.2F -0.5 220!-0.5 220[-91.03125 #DC.2F -155.5 155.5!-155.5 155.5[#FFFF23.DE #5B.1 -220.5 0!-220.5 0[#FFFF23.E1
+ #FFFFA5.3A -155.5 -155.5!-155.5 -155.5[-91.03125 #FFFF24.1E -0.5 -220"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <members>
+                        <DOMShape selected="true">
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#EA1A1A"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -203[#53.8B #FFFF34.D6 143 -144!143 -144[#CA.AD #FFFFAB.F9 202.5 0!202.5 0[#CA.AD #54.09 143 143.5!143 143.5[#53.8B #CB.2D -0.5 203!-0.5 203[#FFFFAB.B9 #CB.2D -144 143.5!-144 143.5[#FFFF34.96 #54.09 -203.5 0!-203.5 0[#FFFF34.96
+ #FFFFAB.F9 -144 -144!-144 -144[#FFFFAB.B9 #FFFF34.D6 -0.5 -203"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#CD1212"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -140[#39.7A #FFFF73.CA 98.5 -99.5!98.5 -99.5[#8B.A3 -58.046875 139.5 0!139.5 0[#8B.A3 #39.F9 98.5 99!98.5 99[#39.7A #8C.23 -0.5 140!-0.5 140[-58.296875 #8C.23 -99.5 99!-99.5 99[#FFFF73.8A #39.F9 -140.5 0!-140.5 0[#FFFF73.8A -58.046875
+ -99.5 -99.5!-99.5 -99.5[-58.296875 #FFFF73.CA -0.5 -140"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <matrix>
+                        <Matrix a="0.4788818359375" d="0.4788818359375" tx="-2.7" ty="-1.25"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point y="-1.05"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <matrix>
+                            <Matrix a="0.4788818359375" d="0.4788818359375" tx="-2.7" ty="-1.25"/>
+                          </matrix>
+                          <transformationPoint>
+                            <Point y="-1.05"/>
+                          </transformationPoint>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#EA1A1A"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!139.5 -20S2[#8B.A3 #25.F9 98.5 79!98.5 79[#39.7A #78.23 -0.5 120!-0.5 120[-58.296875 #78.23 -99.5 79!-99.5 79[#FFFF73.8A #25.F9 -140.5 -20!-140.5 -20[#FFFF73.8A -78.046875 -99.5 -119.5!-99.5 -119.5[-58.296875 #FFFF5F.CA -0.5 -160!-0.5
+ -160[#39.7A #FFFF5F.CA 98.5 -119.5!98.5 -119.5[#8B.A3 -78.046875 139.5 -20"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <transformationPoint>
+                        <Point x="-3.55" y="-2.4"/>
+                      </transformationPoint>
+                      <members>
+                        <DOMShape>
+                          <transformationPoint>
+                            <Point x="-3.55" y="-2.4"/>
+                          </transformationPoint>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#F38B8B"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-35 -48.5[#FFFFDC.FE #FFFFDE.67 -45.5 -23!-45.5 -23[#FFFFC8.27 #FFFFF3.7E -70.5 -12.5!-70.5 -12.5[#FFFFAA.A3 #FFFFF3.7E -96 -23!-96 -23[#FFFF95.8D #FFFFDE.67 -106.5 -48.5!-106.5 -48.5[#FFFF95.8D #FFFFC0.E5 -96 -73.5!-96 -73.5[#FFFFAA.A3
+ #FFFFAC.0D -70.5 -84!-70.5 -84[#FFFFC8.27 #FFFFAC.0D -45.5 -73.5!-45.5 -73.5[#FFFFDC.FE #FFFFC0.E5 -35 -48.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#FF910B"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -220[#5A.91 #FFFF24.1D 155 -155.5!155 -155.5[#DB.AC #FFFFA5.39 219.5 0!219.5 0[#DB.AF #5B.12 155 155.5!155 155.5[#5A.92 #DC.2F -0.5 220!-0.5 220[-91.03125 #DC.2F -155.5 155.5!-155.5 155.5[#FFFF23.DE #5B.1 -220.5 0!-220.5 0[#FFFF23.E1
+ #FFFFA5.3A -155.5 -155.5!-155.5 -155.5[-91.03125 #FFFF24.1E -0.5 -220"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#FFFFFF"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -203[#53.8B #FFFF34.D6 143 -144!143 -144[#CA.AD #FFFFAB.F9 202.5 0!202.5 0[#CA.AD #54.09 143 143.5!143 143.5[#53.8B #CB.2D -0.5 203!-0.5 203[#FFFFAB.B9 #CB.2D -144 143.5!-144 143.5[#FFFF34.96 #54.09 -203.5 0!-203.5 0[#FFFF34.96
+ #FFFFAB.F9 -144 -144!-144 -144[#FFFFAB.B9 #FFFF34.D6 -0.5 -203"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <members>
+                        <DOMShape selected="true">
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#FF910B"/>
+                            </FillStyle>
+                            <FillStyle index="2">
+                              <SolidColor color="#FEB770"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="2" edges="
+!-119.5 144.5[#FFFF6C.64 #78.D2 -164 86.5!-164 86.5[#FFFF46.CF #29.71 -181 -7!-181 -7[#FFFF4F.04 #FFFFC8.13 -155 -96.5!-155 -96.5[#FFFF7B.63 #FFFF76.B6 -96 -162.5!-96 -162.5[-59.703125 #FFFF44.5C 23.5 -187!23.5 -187[#34.C5 #FFFF47.9E
+ 83.5 -165.5"/>
+                            <Edge fillStyle1="1" edges="
+!83.5 -165.5[#64.CE #FFFF67.B1 116 -137!116 -137[#C2.C5 -62.578125 172 44!172 44[#96.A3 #8E.4 56.5 174.5!56.5 174.5[#FFFFD9.BB #D0.FF -119.5 144.5"/>
+                            <Edge fillStyle0="2" fillStyle1="1" edges="
+!-119.5 144.5[-60.078125 #9E.F1 -1.5 137!-1.5 137[#5E.D8 #61.62 112.5 -4!112.5 -4[#80.AC #FFFFA4.B1 83.5 -165.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="1.09091186523438" d="1.09091186523438" ty="24.8"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix a="1.09091186523438" d="1.09091186523438" ty="24.8"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#C6E9FD"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!219.5 -455S2[#DB.AF #FFFE94.12 155 -299.5!155 -299.5[#5A.92 #FFFF15.2F -0.5 -235!-0.5 -235[-91.03125 #FFFF15.2F -155.5 -299.5!-155.5 -299.5[#FFFF23.DE -363.9375 -220.5 -455!-220.5 -455[#FFFF23.E1 #FFFDDE.3A -155.5 -610.5!-155.5 -610.5
+[-91.03125 #FFFD5D.1E -0.5 -675!-0.5 -675[#5A.91 #FFFD5D.1D 155 -610.5!155 -610.5[#DB.AC #FFFDDE.39 219.5 -455"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#AFDEFA"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -220[#5A.91 #FFFF24.1D 155 -155.5!155 -155.5[#DB.AC #FFFFA5.39 219.5 0!219.5 0[#DB.AF #5B.12 155 155.5!155 155.5[#5A.92 #DC.2F -0.5 220!-0.5 220[-91.03125 #DC.2F -155.5 155.5!-155.5 155.5[#FFFF23.DE #5B.1 -220.5 0!-220.5 0[#FFFF23.E1
+ #FFFFA5.3A -155.5 -155.5!-155.5 -155.5[-91.03125 #FFFF24.1E -0.5 -220"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#99D5F9"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -203[#53.8B #FFFF34.D6 143 -144!143 -144[#CA.AD #FFFFAB.F9 202.5 0!202.5 0[#CA.AD #54.09 143 143.5!143 143.5[#53.8B #CB.2D -0.5 203!-0.5 203[#FFFFAB.B9 #CB.2D -144 143.5!-144 143.5[#FFFF34.96 #54.09 -203.5 0!-203.5 0[#FFFF34.96
+ #FFFFAB.F9 -144 -144!-144 -144[#FFFFAB.B9 #FFFF34.D6 -0.5 -203"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <members>
+                        <DOMShape selected="true">
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#FFFFFF"/>
+                            </FillStyle>
+                            <FillStyle index="2">
+                              <SolidColor color="#E2F3FD"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-119.5 144.5[#FFFF6C.64 #78.D2 -164 86.5!-164 86.5[#FFFF46.CF #29.71 -181 -7!-181 -7[#FFFF4F.04 #FFFFC8.13 -155 -96.5!-155 -96.5[#FFFF7B.63 #FFFF76.B6 -96 -162.5!-96 -162.5[-59.703125 #FFFF44.5C 23.5 -187!23.5 -187[#34.C5 #FFFF47.9E
+ 83.5 -165.5"/>
+                            <Edge fillStyle1="2" edges="
+!83.5 -165.5[#64.CE #FFFF67.B1 116 -137!116 -137[#C2.C5 -62.578125 172 44!172 44[#96.A3 #8E.4 56.5 174.5!56.5 174.5[#FFFFD9.BB #D0.FF -119.5 144.5"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!-119.5 144.5[-60.078125 #9E.F1 -1.5 137!-1.5 137[#5E.D8 #61.62 112.5 -4!112.5 -4[#80.AC #FFFFA4.B1 83.5 -165.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#8098AA"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -220[#5A.91 #FFFF24.1D 155 -155.5!155 -155.5[#DB.AC #FFFFA5.39 219.5 0!219.5 0[#DB.AF #5B.12 155 155.5!155 155.5[#5A.92 #DC.2F -0.5 220!-0.5 220[-91.03125 #DC.2F -155.5 155.5!-155.5 155.5[#FFFF23.DE #5B.1 -220.5 0!-220.5 0[#FFFF23.E1
+ #FFFFA5.3A -155.5 -155.5!-155.5 -155.5[-91.03125 #FFFF24.1E -0.5 -220"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <members>
+                        <DOMShape selected="true">
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#D9E1E6"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -203[#53.8B #FFFF34.D6 143 -144!143 -144[#CA.AD #FFFFAB.F9 202.5 0!202.5 0[#CA.AD #54.09 143 143.5!143 143.5[#53.8B #CB.2D -0.5 203!-0.5 203[#FFFFAB.B9 #CB.2D -144 143.5!-144 143.5[#FFFF34.96 #54.09 -203.5 0!-203.5 0[#FFFF34.96
+ #FFFFAB.F9 -144 -144!-144 -144[#FFFFAB.B9 #FFFF34.D6 -0.5 -203"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#B3C2CC"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!120 -135[#C6.C5 -60.578125 176 46!176 46[#9A.A3 #90.4 60.5 176.5!60.5 176.5[#FFFFDD.BB #D2.FF -115.5 146.5!-115.5 146.5[-56.078125 #A0.F1 2.5 139!2.5 139[#62.D8 #63.62 116.5 -2!116.5 -2[#84.AC #FFFFA6.B1 87.5 -163.5!87.5 -163.5[#68.CE
+ #FFFF69.B1 120 -135"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#E6EBEE"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!-61 -155|-1 -165!-1 -165|16 -152!16 -152[1 -38 -115 -28!-115 -28[-150 -30 -178 -52!-178 -52[-148 -128 -71 -165!-71 -165|-61 -155"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#A67BD2"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -220[#5A.91 #FFFF24.1D 155 -155.5!155 -155.5[#DB.AC #FFFFA5.39 219.5 0!219.5 0[#DB.AF #5B.12 155 155.5!155 155.5[#5A.92 #DC.2F -0.5 220!-0.5 220[-91.03125 #DC.2F -155.5 155.5!-155.5 155.5[#FFFF23.DE #5B.1 -220.5 0!-220.5 0[#FFFF23.E1
+ #FFFFA5.3A -155.5 -155.5!-155.5 -155.5[-91.03125 #FFFF24.1E -0.5 -220"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#E1D2F0"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -203[#53.8B #FFFF34.D6 143 -144!143 -144[#CA.AD #FFFFAB.F9 202.5 0!202.5 0[#CA.AD #54.09 143 143.5!143 143.5[#53.8B #CB.2D -0.5 203!-0.5 203[#FFFFAB.B9 #CB.2D -144 143.5!-144 143.5[#FFFF34.96 #54.09 -203.5 0!-203.5 0[#FFFF34.96
+ #FFFFAB.F9 -144 -144!-144 -144[#FFFFAB.B9 #FFFF34.D6 -0.5 -203"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup selected="true">
+                      <members>
+                        <DOMShape selected="true">
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#AA80D5"/>
+                            </FillStyle>
+                            <FillStyle index="2">
+                              <SolidColor color="#8448C1"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-119.5 144.5[#FFFF6C.64 #78.D2 -164 86.5!-164 86.5[#FFFF46.CF #29.71 -181 -7!-181 -7[#FFFF4F.04 #FFFFC8.13 -155 -96.5!-155 -96.5[#FFFF7B.63 #FFFF76.B6 -96 -162.5!-96 -162.5[-59.703125 #FFFF44.5C 23.5 -187!23.5 -187[#34.C5 #FFFF47.9E
+ 83.5 -165.5"/>
+                            <Edge fillStyle1="2" edges="
+!83.5 -165.5[#64.CE #FFFF67.B1 116 -137!116 -137[#C2.C5 -62.578125 172 44!172 44[#96.A3 #8E.4 56.5 174.5!56.5 174.5[#FFFFD9.BB #D0.FF -119.5 144.5"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!-119.5 144.5[-60.078125 #9E.F1 -1.5 137!-1.5 137[#5E.D8 #61.62 112.5 -4!112.5 -4[#80.AC #FFFFA4.B1 83.5 -165.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#8686AE"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -220[#5A.91 #FFFF24.1D 155 -155.5!155 -155.5[#DB.AC #FFFFA5.39 219.5 0!219.5 0[#DB.AF #5B.12 155 155.5!155 155.5[#5A.92 #DC.2F -0.5 220!-0.5 220[-91.03125 #DC.2F -155.5 155.5!-155.5 155.5[#FFFF23.DE #5B.1 -220.5 0!-220.5 0[#FFFF23.E1
+ #FFFFA5.3A -155.5 -155.5!-155.5 -155.5[-91.03125 #FFFF24.1E -0.5 -220"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#DEDEE9"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -203[#53.8B #FFFF34.D6 143 -144!143 -144[#CA.AD #FFFFAB.F9 202.5 0!202.5 0[#CA.AD #54.09 143 143.5!143 143.5[#53.8B #CB.2D -0.5 203!-0.5 203[#FFFFAB.B9 #CB.2D -144 143.5!-144 143.5[#FFFF34.96 #54.09 -203.5 0!-203.5 0[#FFFF34.96
+ #FFFFAB.F9 -144 -144!-144 -144[#FFFFAB.B9 #FFFF34.D6 -0.5 -203"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#262639"/>
+                            </FillStyle>
+                            <FillStyle index="2">
+                              <SolidColor color="#4F4F73"/>
+                            </FillStyle>
+                            <FillStyle index="3">
+                              <SolidColor color="#5E5E88"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle1="1" edges="
+!-0.5 -180[#4A.6C #FFFF4B.F5 126.5 -128!126.5 -128[#B3.7F -74.96875 179.5 0!179.5 0[#B3.7F #4A.EC 126.5 127!126.5 127[#4A.6C #B3.FF -0.5 180!-0.5 180[#FFFFB4.89 #B3.FF -128.5 127!-128.5 127[#FFFF4B.75 #4A.EC -180.5 0!-180.5 0[#FFFF4B.75
+ -74.96875 -128.5 -128!-128.5 -128[#FFFFB4.89 #FFFF4B.F5 -0.5 -180"/>
+                            <Edge fillStyle0="1" fillStyle1="2" edges="
+!-12 -48[37 -53 88 -41!88 -41[149 -25 156 33!156 33[#9F.E2 #3E.0A 131.5 98!131.5 98[#67.59 #85.DF 46.5 153!46.5 153[#FFFFF5.A3 #AC.22 -65 148!-65 148[#FFFF88.29 #7B.ED -144.5 71.5!-144.5 71.5[#FFFF56.D3 #13.1B -133.5 -16!-133.5 -16[-97.765625
+ #FFFFCC.DB -12 -48"/>
+                            <Edge fillStyle0="2" fillStyle1="3" edges="
+!-10 70[#1C.5B #44.3A 53.5 75!53.5 75[#4E.86 #51.B2 93 106!93 106[51 142 -2 147!-2 147[-38 148 -69 128!-69 128|-70 93!-70 93[#FFFFCF.E1 #47.EC -10 70"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                    <DOMGroup>
+                      <members>
+                        <DOMShape>
+                          <fills>
+                            <FillStyle index="1">
+                              <SolidColor color="#B4B4CB"/>
+                            </FillStyle>
+                            <FillStyle index="2">
+                              <SolidColor color="#D2D2E1"/>
+                            </FillStyle>
+                          </fills>
+                          <edges>
+                            <Edge fillStyle0="1" edges="
+!-147 -56.5[#FFFF63.0B #FFFFE5.FA -154 -2!-154 -2[-129 -48 -81 -64!-81 -64[#FFFFEA.1E #FFFFAC.1F 38.5 -80.5!38.5 -80.5[#62.B8 -77.390625 127.5 -46!127.5 -46[#9C.3D #FFFFF1.8D 153.5 10.5!153.5 10.5[#A1.F1 #FFFFF0.31 148.5 -62.5"/>
+                            <Edge fillStyle0="2" edges="
+!148.5 -62.5[140 -80 129 -95!129 -95[94 -142 38 -152!38 -152[-22 -167 -73 -138!-73 -138[-121 -110 -147 -56.5"/>
+                            <Edge fillStyle0="2" fillStyle1="1" edges="
+!-147 -56.5|-132 -50!-132 -50[-107 -73 -78 -85!-78 -85[18 -128 111 -78!111 -78|109 -88!109 -88|119 -85!119 -85|126 -76!126 -76[131 -75 136 -72!136 -72[143 -68 148.5 -62.5"/>
+                          </edges>
+                        </DOMShape>
+                      </members>
+                    </DOMGroup>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

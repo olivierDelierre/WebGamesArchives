@@ -1,0 +1,48 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_logoBg/logoBg" itemID="409a3738-00000cc7" linkageExportForAS="true" linkageIdentifier="logoBg" lastModified="1084185284">
+  <timeline>
+    <DOMTimeline name="logoBg">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_logoBg/bossLogoEau.png">
+                  <matrix>
+                    <Matrix tx="196" ty="135.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_logoBg/bossLogoFeu.png">
+                  <matrix>
+                    <Matrix tx="216" ty="77"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_logoBg/bossLogoVent.png">
+                  <matrix>
+                    <Matrix tx="149.5" ty="124"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance libraryItemName="_gfx/_logoBg/bossLogoTerre.png">
+                  <matrix>
+                    <Matrix tx="220" ty="110"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

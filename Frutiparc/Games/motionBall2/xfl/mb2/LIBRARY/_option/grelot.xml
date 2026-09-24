@@ -1,0 +1,77 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_option/grelot" itemID="3f867b70-00000102" lastModified="1065778032">
+  <timeline>
+    <DOMTimeline name="grelot">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <matrix>
+                    <Matrix tx="16.95" ty="17.7"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#956802"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFCC00"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#EBB601"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#C09501"/>
+                    </FillStyle>
+                    <FillStyle index="5">
+                      <SolidColor color="#FEE07A"/>
+                    </FillStyle>
+                    <FillStyle index="6">
+                      <SolidColor color="#FFF5D5"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="!319.5 -108.5S3|319.5 -109!319.5 -109[#130.F3 #FFFF4C.8A 261 -232!261 -232[#B1.A6 #FFFEB3.E4 101 -333.5!101 -333.5[#18.29 #FFFEB1.35 10 -334!10 -334[-23.4375 #FFFEB5.8C -55 -316.5"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="!-55 -316.5S3[-18 -319 13 -303!13 -303[52 -282 81 -251!81 -251[97 -232 107 -208!107 -208[119 -178 123 -147!123 -147[128 -108 128 -69!128 -69[128 -47 127 -24!127 -24[176 7 174 66!174 66[173 84 170 102!170 102[169 113 169 124!169 124|177
+ 138!177 138|176 148!176 148|200 179!200 179[247 146 275 95!275 95[286 74 293 53!293 53[306 8 312 -39!312 -39[316 -74 319.5 -108.5"/>
+                    <Edge fillStyle0="1" fillStyle1="3" edges="
+!319.5 -108.5S3|321.5 33"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="
+!321.5 33S3[315 59 306 86!306 86[290 130 265 168!265 168|268.5 177"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!268.5 177S3[#136.17 #73.CB 321.5 33"/>
+                    <Edge fillStyle1="1" edges="
+!9 -354S2[#17.69 #FFFE9D.2C 101.5 -353.5!101.5 -353.5[#B9.E1 -353.75 276.5 -245!276.5 -245[#143.87 #FFFF43.63 339 -113!339 -113[#153.6E #FFFF90.CA 339.5 -109.5!339.5 -109.5|341.5 32.5!341.5 32.5[#155.9D 34 341.5 35.5!341.5 35.5[#149.4C
+ #7B.35 285 188!285 188|285.5 187.5!285.5 187.5[#FB.A #F3.55 201 276.5!201 276.5[#7C.29 #148.53 31.5 339!31.5 339[#FFFFD2.21 #15D.7C -119 326!-119 326|-118.5 326!-118.5 326[-208 #12C.D3 -278.5 234.5!-278.5 234.5[#FFFEE8.2F #E9.8F -281
+ 232.5!-281 232.5[#FFFEB3.8E #A6.E8 -338 63!-338 63[#FFFEAB.01 #A.63 -337 -35!-337 -35|-337 -36!-337 -36[#FFFEBC.01 #FFFF04.35 -128 -314!-128 -314[#FFFF85.82 -315.875 -117 -314.5!-117 -314.5[#FFFF93.A3 #FFFEC7.E1 -100 -309.5!-100 -309.5
+|-66.5 -333!-66.5 -333[#FFFFBF.33 #FFFEB1.D5 -63 -335!-63 -335[#FFFFE3.7A -350.1875 8 -354!8 -354|9 -354"/>
+                    <Edge fillStyle0="4" fillStyle1="3" edges="
+!105 152S3[140 114 138 64!138 64[136 28 113 -1!113 -1[100 -17 96 -35!96 -35[76 -129 57 -221!57 -221[21 -267 -37 -273!-37 -273|-47.5 -262.5"/>
+                    <Edge fillStyle0="4" fillStyle1="2" edges="
+!-47.5 -262.5S3[#9.B9 #FFFF21.39 24 -148!24 -148[#1F.BF #FFFF96.92 34 -60.5!34 -60.5[#23.9C #FFFFD8.9B 38 -17.5!38 -17.5[-24.03125 #40.3F 32.5 140.5!32.5 140.5[#2C.66 #9C.23 66.5 160!66.5 160[#57.C6 #9D.3C 105 152"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="
+!105 152S3[108 162 108 150!108 150|105 152"/>
+                    <Edge fillStyle0="3" fillStyle1="2" edges="
+!105 152S3[84 200 46 237!46 237[34 249 20 257!20 257[9 263 -3 267!-3 267[-100 277 -188 241!-188 241[-227 227 -265 220"/>
+                    <Edge fillStyle0="3" fillStyle1="1" edges="
+!-265 220S3[-198 283 -113 307!-113 307[-44 329 29 319!29 319[117 309 190 260!190 260[237 229 268.5 177"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!-97 -287S3[#FFFF93.23 #FFFEDC.75 -122 -295!-122 -295[#FFFECE.63 #FFFF13.43 -317 -34!-317 -34[#FFFEBF.15 #A.6C -318 62!-318 62[#FFFEC7.47 #9E.D -265 220"/>
+                    <Edge fillStyle0="3" fillStyle1="2" edges="
+!-97 -287S3|-47.5 -262.5"/>
+                    <Edge fillStyle0="3" fillStyle1="1" edges="
+!-55 -316.5S3|-97 -287"/>
+                    <Edge fillStyle0="2" fillStyle1="5" edges="
+!-286 -68S3[-273 -223 -122 -224!-122 -224[-96 -224 -81 -200!-81 -200[-9 -90 -105 7!-105 7[-194 97 -260 -9!-260 -9[-277 -36 -286 -68"/>
+                    <Edge fillStyle0="5" fillStyle1="6" edges="
+!-142 -63S3[-181 3 -215 -61!-215 -61[-246 -119 -189 -165!-189 -165[-175 -176 -158 -178!-158 -178[-100 -134 -142 -63"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

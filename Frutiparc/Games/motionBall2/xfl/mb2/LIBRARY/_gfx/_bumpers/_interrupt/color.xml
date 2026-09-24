@@ -1,0 +1,32 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_interrupt/color" itemID="40436730-0000048c" lastModified="1078159159">
+  <timeline>
+    <DOMTimeline name="color">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#E5E6FB"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!420 -0.5[#1A4.42 #AD.81 297.5 296.5!297.5 296.5[#AE.3F 419.5 0 419.5!0 419.5[#FFFF51.BE #1A3.7F -297.5 296.5!-297.5 296.5[#FFFE5B.BC #AD.81 -420 -0.5!-420 -0.5[#FFFE5B.BD -174.75 -297.5 -298!-297.5 -298[#FFFF51.BF -420.75 0 -420.5!0
+ -420.5[#2D.6B #FFFE5B.6F 87.5 -412!87.5 -412[#5B.07 #FFFE64.AB 94.5 -412!94.5 -412[#62.83 #FFFE63.63 102.5 -411.5!102.5 -411.5[#6C.B3 #FFFE66.6C 113.5 -406.5!113.5 -406.5[#73.DC #FFFE6B.22 118.5 -404!118.5 -404[#DA.68 #FFFE87.AF 297.5
+ -298!297.5 -298[#1A4.3F -174.75 420 -0.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

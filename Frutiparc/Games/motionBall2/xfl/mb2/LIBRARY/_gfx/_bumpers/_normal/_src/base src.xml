@@ -1,0 +1,73 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_gfx/_bumpers/_normal/_src/base src" itemID="4061505c-0000029e" lastModified="1080119388">
+  <timeline>
+    <DOMTimeline name="base src">
+      <layers>
+        <DOMLayer name="Layer 2" color="#FF4F4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#73BD26"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!141 -141.5S2[#C7.BD #FFFFAD.05 200 0!200 0[#C7.BD #52.F9 141 141.5!141 141.5[#52.BC #C8.02 0 200!0 200[#FFFFAD.05 #C7.FF -141.5 141.5!-141.5 141.5[-200 #52.FA -200 0!-200 0[-200 -82.984375 -141.5 -141.5!-141.5 -141.5[-82.984375 -200
+ 0 -200!0 -200[#52.BC #FFFF37.FB 141 -141.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4F80FF">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#ADE67D"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#E6F7D7"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#85D940"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#52871D"/>
+                    </FillStyle>
+                    <FillStyle index="5">
+                      <SolidColor color="#73BD26"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="3" fillStyle1="1" edges="
+!143 -325S3[34 -318 -73 -300!-73 -300[-136 -286 -189 -242!-189 -242[-286 -162 -306 -37!-306 -37[-324 71 -288 171!-288 171[-281 188 -274 207!-274 207|-287 220!-287 220[-308 197 -324 171!-324 171[-380 81 -370 -27!-370 -27[#FFFE96.1B #FFFF92.FE
+ -324 -182.5!-324 -182.5[#FFFEE1.AD #FFFF00.06 -208 -308.5!-208 -308.5[#FFFF7E.52 #FFFE96.FA -36 -369.5!-36 -369.5[#39.E4 #FFFE86.02 142 -348!142 -348|143 -325"/>
+                    <Edge fillStyle0="3" fillStyle1="5" edges="
+!71 -155S3|-82 -149!-82 -149[-104 -114 -123 -76!-123 -76[-154 -15 -179 49!-179 49|-172 70!-172 70[-174 73 -176 76!-176 76[-181 81 -186 85!-186 85[-194 92 -203 94!-203 94[-215 97 -227 95!-227 95[-255 7 -229 -82!-229 -82[-180 -246 -3 -242
+!-3 -242[68 -240 131 -212!131 -212[129 -197 127 -182!127 -182[126 -176 123 -169!123 -169[118 -160 112 -151!112 -151|81 -143!81 -143|71 -155"/>
+                    <Edge fillStyle0="3" fillStyle1="4" edges="
+!276.5 -289S3[#A1.9D #FFFE70.2E 0 -400!0 -400[#FFFF5A.45 #FFFE70.2F -283 -283!-283 -283[#FFFE70.2F #FFFF5A.45 -400 0!-400 0[#FFFE70.2F #A5.E4 -283 282.5!-283 282.5[#FFFEEE.9C #124.2 -263.5 301"/>
+                    <Edge fillStyle0="5" fillStyle1="4" edges="
+!-263.5 301S3[-179 371 -71 391!-71 391[38 416 142 373!142 373[246 332 316 241!316 241[385 153 397 41!397 41[409 -73 359 -176!359 -176[327 -241 276.5 -289"/>
+                    <Edge fillStyle0="5" fillStyle1="3" edges="
+!276.5 -289S3[317 -177 347 -65!347 -65[377 45 325 150!325 150[#114.02 #F8.0E 163 307!163 307[#31.FA #16D.D4 -86.5 336.5!-86.5 336.5[-222.96875 #133.3A -263.5 301"/>
+                    <Edge fillStyle1="4" edges="
+!296.5 -297S2[#1A3.EA #FFFF52.0F 420 0!420 0[#1A3.EC #AE.2 296.5 296.5!296.5 296.5[#AE.2 #1A3.EC 0 420!0 420[#FFFF52.0F #1A3.EA -297 296.5!-297 296.5[#FFFE5C.45 #AE.1F -420 0!-420 0[-419.71875 -173.9375 -297 -297!-297 -297[-173.9375 -419.71875
+ 0 -420!0 -420[#AE.1F #FFFE5C.45 296.5 -297"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!-314 -102S3|-335 -113!-335 -113[#FFFEDC.CE -224.9375 -242.5 -257.5!-242.5 -257.5[#FFFF3E.1D #FFFEDD.C3 -199 -272.5!-199 -272.5|-217 -243!-217 -243[-262 -193 -299 -130!-299 -130[-306 -116 -314 -102"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

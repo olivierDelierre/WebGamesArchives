@@ -1,0 +1,43 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="hehteht" itemID="40aa3f27-000016e9" lastModified="1084899240">
+  <timeline>
+    <DOMTimeline name="hehteht">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <transformationPoint>
+                    <Point y="0.05"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMShape>
+                      <transformationPoint>
+                        <Point y="0.05"/>
+                      </transformationPoint>
+                      <fills>
+                        <FillStyle index="1">
+                          <RadialGradient>
+                            <matrix>
+                              <Matrix a="-0.0006103515625" b="-0.0107879638671875" c="0.014068603515625" d="-0.0008087158203125" tx="-0.15" ty="-3.65"/>
+                            </matrix>
+                            <GradientEntry color="#FFCC00" ratio="0.270588235294118"/>
+                            <GradientEntry color="#DEAF00" ratio="1"/>
+                          </RadialGradient>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!146 -0.5[#92.21 #3C.28 103.5 103!103.5 103[#3C.A8 #91.A1 0 145.5!0 145.5[#FFFFC3.97 #91.A1 -103 103!-103 103[#FFFF6E.1F #3C.28 -146 -0.5!-146 -0.5[#FFFF6E.1F #FFFFC2.D7 -103 -104!-103 -104[#FFFFC3.97 #FFFF6D.5F 0 -146.5!0 -146.5[#3C.A8
+ #FFFF6D.5F 103.5 -104!103.5 -104[#92.21 #FFFFC2.D7 146 -0.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

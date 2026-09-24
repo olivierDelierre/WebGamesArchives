@@ -1,0 +1,308 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_ a ranger/old_main" itemID="4035e705-00000149" lastModified="1077281708">
+  <timeline>
+    <DOMTimeline name="old_main">
+      <layers>
+        <DOMLayer name="Layer 7" color="#4FFFFF">
+          <frames>
+            <DOMFrame index="0" duration="9" name="include" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="9" name="waiting" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" duration="8" name="challenge" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="26" duration="8" name="intro" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="34" duration="8" name="course" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="42" duration="8" name="menu" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="50" duration="9" name="aventure" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="59" duration="7" name="aide" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="66" duration="7" name="classic" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#FF4F4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[#include "inc/mball2.as"
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="2" duration="7" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[mcLoading.chargement.txt = wait_text;
+progress = wait_function();
+if( progress == undefined )
+	progress = "";]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="10" duration="8" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndPlay(_currentframe-1);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[load_data(CHALLENGE_DATA);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="19" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[init_mb2();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="20" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[main(); ]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="21" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndPlay(_currentframe-1);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="26" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[intro_init();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="27" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[intro_main();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="28" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndPlay(_currentframe-1);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="34" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[load_data(COURSE_DATA+mode_param);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="35" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[course_init();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="36" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[course_main();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="37" duration="5" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndPlay(_currentframe-1);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="42" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[menu_init();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="43" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[menu_main();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="44" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndPlay(_currentframe-1);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="50" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[load_data(AVENTURE_DATA+mode_param);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="51" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[init_mb2();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="52" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[main();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="53" duration="6" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndPlay(_currentframe-1);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="59" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="60" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndPlay(_currentframe-1);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="61" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="66" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[load_data(CLASSIC_DATA);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="67" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[init_mb2();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="68" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[main();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="69" duration="4" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[gotoAndPlay(_currentframe-1);]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 9" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" duration="9" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="64" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 8" color="#FF4F4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="8" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="9" duration="9" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_interface/loading" name="mcLoading">
+                  <matrix>
+                    <Matrix a="1.00007629394531" d="0.999481201171875" tx="-9.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="8" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="26" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_ a ranger/intro_bg" selected="true">
+                  <matrix>
+                    <Matrix tx="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="305" y="205"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="29" duration="13" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="42" duration="3" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="_menu/fondMenu" name="bg" selected="true">
+                  <matrix>
+                    <Matrix tx="305.05" ty="205"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="45" duration="14" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="59" duration="2" keyMode="9728">
+              <elements>
+                <DOMStaticText fontRenderingMode="standard" width="569.95" height="276.6" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="20.5" ty="51.9"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Aidez la pauvre balle à trouver son chemin dans un affreux labyrinthe !&#xD;&#xD;Dans chaque salle, ramassez les billes rouges pour ouvrir les portes et continuer votre aventure, mais attention au temps qui s’écoule ! Pour vous aider dans votre quête, vous pouvez récupérer de nouvelles balles vous permettant d’effectuer de nouvelles actions (sauter les trous, détruire les murs, …).&#xD;&#xD;  - Vous perdez la partie quand vous n’avez plus de balles ou plus de temps.&#xD;  - Vous gagnez si vous arrivez a trouver la sortie en mettant le moins de temps&#xD;     possible : une surprise vous y attends !&#xD;  - Utilisez les touches directionnelles pour vous déplacer&#xD;  - Utilisez ESPACE pour changer de balle une fois que vous en aurai&#xD;     récupéré de nouvelles.&#xD;</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" autoKern="false" size="16" face="ArialMT" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="_menu/aide retour">
+                  <matrix>
+                    <Matrix tx="251.85" ty="349.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="74.45" y="23.95"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="61" duration="12" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

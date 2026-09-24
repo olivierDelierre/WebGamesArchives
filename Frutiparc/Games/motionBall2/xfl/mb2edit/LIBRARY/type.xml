@@ -1,0 +1,417 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="type" itemID="3fe82803-00000d89" lastModified="1077714344">
+  <timeline>
+    <DOMTimeline name="type">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="5" name="DATA" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="6" name="START" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="11" duration="5" name="END" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="16" duration="6" name="NONE" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="22" duration="10" name="ORANGE" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="32" duration="8" name="VIOLET" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="40" duration="7" name="RED" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="47" duration="6" name="BLUE" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="53" duration="6" name="GREEN" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="59" duration="22" name="METAL" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="81" duration="5" name="KEY" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="86" duration="5" name="MAP" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="91" duration="7" name="RADAR" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="98" duration="9" name="SMALLTIME" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="107" duration="16" name="BIGTIME" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();
+]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="6" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.4"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!6844 3820|6886 3836!6886 3836|6684 4885!6684 4885|6953 4356!6953 4356|7729 4880!7729 4880|7114 4225!7114 4225|7779 3830!7779 3830|7070 3708!7070 3708|6999 3660!6999 3660|6939 3685!6939 3685|6917 3729!6917 3729|6869 3745!6869 3745|6844
+ 3820!7785 3714|8245 3792!8245 3792|8204 3845!8204 3845|8234 4850!8234 4850[8419 4915 8438 4691!8438 4691[8444 4627 8433 4565!8433 4565[8375 4220 8354 3870!8354 3870|8425 3759!8425 3759|9339 3550!9339 3550|7824 3655!7824 3655|7798 3682
+!7798 3682|7785 3714!7609 3825|7002 4093!7002 4093|7050 3843!7050 3843|7609 3825!4888 3643[4780 3691 4663 3715!4663 3715[4345 3775 4108 3984!4108 3984[3953 4120 4124 4225!4124 4225[4475 4444 4864 4590!4864 4590|3739 4732!3739 4732|3739
+ 4840!3739 4840[4389 5041 5010 4761!5010 4761[5106 4719 5104 4624!5104 4624[5103 4557 5048 4510!5048 4510[4704 4219 4264 4115!4264 4115|5199 3715!5199 3715[5102 3548 4888 3643!6059 3630|5024 4019!5024 4019|5408 4058!5408 4058|5399 4905
+!5399 4905|5611 3996!5611 3996|6149 3730!6149 3730|6098 3642!6098 3642|6059 3630!6379 3590|6314 3610!6314 3610[6057 4028 5890 4479!5890 4479[5855 4575 5893 4671!5893 4671[5934 4774 6019 4850!6019 4850|6067 4812!6067 4812|6269 4155!6269
+ 4155|6604 4800!6604 4800|6457 3623!6457 3623|6379 3590"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="5" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.4"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!7009 3295|6463 4772!6463 4772|6354 4755!6354 4755|5979 3360!5979 3360|6419 4400!6419 4400|6844 3235!6844 3235|6919 3210!6919 3210|7009 3295!7265 3398|7302 3432!7302 3432[7800 3076 8177 3513!8177 3513[8223 3567 8218 3644!8218 3644[8169
+ 4390 7469 4666!7469 4666[7261 4749 7037 4750!7037 4750|6903 5037!6903 5037|6809 5000!6809 5000|7201 3622!7201 3622|6995 3645!6995 3645|7246 3464!7246 3464|7265 3398!7338 3555|7040 4742!7040 4742[7071 4726 7102 4710!7102 4710[7318 4598
+ 7534 4484!7534 4484[8104 4183 8044 3540!8044 3540|7338 3555!4559 3500|5544 3507!5544 3507|5499 3595!5499 3595|4534 3575!4534 3575|4559 3500!5852 4693|5664 4745!5664 4745|5939 3445!5939 3445|5819 4640!5819 4640|5852 4693!5144 4165|4439
+ 4112!4439 4112|4179 4590!4179 4590|5384 4570!5384 4570|5374 4720!5374 4720|3929 4785!3929 4785|4600 3676!4600 3676|4490 4004!4490 4004|5179 4098!5179 4098|5144 4165"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" duration="6" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!11706 -138|11759 -160!11759 -160|12588 -160!12588 -160|12588 543!12588 543|11681 -96!11681 -96|11706 -138"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="22" duration="10" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF9900"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!6927 5028[6576 5380 6079 5380!6079 5380[5582 5380 5230 5028!5230 5028[4879 4677 4879 4180!4879 4180[4879 3683 5230 3331!5230 3331[5582 2980 6079 2980!6079 2980[6576 2980 6927 3331!6927 3331[7279 3683 7279 4180!7279 4180[7279 4677 6927
+ 5028"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="32" duration="8" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#A549B6"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!6927 5028[6576 5380 6079 5380!6079 5380[5582 5380 5230 5028!5230 5028[4879 4677 4879 4180!4879 4180[4879 3683 5230 3331!5230 3331[5582 2980 6079 2980!6079 2980[6576 2980 6927 3331!6927 3331[7279 3683 7279 4180!7279 4180[7279 4677 6927
+ 5028"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="40" duration="7" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#E40101"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!6927 5028[6576 5380 6079 5380!6079 5380[5582 5380 5230 5028!5230 5028[4879 4677 4879 4180!4879 4180[4879 3683 5230 3331!5230 3331[5582 2980 6079 2980!6079 2980[6576 2980 6927 3331!6927 3331[7279 3683 7279 4180!7279 4180[7279 4677 6927
+ 5028"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="47" duration="6" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#A4E9F9"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!6927 5028[6576 5380 6079 5380!6079 5380[5582 5380 5230 5028!5230 5028[4879 4677 4879 4180!4879 4180[4879 3683 5230 3331!5230 3331[5582 2980 6079 2980!6079 2980[6576 2980 6927 3331!6927 3331[7279 3683 7279 4180!7279 4180[7279 4677 6927
+ 5028"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="53" duration="6" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#76EA15"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!6927 5028[6576 5380 6079 5380!6079 5380[5582 5380 5230 5028!5230 5028[4879 4677 4879 4180!4879 4180[4879 3683 5230 3331!5230 3331[5582 2980 6079 2980!6079 2980[6576 2980 6927 3331!6927 3331[7279 3683 7279 4180!7279 4180[7279 4677 6927
+ 5028"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="59" duration="22" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#BFC9D7"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!6927 5028[6576 5380 6079 5380!6079 5380[5582 5380 5230 5028!5230 5028[4879 4677 4879 4180!4879 4180[4879 3683 5230 3331!5230 3331[5582 2980 6079 2980!6079 2980[6576 2980 6927 3331!6927 3331[7279 3683 7279 4180!7279 4180[7279 4677 6927
+ 5028"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="81" duration="5" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#C79A01"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFCC00"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#FFF3CE"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="
+!7147 3498S3|7124 3655!7124 3655[6805 3868 6627 3569!6627 3569[6581 3490 6572 3396!6572 3396[6878 3263 7123 3476!7123 3476[7135 3486 7147 3498"/>
+                    <Edge fillStyle0="2" edges="
+!7161.5 3331.5S1|7149 3305!7149 3305|7125.5 3297"/>
+                    <Edge fillStyle0="1" edges="
+!7125.5 3297S1[6483 2824 5838 3328!5838 3328[5811 3319 5784 3311!5784 3311[5626 3259 5469 3320!5469 3320|5461 3379!5461 3379[5437 3390 5414 3402!5414 3402[5020 3605 4932.5 4034.5"/>
+                    <Edge fillStyle0="2" edges="
+!4932.5 4034.5S1|4933 4048"/>
+                    <Edge fillStyle0="1" edges="
+!4933 4048S1[5306 5143 6409 4920!6409 4920[7988 4604 7161.5 3331.5"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!7161.5 3331.5S3[7534 4079 6873 4479!6873 4479[5616 5240 4933 4048"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!7125.5 3297S3[6313 3043 5882 3755!5882 3755[5854 3802 5829 3850!5829 3850[6081 3781 6314 3884!6314 3884[6388 3914 6408 3991!6408 3991[6064 4417 5731 3871!5731 3871[5605 3663 5730 3442!5730 3442|5584 3471!5584 3471|5570 3515!5570 3515
+|5494 3510!5494 3510|5430 3545!5430 3545|5404 3590!5404 3590|5346 3583!5346 3583[5096 3772 4932.5 4034.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="86" duration="5" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#00CC00"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#026501"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="4" edges="
+!6722.5 2822|6744.5 2820"/>
+                    <Edge fillStyle0="1" fillStyle1="4" edges="
+!6744.5 2820|6622 3071!6622 3071[6622 3053 6623 3035!6623 3035[6632 2910 6722.5 2822"/>
+                    <Edge fillStyle0="1" edges="
+!6722.5 2822[5414 2766 5079 4026!5079 4026[5004 4308 5164 4537!5164 4537[5965 5678 7146.5 4847.5"/>
+                    <Edge fillStyle0="4" edges="
+!7146.5 4847.5|7342 4678"/>
+                    <Edge fillStyle0="1" edges="
+!7342 4678[7372 4648 7401 4617!7401 4617[7639 4370 7774.5 4052.5"/>
+                    <Edge fillStyle0="4" edges="
+!7774.5 4052.5|7814 3964.5"/>
+                    <Edge fillStyle0="1" edges="
+!7814 3964.5[7821 3937 7826 3908!7826 3908[7914 3441 7558.5 3120.5"/>
+                    <Edge fillStyle0="4" edges="
+!7558.5 3120.5|7487.5 3057.5"/>
+                    <Edge fillStyle0="1" edges="
+!7487.5 3057.5[7451 3033 7414 3010!7414 3010[7109 2817 6744.5 2820"/>
+                    <Edge fillStyle0="1" fillStyle1="4" edges="
+!7558.5 3120.5|7581 3144!7581 3144|7364 3195!7364 3195|7274 3300!7274 3300|7296 3328!7296 3328|7279 3375!7279 3375|7150 3287!7150 3287[7183 3229 7230 3178!7230 3178[7333 3067 7487.5 3057.5!7774.5 4052.5[7605 3968 7479 3820!7479 3820[7460
+ 3799 7443 3778!7443 3778[7606 3812 7739 3907!7739 3907[7777 3935 7814 3964.5!7459 4252|7700 4199!7700 4199|7648 4289!7648 4289|7459 4252!7146.5 4847.5[6949 4942 6747 4864!6747 4864[6714 4853 6683 4839!6683 4839|6705 4701!6705 4701|6784
+ 4710!6784 4710|6794 4750!6794 4750|7034 4758!7034 4758[6921 4703 6854 4598!6854 4598[6817 4541 6799 4475!6799 4475[7022 4560 7197 4724!7197 4724|7342 4678"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!6295 4536[5715 5171 5267 4462!5267 4462[5254 4441 5243 4420!5243 4420[5636 3507 6203 4191!6203 4191[6320 4333 6295 4536"/>
+                    <Edge fillStyle0="2" fillStyle1="3" edges="
+!5833 4509[5819 4515 5804 4518!5804 4518[5435 4185 5899 3975!5899 3975|5980 4059!5980 4059[6229 4388 5833 4509"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="91" duration="7" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#A33901"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#722801"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="
+!7773 2818.5S1|7499 2782!7499 2782|6335 3273.5"/>
+                    <Edge fillStyle0="2" edges="
+!6335 3273.5S1|6189 3335!6189 3335[6207 3041 6225 3008!6225 3008[6233 2991 6243 2975!6243 2975[#186B.17 #B92.B1 6259 2950.5!6259 2950.5[#18BA.F1 #B14.8E 6368 2734.5!6368 2734.5[#18F6.2 #A71.19 6399.5 2616"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!6399.5 2616S3[#1839.D8 #B07.94 5979 2975!5979 2975[#1703.AE #B33.97 5790 2920"/>
+                    <Edge fillStyle0="2" edges="
+!5790 2920S1[#1651.A2 #C60.34 5626 3413!5626 3413[#15F3.47 #D67.B3 5612 3450!5612 3450[#15E9.E4 #D7F.84 5608 3461!5608 3461[#15E6.B6 #D88.4F 5605.5 3467.5!5605.5 3467.5[#15E0.03 #D99.67 5594.5 3495!5594.5 3495[#15D8.45 #DAC.66 5590 3506
+!5590 3506[#15D2.4B #DBA.CD 5582.5 3523.5!5582.5 3523.5[#15CC.A4 #DC7.CA 5579 3532!5579 3532[#15C9.B5 #DCE.EF 5576.5 3538!5576.5 3538[#15C7.35 #DD4.E7 5574 3544!5574 3544|5120 4141!5120 4141[#13F6.47 #1034.BC 5100.5 4156.5!5100.5 4156.5
+|5101 4156.5"/>
+                    <Edge fillStyle0="1" edges="
+!5101 4156.5S1[#132B.6 #10D6.8B 4657 4416!4657 4416[#1110.0B #11BB.3B 4162 4762"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!4162 4762S3[#10B1.CB #12FC.BF 4404 4940!4404 4940[5425 4755 6260 4099!6260 4099[6722 3736 7233 3462!7233 3462[7634 3248 7774 2825!7774 2825[#1E5D.8F #B05.B5 7773 2818.5"/>
+                    <Edge fillStyle1="2" edges="
+!7773 2818.5S2|8267 2884!8267 2884|8383 3186!8383 3186[#1F75.BB #C9D.B7 7742.5 3333!7742.5 3333[#1D51.86 #D53.BD 7279 3525!7279 3525[6025 4154 4998 5102!4998 5102[4642 5430 4199 5286!4199 5286[3833 5168 4092 4844!4092 4844[#101D.CC #12C1.7E
+ 4162 4762"/>
+                    <Edge fillStyle1="1" edges="
+!5790 2920S2[#170B.7B #A04.FA 5986 2203!5986 2203[5995 2164 6004 2125!6004 2125[6111 2110 6186 2160!6186 2160[#192D.AE #920.13 6399.5 2616"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!6335 3273.5S3[#18BF.6 3284 6334 3295!6334 3295[5794 3820 5109 4155!5109 4155[#13F1.1B #103B.E8 5101 4156.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="98" duration="9" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#0099FF"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#5AC5FE"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#BBE8FF"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="
+!6593.5 3726.5[#18C3.02 #C34.D9 5685 3352.5!5685 3352.5[#13BF.DD #DF3.D4 5215.5 4198!5215.5 4198[#14D9.2E #1242.01 5811 4666!5811 4666[#1957.5A #122E.E 6604 4022.5!6604 4022.5[#19E7.78 3874.5 6593.5 3726.5"/>
+                    <Edge fillStyle0="4" fillStyle1="3" edges="
+!5963 3825.5[#16F3.5B #F08.83 5860 3936!5860 3936[#16DB.D9 #F8E.74 5873 4025!5873 4025[#1747.D3 #FBD.D9 6011 3958.5!6011 3958.5[#1790.09 #F59.28 6035 3892!6035 3892|5963 3825.5"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!5609.5 3655[#1429.1C #1017.EA 5775 4304!5775 4304[#1818.56 #1146.8A 6337.5 4060!6337.5 4060[#1905.4B #F4A.8E 6413.5 3753!6413.5 3753[#179D.33 #D4A.E6 5609.5 3655"/>
+                    <Edge fillStyle0="3" fillStyle1="2" edges="
+!6040 4087.5[#1854.01 #EF7.18 5953 3667!5953 3667[#15CC.D8 #FBE.DA 6017 4087.5!6017 4087.5[#178C.41 #FF8.F8 6040 4087.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="107" duration="16" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#0099FF"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#5AC5FE"/>
+                    </FillStyle>
+                    <FillStyle index="3">
+                      <SolidColor color="#BBE8FF"/>
+                    </FillStyle>
+                    <FillStyle index="4">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="
+!7390 3402[6869 2170 5530 2636!5530 2636[4242 3085 4569 4367!4569 4367[4818 5342 5788 5326!5788 5326[7173 5303 7412 4008!7412 4008[7468 3705 7390 3402"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!7022 3456[6268 2739 5376 3255!5376 3255[4458 4207 5715 4584!5715 4584[6520 4827 6866 4085!6866 4085[7005 3787 7022 3456"/>
+                    <Edge fillStyle0="4" fillStyle1="3" edges="
+!6099 3605[5920 3652 5889 3831!5889 3831[5872 3926 5915 4013!5915 4013[6093 4023 6198 3877!6198 3877[6241 3817 6247 3741!6247 3741|6099 3605"/>
+                    <Edge fillStyle0="3" fillStyle1="2" edges="
+!6257 4141[6642 3616 6079 3280!6079 3280[5317 4025 6210 4141!6210 4141[6233 4144 6257 4141"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Guide: Layer 3" color="#FF4FFF" current="true" isSelected="true" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" duration="123" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!0 0S2|-400 0!-400 0|-400 -400!-400 -400|0 -400!0 -400|0 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

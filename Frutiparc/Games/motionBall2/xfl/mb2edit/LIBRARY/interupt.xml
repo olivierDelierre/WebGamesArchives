@@ -1,0 +1,271 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="interupt" itemID="403cb04b-0000072a" linkageExportForAS="true" linkageIdentifier="interupt" sourceFlashFilepath="..\mb2.fla" sourceLibraryItemHRef="_gfx/_bumpers/_interrupt/interupt" sourceLastModified="1078234477" lastModified="1078234477" lastUniqueIdentifier="5">
+  <timeline>
+    <DOMTimeline name="interupt">
+      <layers>
+        <DOMLayer name="Layer 5" color="#4FFFFF" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="6" name="playOn" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="6" duration="6" name="on" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="12" duration="6" name="playOff" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" duration="43" name="off" labelType="name" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 6" color="#808080" locked="true">
+          <frames>
+            <DOMFrame index="0" duration="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="6" duration="12" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="18" duration="43" keyMode="9728">
+              <Actionscript>
+                <script><![CDATA[stop();]]></script>
+              </Actionscript>
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" duration="5" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065">
+              <elements>
+                <DOMSymbolInstance libraryItemName="flash">
+                  <matrix>
+                    <Matrix a="1.07998657226563" d="1.07998657226563" tx="-0.1" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="flash">
+                  <matrix>
+                    <Matrix tx="-0.1" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" duration="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="12" duration="5" tweenType="motion" motionTweenSync="true" motionTweenSnap="true" keyMode="24065">
+              <elements>
+                <DOMSymbolInstance libraryItemName="flash">
+                  <matrix>
+                    <Matrix a="1.07998657226563" d="1.07998657226563" tx="-0.1" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="17" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="flash">
+                  <matrix>
+                    <Matrix tx="-0.1" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="18" duration="21" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="39" duration="22" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!70 -71.5[#63.C8 #FFFFD6.2A 100 0!100 0[#63.C8 #29.86 70 70!70 70[#29.86 #63.C8 0 100!0 100[#FFFFD6.2A #63.C8 -71.5 70!-71.5 70[#FFFF9B.E7 #29.86 -100 0!-100 0[#FFFF9B.E7 #FFFFD6.2A -71.5 -71.5!-71.5 -71.5[#FFFFD6.2A #FFFF9B.E7 0 -100
+!0 -100[#29.86 #FFFF9B.E7 70 -71.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" duration="12" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="base">
+                  <matrix>
+                    <Matrix tx="-0.1" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="18" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="base">
+                  <matrix>
+                    <Matrix tx="-0.1" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color redOffset="255"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="9" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="base">
+                  <matrix>
+                    <Matrix tx="-0.1" ty="0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color blueMultiplier="0" redOffset="128"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="39" duration="22" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF0000"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="
+!283 -282.5[#190.12 #FFFF5A.B7 400 0.5!400 0.5[#190.12 #A6.09 283 283!283 283[#A5.C9 #190.52 0 400.5!0 400.5[#FFFF5A.36 #190.52 -283 283!-283 283[#FFFE6F.ED #A6.09 -400 0.5!-400 0.5[#FFFE6F.ED #FFFF5A.B7 -283 -282.5!-283 -282.5[#FFFF5A.36
+ #FFFE70.6E 0 -399.5!0 -399.5[#A5.C9 #FFFE70.6E 283 -282.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 3" color="#FFFF4F">
+          <frames>
+            <DOMFrame index="0" duration="12" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#0E0F6B"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!91.5 -431.5[#63.C7 #FFFE4F.26 108 -430.5!108 -430.5[#75.0C #FFFE54.1D 124 -423.5!124 -423.5[#E4.B #FFFE75.AA 311.5 -312!311.5 -312[#1B8.2B #FFFF49.0A 440 -0.5!440 -0.5[#1B8.31 #B5.B8 311.5 310.5!311.5 310.5[#B6.75 #1B7.6C 0 439.5!0 439.5
+[#FFFF49.89 #1B7.6B -311.5 310.5!-311.5 310.5[#FFFE47.CE #B5.B8 -440 -0.5!-440 -0.5[#FFFE47.D2 #FFFF49.0A -311.5 -312!-311.5 -312[#FFFF49.89 #FFFE47.54 0 -440.5!0 -440.5[#2F.7F #FFFE47.7E 91.5 -431.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#E5E6FB"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="
+!420 -0.5[#1A4.42 #AD.81 297.5 296.5!297.5 296.5[#AE.3F 419.5 0 419.5!0 419.5[#FFFF51.BE #1A3.7F -297.5 296.5!-297.5 296.5[#FFFE5B.BC #AD.81 -420 -0.5!-420 -0.5[#FFFE5B.BD -174.75 -297.5 -298!-297.5 -298[#FFFF51.BF -420.75 0 -420.5!0
+ -420.5[#2D.6B #FFFE5B.6F 87.5 -412!87.5 -412[#5B.07 #FFFE64.AB 94.5 -412!94.5 -412[#62.83 #FFFE63.63 102.5 -411.5!102.5 -411.5[#6C.B3 #FFFE66.6C 113.5 -406.5!113.5 -406.5[#73.DC #FFFE6B.22 118.5 -404!118.5 -404[#DA.68 #FFFE87.AF 297.5
+ -298!297.5 -298[#1A4.3F -174.75 420 -0.5"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="18" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFE6FB"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#AD01A5"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="2" edges="
+!108 -430.5[#75.0C #FFFE54.1D 124 -423.5!124 -423.5[#E4.B #FFFE75.AA 311.5 -312!311.5 -312[#1B8.2B #FFFF49.0A 440 -0.5!440 -0.5[#1B8.31 #B5.B8 311.5 310.5!311.5 310.5[#B6.75 #1B7.6C 0 439.5!0 439.5[#FFFF49.89 #1B7.6B -311.5 310.5!-311.5
+ 310.5[#FFFE47.CE #B5.B8 -440 -0.5!-440 -0.5[#FFFE47.D2 #FFFF49.0A -311.5 -312!-311.5 -312[#FFFF49.89 #FFFE47.54 0 -440.5!0 -440.5[#2F.7F #FFFE47.7E 91.5 -431.5!91.5 -431.5[#63.C7 #FFFE4F.26 108 -430.5"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!113.5 -406.5[#73.DC #FFFE6B.22 118.5 -404!118.5 -404[#DA.68 #FFFE87.AF 297.5 -298!297.5 -298[#1A4.3F -174.75 420 -0.5!420 -0.5[#1A4.42 #AD.81 297.5 296.5!297.5 296.5[#AE.3F 419.5 0 419.5!0 419.5[#FFFF51.BE #1A3.7F -297.5 296.5!-297.5
+ 296.5[#FFFE5B.BC #AD.81 -420 -0.5!-420 -0.5[#FFFE5B.BD -174.75 -297.5 -298!-297.5 -298[#FFFF51.BF -420.75 0 -420.5!0 -420.5[#2D.6B #FFFE5B.6F 87.5 -412!87.5 -412[#5B.07 #FFFE64.AB 94.5 -412!94.5 -412[#62.83 #FFFE63.63 102.5 -411.5!102.5
+ -411.5[#6C.B3 #FFFE66.6C 113.5 -406.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="30" duration="31" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#653701"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFE600"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="
+!102.5 -411.5[#6C.B3 #FFFE66.6C 113.5 -406.5!113.5 -406.5[#73.DC #FFFE6B.22 118.5 -404!118.5 -404[#DA.68 #FFFE87.AF 297.5 -298!297.5 -298[#1A4.3F -174.75 420 -0.5!420 -0.5[#1A4.42 #AD.81 297.5 296.5!297.5 296.5[#AE.3F 419.5 0 419.5!0
+ 419.5[#FFFF51.BE #1A3.7F -297.5 296.5!-297.5 296.5[#FFFE5B.BC #AD.81 -420 -0.5!-420 -0.5[#FFFE5B.BD -174.75 -297.5 -298!-297.5 -298[#FFFF51.BF -420.75 0 -420.5!0 -420.5[#2D.6B #FFFE5B.6F 87.5 -412!87.5 -412[#5B.07 #FFFE64.AB 94.5 -412
+!94.5 -412[#62.83 #FFFE63.63 102.5 -411.5"/>
+                    <Edge fillStyle1="1" edges="
+!124 -423.5[#E4.B #FFFE75.AA 311.5 -312!311.5 -312[#1B8.2B #FFFF49.0A 440 -0.5!440 -0.5[#1B8.31 #B5.B8 311.5 310.5!311.5 310.5[#B6.75 #1B7.6C 0 439.5!0 439.5[#FFFF49.89 #1B7.6B -311.5 310.5!-311.5 310.5[#FFFE47.CE #B5.B8 -440 -0.5!-440
+ -0.5[#FFFE47.D2 #FFFF49.0A -311.5 -312!-311.5 -312[#FFFF49.89 #FFFE47.54 0 -440.5!0 -440.5[#2F.7F #FFFE47.7E 91.5 -431.5!91.5 -431.5[#63.C7 #FFFE4F.26 108 -430.5!108 -430.5[#75.0C #FFFE54.1D 124 -423.5"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

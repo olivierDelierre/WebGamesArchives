@@ -1,0 +1,71 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_boss/_poulpe/boss tir gfx" itemID="3f9e1a38-0000011f" lastModified="1068298546" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="boss tir gfx">
+      <layers>
+        <DOMLayer name="Layer 2" color="#9933CC">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#999999"/>
+                        </FillStyle>
+                        <FillStyle index="2">
+                          <SolidColor color="#FFFFFF"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" fillStyle1="2" edges="!551 -552S3[#30C.1 #FFFEBC.3A 780 0!780 0[#30C.0C #143.C2 551 551!551 551[#143.C2 #30C.0C 0 780!0 780[#FFFEBC.3A #30C.1 -552 551!-552 551[#FFFCF3.EE #143.C3 -780 0!-780 0[#FFFCF3.EB #FFFEBC.39 -552 -552!-552 -552[#FFFEBC.39 #FFFCF3.EB
+ 0 -780!0 -780[#143.C3 #FFFCF3.EE 551 -552"/>
+                        <Edge fillStyle0="1" edges="
+!0 -820S1[#FFFEAB.C6 #FFFCCC.14 -580 -580!-580 -580[#FFFCCC.14 #FFFEAB.C6 -820 0!-820 0[#FFFCCC.12 #154.3D -580 579!-580 579[#FFFEAB.C7 #333.F1 0 820!0 820[#154.3F #333.F2 579 579!579 579[#333.F2 #154.3F 820 0!820 0[#333.F1 #FFFEAB.C7
+ 579 -580!579 -580[#154.3D #FFFCCC.12 0 -820"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix tx="-0.1" ty="0.2"/>
+                  </matrix>
+                  <members>
+                    <DOMShape>
+                      <matrix>
+                        <Matrix tx="-0.1" ty="0.2"/>
+                      </matrix>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#DDDDDD"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="
+!319 -612S1[#1F9.76 #FFFE55.A1 505.5 -163!505.5 -163[#1F9.73 #64.45 319 285!319 285[#86.43 #1D7.74 -129 471.5!-129 471.5[#FFFE77.A1 #1D7.76 -578 285!-578 285[#FFFD62.BB #C2.24 -715.5 84.5!-715.5 84.5[#FFFD4E.4E #149.07 -509.5 508.5!-509.5
+ 508.5[#FFFED5.27 #2CF.FF 0 720!0 720[#12A.CB #2CF.FC 508.5 508.5!508.5 508.5[#2CF.FC #12A.CC 720 0!720 0[#2CF.FF #FFFED5.27 508.5 -509.5!508.5 -509.5[#183.B7 #FFFD89.3A 237.5 -682!237.5 -682[#117.F1 #FFFD74.C4 319 -612"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="_boss/_poulpe/pupille">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
