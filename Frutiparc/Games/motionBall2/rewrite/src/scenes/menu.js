@@ -79,6 +79,10 @@ export class MenuScene {
 			b.w = b.h = 100;
 		});
 		this.place();
+		for (const b of this.group.buttons) {
+			b.px = b.x;
+			b.py = b.y;
+		}
 	}
 
 	/**
@@ -204,6 +208,10 @@ export class MenuScene {
 			this.clock -= FRAME;
 			this.step();
 		}
+		// (the symbols play with the real time : their tweens are drawn between frames)
+		this.bg.update(dt);
+		for (const b of this.group.buttons)
+			b.art.update(dt);
 		this.select();
 	}
 
@@ -240,10 +248,15 @@ export class MenuScene {
 
 	/** One frame of the original (40 per second). */
 	step() {
+		// (the places of the previous step, to draw in between)
+		for (const b of this.group.buttons) {
+			b.px = b.x;
+			b.py = b.y;
+		}
+		if (this.info)
+			this.info.py = this.info.y;
+		this.prevHole = this.holeScale;
 		this.menuTime += 1 / 30;
-		this.bg.update(FRAME);
-		for (const b of this.group.buttons)
-			b.art.update(FRAME);
 
 		const info = this.info;
 		if (info) {
@@ -318,8 +331,15 @@ export class MenuScene {
 
 	// ----- drawing -----
 
+	/** Between the previous step (0) and the last one (1). */
+	get k() {
+		return Math.min(1, this.clock / FRAME);
+	}
+
 	render(ctx) {
-		this.bg.set("hole", { xscale: this.holeScale, yscale: this.holeScale });
+		const k = this.k;
+		const hole = this.prevHole === undefined ? this.holeScale : this.prevHole + (this.holeScale - this.prevHole) * k;
+		this.bg.set("hole", { xscale: hole, yscale: hole });
 		this.bg.draw(ctx);
 		this.group.render(ctx);
 
@@ -329,16 +349,18 @@ export class MenuScene {
 			text(ctx, b.info(), CX, CY, { size: 15, color: "#fff", outline: "#4a1470" });
 
 		if (this.info) {
+			const py = this.info.py ?? this.info.y;
 			ctx.save();
-			ctx.translate(W / 2, this.info.y);
+			ctx.translate(W / 2, py + (this.info.y - py) * k);
 			this.info.art.draw(ctx);
 			ctx.restore();
 		}
 	}
 
 	drawBall(ctx, b) {
+		const k = this.k;
 		ctx.save();
-		ctx.translate(b.x, b.y);
+		ctx.translate(b.px + (b.x - b.px) * k, b.py + (b.y - b.py) * k);
 		b.art.draw(ctx);
 		ctx.restore();
 	}

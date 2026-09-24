@@ -23,6 +23,9 @@ import { drawShape, drawText, withColor, isIdentityColor, combineColor, lerpColo
 
 const MAX_GOTO_DEPTH = 8;
 
+/** The script operations that may leave the timeline (no drawing between frames then). */
+const JUMPS = new Set(["goto", "gotoRel", "randomFrame", "remove", "removeParent", "countdown", "loopUnlessRandom", "loopIf"]);
+
 export class Clip {
 
 	/**
@@ -107,6 +110,32 @@ export class Clip {
 			this.time -= step;
 			this.tick();
 		}
+	}
+
+	/**
+	 * The frame to draw : between the current frame and the next one, by the
+	 * time spent since the last frame, so that the motion tweens move smoothly
+	 * on any screen instead of 40 times per second. (The frames themselves,
+	 * their scripts and the drawings of the frame by frame animations stay
+	 * whole.) Not when the timeline stops, loops or jumps at the next frame.
+	 */
+	drawFrame() {
+		const f = this.frame;
+		if (this.removed || f + 1 >= this.totalFrames)
+			return f;
+		if (this.controlled) {
+			// a graphic moves on with its parent
+			if (!this.followsParent || !this.parent)
+				return f;
+			const pf = this.parent.drawFrame();
+			return f + (pf - Math.floor(pf));
+		}
+		if (!this.playing)
+			return f;
+		const ops = this.symbol.scripts[f + 1];
+		if (ops && ops.some(op => JUMPS.has(op[0])))
+			return f;
+		return f + Math.min(0.999, this.time * (this.lib.data.frameRate || 40));
 	}
 
 	/** One frame. */
@@ -299,6 +328,7 @@ export class Clip {
 					else
 						f = ((f % total) + total) % total;
 					c.frame = f;
+					c.followsParent = el.g.loop !== "single frame" && f + 1 < total;
 					c.syncChildren(tick);
 				} else if (tick && !created) {
 					c.tick();
@@ -369,16 +399,17 @@ export class Clip {
 				ctx.scale(1, v._flipY);
 		}
 
+		const frame = this.drawFrame();
 		layers.forEach((layer, li) => {
 			if (layer.mask)
 				return;
-			const cur = this.layerElements(layer);
+			const cur = this.layerElements(layer, frame);
 			if (!cur || !cur.els.length)
 				return;
 			const masked = layer.maskedBy !== undefined;
 			if (masked) {
 				ctx.save();
-				const mask = this.layerElements(layers[layer.maskedBy]);
+				const mask = this.layerElements(layers[layer.maskedBy], frame);
 				if (mask)
 					clipToMask(ctx, lib, mask.els, this, layer.maskedBy);
 			}
@@ -400,10 +431,11 @@ export class Clip {
 		if (this.removed)
 			return null;
 		let acc = null;
+		const frame = this.drawFrame();
 		this.symbol.layers.forEach((layer, li) => {
 			if (layer.mask)
 				return;
-			const cur = this.layerElements(layer);
+			const cur = this.layerElements(layer, frame);
 			if (!cur)
 				return;
 			cur.els.forEach((el, ei) => {

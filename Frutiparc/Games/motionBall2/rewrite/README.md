@@ -71,7 +71,9 @@ differs:
 - Collisions are geometric: the ball bounces on the real shapes of the bumpers
   and slides along the walls instead of sampling 16 points on a 4 x 4 grid.
 - A fixed 120 steps per second simulation; the original's per-frame tuning
-  (40 frames per second) is converted to pixels per second.
+  (40 frames per second) is converted to pixels per second. The animations
+  keep the original 40 frames per second but are drawn in between (motion
+  tweens, the intro, the menu), so they are smooth at 60, 120 or 144 Hz.
 - Keyboard, gamepad and touch controls: the menu's ring of balls can be walked
   with the arrows, the pause has "Continuer" / "Abandonner" buttons, a finger
   drives the ball with a virtual joystick.

@@ -212,6 +212,14 @@ drives it like the original ActionScript : `gotoAndPlay("hit")`,
 `art.on = event => ...` (the final boss follows its `kataDone` / `animDone`
 like BossTB.as).
 
+**Smooth on any screen.** The symbols' timelines, the intro and the menu keep
+the original 40 frames per second (their scripts and tuning are per frame),
+but they are *drawn* between their last two frames: `Clip.drawFrame()` gives a
+fractional frame, so motion tweens are interpolated at the display rate (not
+across a stop or a jump of the timeline), and the intro, the menu ring and the
+earth power's vine keep their previous step's places to draw in between.
+Only the frame-by-frame drawings of the original stay at 40 per second.
+
 ## Physics
 
 The ball is a circle; everything solid has a shape (`game/physics.js`):

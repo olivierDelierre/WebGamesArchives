@@ -171,3 +171,29 @@ test("colour transforms combine like Flash's", () => {
 	assert.ok(isIdentityColor(null));
 	assert.ok(!isIdentityColor(red));
 });
+
+test("clip : the tweens are drawn between frames, not the jumps nor the stops", () => {
+	const shade = clip("TBShadow");
+	const layer = shade.symbol.layers[0];
+	const tween = layer.frames.find(f => f.tw !== undefined && f.n > 1);
+	shade.gotoAndPlay(tween.i);
+	shade.update(0.5 / 40);
+	assert.ok(Math.abs(shade.drawFrame() - (tween.i + 0.5)) < 0.01, "half way to the next frame");
+	const between = shade.layerElements(layer, shade.drawFrame()).els[0].m;
+	const now = shade.layerElements(layer).els[0].m;
+	const next = shade.layerElements(layer, tween.i + 1).els[0].m;
+	assert.ok(Math.abs(between[4] - (now[4] + next[4]) / 2) < 0.5, "the tween's place in between");
+
+	shade.stop();
+	assert.equal(shade.drawFrame(), tween.i, "stopped : the frame itself");
+
+	// "bnormal" : its first frame stops the timeline
+	const bumper = clip("bnormal");
+	bumper.update(0.5 / 40);
+	assert.equal(bumper.drawFrame(), 0);
+	// "FXWater" : its last frame goes back to the first one
+	const water = clip("FXWater");
+	water.gotoAndPlay(19);
+	water.update(0.5 / 40);
+	assert.equal(water.drawFrame(), 19, "no drawing between a frame and a jump");
+});

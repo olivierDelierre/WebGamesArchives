@@ -1302,6 +1302,7 @@
 
   // src/gfx/xfl/clip.js
   var MAX_GOTO_DEPTH = 8;
+  var JUMPS = /* @__PURE__ */ new Set(["goto", "gotoRel", "randomFrame", "remove", "removeParent", "countdown", "loopUnlessRandom", "loopIf"]);
   var Clip = class _Clip {
     /**
      * @param lib     the XflLibrary
@@ -1375,6 +1376,30 @@
         this.time -= step2;
         this.tick();
       }
+    }
+    /**
+     * The frame to draw : between the current frame and the next one, by the
+     * time spent since the last frame, so that the motion tweens move smoothly
+     * on any screen instead of 40 times per second. (The frames themselves,
+     * their scripts and the drawings of the frame by frame animations stay
+     * whole.) Not when the timeline stops, loops or jumps at the next frame.
+     */
+    drawFrame() {
+      const f = this.frame;
+      if (this.removed || f + 1 >= this.totalFrames)
+        return f;
+      if (this.controlled) {
+        if (!this.followsParent || !this.parent)
+          return f;
+        const pf = this.parent.drawFrame();
+        return f + (pf - Math.floor(pf));
+      }
+      if (!this.playing)
+        return f;
+      const ops = this.symbol.scripts[f + 1];
+      if (ops && ops.some((op) => JUMPS.has(op[0])))
+        return f;
+      return f + Math.min(0.999, this.time * (this.lib.data.frameRate || 40));
     }
     /** One frame. */
     tick() {
@@ -1557,6 +1582,7 @@
             else
               f = (f % total + total) % total;
             c.frame = f;
+            c.followsParent = el.g.loop !== "single frame" && f + 1 < total;
             c.syncChildren(tick);
           } else if (tick && !created) {
             c.tick();
@@ -1620,16 +1646,17 @@
         if (v._flipY)
           ctx.scale(1, v._flipY);
       }
+      const frame = this.drawFrame();
       layers.forEach((layer, li) => {
         if (layer.mask)
           return;
-        const cur = this.layerElements(layer);
+        const cur = this.layerElements(layer, frame);
         if (!cur || !cur.els.length)
           return;
         const masked = layer.maskedBy !== void 0;
         if (masked) {
           ctx.save();
-          const mask = this.layerElements(layers[layer.maskedBy]);
+          const mask = this.layerElements(layers[layer.maskedBy], frame);
           if (mask)
             clipToMask(ctx, lib, mask.els, this, layer.maskedBy);
         }
@@ -1649,10 +1676,11 @@
       if (this.removed)
         return null;
       let acc = null;
+      const frame = this.drawFrame();
       this.symbol.layers.forEach((layer, li) => {
         if (layer.mask)
           return;
-        const cur = this.layerElements(layer);
+        const cur = this.layerElements(layer, frame);
         if (!cur)
           return;
         cur.els.forEach((el, ei) => {
@@ -6550,6 +6578,10 @@
      * (a spring, stiffer when stretched). The ball receives the pull too.
      */
     pullVine(ball) {
+      for (const m of this.vine) {
+        m.px = m.x;
+        m.py = m.y;
+      }
       const b = { x: ball.x, y: ball.y, vx: ball.vx / 40, vy: ball.vy / 40 };
       const chain = this.vine.concat([b]);
       for (let i = 1; i < chain.length; i++) {
@@ -6592,7 +6624,8 @@
       if (this.vine) {
         ctx.save();
         ctx.globalAlpha = this.breaking < 0 ? 1 : Math.max(0, 1 - this.breaking / 0.25);
-        const points = this.vine.concat([game.ball]);
+        const k = Math.min(1, this.clock.time / FRAME);
+        const points = this.vine.map((m) => m.px === void 0 ? m : { x: m.px + (m.x - m.px) * k, y: m.py + (m.y - m.py) * k }).concat([game.ball]);
         for (let i = 0; i < this.vine.length; i++) {
           const a = points[i];
           const b = points[i + 1];
@@ -8102,6 +8135,10 @@
         b.w = b.h = 100;
       });
       this.place();
+      for (const b of this.group.buttons) {
+        b.px = b.x;
+        b.py = b.y;
+      }
     }
     /**
      * A ball of the menu : `id` is its frame in the original (its title and
@@ -8215,6 +8252,9 @@
         this.clock -= FRAME2;
         this.step();
       }
+      this.bg.update(dt);
+      for (const b of this.group.buttons)
+        b.art.update(dt);
       this.select();
     }
     /** The mouse on the left or on the right turns the ring. */
@@ -8247,10 +8287,14 @@
     }
     /** One frame of the original (40 per second). */
     step() {
+      for (const b of this.group.buttons) {
+        b.px = b.x;
+        b.py = b.y;
+      }
+      if (this.info)
+        this.info.py = this.info.y;
+      this.prevHole = this.holeScale;
       this.menuTime += 1 / 30;
-      this.bg.update(FRAME2);
-      for (const b of this.group.buttons)
-        b.art.update(FRAME2);
       const info = this.info;
       if (info) {
         info.y += info.dy;
@@ -8318,23 +8362,31 @@
       }
     }
     // ----- drawing -----
+    /** Between the previous step (0) and the last one (1). */
+    get k() {
+      return Math.min(1, this.clock / FRAME2);
+    }
     render(ctx) {
-      this.bg.set("hole", { xscale: this.holeScale, yscale: this.holeScale });
+      const k = this.k;
+      const hole = this.prevHole === void 0 ? this.holeScale : this.prevHole + (this.holeScale - this.prevHole) * k;
+      this.bg.set("hole", { xscale: hole, yscale: hole });
       this.bg.draw(ctx);
       this.group.render(ctx);
       const b = this.group.focused;
       if (this.phase <= 1 && b && b.enabled && b.info)
         text(ctx, b.info(), CX, CY, { size: 15, color: "#fff", outline: "#4a1470" });
       if (this.info) {
+        const py = this.info.py ?? this.info.y;
         ctx.save();
-        ctx.translate(WIDTH / 2, this.info.y);
+        ctx.translate(WIDTH / 2, py + (this.info.y - py) * k);
         this.info.art.draw(ctx);
         ctx.restore();
       }
     }
     drawBall(ctx, b) {
+      const k = this.k;
       ctx.save();
-      ctx.translate(b.x, b.y);
+      ctx.translate(b.px + (b.x - b.px) * k, b.py + (b.y - b.py) * k);
       b.art.draw(ctx);
       ctx.restore();
     }
@@ -8358,12 +8410,21 @@
       this.xscale = 100;
       this.yscale = 100;
       this.color = null;
+      this.prev = null;
     }
-    draw(ctx) {
+    /** Keeps the place of this step. */
+    snapshot() {
+      this.prev = { x: this.x, y: this.y, rotation: this.rotation, xscale: this.xscale, yscale: this.yscale };
+    }
+    /** Draws between the previous step (k = 0) and this one (k = 1). */
+    draw(ctx, k = 1) {
+      const p = this.prev || this;
+      const lerp = (a, b) => a + (b - a) * k;
+      const dr = (this.rotation - p.rotation + 540) % 360 - 180;
       ctx.save();
-      ctx.translate(this.x, this.y);
-      ctx.rotate(this.rotation * Math.PI / 180);
-      ctx.scale(this.xscale / 100, this.yscale / 100);
+      ctx.translate(lerp(p.x, this.x), lerp(p.y, this.y));
+      ctx.rotate((p.rotation + dr * k) * Math.PI / 180);
+      ctx.scale(lerp(p.xscale, this.xscale) / 100, lerp(p.yscale, this.yscale) / 100);
       this.art.draw(ctx, this.color);
       ctx.restore();
     }
@@ -8423,7 +8484,13 @@
     breathe(t, i) {
       return 100 + this.scaleFactor * Math.cos(i + this.totTime / 20);
     }
+    /** Everything drawn by the intro. */
+    get all() {
+      return [this.bg, this.shadeDeux, ...this.fissures, this.deux, this.pressStart, ...this.letters].filter(Boolean);
+    }
     step() {
+      for (const mc of this.all)
+        mc.snapshot();
       this.totTime++;
       this.menuTime = Math.min(1, this.menuTime + 1 / 30);
       const L2 = this.letters;
@@ -8595,21 +8662,13 @@
       }
     }
     render(ctx) {
+      const k = Math.min(1, this.clock / FRAME3);
       ctx.fillStyle = "#000";
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
       ctx.save();
       ctx.translate(0, this.shakeY || 0);
-      this.bg.draw(ctx);
-      if (this.shadeDeux)
-        this.shadeDeux.draw(ctx);
-      for (const f of this.fissures)
-        f.draw(ctx);
-      if (this.deux)
-        this.deux.draw(ctx);
-      if (this.pressStart)
-        this.pressStart.draw(ctx);
-      for (const t of this.letters)
-        t.draw(ctx);
+      for (const mc of this.all)
+        mc.draw(ctx, k);
       ctx.restore();
     }
   };
