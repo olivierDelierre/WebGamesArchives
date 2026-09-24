@@ -240,7 +240,7 @@ export class MenuScene {
 		ctx.save();
 		ctx.translate(W / 2 - 170, 262);
 		ctx.scale(2.4, 2.4);
-		drawBall(ctx, i, 9, null);
+		drawBall(ctx, i, 0.8);
 		ctx.restore();
 		text(ctx, "Bille " + BALLS[i].name.toLowerCase(), W / 2 + 30, 235, { size: 22, color: "#fff", outline: "#c86a00" });
 		text(ctx, BALL_HELP[i], W / 2 + 30, 280, { size: 15, color: "#6a3a00", weight: "700" });

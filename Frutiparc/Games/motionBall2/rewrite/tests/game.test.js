@@ -513,8 +513,8 @@ test("Classique : the hatch opens with the red pastilles, and leads to the next 
 		g.ball.placeAt(red.x, red.y);
 		run(g, STEP * 2);
 	}
-	run(g, 0.5);
-	assert.equal(room.hatch.open, 1);
+	// (the "exit" symbol opens in ~0.7 s)
+	runUntil(g, () => room.hatch.open === 1, 2);
 	g.ball.placeAt(room.hatch.x, room.hatch.y);
 	const t0 = g.time;
 	runUntil(g, g => g.state === "scroll", 3);

@@ -4,7 +4,7 @@
  * draws the whole room.
  *
  * Positions in the data are cells of 4 x 4 pixels, for the top-left corner of
- * the item ; the entities use the centre, in pixels. SIZES gives the size of
+ * the item ; the entities use the centre, in pixels. centreOf gives the size of
  * each item to convert one into the other.
  */
 
@@ -18,23 +18,32 @@ import { GreenBlock, SwitchBlock, Switch } from "./entities/blocks.js";
 import { Pastille, Hatch, BallPickup, ItemBox, Teleport } from "./entities/pickups.js";
 import { Zapper, makeBeams } from "./entities/zappers.js";
 import { roundRect } from "../gfx/draw.js";
-import { clip, drawClip } from "../gfx/xfl/index.js";
+import { clip, drawClip, symbolCells } from "../gfx/xfl/index.js";
 import { Icon } from "../gfx/icons.js";
 import { app } from "../app.js";
 
-/** Size of each item, in pixels (the symbols of the original, rounded to even cells). */
-const SIZES = {
-	[Item.BUMPER]: 48, [Item.CLOCK]: 64, [Item.DEATH]: 40, [Item.MAGNET]: 40,
-	[Item.GHOST]: 56, [Item.BLOCK]: 40, [Item.HOLE]: 40, [Item.RED]: 24,
-	[Item.BLUE]: 24, [Item.TELEPORT]: 48, [Item.SWITCH]: 32, [Item.PINK_BLOCK]: 40,
-	[Item.BLUE_BLOCK]: 40, [Item.ZAPPER]: 32, [Item.HATCH]: 40
+/** The original symbol of each item (their size places the items, see centreOf). */
+const ITEM_SYMBOLS = {
+	[Item.BUMPER]: "bnormal", [Item.CLOCK]: "btime", [Item.DEATH]: "bdeath", [Item.MAGNET]: "bmagnet",
+	[Item.GHOST]: "bshadow", [Item.BLOCK]: "wall", [Item.HOLE]: "wall", [Item.RED]: "red",
+	[Item.BLUE]: "blue", [Item.TELEPORT]: "bteleport", [Item.SWITCH]: "interupt", [Item.PINK_BLOCK]: "interred",
+	[Item.BLUE_BLOCK]: "interblue", [Item.ZAPPER]: "zapper", [Item.HATCH]: "exit"
 };
 
-/** Centre of an item of the data. */
-const centreOf = item => ({
-	x: item.x * CELL + SIZES[item.type] / 2,
-	y: item.y * CELL + SIZES[item.type] / 2
-});
+/**
+ * Centre of an item of the data, like the original (Tools.set_mcpos) : the
+ * data gives the top-left cell, and the symbol is centred on its size in
+ * cells. (In Course mode the zappers are "checkpoint" symbols.)
+ */
+function centreOf(item, course) {
+	const name = item.type === Item.ZAPPER && course ? "checkpoint" : ITEM_SYMBOLS[item.type];
+	const cells = symbolCells(name);
+	return {
+		x: (item.x + cells.w / 2) * CELL,
+		y: (item.y + cells.h / 2) * CELL,
+		cells
+	};
+}
 
 /** The ball colour given by each DungeonBall / bonus ball. */
 const BALL_OF_OBJECT = [BallType.GREEN, BallType.BLUE, BallType.METAL, BallType.VIOLET];
@@ -123,7 +132,7 @@ export class Room {
 	addItem(game, item) {
 		if (item.destroyed || item.taken)
 			return;
-		const { x, y } = centreOf(item);
+		const { x, y, cells } = centreOf(item, game.rules.checkpoints);
 		const left = item.x * CELL;
 		const top = item.y * CELL;
 
@@ -134,10 +143,12 @@ export class Room {
 		case Item.MAGNET: return this.add(new Magnet(x, y));
 		case Item.GHOST: return this.add(new GhostBumper(x, y));
 		case Item.TELEPORT: return this.add(new Teleport(x, y));
+		// (the original draws the switch and the blue blocks 2 pixels up-left ;
+		// the pink and blue blocks collide like a green block)
 		case Item.SWITCH: return this.add(new Switch(x, y));
-		case Item.PINK_BLOCK: return this.add(new SwitchBlock(left, top, true));
-		case Item.BLUE_BLOCK: return this.add(new SwitchBlock(left, top, false));
-		case Item.ZAPPER: return this.add(new Zapper(x, y, item.x, item.y, game.rules.checkpoints));
+		case Item.PINK_BLOCK: return this.add(new SwitchBlock(left, top, true, x, y));
+		case Item.BLUE_BLOCK: return this.add(new SwitchBlock(left, top, false, x - 2, y - 2));
+		case Item.ZAPPER: return this.add(new Zapper(x, y, item.x, item.y, cells, game.rules.checkpoints));
 
 		case Item.BLOCK: {
 			const block = this.add(new GreenBlock(left, top, item));

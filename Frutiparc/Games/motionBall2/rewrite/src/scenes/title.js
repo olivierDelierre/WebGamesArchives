@@ -43,7 +43,7 @@ export class TitleScene {
 			ctx.translate(W / 2 + Math.cos(a) * 230, 150 + Math.sin(a) * 90);
 			const s = 1.2 + Math.sin(a) * 0.4;
 			ctx.scale(s, s);
-			drawBall(ctx, i, 9, null);
+			drawBall(ctx, i, 0.8);
 			ctx.restore();
 		}
 

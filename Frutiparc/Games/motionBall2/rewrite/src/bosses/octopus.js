@@ -15,9 +15,9 @@
  */
 
 import { WIDTH as W, HEIGHT as H, TILES_X, TILES_Y } from "../config.js";
-import { Boss, drawTinted, breakFloor, ARENA } from "./common.js";
+import { Boss, breakFloor, ARENA } from "./common.js";
+import { clip, drawClip } from "../gfx/xfl/index.js";
 import { angleDiff, dist2, decay, randInt, TAU } from "../engine/math.js";
-import { circle, sphere, text } from "../gfx/draw.js";
 import { app } from "../app.js";
 
 /** The original counted its waits in units of 25 frames. */
@@ -40,25 +40,43 @@ export class Octopus extends Boss {
 		// animation
 		this.anim = { name: "sleep", time: 0 };
 		this.pupil = { x: 0, y: 0 };
-		this.blink = 0;
 		this.pincers = 0;           // opening angle, degrees
 		this.suction = 0;           // size of the suction effect
 		this.particles = null;
+		this.art = clip("boss");
+		this.art.gotoAndStop("dodo");
 
 		game.ball.speedLimit = false;
 		app.audio.play("bossDeath");
 	}
 
+	/**
+	 * The animations of the "boss" symbol (Boss.as) : sleep = "dodo",
+	 * suck = "aspire" (loops), eat, spit = "throw", eyeless = "looseEye",
+	 * newEye, death ; the others show "normal".
+	 */
 	play(anim) {
 		this.anim = { name: anim, time: 0 };
+		const a = this.art;
+		switch (anim) {
+		case "sleep": a.gotoAndStop("dodo"); break;
+		case "suck": a.gotoAndPlay("aspire"); break;
+		case "eat": a.gotoAndPlay("eat"); break;
+		case "spit": a.gotoAndPlay("throw"); break;
+		case "eyeless": a.gotoAndPlay("looseEye"); break;
+		case "newEye": a.gotoAndPlay("newEye"); break;
+		case "death": a.gotoAndPlay("death"); break;
+		default:
+			a.gotoAndStop("normal");
+		}
 	}
 
 	// ----- every step -----
 
 	update(dt, game) {
 		this.anim.time += dt;
+		this.updateArt(dt);
 		this.alpha = Math.min(1, this.alpha + dt * 4);
-		this.blink = Math.max(0, this.blink - dt);
 		this.lookAt(game.ball, dt);
 
 		if (this.particles) {
@@ -104,7 +122,9 @@ export class Octopus extends Boss {
 		this.collide(dt, game);
 		if (s.name === "sleep" && s.time <= 3 * U && this.anim.name === "sleep") {
 			this.play("normal");
-			this.blink = 0.3;
+			const eye = this.art.child("oeil");
+			if (eye)
+				eye.gotoAndPlay("close");
 		}
 		if (s.time <= 0)
 			s.then === "attack" ? this.nextPattern(game) : s.then(game);
@@ -400,182 +420,65 @@ export class Octopus extends Boss {
 		const k = decay(0.9, dt);
 		this.pupil.x = this.pupil.x * k + x * (1 - k);
 		this.pupil.y = this.pupil.y * k + y * (1 - k);
-		if (this.anim.name !== "sleep" && this.blink <= 0 && Math.random() < dt)
-			this.blink = 0.3;
+		// (original : 1 chance in 40 per frame)
+		if (this.anim.name !== "sleep" && Math.random() < dt) {
+			const eye = this.art.child("oeil");
+			if (eye)
+				eye.play();
+		}
+	}
+
+	/** Moves the parts of the symbol that the code drives (Boss.as). */
+	updateArt(dt) {
+		const a = this.art;
+		a.update(dt);
+		a.set("p1", { rotation: this.pincers });
+		a.set("p2", { rotation: -this.pincers });
+		a.set("souffle", { xscale: this.suction, yscale: this.suction });
+		const p = this.pupil;
+		a.set("p", { x: p.x, y: p.y, xscale: 1 - Math.abs(p.x) / 100, yscale: 1 - Math.abs(p.y) * 1.5 / 100 });
+		// the body stretches with the jump
+		const body = a.child("b");
+		if (body)
+			body.gotoAndStop(Math.max(0, Math.round(this.jumpHeight / 5) - 1));
+		if (this.eyeArt)
+			this.eyeArt.update(dt);
 	}
 
 	renderShadow(ctx) {
 		if (this.particles && this.anim.time > 0.3)
 			return;
-		const s = 1 + this.jumpHeight / 300;
-		ctx.fillStyle = "rgba(40,0,60," + 0.3 * this.alpha + ")";
-		ctx.beginPath();
-		ctx.ellipse(this.x, this.y + 28, 44 * s, 14 * s, 0, 0, TAU);
-		ctx.fill();
+		drawClip(ctx, shade || (shade = clip("boss shade")), this.x, this.y, 0, 1 + this.jumpHeight / 300, this.alpha);
 	}
 
-	render(ctx, game) {
-		const a = this.anim;
-		let scale = 1;
-		let alpha = this.alpha;
-		if (a.name === "death") {
-			const k = Math.min(1, a.time / 1);
-			scale = 1 + k * 0.6;
-			alpha *= 1 - k;
-		} else if ((a.name === "eat" || a.name === "spit") && a.time < 0.35) {
-			scale = 1 + 0.13 * Math.sin(a.time / 0.35 * Math.PI);
-		}
+	render(ctx) {
+		// the red of the hits (original : a red offset of 60 per hit, + 100 while hurt)
+		const red = this.hits * 40 + Math.max(0, this.hurt / U) * 100;
+		ctx.save();
+		ctx.translate(this.x, this.y - this.jumpHeight);
+		ctx.globalAlpha *= this.alpha;
+		this.art.draw(ctx, red > 0 ? redOffset(red) : null);
+		ctx.restore();
 
-		if (alpha > 0) {
-			ctx.globalAlpha = alpha;
-			const redness = (this.hits * 40 + Math.max(0, this.hurt / U) * 100) / 255;
-			drawTinted(ctx, this.x, this.y - this.jumpHeight, 70, this.hits || this.hurt > 0 ? redness : 0, c => {
-				c.scale(scale, scale);
-				this.drawBody(c);
-			});
-			ctx.globalAlpha = 1;
-		}
-
-		if (this.eye)
-			drawThrownEye(ctx, this.eye, this.hits);
-		if (this.particles)
-			for (const p of this.particles)
-				sphere(ctx, p.x, p.y, 10 * p.scale, "#c070f0", "#5a1a8a", "#f0d0ff");
-	}
-
-	drawBody(ctx) {
-		const t = app.time * 5;
-		const name = this.anim.name;
-
-		// suction
-		if (this.suction > 0.05) {
-			ctx.strokeStyle = "rgba(255,255,255,0.5)";
-			ctx.lineWidth = 2;
-			for (let i = 0; i < 3; i++) {
-				const k = (t * 0.5 + i / 3) % 1;
-				ctx.beginPath();
-				ctx.arc(0, 25, (60 - k * 50) * this.suction, 0.2 * Math.PI, 0.8 * Math.PI);
-				ctx.stroke();
-			}
-		}
-
-		// tentacles
-		ctx.strokeStyle = "#7a36b0";
-		ctx.lineCap = "round";
-		for (let i = 0; i < 6; i++) {
-			const bx = -30 + i * 12;
-			const wave = Math.sin(t + i) * 6;
-			ctx.lineWidth = 9 - Math.abs(i - 2.5);
-			ctx.beginPath();
-			ctx.moveTo(bx, 10);
-			ctx.quadraticCurveTo(bx * 1.3 + wave, 30, bx * 1.5 - wave, 40 + (i % 2) * 4);
-			ctx.stroke();
-		}
-
-		// pincers
-		for (const side of [-1, 1]) {
+		if (this.eye) {
+			const e = this.eyeArt || (this.eyeArt = clip("boss tir"));
 			ctx.save();
-			ctx.translate(side * 24, 18);
-			ctx.rotate(-side * this.pincers * Math.PI / 180);
-			ctx.fillStyle = "#d06ae0";
-			ctx.strokeStyle = "#5a1a78";
-			ctx.lineWidth = 1.5;
-			ctx.beginPath();
-			ctx.moveTo(0, 0);
-			ctx.quadraticCurveTo(side * 16, 6, side * 10, 20);
-			ctx.quadraticCurveTo(side * 4, 12, 0, 8);
-			ctx.closePath();
-			ctx.fill();
-			ctx.stroke();
+			ctx.translate(this.eye.x, this.eye.y);
+			e.draw(ctx, this.hits ? redOffset(this.hits * 40) : null);
 			ctx.restore();
+		} else {
+			this.eyeArt = null;
 		}
-
-		// head
-		const g = ctx.createRadialGradient(-12, -22, 5, 0, -5, 48);
-		g.addColorStop(0, "#e2a4ff");
-		g.addColorStop(0.5, "#a650dc");
-		g.addColorStop(1, "#5a1a8a");
-		ctx.fillStyle = g;
-		ctx.beginPath();
-		ctx.ellipse(0, -6, 42, 34, 0, 0, TAU);
-		ctx.fill();
-		ctx.strokeStyle = "#4a1070";
-		ctx.lineWidth = 2;
-		ctx.stroke();
-		ctx.fillStyle = "rgba(255,255,255,0.18)";
-		for (const [x, y, r] of [[-26, -18, 5], [24, -22, 4], [30, 2, 3], [-30, 4, 3]]) {
-			circle(ctx, x, y, r);
-			ctx.fill();
+		if (this.particles) {
+			const c = particle || (particle = clip("bossParticule"));
+			for (const q of this.particles)
+				drawClip(ctx, c, q.x, q.y, 0, q.scale);
 		}
-
-		this.drawEye(ctx, name);
-
-		if (name === "sleep")
-			text(ctx, "z", 30 + Math.sin(t) * 3, -40 - (t * 4 % 12), { size: 14, color: "#fff" });
-	}
-
-	drawEye(ctx, name) {
-		if (this.eye || name === "eyeless") {
-			ctx.fillStyle = "#3a0858";
-			ctx.beginPath();
-			ctx.ellipse(0, -6, 16, 13, 0, 0, TAU);
-			ctx.fill();
-			return;
-		}
-		const grow = name === "newEye" ? Math.min(1, this.anim.time / 0.25) : 1;
-		ctx.save();
-		ctx.translate(0, -6);
-		ctx.scale(grow, grow);
-		sphere(ctx, 0, 0, 16, "#ffffff", "#c8b8d8", "#ffffff");
-
-		const p = this.pupil;
-		ctx.save();
-		ctx.translate(p.x * 0.3, p.y * 0.5);
-		ctx.scale(Math.max(0.3, 1 - Math.abs(p.x) / 100), Math.max(0.3, 1 - Math.abs(p.y) * 1.5 / 100));
-		sphere(ctx, 0, 0, 8, "#e0304a", "#6a0010");
-		ctx.fillStyle = "#000";
-		circle(ctx, 0, 0, 3.5);
-		ctx.fill();
-		ctx.restore();
-
-		// eyelid : closed when asleep, or blinking
-		const lid = name === "sleep" ? 1 : this.blink > 0 ? Math.sin(this.blink / 0.3 * Math.PI) : 0;
-		if (lid > 0) {
-			ctx.fillStyle = "#9a48cc";
-			ctx.beginPath();
-			ctx.ellipse(0, -16 + 16 * lid, 17, 16 * lid + 0.1, 0, Math.PI, TAU);
-			ctx.rect(-17, -17, 34, 1 + 16 * lid);
-			ctx.fill();
-			if (lid === 1) {
-				ctx.strokeStyle = "#4a1070";
-				ctx.lineWidth = 2;
-				ctx.beginPath();
-				ctx.arc(0, -2, 12, 0.15 * Math.PI, 0.85 * Math.PI);
-				ctx.stroke();
-			}
-		}
-		ctx.restore();
 	}
 }
 
-/** The thrown eye, looking where it goes. */
-function drawThrownEye(ctx, eye, hits) {
-	const a = Math.atan2(eye.vy, eye.vx);
-	drawTinted(ctx, eye.x, eye.y, 16, hits * 40 / 255, c => {
-		sphere(c, 0, 0, 13, "#ffffff", "#b8a8c8");
-		sphere(c, Math.cos(a) * 5, Math.sin(a) * 5, 6, "#e0304a", "#6a0010");
-		c.fillStyle = "#000";
-		circle(c, Math.cos(a) * 6, Math.sin(a) * 6, 2.5);
-		c.fill();
-		c.strokeStyle = "rgba(200,40,60,0.5)";
-		c.lineWidth = 1;
-		for (let i = 0; i < 4; i++) {
-			const b = a + Math.PI + (i - 1.5) * 0.4;
-			c.beginPath();
-			c.moveTo(Math.cos(b) * 12, Math.sin(b) * 12);
-			c.lineTo(Math.cos(b) * 5, Math.sin(b) * 5);
-			c.stroke();
-		}
-	});
-}
+let shade = null;
+let particle = null;
 
+/** A colour transform adding red. */
+const redOffset = red => ({ am: 1, rm: 1, gm: 1, bm: 1, ao: 0, ro: Math.min(255, red), go: 0, bo: 0 });

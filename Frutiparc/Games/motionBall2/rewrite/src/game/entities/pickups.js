@@ -1,6 +1,6 @@
 /**
  * What the ball collects : pastilles, balls, item boxes, and the Classique
- * hatch. Also the teleports.
+ * hatch. Also the teleports. All drawn with the original symbols.
  *
  * Pastilles and balls are collected by distance (the ball rolls over them),
  * item boxes by collision.
@@ -9,12 +9,9 @@
 import { Entity, Layer } from "../entity.js";
 import { BOUNCE } from "../physics.js";
 import { Item } from "../../data/enums.js";
-import { circle, roundRect, sphere, shine, sprite, drawSprite, dropShadow } from "../../gfx/draw.js";
-import { drawItemIcon } from "../../gfx/icons.js";
-import { drawBall } from "../ball.js";
-import { dist2, ease } from "../../engine/math.js";
+import { dist2 } from "../../engine/math.js";
+import { clip, drawClip } from "../../gfx/xfl/index.js";
 import { app } from "../../app.js";
-import { Burst, Ring } from "./effects.js";
 
 /** Distance (squared) under which the ball takes a pastille (original : 300). */
 const TAKE_DIST2 = 300;
@@ -31,16 +28,20 @@ export class Pastille extends Entity {
 		this.red = red;
 		this.data = data;
 		this.taken = false;
+		// "red" / "blue" : stopped, then "hit" plays and removes itself
+		this.art = clip(red ? "red" : "blue");
 	}
 
 	update(dt, game) {
+		this.art.update(dt);
+		if (this.art.removed)
+			this.dead = true;
 		const ball = game.ball;
 		if (this.taken || ball.falling || dist2(this.x, this.y, ball.x, ball.y) >= TAKE_DIST2)
 			return;
 		this.taken = true;
-		this.dead = true;
 		this.data.taken = true;
-		game.room.add(new Burst(this.x, this.y, this.red ? "#ff5040" : "#ffd040"));
+		this.art.gotoAndPlay("hit");
 		if (this.red) {
 			app.audio.play("red");
 			game.room.redTaken(game);
@@ -51,29 +52,8 @@ export class Pastille extends Entity {
 	}
 
 	render(ctx) {
-		drawSprite(ctx, this.red ? redSprite() : blueSprite(), this.x, this.y);
+		drawClip(ctx, this.art, this.x, this.y);
 	}
-}
-
-function redSprite() {
-	return sprite("red", 26, 26, ctx => {
-		const halo = ctx.createRadialGradient(0, 0, 4, 0, 0, 12);
-		halo.addColorStop(0, "rgba(255,255,255,0.9)");
-		halo.addColorStop(1, "rgba(255,255,255,0)");
-		ctx.fillStyle = halo;
-		circle(ctx, 0, 0, 12);
-		ctx.fill();
-		sphere(ctx, 0, 0, 7, "#ff2a2a", "#8a0000", "#ffd0d0");
-	});
-}
-
-function blueSprite() {
-	return sprite("blue", 26, 26, ctx => {
-		ctx.fillStyle = "rgba(60,0,60,0.25)";
-		circle(ctx, 2, 2, 6);
-		ctx.fill();
-		sphere(ctx, 0, 0, 6, "#ffcc22", "#b06a00", "#fff6c0");
-	});
 }
 
 /**
@@ -85,13 +65,21 @@ export class Hatch extends Entity {
 	constructor(x, y) {
 		super(x, y, Layer.ITEM);
 		this.itemType = Item.HATCH;
-		this.open = 0;          // 0 closed .. 1 open
+		this.open = 0;          // 1 once open
 		this.opening = false;
+		// "exit" : "close", then "anim_open" ; its script sets flOpen at the end
+		this.art = clip("exit");
+		this.art.stop();
 	}
 
 	update(dt, game) {
-		if (this.opening)
-			this.open = Math.min(1, this.open + dt / 0.33);
+		if (this.opening && !this.started) {
+			this.started = true;
+			this.art.gotoAndPlay("anim_open");
+		}
+		this.art.update(dt);
+		if (this.art.vars.flOpen)
+			this.open = 1;
 
 		const ball = game.ball;
 		if (this.open < 1 || ball.falling || dist2(this.x, this.y, ball.x, ball.y) >= TAKE_DIST2)
@@ -101,101 +89,51 @@ export class Hatch extends Entity {
 	}
 
 	render(ctx) {
-		ctx.save();
-		ctx.translate(this.x, this.y);
-		ctx.fillStyle = "#2a0c40";
-		roundRect(ctx, -17, -17, 34, 34, 8);
-		ctx.fill();
-		const g = ctx.createRadialGradient(0, 0, 2, 0, 0, 16);
-		g.addColorStop(0, "#000");
-		g.addColorStop(1, "#4a1a6a");
-		ctx.fillStyle = g;
-		circle(ctx, 0, 0, 14);
-		ctx.fill();
-
-		// the two flaps slide apart
-		const open = ease.inOutQuad(this.open);
-		if (open < 1) {
-			ctx.save();
-			ctx.beginPath();
-			ctx.rect(-17, -17, 34, 34);
-			ctx.clip();
-			ctx.fillStyle = "#d8a8f0";
-			ctx.strokeStyle = "#7a3a9a";
-			ctx.lineWidth = 1.5;
-			roundRect(ctx, -17 - open * 17, -17, 17, 34, 5);
-			ctx.fill();
-			ctx.stroke();
-			roundRect(ctx, open * 17, -17, 17, 34, 5);
-			ctx.fill();
-			ctx.stroke();
-			ctx.restore();
-		}
-
-		ctx.strokeStyle = this.open >= 1 ? "#7cff4a" : "#b070d8";
-		ctx.lineWidth = 2;
-		roundRect(ctx, -18, -18, 36, 36, 8);
-		ctx.stroke();
-		ctx.restore();
+		drawClip(ctx, this.art, this.x, this.y);
 	}
 }
 
-/** A ball to collect, floating in the middle of a room. */
+/** A ball to collect, in the middle of a room ("ballbox" ; its child "ball" shows the colour). */
 export class BallPickup extends Entity {
 
 	constructor(x, y, ballType) {
 		super(x, y, Layer.ITEM);
 		this.ballType = ballType;
-		this.taken = -1;       // seconds since taken, -1 = not yet
+		this.taken = false;
+		this.art = clip("ballbox");
+		const ball = this.art.child("ball");
+		if (ball)
+			ball.gotoAndStop(ballType);
 	}
 
 	update(dt, game) {
-		if (this.taken >= 0) {
-			this.taken += dt;
-			if (this.taken > 0.4)
-				this.dead = true;
+		this.art.update(dt);
+		if (this.art.removed)
+			this.dead = true;
+		if (this.taken)
 			return;
-		}
 		const ball = game.ball;
 		if (!ball.falling && dist2(this.x, this.y, ball.x, ball.y) < 24 * 24) {
-			this.taken = 0;
+			this.taken = true;
+			this.art.gotoAndPlay("hit");
 			app.audio.play("found");
 			game.collectBall(this.ballType);
 		}
 	}
 
 	render(ctx) {
-		const t = app.time * 2.7;
-		const k = this.taken < 0 ? 0 : this.taken / 0.4;
-		ctx.save();
-		ctx.translate(this.x, this.y);
-		ctx.globalAlpha = 1 - k;
-
-		const r = 24 + k * 20;
-		const g = ctx.createRadialGradient(0, 0, 4, 0, 0, r);
-		g.addColorStop(0, "rgba(255,255,255,0.8)");
-		g.addColorStop(0.5, "rgba(255,255,255,0.25)");
-		g.addColorStop(1, "rgba(255,255,255,0)");
-		ctx.fillStyle = g;
-		circle(ctx, 0, 0, r);
-		ctx.fill();
-
-		ctx.strokeStyle = "rgba(255,255,255,0.6)";
-		ctx.lineWidth = 1.5;
-		circle(ctx, 0, 0, 20 + Math.sin(t) * 2);
-		ctx.stroke();
-
-		ctx.translate(0, Math.sin(t * 1.3) * 2);
-		drawBall(ctx, this.ballType, 9, null);
-		ctx.restore();
+		drawClip(ctx, this.art, this.x, this.y);
 	}
 }
 
-/** An item box : a bubble holding an item, which bursts when hit. */
+/**
+ * An item box ("itembox" ; its child "item" shows the item) : it bursts when
+ * the ball hits it, and gives its item.
+ */
 export class ItemBox extends Entity {
 
 	/**
-	 * @param icon    the item shown (gfx/icons.js Icon)
+	 * @param icon    the item : 0 map, 1 radar, 2 small time, 3 big time, 4 key
 	 * @param give    (game) => void : gives the item
 	 */
 	constructor(x, y, icon, give) {
@@ -205,55 +143,29 @@ export class ItemBox extends Entity {
 		this.shape = { kind: "circle", x, y, r: 22 };
 		this.solid = true;
 		this.bounce = BOUNCE.itemBox;
-		this.burst = -1;
+		this.art = clip("itembox");
+		const item = this.art.child("item");
+		if (item)
+			item.gotoAndStop(icon);
 	}
 
 	onHit(game) {
-		if (this.burst >= 0)
+		if (!this.solid)
 			return;
-		this.burst = 0;
 		this.solid = false;
+		this.art.gotoAndPlay("hit");
 		app.audio.play("found");
-		game.room.add(new Ring(this.x, this.y, 40, "#fff"));
 		this.give(game);
 	}
 
 	update(dt) {
-		if (this.burst >= 0) {
-			this.burst += dt;
-			if (this.burst > 0.4)
-				this.dead = true;
-		}
-	}
-
-	renderShadow(ctx) {
-		if (this.burst < 0)
-			dropShadow(ctx, this.x, this.y, 20, 0.15);
+		this.art.update(dt);
+		if (this.art.removed)
+			this.dead = true;
 	}
 
 	render(ctx) {
-		ctx.save();
-		ctx.translate(this.x, this.y);
-		if (this.burst < 0) {
-			const g = ctx.createRadialGradient(-6, -8, 3, 0, 0, 23);
-			g.addColorStop(0, "rgba(255,255,255,0.9)");
-			g.addColorStop(0.6, "rgba(200,240,255,0.35)");
-			g.addColorStop(1, "rgba(120,200,255,0.6)");
-			ctx.fillStyle = g;
-			circle(ctx, 0, 0, 23);
-			ctx.fill();
-			ctx.strokeStyle = "rgba(255,255,255,0.8)";
-			ctx.lineWidth = 1.5;
-			ctx.stroke();
-			drawItemIcon(ctx, this.icon, 1 + 0.08 * Math.sin(app.time * 6));
-			shine(ctx, 0, 0, 22, 0.55);
-		} else {
-			// the item grows and fades
-			const k = this.burst / 0.4;
-			ctx.globalAlpha = 1 - k;
-			drawItemIcon(ctx, this.icon, 1 + k);
-		}
-		ctx.restore();
+		drawClip(ctx, this.art, this.x, this.y);
 	}
 }
 
@@ -281,6 +193,11 @@ export class Teleport extends Entity {
 	}
 
 	update(dt, game) {
+		if (!this.art) {
+			this.art = clip("bteleport");
+			this.art.set("c0", { visible: false });
+		}
+		this.art.update(dt);
 		const ball = game.ball;
 		const d = Math.sqrt(dist2(this.x, this.y, ball.x, ball.y)) + 0.1;
 
@@ -305,29 +222,26 @@ export class Teleport extends Entity {
 		ball.y = other.y;
 	}
 
+	/**
+	 * "bteleport", whose circle "c0" the original duplicated 5 times and
+	 * turned / stretched by code (Level.as, Collide.bumper_teleport_on_update).
+	 */
 	render(ctx) {
-		ctx.save();
-		ctx.translate(this.x, this.y);
-		const g = ctx.createRadialGradient(0, 0, 2, 0, 0, 24);
-		g.addColorStop(0, "rgba(255,255,255,0.95)");
-		g.addColorStop(0.4, "rgba(210,150,255,0.6)");
-		g.addColorStop(1, "rgba(120,40,200,0)");
-		ctx.fillStyle = g;
-		circle(ctx, 0, 0, 24);
-		ctx.fill();
-
-		ctx.strokeStyle = "rgba(255,255,255,0.75)";
-		ctx.lineWidth = 1.5;
+		if (!this.art)
+			return;
+		drawClip(ctx, this.art, this.x, this.y);
+		const circle = this.art.child("c0");
+		if (!circle || this.art.frame >= 48)
+			return;
 		for (const c of this.circles) {
 			ctx.save();
+			ctx.translate(this.x, this.y);
 			ctx.rotate(c.angle);
 			ctx.scale(1 + Math.cos(c.phase) * 0.5, 1 + Math.sin(c.phase) * 0.5);
 			ctx.rotate(c.tilt);
-			ctx.beginPath();
-			ctx.ellipse(0, c.offset, 14, 8, 0, 0, Math.PI * 1.3);
-			ctx.stroke();
+			ctx.translate(0, c.offset);
+			circle.draw(ctx);
 			ctx.restore();
 		}
-		ctx.restore();
 	}
 }

@@ -10,23 +10,28 @@
 import { Entity, Layer } from "../entity.js";
 import { BOUNCE } from "../physics.js";
 import { Item, BALL_TYPE_COUNT } from "../../data/enums.js";
-import { BALL_COLORS, circle, sphere, sprite, drawSprite, dropShadow } from "../../gfx/draw.js";
+import { BALL_COLORS } from "../../gfx/draw.js";
+import { clip, drawClip } from "../../gfx/xfl/index.js";
+import { drawItemShadow } from "./bumpers.js";
 import { app } from "../../app.js";
 import { Spark, BeamFlash } from "./effects.js";
 
 export class Zapper extends Entity {
 
-	/** @param cellX, cellY  the position in the level data (gives the phase) */
-	constructor(x, y, cellX, cellY, checkpoint) {
+	/**
+	 * @param cellX, cellY  the position in the level data (gives the phase)
+	 * @param cells         the size of the symbol in cells
+	 */
+	constructor(x, y, cellX, cellY, cells, checkpoint) {
 		super(x, y, Layer.OBJECT);
 		this.itemType = Item.ZAPPER;
 		this.shape = { kind: "circle", x, y, r: 14 };
 		this.solid = true;
 		this.bounce = BOUNCE.zapper;
 		this.checkpoint = checkpoint;
-		// the colour depends on the position (4 = half the size of the post, in cells)
-		this.phase = checkpoint ? 0 : (((cellX - 4) + (cellY - 4)) % BALL_TYPE_COUNT + BALL_TYPE_COUNT) % BALL_TYPE_COUNT;
-		this.blink = x;   // desynchronises the lights
+		// the colour depends on the position (original : ((x - w/2) + (y - h/2)) % 7)
+		const p = (cellX - cells.w / 2) + (cellY - cells.h / 2);
+		this.phase = checkpoint ? 0 : ((p % BALL_TYPE_COUNT) + BALL_TYPE_COUNT) % BALL_TYPE_COUNT;
 	}
 
 	onHit(game, contact) {
@@ -35,49 +40,22 @@ export class Zapper extends Entity {
 	}
 
 	renderShadow(ctx) {
-		dropShadow(ctx, this.x, this.y, 14);
+		drawItemShadow(ctx, Item.ZAPPER, this.x, this.y);
 	}
 
+	/** The "zapper" symbol : a frame per colour ; in Course mode, "checkpoint". */
 	render(ctx) {
-		if (this.checkpoint) {
-			drawSprite(ctx, checkpointSprite(), this.x, this.y);
-			return;
+		if (!this.art) {
+			this.art = clip(this.checkpoint ? "checkpoint" : "zapper");
+			this.art.gotoAndStop(this.checkpoint ? "off" : this.phase);
 		}
-		drawSprite(ctx, postSprite(this.phase), this.x, this.y);
-		const t = app.time * 6 + this.blink;
-		ctx.fillStyle = "rgba(255,255,255," + (0.3 + 0.3 * Math.sin(t)) + ")";
-		circle(ctx, this.x, this.y, 9);
-		ctx.fill();
+		drawClip(ctx, this.art, this.x, this.y);
 	}
-}
 
-function postSprite(phase) {
-	return sprite("zapper" + phase, 32, 32, ctx => {
-		const col = BALL_COLORS[phase];
-		sphere(ctx, 0, 0, 14, "#dcdce6", "#4a4a5a");
-		ctx.strokeStyle = "#3a3a48";
-		ctx.lineWidth = 1;
-		circle(ctx, 0, 0, 14);
-		ctx.stroke();
-		sphere(ctx, 0, 0, 8, col[0], col[1], col[2]);
-	});
-}
-
-function checkpointSprite() {
-	return sprite("checkpoint", 32, 32, ctx => {
-		sphere(ctx, 0, 0, 14, "#fff4b0", "#b08400");
-		ctx.strokeStyle = "#7a5a00";
-		ctx.lineWidth = 1;
-		circle(ctx, 0, 0, 14);
-		ctx.stroke();
-		// chequered flag
-		for (let i = 0; i < 4; i++) {
-			for (let j = 0; j < 3; j++) {
-				ctx.fillStyle = (i + j) % 2 ? "#222" : "#fff";
-				ctx.fillRect(-6 + i * 3, -5 + j * 3, 3, 3);
-			}
-		}
-	});
+	update(dt) {
+		if (this.art)
+			this.art.update(dt);
+	}
 }
 
 /** A laser beam between two posts of the same phase. */

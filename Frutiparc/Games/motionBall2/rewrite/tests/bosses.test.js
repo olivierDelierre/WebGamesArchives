@@ -50,6 +50,7 @@ test("octopus : sending its eye back hurts it", () => {
 	run(g, 0.3, invulnerable);
 	const eye = o.eye;
 	const d = Math.hypot(eye.vx, eye.vy);
+	g.ball.fall = null;
 	g.ball.placeAt(eye.x + eye.vx / d * 30, eye.y + eye.vy / d * 30);
 	g.ball.vx = -eye.vx;
 	g.ball.vy = -eye.vy;
@@ -119,7 +120,10 @@ test("snake : its tail kills", () => {
 		g.ball.placeAt(305, 380);
 	});
 	const tail = s.parts[s.parts.length - 1];
+	// (away from the head, which is tested first)
+	s.parts[0].x = tail.x + 500;
 	g.ball.invulnerable = 0;
+	g.ball.fall = null;
 	g.ball.placeAt(tail.x, tail.y);
 	s.collide(g);
 	assert.ok(g.ball.falling);

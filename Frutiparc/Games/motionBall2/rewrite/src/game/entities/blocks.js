@@ -71,8 +71,9 @@ export class GreenBlock extends Entity {
  */
 export class SwitchBlock extends Entity {
 
-	constructor(x, y, pink) {
-		super(x + TILE / 2, y + TILE / 2, Layer.FLOOR);
+	/** x, y = the top-left corner of the collision box ; artX, artY = where the symbol is drawn */
+	constructor(x, y, pink, artX = x + TILE / 2, artY = y + TILE / 2) {
+		super(artX, artY, Layer.FLOOR);
 		this.itemType = pink ? Item.PINK_BLOCK : Item.BLUE_BLOCK;
 		this.pink = pink;
 		this.left = x;
@@ -144,10 +145,11 @@ export class Switch extends Entity {
 	}
 
 	renderShadow(ctx) {
-		drawItemShadow(ctx, Item.SWITCH, this.x, this.y);
+		drawItemShadow(ctx, Item.SWITCH, this.x - 2, this.y - 2);
 	}
 
+	/** (the original draws the switch 2 pixels up-left of its collision) */
 	render(ctx) {
-		drawClip(ctx, this.art, this.x, this.y);
+		drawClip(ctx, this.art, this.x - 2, this.y - 2);
 	}
 }

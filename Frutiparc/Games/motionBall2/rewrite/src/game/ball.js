@@ -16,7 +16,7 @@ import { BallType, Item } from "../data/enums.js";
 import { Entity, Layer } from "./entity.js";
 import { collideBall } from "./physics.js";
 import { decay, randInt, TAU } from "../engine/math.js";
-import { BALL_COLORS, circle, sphere, shine } from "../gfx/draw.js";
+import { clip, drawClip } from "../gfx/xfl/index.js";
 import { app } from "../app.js";
 
 const MAX_SUBSTEP = 4;
@@ -71,16 +71,28 @@ export class Ball extends Entity {
 		return BALLS[this.type];
 	}
 
+	/**
+	 * Changes the colour : the "marble" symbol shows it, and a few "stone"
+	 * clips roll on it (frames random(4) + 10 x colour), like Ball.as.
+	 */
 	setType(type) {
 		this.type = type;
 		const s = SPOTS[type];
 		this.spots = [];
 		for (let i = 0; i < s.count; i++) {
+			const art = clip("stone");
+			art.gotoAndStop(randInt(4) + type * 10);
+			if (type === BallType.VIOLET) {
+				const sparkle = art.child("eclat");
+				if (sparkle)
+					sparkle.gotoAndPlay(randInt(30));
+			}
 			this.spots.push({
 				u: Math.random() * TAU,
 				v: Math.random() * TAU,
 				ray: s.min + randInt(s.max - s.min + 1),
-				size: 1 + Math.random() * 1.6
+				rotation: Math.random() * TAU,
+				art
 			});
 		}
 	}
@@ -201,6 +213,7 @@ export class Ball extends Entity {
 	/** Fakes the rolling : each spot turns around the ball with the speed. */
 	roll(dt) {
 		for (const s of this.spots) {
+			s.art.update(dt);
 			// (original : 10 x the speed per frame, on a circle of 628 = 2 PI x 100)
 			s.u = (s.u + this.vx * dt * 0.1) % TAU;
 			s.v = (s.v + this.vy * dt * 0.1) % TAU;
@@ -336,9 +349,7 @@ export class Ball extends Entity {
 	renderShadow(ctx) {
 		if (this.hidden || this.fall)
 			return;
-		ctx.fillStyle = "rgba(40,0,70,0.3)";
-		circle(ctx, this.x + 3, this.y + 3, this.radius);
-		ctx.fill();
+		drawClip(ctx, shadowClip || (shadowClip = clip("shadow")), this.x + 3, this.y + 3);
 	}
 
 	render(ctx) {
@@ -356,45 +367,54 @@ export class Ball extends Entity {
 			this.fall.clip(ctx);
 			ctx.clip();
 		}
+		// (original : x / y scale 100 % + 3 % per pixel of jump)
 		const scale = (this.fall ? this.fall.scale : 1) * (1 + this.height * 0.03);
 		ctx.translate(this.x, this.y - this.height);
 		ctx.scale(scale, scale);
-		drawBall(ctx, this.type, this.radius, this.spots);
+		drawBall(ctx, this.type, 1, this.spots);
 		ctx.restore();
 		ctx.globalAlpha = 1;
 	}
 }
 
-/** A ball with its rolling spots, centred on (0, 0). Also used by the HUD and the menus. */
-export function drawBall(ctx, type, r, spots) {
-	const col = BALL_COLORS[type];
-	sphere(ctx, 0, 0, r + 1, col[0], col[1], col[2]);
+let shadowClip = null;
+const marbles = [];
+let light = null;
+
+/**
+ * A ball, centred on (0, 0) (also used by the menus) : the "marble" symbol
+ * (a frame per colour), the rolling stones clipped to its "round" mask
+ * (radius 12), and the "light" reflection on top. `scale` : 1 = the size of
+ * the game's ball.
+ */
+export function drawBall(ctx, type, scale = 1, spots = null) {
+	const marble = marbles[type] || (marbles[type] = clip("marble"));
+	marble.gotoAndStop(type);
+	ctx.save();
+	if (scale !== 1)
+		ctx.scale(scale, scale);
+	marble.draw(ctx);
 
 	if (spots && spots.length) {
 		ctx.save();
-		circle(ctx, 0, 0, r);
+		ctx.beginPath();
+		ctx.arc(0, 0, 12, 0, TAU);
 		ctx.clip();
-		ctx.fillStyle = SPOTS[type].color;
 		for (const s of spots) {
-			// a spot on the sphere : visible on the front half only
-			const x = Math.cos(s.u) * s.ray / 2;
-			const y = Math.sin(s.v) * s.ray / 2;
+			// (original : alpha = 50 + (xc + yc) x ray / BALL_RAYSIZE x 50 %)
 			const front = Math.cos(s.u + Math.PI / 2) + Math.cos(s.v + Math.PI / 2);
 			const alpha = 0.5 + front * (s.ray / BALL_RADIUS) * 0.5;
-			if (alpha <= 0.05)
+			if (alpha <= 0.01)
 				continue;
-			ctx.globalAlpha = Math.min(1, alpha) * 0.8;
-			circle(ctx, x, y, s.size);
-			ctx.fill();
+			ctx.save();
+			ctx.globalAlpha *= Math.min(1, alpha);
+			ctx.translate(Math.cos(s.u) * s.ray / 2, Math.sin(s.v) * s.ray / 2);
+			ctx.rotate(s.rotation);
+			s.art.draw(ctx);
+			ctx.restore();
 		}
 		ctx.restore();
 	}
-
-	if (type === BallType.METAL) {
-		ctx.strokeStyle = "rgba(255,255,255,0.5)";
-		ctx.lineWidth = 1;
-		circle(ctx, 0, 0, r * 0.6);
-		ctx.stroke();
-	}
-	shine(ctx, 0, 0, r, 0.75);
+	(light || (light = clip("light"))).draw(ctx);
+	ctx.restore();
 }
