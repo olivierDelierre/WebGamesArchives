@@ -7,7 +7,8 @@ import { Entity, Layer } from "../entity.js";
 import { BOUNCE } from "../physics.js";
 import { BallType, Item } from "../../data/enums.js";
 import { TILE } from "../../config.js";
-import { image, roundRect, sphere, shine, circle } from "../../gfx/draw.js";
+import { clip, drawClip } from "../../gfx/xfl/index.js";
+import { drawItemShadow } from "./bumpers.js";
 import { app } from "../../app.js";
 import { Spark, Debris } from "./effects.js";
 
@@ -55,44 +56,11 @@ export class GreenBlock extends Entity {
 		}
 	}
 
+	/** The "wall" symbol : one frame per combination of neighbours, so that they merge. */
 	render(ctx) {
-		const f = this.neighbours;
-		const EXT = 6;
-		const x0 = this.left;
-		const y0 = this.top;
-		// sides touching another block are extended under it, so the blocks merge
-		const left = (f & 1) ? -EXT : 1;
-		const up = (f & 2) ? -EXT : 1;
-		const right = (f & 4) ? TILE + EXT : TILE - 1;
-		const down = (f & 8) ? TILE + EXT : TILE - 1;
-
-		ctx.save();
-		ctx.beginPath();
-		ctx.rect(x0, y0, TILE, TILE);
-		ctx.clip();
-		const g = ctx.createLinearGradient(x0, y0, x0 + TILE, y0 + TILE);
-		g.addColorStop(0, "#b4f0a0");
-		g.addColorStop(1, "#8fdc78");
-		ctx.fillStyle = g;
-		roundRect(ctx, x0 + left, y0 + up, right - left, down - up, 8);
-		ctx.fill();
-		ctx.lineWidth = 1.5;
-		ctx.strokeStyle = "#62b24a";
-		ctx.stroke();
-
-		// soft highlight in the top-left corner of a group of blocks
-		if (!(f & 1) && !(f & 2)) {
-			ctx.strokeStyle = "rgba(255,255,255,0.75)";
-			ctx.lineWidth = 2.5;
-			ctx.lineCap = "round";
-			ctx.beginPath();
-			ctx.moveTo(x0 + left + 4, y0 + up + 16);
-			ctx.lineTo(x0 + left + 4, y0 + up + 10);
-			ctx.quadraticCurveTo(x0 + left + 4, y0 + up + 4, x0 + left + 10, y0 + up + 4);
-			ctx.lineTo(x0 + left + 16, y0 + up + 4);
-			ctx.stroke();
-		}
-		ctx.restore();
+		const c = this.art || (this.art = clip("wall"));
+		c.gotoAndStop(this.neighbours);
+		drawClip(ctx, c, this.x, this.y);
 	}
 }
 
@@ -111,7 +79,9 @@ export class SwitchBlock extends Entity {
 		this.top = y;
 		this.shape = { kind: "box", x, y, w: TILE, h: TILE };
 		this.bounce = BOUNCE.block;
-		this.raised = 0;          // 0 lowered .. 1 raised (animated)
+		this.solid = null;
+		// the symbol : "off" = up, "on" = down, "playOff" / "playOn" go there
+		this.art = clip(pink ? "interred" : "interblue");
 	}
 
 	isUp(game) {
@@ -120,9 +90,13 @@ export class SwitchBlock extends Entity {
 
 	update(dt, game) {
 		const up = this.isUp(game);
+		if (this.solid === null)
+			this.art.gotoAndStop(up ? "off" : "on");
+		else if (up !== this.solid)
+			this.art.gotoAndPlay(up ? "playOff" : "playOn");
 		this.solid = up;
-		this.raised = Math.max(0, Math.min(1, this.raised + (up ? dt : -dt) * 5));
-		this.layer = this.raised > 0.5 ? Layer.BLOCK : Layer.FLOOR;
+		this.layer = up ? Layer.BLOCK : Layer.FLOOR;
+		this.art.update(dt);
 	}
 
 	onHit(game, contact) {
@@ -131,13 +105,7 @@ export class SwitchBlock extends Entity {
 	}
 
 	render(ctx) {
-		const color = this.pink ? "pink" : "blue";
-		image(ctx, "inter_low_" + color, TILE, TILE, this.left, this.top);
-		if (this.raised > 0) {
-			ctx.globalAlpha = this.raised;
-			image(ctx, "inter_high_" + color, TILE, TILE, this.left, this.top - 3 * this.raised);
-			ctx.globalAlpha = 1;
-		}
+		drawClip(ctx, this.art, this.x, this.y);
 	}
 }
 
@@ -151,7 +119,8 @@ export class Switch extends Entity {
 		this.solid = true;
 		this.bounce = BOUNCE.block;
 		this.cooldown = 0;
-		this.angle = 0;
+		this.on = null;
+		this.art = clip("interupt");
 	}
 
 	onHit(game, contact) {
@@ -166,36 +135,19 @@ export class Switch extends Entity {
 
 	update(dt, game) {
 		this.cooldown = Math.max(0, this.cooldown - dt);
-		// the disc turns half a turn at each toggle
-		const target = game.switchOn ? Math.PI : 0;
-		this.angle += (target - this.angle) * Math.min(1, dt * 10);
+		if (this.on === null)
+			this.art.gotoAndStop(game.switchOn ? "on" : "off");
+		else if (this.on !== game.switchOn)
+			this.art.gotoAndPlay(game.switchOn ? "playOn" : "playOff");
+		this.on = game.switchOn;
+		this.art.update(dt);
 	}
 
 	renderShadow(ctx) {
-		ctx.fillStyle = "rgba(40,0,70,0.22)";
-		circle(ctx, this.x + 4, this.y + 5, 14);
-		ctx.fill();
+		drawItemShadow(ctx, Item.SWITCH, this.x, this.y);
 	}
 
 	render(ctx) {
-		ctx.save();
-		ctx.translate(this.x, this.y);
-		sphere(ctx, 0, 0, 15, "#e8e4f0", "#7a7288");
-		ctx.rotate(this.angle);
-		ctx.fillStyle = "#ff6ec8";
-		ctx.beginPath();
-		ctx.arc(0, 0, 10, -Math.PI / 2, Math.PI / 2);
-		ctx.fill();
-		ctx.fillStyle = "#5a6cff";
-		ctx.beginPath();
-		ctx.arc(0, 0, 10, Math.PI / 2, Math.PI * 1.5);
-		ctx.fill();
-		ctx.rotate(-this.angle);
-		ctx.strokeStyle = "#4a4458";
-		ctx.lineWidth = 1.5;
-		circle(ctx, 0, 0, 10);
-		ctx.stroke();
-		shine(ctx, 0, 0, 14, 0.5);
-		ctx.restore();
+		drawClip(ctx, this.art, this.x, this.y);
 	}
 }

@@ -11,7 +11,9 @@ export class ImageStore {
 	}
 
 	/**
-	 * @param {string[]} files  file names, e.g. "bg01.jpg" (the name is the file name without extension)
+	 * @param {string[]} files  file names of the base folder, e.g. "bg01.jpg" (the name is the file
+	 *                          name without extension), or paths with a folder, e.g.
+	 *                          "assets/xfl/mb2/b3.png" (the name is the path itself)
 	 * @param {(p: number) => void} progress
 	 */
 	load(files, progress) {
@@ -22,15 +24,16 @@ export class ImageStore {
 				progress(++done / files.length);
 				resolve();
 			};
+			const isPath = file.includes("/");
 			img.onload = () => {
-				this.images.set(file.replace(/\.[a-z]+$/, ""), img);
+				this.images.set(isPath ? file : file.replace(/\.[a-z]+$/, ""), img);
 				finish();
 			};
 			img.onerror = () => {
 				console.warn("image", file, "not loaded");
 				finish();
 			};
-			img.src = this.basePath + file;
+			img.src = isPath ? file : this.basePath + file;
 		})));
 	}
 

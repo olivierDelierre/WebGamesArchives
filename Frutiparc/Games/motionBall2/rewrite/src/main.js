@@ -17,6 +17,7 @@ import { text } from "./gfx/draw.js";
 import { TitleScene } from "./scenes/title.js";
 import { applySettings } from "./scenes/menu.js";
 import { PlayScene } from "./scenes/play.js";
+import { xflBitmapFiles } from "./gfx/xfl/index.js";
 
 const IMAGES = [
 	"bg01.jpg", "bg02.jpg", "bg03.jpg", "bg04.jpg", "bgHole.jpg",
@@ -79,7 +80,7 @@ function start() {
 
 	const fonts = document.fonts ? document.fonts.ready.catch(() => { }) : Promise.resolve();
 	Promise.all([
-		app.images.load(IMAGES, p => {
+		app.images.load(IMAGES.concat(xflBitmapFiles()), p => {
 			images = p;
 			drawLoading();
 		}),

@@ -12,12 +12,13 @@ import { WIDTH as W, HEIGHT as H, CELL, TILE, TILE_ORIGIN, TILES_X, TILES_Y } fr
 import { Item, RoomType, Exit, Mode, DungeonBonus, BallType } from "../data/enums.js";
 import { Layer } from "./entity.js";
 import { circleTouchesSegment } from "./physics.js";
-import { Door, borderColliders, borderCanvas } from "./doors.js";
+import { Door, borderColliders, drawBorder } from "./doors.js";
 import { Bumper, ClockBumper, DeathBumper, Magnet, GhostBumper } from "./entities/bumpers.js";
 import { GreenBlock, SwitchBlock, Switch } from "./entities/blocks.js";
 import { Pastille, Hatch, BallPickup, ItemBox, Teleport } from "./entities/pickups.js";
 import { Zapper, makeBeams } from "./entities/zappers.js";
-import { image, roundRectPath } from "../gfx/draw.js";
+import { roundRect } from "../gfx/draw.js";
+import { clip, drawClip } from "../gfx/xfl/index.js";
 import { Icon } from "../gfx/icons.js";
 import { app } from "../app.js";
 
@@ -361,7 +362,12 @@ export class Room {
 	 * (the ball, the boss), sorted by layer with the others.
 	 */
 	render(ctx, game, extras = []) {
-		image(ctx, this.background, W, H, 0, 0);
+		if (!this.backgroundClip) {
+			// (the original "background" symbol : a frame per floor picture)
+			this.backgroundClip = clip("background");
+			this.backgroundClip.gotoAndStop((this.rx + this.ry) % 4);
+		}
+		drawClip(ctx, this.backgroundClip, 0, 0);
 		this.renderHoles(ctx);
 		this.renderBlockShadows(ctx);
 
@@ -384,12 +390,12 @@ export class Room {
 	renderBorder(ctx, game) {
 		for (const door of this.doors)
 			door.render(ctx, game);
-		ctx.drawImage(borderCanvas(true), 0, 0, W, H);
+		drawBorder(ctx);
 	}
 
 	/**
-	 * The holes show the "bgHole" picture (the floor far below), with a back
-	 * wall on their top edge when there is floor above them.
+	 * The holes show the "ground" symbol (the floor far below), except for a
+	 * back wall on their top edge when there is floor above them.
 	 */
 	renderHoles(ctx) {
 		if (!this.holes.length)
@@ -404,32 +410,51 @@ export class Room {
 			ctx.rect(r.x, r.y, TILE, TILE);
 		}
 		ctx.clip();
-		image(ctx, "bgHole", W, H, 0, 0);
+		drawClip(ctx, ground || (ground = clip("ground")), 0, 0);
 
 		for (const h of this.holes) {
 			if (h.ty === 0 || this.tiles.get(h.tx, h.ty - 1) === Item.HOLE)
 				continue;
 			const r = rect(h);
-			// back wall, and its shadow
 			ctx.fillStyle = "#9B76BC";
 			ctx.fillRect(r.x, r.y, TILE, HOLE_WALL);
-			ctx.fillStyle = "rgba(40,10,60,0.35)";
-			ctx.fillRect(r.x, r.y + HOLE_WALL, TILE, 6);
 		}
 		ctx.restore();
 	}
 
-	/** The drop shadow of each run of green blocks. */
+	/**
+	 * The drop shadows of the green blocks, like the original : a rounded
+	 * rectangle for each vertical run and each horizontal run of blocks.
+	 */
 	renderBlockShadows(ctx) {
 		if (!this.blocks.length)
 			return;
+		const isBlock = (x, y) => this.tiles.get(x, y) === Item.BLOCK;
+		const SHIFT = 4;
 		ctx.fillStyle = "rgba(0,0,0,0.2)";
-		ctx.beginPath();
-		for (const b of this.blocks)
-			roundRectPath(ctx, b.left + 4, b.top + 4, TILE, TILE, 8);
-		ctx.fill();
+		for (const b of this.blocks) {
+			const tx = Math.round((b.left - TILE_ORIGIN) / TILE);
+			const ty = Math.round((b.top - TILE_ORIGIN) / TILE);
+			if (!isBlock(tx, ty - 1)) {
+				let n = 1;
+				while (isBlock(tx, ty + n))
+					n++;
+				roundRect(ctx, b.left + SHIFT, b.top + SHIFT, TILE, n * TILE, 8);
+				ctx.fill();
+			}
+			if (!isBlock(tx - 1, ty)) {
+				let n = 1;
+				while (isBlock(tx + n, ty))
+					n++;
+				roundRect(ctx, b.left + SHIFT, b.top + SHIFT, n * TILE, TILE, 8);
+				ctx.fill();
+			}
+		}
 	}
 }
+
+/** The floor under the holes (one clip for every room). */
+let ground = null;
 
 /** The items of the item boxes : icon, and what they give. */
 const BONUS_ITEMS = {
