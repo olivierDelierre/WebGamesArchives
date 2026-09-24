@@ -57,3 +57,5 @@ In the original, the Frusion client (the Frutiparc "disc") could lock some modes
 - **Final boss animations:** the timeline animations of the final boss ("Tourneboule") were rebuilt. Its callbacks (`animDone`, `kataDone`) fire at the same points of its behaviour.
 - **Zapper beams:** these are drawn faintly so the player can see which ball colour crosses them.
 - **Online features:** online rankings are replaced by local records.
+
+See [FLA_DECODING.md](FLA_DECODING.md) for how to decode the vector art of the `.fla` files and where to plug it in.
