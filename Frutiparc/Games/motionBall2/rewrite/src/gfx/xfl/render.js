@@ -204,6 +204,35 @@ export function withColor(ctx, c, draw) {
 		poolDepth--;
 	}
 
+	// negative offsets : c - k = 255 - ((255 - c) + k), inverting with a
+	// white silhouette ("difference") around the addition
+	const rn = Math.max(0, -c.ro);
+	const gn = Math.max(0, -c.go);
+	const bn = Math.max(0, -c.bo);
+	if (rn || gn || bn) {
+		const sil = offscreen(w, h);
+		const sc = sil.getContext("2d");
+		sc.setTransform(1, 0, 0, 1, 0, 0);
+		const silhouette = color => {
+			sc.globalCompositeOperation = "copy";
+			sc.drawImage(layer, 0, 0);
+			sc.globalCompositeOperation = "source-in";
+			sc.fillStyle = color;
+			sc.fillRect(0, 0, w, h);
+		};
+		const invert = () => {
+			silhouette("#fff");
+			lc.globalCompositeOperation = "difference";
+			lc.drawImage(sil, 0, 0);
+		};
+		invert();
+		silhouette("rgb(" + [rn, gn, bn].map(v => Math.round(Math.min(255, v))).join(",") + ")");
+		lc.globalCompositeOperation = "lighter";
+		lc.drawImage(sil, 0, 0);
+		invert();
+		poolDepth--;
+	}
+
 	ctx.save();
 	ctx.setTransform(1, 0, 0, 1, 0, 0);
 	ctx.globalAlpha *= alpha;

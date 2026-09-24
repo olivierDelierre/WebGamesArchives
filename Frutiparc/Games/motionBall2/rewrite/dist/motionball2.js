@@ -1631,6 +1631,32 @@
       lc.drawImage(sil, 0, 0);
       poolDepth--;
     }
+    const rn = Math.max(0, -c.ro);
+    const gn = Math.max(0, -c.go);
+    const bn = Math.max(0, -c.bo);
+    if (rn || gn || bn) {
+      const sil = offscreen(w, h);
+      const sc = sil.getContext("2d");
+      sc.setTransform(1, 0, 0, 1, 0, 0);
+      const silhouette = (color) => {
+        sc.globalCompositeOperation = "copy";
+        sc.drawImage(layer, 0, 0);
+        sc.globalCompositeOperation = "source-in";
+        sc.fillStyle = color;
+        sc.fillRect(0, 0, w, h);
+      };
+      const invert = () => {
+        silhouette("#fff");
+        lc.globalCompositeOperation = "difference";
+        lc.drawImage(sil, 0, 0);
+      };
+      invert();
+      silhouette("rgb(" + [rn, gn, bn].map((v) => Math.round(Math.min(255, v))).join(",") + ")");
+      lc.globalCompositeOperation = "lighter";
+      lc.drawImage(sil, 0, 0);
+      invert();
+      poolDepth--;
+    }
     ctx.save();
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.globalAlpha *= alpha;
@@ -2002,10 +2028,14 @@
       return void 0;
     }
     // ----- drawing -----
-    /** Draws the clip at the origin of ctx. `color` : an inherited colour transform. */
+    /** Draws the clip at the origin of ctx, with an optional colour transform. */
     draw(ctx, color = null) {
       if (this.removed)
         return;
+      if (color && !isIdentityColor(color)) {
+        withColor(ctx, color, (lc) => this.draw(lc));
+        return;
+      }
       const lib = this.lib;
       const layers = this.symbol.layers;
       const v = this.vars;
@@ -2029,14 +2059,14 @@
           if (mask)
             clipToMask(ctx, lib, mask.els, this, layer.maskedBy);
         }
-        cur.els.forEach((el, ei) => this.drawElement(ctx, el, li, ei, color));
+        cur.els.forEach((el, ei) => this.drawElement(ctx, el, li, ei));
         if (masked)
           ctx.restore();
       });
       if (v._flipY || v._rotate)
         ctx.restore();
     }
-    drawElement(ctx, el, li, ei, color) {
+    drawElement(ctx, el, li, ei) {
       const lib = this.lib;
       let m = el.m;
       const o = el.n ? this.lookup("overrides", el.n) : null;
@@ -2067,13 +2097,13 @@
           const c = this.children.get(li + ":" + ei + ":" + el.s);
           if (!c)
             break;
-          let ct = el.c ? combineColor(color, el.c) : color;
+          let ct = el.c || null;
           if (o && o.alpha !== void 0)
             ct = combineColor(ct, { am: o.alpha, rm: 1, gm: 1, bm: 1, ao: 0, ro: 0, go: 0, bo: 0 });
-          if (ct && !isIdentityColor(ct) && ct !== color)
-            withColor(ctx, ct, () => c.draw(ctx, null));
+          if (ct && !isIdentityColor(ct))
+            withColor(ctx, ct, (lc) => c.draw(lc));
           else
-            c.draw(ctx, color);
+            c.draw(ctx);
           break;
         }
       }
@@ -6917,10 +6947,10 @@
   // src/bosses/snake.js
   var Element = Object.freeze({ WATER: 0, FIRE: 1, WIND: 2, EARTH: 3 });
   var ELEMENTS = [
-    { color: "#8fd8ff", logo: "logo_eau", power: Water, max: 2, sound: "water" },
-    { color: "#ff7a3a", logo: "logo_feu", power: Fire, max: 3, sound: "crash" },
-    { color: "#e9f4ff", logo: "logo_vent", power: Wind, max: 1, sound: "wind" },
-    { color: "#a6d25a", logo: "logo_terre", power: Earth, max: 3, sound: "earth" }
+    { power: Water, max: 2, sound: "water" },
+    { power: Fire, max: 3, sound: "crash" },
+    { power: Wind, max: 1, sound: "wind" },
+    { power: Earth, max: 3, sound: "earth" }
   ];
   var RINGS = 3;
   var STATES = ["wait", "search", "charge", "evade", "power"];
@@ -6930,6 +6960,7 @@
     constructor(game, element) {
       super(WIDTH / 2, HEIGHT / 2);
       this.element = ELEMENTS[element];
+      this.elementIndex = element;
       this.powers = [];
       this.push = 3;
       this.angle = 0;
@@ -6948,12 +6979,12 @@
       this.parts = [];
       for (let i = 0; i < RINGS + 2; i++) {
         const kind = i === 0 ? "head" : i === RINGS + 1 ? "tail" : "ring";
-        this.parts.push({ kind, r: kind === "head" ? 20 : 25, scale: 1, x: this.x, y: this.y, angle: 0, spin: 0 });
+        this.parts.push({ kind, r: kind === "head" ? 20 : 25, scale: 1, x: this.x, y: this.y, angle: 0, spin: 0, art: this.makePartArt(kind, element) });
       }
       this.resizeRings();
       this.path = [{ x: this.x, y: this.y, a: 0 }];
       this.scales = [];
-      game.room.add(new ElementLogo(this.element.logo));
+      game.room.add(new ElementLogo(element));
       this.choose(game);
       for (let i = 0; i < 5; i++)
         this.update(1 / 40, game);
@@ -6970,14 +7001,28 @@
         this.parts[i].r = s * 50;
       }
     }
+    /**
+     * A part : the "snake" symbol, frame head / ring / tail, its "gfx" at the
+     * frame of the element (the head's skull "crane" too).
+     */
+    makePartArt(kind, element) {
+      const art = clip("snake");
+      art.gotoAndStop(kind === "head" ? 0 : kind === "ring" ? 1 : 2);
+      art.child("gfx")?.gotoAndStop(element);
+      art.child("crane")?.gotoAndStop(element);
+      return art;
+    }
+    /** The eyes "o1", "o2" : red when angry, green when calm, yellow when berserk. */
     get eyes() {
-      return this.berserk > 0 ? "#ffea00" : this.angry > 0 ? "#ff3020" : "#40ff60";
+      return this.berserk > 0 ? 2 : this.angry > 0 ? 0 : 1;
     }
     // ----- every step -----
     update(dt, game) {
       this.ball = game.ball;
       this.powers = this.powers.filter((p) => !p.dead);
       this.updateScales(dt);
+      for (const p of this.parts)
+        p.art.update(dt);
       this.bite = Math.max(0, this.bite - dt);
       if (this.dying) {
         this.updateDeath(dt, game);
@@ -7097,6 +7142,7 @@
       if (this.inEllipse(head, ball, 42, 34, 0)) {
         if (Math.abs(angleDiff(this.angle, this.angleToBall())) < 0.3) {
           this.bite = 0.25;
+          this.parts[0].art.child("crane")?.child("anim")?.play();
           if (this.angry === 0)
             this.loseRing(game);
           this.angry = 6 + randInt(4);
@@ -7147,7 +7193,9 @@
       for (let i = 0; i < 5; i++) {
         const a = i * Math.PI / 2.5;
         const d = ring.r / 2 + Math.random() * ring.r / 2;
-        this.scales.push({ x: ring.x + Math.cos(a) * d, y: ring.y + Math.sin(a) * d, a, rot: Math.random() * TAU, size: 3 });
+        const art = clip("snakePart");
+        art.gotoAndStop(this.elementIndex);
+        this.scales.push({ x: ring.x + Math.cos(a) * d, y: ring.y + Math.sin(a) * d, a, rot: Math.random() * TAU, size: 3, art });
       }
       this.parts.splice(1, 1);
       this.resizeRings();
@@ -7228,6 +7276,9 @@
     }
     // ----- drawing -----
     render(ctx) {
+      const head = this.parts[0].art;
+      for (const eye of ["o1", "o2"])
+        head.child(eye)?.gotoAndStop(this.eyes);
       for (let i = this.parts.length - 1; i >= 0; i--) {
         const p = this.parts[i];
         if (p.scale <= 0)
@@ -7236,7 +7287,7 @@
         ctx.translate(p.x, p.y);
         ctx.rotate(p.angle + Math.PI + p.spin);
         ctx.scale(p.scale, p.scale);
-        this.drawPart(ctx, p);
+        p.art.draw(ctx);
         ctx.restore();
       }
       for (const s of this.scales) {
@@ -7244,78 +7295,28 @@
         ctx.translate(s.x, s.y);
         ctx.rotate(s.rot);
         ctx.scale(s.size, s.size);
-        ctx.fillStyle = this.element.color;
-        ctx.strokeStyle = "rgba(0,0,0,0.3)";
-        ctx.lineWidth = 0.5;
-        ctx.beginPath();
-        ctx.moveTo(0, -5);
-        ctx.quadraticCurveTo(5, -2, 3, 4);
-        ctx.quadraticCurveTo(0, 6, -3, 4);
-        ctx.quadraticCurveTo(-5, -2, 0, -5);
-        ctx.fill();
-        ctx.stroke();
+        s.art.draw(ctx);
         ctx.restore();
       }
     }
-    drawPart(ctx, p) {
-      const img = tinted("snake_" + p.kind.replace("ring", "body"), this.element.color);
-      if (!img)
-        return;
-      if (p.kind === "tail") {
-        ctx.drawImage(img, -26, -img.height / 2);
-        return;
-      }
-      if (p.kind === "head") {
-        const bite = this.bite > 0 ? Math.sin(this.bite / 0.25 * Math.PI) * 6 : 0;
-        ctx.drawImage(img, -img.width / 2 + bite, -img.height / 2);
-        for (const side of [-1, 1])
-          sphere(ctx, -38 + bite, side * 24, 5, this.eyes, "#202020", "#ffffff");
-        return;
-      }
-      ctx.drawImage(img, -img.width / 2, -img.height / 2);
-    }
   };
   var ElementLogo = class extends Entity {
-    constructor(name) {
-      super(WIDTH / 2, HEIGHT / 2, Layer.FLOOR);
-      this.name = name;
+    /** ("logoBg" : a frame per element, placed by the symbol itself) */
+    constructor(element) {
+      super(0, 0, Layer.FLOOR);
+      this.art = clip("logoBg");
+      this.art.gotoAndStop(element);
       this.alpha = 0;
     }
     update(dt) {
       this.alpha = Math.min(1, this.alpha + dt);
     }
     render(ctx) {
-      const img = app.images.get(this.name);
-      if (!img)
-        return;
-      const w = img.naturalWidth * 1.3;
-      const h = img.naturalHeight * 1.3;
       ctx.globalAlpha = this.alpha;
-      ctx.drawImage(img, WIDTH / 2 - w / 2, HEIGHT / 2 - h / 2, w, h);
+      this.art.draw(ctx);
       ctx.globalAlpha = 1;
     }
   };
-  var tintCache = /* @__PURE__ */ new Map();
-  function tinted(name, color) {
-    const key = name + color;
-    if (tintCache.has(key))
-      return tintCache.get(key);
-    const img = app.images.get(name);
-    if (!img)
-      return null;
-    const canvas = document.createElement("canvas");
-    canvas.width = img.naturalWidth;
-    canvas.height = img.naturalHeight;
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
-    ctx.globalCompositeOperation = "multiply";
-    ctx.fillStyle = color;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.globalCompositeOperation = "destination-in";
-    ctx.drawImage(img, 0, 0);
-    tintCache.set(key, canvas);
-    return canvas;
-  }
 
   // src/bosses/tourneboule.js
   var HITS_TO_GROUND = 4;

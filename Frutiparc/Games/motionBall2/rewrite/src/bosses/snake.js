@@ -17,17 +17,17 @@ import { Boss, ARENA } from "./common.js";
 import { Water, Fire, Earth, Wind } from "./powers.js";
 import { Entity, Layer } from "../game/entity.js";
 import { angleDiff, decay, weightedIndex, randInt, TAU } from "../engine/math.js";
-import { sphere } from "../gfx/draw.js";
+import { clip } from "../gfx/xfl/index.js";
 import { app } from "../app.js";
 
 /** The elements, in the order of the adventures. */
 export const Element = Object.freeze({ WATER: 0, FIRE: 1, WIND: 2, EARTH: 3 });
 
 const ELEMENTS = [
-	{ color: "#8fd8ff", logo: "logo_eau", power: Water, max: 2, sound: "water" },
-	{ color: "#ff7a3a", logo: "logo_feu", power: Fire, max: 3, sound: "crash" },
-	{ color: "#e9f4ff", logo: "logo_vent", power: Wind, max: 1, sound: "wind" },
-	{ color: "#a6d25a", logo: "logo_terre", power: Earth, max: 3, sound: "earth" }
+	{ power: Water, max: 2, sound: "water" },
+	{ power: Fire, max: 3, sound: "crash" },
+	{ power: Wind, max: 1, sound: "wind" },
+	{ power: Earth, max: 3, sound: "earth" }
 ];
 
 /** Body rings = hits needed. */
@@ -45,6 +45,7 @@ export class Snake extends Boss {
 	constructor(game, element) {
 		super(W / 2, H / 2);
 		this.element = ELEMENTS[element];
+		this.elementIndex = element;
 		this.powers = [];
 		this.push = 3;               // strength of the push on the ball (px / frame^2)
 		this.angle = 0;
@@ -65,13 +66,13 @@ export class Snake extends Boss {
 		this.parts = [];
 		for (let i = 0; i < RINGS + 2; i++) {
 			const kind = i === 0 ? "head" : i === RINGS + 1 ? "tail" : "ring";
-			this.parts.push({ kind, r: kind === "head" ? 20 : 25, scale: 1, x: this.x, y: this.y, angle: 0, spin: 0 });
+			this.parts.push({ kind, r: kind === "head" ? 20 : 25, scale: 1, x: this.x, y: this.y, angle: 0, spin: 0, art: this.makePartArt(kind, element) });
 		}
 		this.resizeRings();
 		this.path = [{ x: this.x, y: this.y, a: 0 }];
 		this.scales = [];            // scales flying away from a lost ring
 
-		game.room.add(new ElementLogo(this.element.logo));
+		game.room.add(new ElementLogo(element));
 		this.choose(game);
 		for (let i = 0; i < 5; i++)
 			this.update(1 / 40, game);
@@ -91,8 +92,21 @@ export class Snake extends Boss {
 		}
 	}
 
+	/**
+	 * A part : the "snake" symbol, frame head / ring / tail, its "gfx" at the
+	 * frame of the element (the head's skull "crane" too).
+	 */
+	makePartArt(kind, element) {
+		const art = clip("snake");
+		art.gotoAndStop(kind === "head" ? 0 : kind === "ring" ? 1 : 2);
+		art.child("gfx")?.gotoAndStop(element);
+		art.child("crane")?.gotoAndStop(element);
+		return art;
+	}
+
+	/** The eyes "o1", "o2" : red when angry, green when calm, yellow when berserk. */
 	get eyes() {
-		return this.berserk > 0 ? "#ffea00" : this.angry > 0 ? "#ff3020" : "#40ff60";
+		return this.berserk > 0 ? 2 : this.angry > 0 ? 0 : 1;
 	}
 
 	// ----- every step -----
@@ -101,6 +115,8 @@ export class Snake extends Boss {
 		this.ball = game.ball;
 		this.powers = this.powers.filter(p => !p.dead);
 		this.updateScales(dt);
+		for (const p of this.parts)
+			p.art.update(dt);
 		this.bite = Math.max(0, this.bite - dt);
 
 		if (this.dying) {
@@ -239,6 +255,7 @@ export class Snake extends Boss {
 		if (this.inEllipse(head, ball, 42, 34, 0)) {
 			if (Math.abs(angleDiff(this.angle, this.angleToBall())) < 0.3) {
 				this.bite = 0.25;
+				this.parts[0].art.child("crane")?.child("anim")?.play();
 				if (this.angry === 0)
 					this.loseRing(game);
 				this.angry = 6 + randInt(4);
@@ -297,7 +314,9 @@ export class Snake extends Boss {
 		for (let i = 0; i < 5; i++) {
 			const a = i * Math.PI / 2.5;
 			const d = ring.r / 2 + Math.random() * ring.r / 2;
-			this.scales.push({ x: ring.x + Math.cos(a) * d, y: ring.y + Math.sin(a) * d, a, rot: Math.random() * TAU, size: 3 });
+			const art = clip("snakePart");
+			art.gotoAndStop(this.elementIndex);
+			this.scales.push({ x: ring.x + Math.cos(a) * d, y: ring.y + Math.sin(a) * d, a, rot: Math.random() * TAU, size: 3, art });
 		}
 		this.parts.splice(1, 1);
 		this.resizeRings();
@@ -388,6 +407,9 @@ export class Snake extends Boss {
 	// ----- drawing -----
 
 	render(ctx) {
+		const head = this.parts[0].art;
+		for (const eye of ["o1", "o2"])
+			head.child(eye)?.gotoAndStop(this.eyes);
 		// from the tail to the head, so that the head is on top
 		for (let i = this.parts.length - 1; i >= 0; i--) {
 			const p = this.parts[i];
@@ -395,10 +417,10 @@ export class Snake extends Boss {
 				continue;
 			ctx.save();
 			ctx.translate(p.x, p.y);
-			// the bitmaps face left
+			// the symbol faces left
 			ctx.rotate(p.angle + Math.PI + p.spin);
 			ctx.scale(p.scale, p.scale);
-			this.drawPart(ctx, p);
+			p.art.draw(ctx);
 			ctx.restore();
 		}
 		for (const s of this.scales) {
@@ -406,46 +428,20 @@ export class Snake extends Boss {
 			ctx.translate(s.x, s.y);
 			ctx.rotate(s.rot);
 			ctx.scale(s.size, s.size);
-			ctx.fillStyle = this.element.color;
-			ctx.strokeStyle = "rgba(0,0,0,0.3)";
-			ctx.lineWidth = 0.5;
-			ctx.beginPath();
-			ctx.moveTo(0, -5);
-			ctx.quadraticCurveTo(5, -2, 3, 4);
-			ctx.quadraticCurveTo(0, 6, -3, 4);
-			ctx.quadraticCurveTo(-5, -2, 0, -5);
-			ctx.fill();
-			ctx.stroke();
+			s.art.draw(ctx);
 			ctx.restore();
 		}
-	}
-
-	drawPart(ctx, p) {
-		const img = tinted("snake_" + p.kind.replace("ring", "body"), this.element.color);
-		if (!img)
-			return;
-		if (p.kind === "tail") {
-			// the registration point is on the ball of the tail, the spikes point backward
-			ctx.drawImage(img, -26, -img.height / 2);
-			return;
-		}
-		if (p.kind === "head") {
-			const bite = this.bite > 0 ? Math.sin(this.bite / 0.25 * Math.PI) * 6 : 0;
-			ctx.drawImage(img, -img.width / 2 + bite, -img.height / 2);
-			for (const side of [-1, 1])
-				sphere(ctx, -38 + bite, side * 24, 5, this.eyes, "#202020", "#ffffff");
-			return;
-		}
-		ctx.drawImage(img, -img.width / 2, -img.height / 2);
 	}
 }
 
 /** The logo of the element, on the floor of the boss room. */
 class ElementLogo extends Entity {
 
-	constructor(name) {
-		super(W / 2, H / 2, Layer.FLOOR);
-		this.name = name;
+	/** ("logoBg" : a frame per element, placed by the symbol itself) */
+	constructor(element) {
+		super(0, 0, Layer.FLOOR);
+		this.art = clip("logoBg");
+		this.art.gotoAndStop(element);
 		this.alpha = 0;
 	}
 
@@ -454,40 +450,8 @@ class ElementLogo extends Entity {
 	}
 
 	render(ctx) {
-		const img = app.images.get(this.name);
-		if (!img)
-			return;
-		const w = img.naturalWidth * 1.3;
-		const h = img.naturalHeight * 1.3;
 		ctx.globalAlpha = this.alpha;
-		ctx.drawImage(img, W / 2 - w / 2, H / 2 - h / 2, w, h);
+		this.art.draw(ctx);
 		ctx.globalAlpha = 1;
 	}
 }
-
-// ----- tinted bitmaps -----
-
-const tintCache = new Map();
-
-/** A (white) bitmap multiplied by a colour. */
-function tinted(name, color) {
-	const key = name + color;
-	if (tintCache.has(key))
-		return tintCache.get(key);
-	const img = app.images.get(name);
-	if (!img)
-		return null;
-	const canvas = document.createElement("canvas");
-	canvas.width = img.naturalWidth;
-	canvas.height = img.naturalHeight;
-	const ctx = canvas.getContext("2d");
-	ctx.drawImage(img, 0, 0);
-	ctx.globalCompositeOperation = "multiply";
-	ctx.fillStyle = color;
-	ctx.fillRect(0, 0, canvas.width, canvas.height);
-	ctx.globalCompositeOperation = "destination-in";
-	ctx.drawImage(img, 0, 0);
-	tintCache.set(key, canvas);
-	return canvas;
-}
-

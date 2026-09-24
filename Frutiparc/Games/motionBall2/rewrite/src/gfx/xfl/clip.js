@@ -350,10 +350,14 @@ export class Clip {
 
 	// ----- drawing -----
 
-	/** Draws the clip at the origin of ctx. `color` : an inherited colour transform. */
+	/** Draws the clip at the origin of ctx, with an optional colour transform. */
 	draw(ctx, color = null) {
 		if (this.removed)
 			return;
+		if (color && !isIdentityColor(color)) {
+			withColor(ctx, color, lc => this.draw(lc));
+			return;
+		}
 		const lib = this.lib;
 		const layers = this.symbol.layers;
 		const v = this.vars;
@@ -378,7 +382,7 @@ export class Clip {
 				if (mask)
 					clipToMask(ctx, lib, mask.els, this, layer.maskedBy);
 			}
-			cur.els.forEach((el, ei) => this.drawElement(ctx, el, li, ei, color));
+			cur.els.forEach((el, ei) => this.drawElement(ctx, el, li, ei));
 			if (masked)
 				ctx.restore();
 		});
@@ -387,7 +391,7 @@ export class Clip {
 			ctx.restore();
 	}
 
-	drawElement(ctx, el, li, ei, color) {
+	drawElement(ctx, el, li, ei) {
 		const lib = this.lib;
 		let m = el.m;
 		const o = el.n ? this.lookup("overrides", el.n) : null;
@@ -420,13 +424,14 @@ export class Clip {
 			const c = this.children.get(li + ":" + ei + ":" + el.s);
 			if (!c)
 				break;
-			let ct = el.c ? combineColor(color, el.c) : color;
+			// (a nested transform applies over the parent's, drawn offscreen)
+			let ct = el.c || null;
 			if (o && o.alpha !== undefined)
 				ct = combineColor(ct, { am: o.alpha, rm: 1, gm: 1, bm: 1, ao: 0, ro: 0, go: 0, bo: 0 });
-			if (ct && !isIdentityColor(ct) && ct !== color)
-				withColor(ctx, ct, () => c.draw(ctx, null));
+			if (ct && !isIdentityColor(ct))
+				withColor(ctx, ct, lc => c.draw(lc));
 			else
-				c.draw(ctx, color);
+				c.draw(ctx);
 			break;
 		}
 		}
