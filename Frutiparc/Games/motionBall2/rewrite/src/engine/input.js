@@ -53,6 +53,7 @@ export class Input {
 		this.padPrevious = new Set();
 		this.pointer = null;           // { x, y } of the last tap / click, until endStep
 		this.hover = null;             // mouse position, for the menus
+		this.mouseHeld = false;        // the mouse button is down (to drag the sliders)
 		this.touchStick = null;        // { id, x0, y0, x, y, t0 }
 		this.listeners = [];
 
@@ -61,6 +62,14 @@ export class Input {
 	}
 
 	// ----- queries -----
+
+	/** Where the mouse (button held) or a finger drags, in game coordinates, or null. */
+	drag() {
+		if (this.mouseHeld && this.hover)
+			return this.hover;
+		const t = this.touchStick;
+		return t ? { x: t.x, y: t.y } : null;
+	}
 
 	/** Was the action triggered since the last step ? */
 	pressed(action) {
@@ -190,6 +199,8 @@ export class Input {
 			const p = this.screen.toGame(e.clientX, e.clientY);
 			if (e.pointerType === "mouse") {
 				this.pointer = p;
+				this.hover = p;
+				this.mouseHeld = true;
 				return;
 			}
 			if (!this.touchStick) {
@@ -210,6 +221,8 @@ export class Input {
 		});
 
 		const release = e => {
+			if (e.pointerType === "mouse")
+				this.mouseHeld = false;
 			const t = this.touchStick;
 			if (!t || t.id !== e.pointerId)
 				return;
@@ -220,6 +233,12 @@ export class Input {
 			this.touchStick = null;
 		};
 		this.on(canvas, "pointerup", release);
+		// (the mouse button may be released outside of the canvas)
+		if (typeof window !== "undefined" && window.addEventListener)
+			this.on(window, "pointerup", e => {
+				if (e.pointerType === "mouse")
+					this.mouseHeld = false;
+			});
 		this.on(canvas, "pointercancel", release);
 		this.on(canvas, "contextmenu", e => e.preventDefault());
 	}

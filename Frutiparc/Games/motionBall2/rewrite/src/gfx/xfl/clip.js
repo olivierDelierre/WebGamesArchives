@@ -19,9 +19,12 @@
  * elements between two keyframes (with the easing of the tween).
  */
 
-import { drawShape, drawText, withColor, isIdentityColor, combineColor, lerpColor, interpolateMatrix, clipToMask } from "./render.js";
+import { drawShape, drawText, withColor, isIdentityColor, combineColor, lerpColor, interpolateMatrix, clipToMask, unionBounds } from "./render.js";
 
 const MAX_GOTO_DEPTH = 8;
+
+/** The script operations that may leave the timeline (no drawing between frames then). */
+const JUMPS = new Set(["goto", "gotoRel", "randomFrame", "remove", "removeParent", "countdown", "loopUnlessRandom", "loopIf"]);
 
 export class Clip {
 
@@ -107,6 +110,32 @@ export class Clip {
 			this.time -= step;
 			this.tick();
 		}
+	}
+
+	/**
+	 * The frame to draw : between the current frame and the next one, by the
+	 * time spent since the last frame, so that the motion tweens move smoothly
+	 * on any screen instead of 40 times per second. (The frames themselves,
+	 * their scripts and the drawings of the frame by frame animations stay
+	 * whole.) Not when the timeline stops, loops or jumps at the next frame.
+	 */
+	drawFrame() {
+		const f = this.frame;
+		if (this.removed || f + 1 >= this.totalFrames)
+			return f;
+		if (this.controlled) {
+			// a graphic moves on with its parent
+			if (!this.followsParent || !this.parent)
+				return f;
+			const pf = this.parent.drawFrame();
+			return f + (pf - Math.floor(pf));
+		}
+		if (!this.playing)
+			return f;
+		const ops = this.symbol.scripts[f + 1];
+		if (ops && ops.some(op => JUMPS.has(op[0])))
+			return f;
+		return f + Math.min(0.999, this.time * (this.lib.data.frameRate || 40));
 	}
 
 	/** One frame. */
@@ -299,6 +328,7 @@ export class Clip {
 					else
 						f = ((f % total) + total) % total;
 					c.frame = f;
+					c.followsParent = el.g.loop !== "single frame" && f + 1 < total;
 					c.syncChildren(tick);
 				} else if (tick && !created) {
 					c.tick();
@@ -355,7 +385,7 @@ export class Clip {
 		if (this.removed)
 			return;
 		if (color && !isIdentityColor(color)) {
-			withColor(ctx, color, lc => this.draw(lc));
+			withColor(ctx, color, lc => this.draw(lc), this.bounds());
 			return;
 		}
 		const lib = this.lib;
@@ -369,16 +399,17 @@ export class Clip {
 				ctx.scale(1, v._flipY);
 		}
 
+		const frame = this.drawFrame();
 		layers.forEach((layer, li) => {
 			if (layer.mask)
 				return;
-			const cur = this.layerElements(layer);
+			const cur = this.layerElements(layer, frame);
 			if (!cur || !cur.els.length)
 				return;
 			const masked = layer.maskedBy !== undefined;
 			if (masked) {
 				ctx.save();
-				const mask = this.layerElements(layers[layer.maskedBy]);
+				const mask = this.layerElements(layers[layer.maskedBy], frame);
 				if (mask)
 					clipToMask(ctx, lib, mask.els, this, layer.maskedBy);
 			}
@@ -389,6 +420,59 @@ export class Clip {
 
 		if (v._flipY || v._rotate)
 			ctx.restore();
+	}
+
+	/**
+	 * The local bounds [x0, y0, x1, y1] of what the clip draws at its current
+	 * frame (null when it draws nothing) : the colour transforms only work on
+	 * that part of the canvas.
+	 */
+	bounds() {
+		if (this.removed)
+			return null;
+		let acc = null;
+		const frame = this.drawFrame();
+		this.symbol.layers.forEach((layer, li) => {
+			if (layer.mask)
+				return;
+			const cur = this.layerElements(layer, frame);
+			if (!cur)
+				return;
+			cur.els.forEach((el, ei) => {
+				let m = el.m;
+				const o = el.n ? this.lookup("overrides", el.n) : null;
+				if (o) {
+					if (o.visible === false)
+						return;
+					m = applyOverride(m, o);
+				}
+				let b = null;
+				switch (el.t) {
+				case "shape":
+					b = this.lib.shape(el.id)?.bounds;
+					break;
+				case "bmp": {
+					const bmp = this.lib.bitmap(el.b);
+					b = bmp ? [0, 0, bmp.w, bmp.h] : null;
+					break;
+				}
+				case "text":
+					b = [0, 0, el.w || 0, el.h || 0];
+					break;
+				case "sym":
+					b = this.children.get(li + ":" + ei + ":" + el.s)?.bounds();
+					break;
+				}
+				acc = unionBounds(acc, b, m);
+			});
+		});
+		// (the rotation / flip of the "randomRotate" / "randomFlipY" scripts)
+		const v = this.vars;
+		if (acc && (v._rotate || v._flipY)) {
+			const r = Math.max(...acc.map(Math.abs));
+			acc = [-r * 1.5, -r * 1.5, r * 1.5, r * 1.5];
+		}
+		return acc;
 	}
 
 	drawElement(ctx, el, li, ei) {
@@ -429,7 +513,7 @@ export class Clip {
 			if (o && o.alpha !== undefined)
 				ct = combineColor(ct, { am: o.alpha, rm: 1, gm: 1, bm: 1, ao: 0, ro: 0, go: 0, bo: 0 });
 			if (ct && !isIdentityColor(ct))
-				withColor(ctx, ct, lc => c.draw(lc));
+				withColor(ctx, ct, lc => c.draw(lc), c.bounds());
 			else
 				c.draw(ctx);
 			break;

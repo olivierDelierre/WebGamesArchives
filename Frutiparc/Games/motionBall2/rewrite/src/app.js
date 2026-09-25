@@ -6,6 +6,7 @@
  *   app.audio    sounds and music (engine/audio.js)
  *   app.images   the bitmaps (engine/assets.js)
  *   app.save     the saved progression and settings (progress.js)
+ *   app.achievements   the achievements (achievements.js)
  *   app.scenes   the current screen (engine/scenes.js)
  *   app.time     seconds since the start (for idle animations)
  *
@@ -18,6 +19,7 @@ export const app = {
 	audio: null,
 	images: null,
 	save: null,
+	achievements: null,
 	scenes: null,
 	time: 0
 };

@@ -46,6 +46,7 @@ src/
   config.js           sizes, physics tuning, ball specs
   sounds.js           sound names -> files, music layers
   progress.js         saved settings, unlocks and records
+  achievements.js     the achievements : the list, what unlocks them, the banner
 
   engine/             game-independent code
     loop.js           fixed-step main loop
@@ -107,6 +108,7 @@ src/
     menu.js           the ring of balls of the original menu (Menu.as)
     widgets.js        button navigation (mouse, touch, keyboard, gamepad)
     play.js           runs a Game ; pause and end-of-game panels
+    achievements.js   the achievements screen
     map_view.js       the dungeon map of the pause ("carte", "room")
 ```
 
@@ -211,6 +213,14 @@ drives it like the original ActionScript : `gotoAndPlay("hit")`,
 (stops, loops, `removeMovieClip`), and their calls reach the game through
 `art.on = event => ...` (the final boss follows its `kataDone` / `animDone`
 like BossTB.as).
+
+**Smooth on any screen.** The symbols' timelines, the intro and the menu keep
+the original 40 frames per second (their scripts and tuning are per frame),
+but they are *drawn* between their last two frames: `Clip.drawFrame()` gives a
+fractional frame, so motion tweens are interpolated at the display rate (not
+across a stop or a jump of the timeline), and the intro, the menu ring and the
+earth power's vine keep their previous step's places to draw in between.
+Only the frame-by-frame drawings of the original stay at 40 per second.
 
 ## Physics
 

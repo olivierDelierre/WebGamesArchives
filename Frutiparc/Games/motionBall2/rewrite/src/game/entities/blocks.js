@@ -44,6 +44,7 @@ export class GreenBlock extends Entity {
 		this.solid = false;
 		this.data.destroyed = true;
 		game.room.removeTile(this);
+		game.achieve("block");
 
 		// 4 pieces fly away in the direction of the ball
 		const ball = game.ball;

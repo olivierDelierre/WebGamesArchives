@@ -79,6 +79,7 @@ test("the progression is saved and read back", () => {
 	assert.equal(q.data.adventures.best[2], 77);
 	assert.equal(q.settings.music, false);
 	assert.equal(q.settings.sounds, true);
+	assert.equal(q.settings.musicVolume, 1, "a volume missing from an older save : the default");
 	delete globalThis.localStorage;
 });
 

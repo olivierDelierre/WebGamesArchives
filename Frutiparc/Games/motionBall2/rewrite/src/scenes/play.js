@@ -65,6 +65,8 @@ export class PlayScene {
 	}
 
 	quit() {
+		// (the counters of the achievements)
+		app.save.save();
 		app.audio.stopLayers(0.5);
 		app.audio.playMusic("musicMenu", MUSIC_VOLUME);
 		app.scenes.goto(new MenuScene());
@@ -80,6 +82,7 @@ export class PlayScene {
 		// (the panel shows "victory" or "game over" ; the heading tells why)
 		let heading = win ? "Victoire !" : result.cause === "time" ? "Temps écoulé !" : "Plus de billes !";
 		let table = null;
+		let courseRank = -1;
 
 		switch (result.mode) {
 		case Mode.CHALLENGE:
@@ -102,6 +105,7 @@ export class PlayScene {
 			if (win) {
 				heading = "Arrivée !";
 				const r = save.courseTime(result.param, result.time);
+				courseRank = r.rank;
 				table = r.table;
 				lines.push("Temps : " + formatTime(result.time, true));
 				lines.push(r.rank < 0 ? "Pas de record..." : "Record battu !");
@@ -121,6 +125,8 @@ export class PlayScene {
 			lines.push(win ? "Tu connais les bases : à toi de jouer !" : "Essaie encore !");
 			break;
 		}
+		if (app.achievements)
+			app.achievements.event("end", this.game, { ...result, courseRank });
 		this.ending = { heading, lines, table, pop: new Pop(), scale: 0, time: 0, art: this.endPanel(win, lines, table) };
 		if (win)
 			app.audio.playMusic("musicMenu", MUSIC_VOLUME);

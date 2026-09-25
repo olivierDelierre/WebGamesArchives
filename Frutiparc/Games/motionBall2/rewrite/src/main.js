@@ -13,6 +13,7 @@ import { ImageStore } from "./engine/assets.js";
 import { SceneManager } from "./engine/scenes.js";
 import { Loop } from "./engine/loop.js";
 import { Progress } from "./progress.js";
+import { Achievements } from "./achievements.js";
 import { SOUND_FILES } from "./sounds.js";
 import { TitleScene } from "./scenes/title.js";
 import { applySettings } from "./scenes/menu.js";
@@ -27,6 +28,7 @@ function start() {
 	app.audio = new AudioEngine(SOUND_FILES);
 	app.images = new ImageStore();
 	app.save = new Progress();
+	app.achievements = new Achievements(app.save);
 	app.scenes = new SceneManager();
 
 	// the on-screen buttons of the touch screens
@@ -100,13 +102,16 @@ function step(dt) {
 	app.time += dt;
 	app.audio.update(dt);
 	app.scenes.update(dt);
+	app.achievements.update(dt);
 	app.input.endStep();
 }
 
 /** One displayed frame. */
 function render() {
 	app.input.poll();
-	app.scenes.render(app.screen.begin());
+	const ctx = app.screen.begin();
+	app.scenes.render(ctx);
+	app.achievements.render(ctx);
 }
 
 start();

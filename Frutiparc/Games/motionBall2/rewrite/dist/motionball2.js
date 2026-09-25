@@ -45,6 +45,7 @@
     audio: null,
     images: null,
     save: null,
+    achievements: null,
     scenes: null,
     time: 0
   };
@@ -141,12 +142,20 @@
       this.padPrevious = /* @__PURE__ */ new Set();
       this.pointer = null;
       this.hover = null;
+      this.mouseHeld = false;
       this.touchStick = null;
       this.listeners = [];
       this.bindKeyboard();
       this.bindPointer();
     }
     // ----- queries -----
+    /** Where the mouse (button held) or a finger drags, in game coordinates, or null. */
+    drag() {
+      if (this.mouseHeld && this.hover)
+        return this.hover;
+      const t = this.touchStick;
+      return t ? { x: t.x, y: t.y } : null;
+    }
     /** Was the action triggered since the last step ? */
     pressed(action) {
       return this.queue.has(action);
@@ -254,6 +263,8 @@
         const p = this.screen.toGame(e.clientX, e.clientY);
         if (e.pointerType === "mouse") {
           this.pointer = p;
+          this.hover = p;
+          this.mouseHeld = true;
           return;
         }
         if (!this.touchStick) {
@@ -272,6 +283,8 @@
         }
       });
       const release = (e) => {
+        if (e.pointerType === "mouse")
+          this.mouseHeld = false;
         const t = this.touchStick;
         if (!t || t.id !== e.pointerId)
           return;
@@ -281,6 +294,11 @@
         this.touchStick = null;
       };
       this.on(canvas, "pointerup", release);
+      if (typeof window !== "undefined" && window.addEventListener)
+        this.on(window, "pointerup", (e) => {
+          if (e.pointerType === "mouse")
+            this.mouseHeld = false;
+        });
       this.on(canvas, "pointercancel", release);
       this.on(canvas, "contextmenu", (e) => e.preventDefault());
     }
@@ -459,13 +477,14 @@
       this.volume = 1;
       this.musicOn = true;
       this.soundsOn = true;
+      this.musicVolume = 1;
+      this.soundsVolume = 1;
     }
     /** Loads every sound. `progress(p)` is called with p in [0, 1]. */
     async load(progress) {
       const useWebAudio = location.protocol !== "file:" && (window.AudioContext || window.webkitAudioContext);
       this.backend = useWebAudio ? new WebAudioBackend() : new ElementBackend();
-      this.setMusicEnabled(this.musicOn);
-      this.setSoundsEnabled(this.soundsOn);
+      this.applyBuses();
       const names = Object.keys(this.files);
       let done = 0;
       await Promise.all(names.map(async (name) => {
@@ -492,13 +511,27 @@
     }
     setMusicEnabled(on) {
       this.musicOn = on;
-      if (this.backend)
-        this.backend.setBus("music", on ? 1 : 0);
+      this.applyBuses();
     }
     setSoundsEnabled(on) {
       this.soundsOn = on;
-      if (this.backend)
-        this.backend.setBus("sfx", on ? 1 : 0);
+      this.applyBuses();
+    }
+    /** The volume of the music, 0 .. 1 (while it is switched on). */
+    setMusicVolume(v) {
+      this.musicVolume = Math.max(0, Math.min(1, v));
+      this.applyBuses();
+    }
+    /** The volume of the sound effects, 0 .. 1 (while they are switched on). */
+    setSoundsVolume(v) {
+      this.soundsVolume = Math.max(0, Math.min(1, v));
+      this.applyBuses();
+    }
+    applyBuses() {
+      if (!this.backend)
+        return;
+      this.backend.setBus("music", this.musicOn ? this.musicVolume : 0);
+      this.backend.setBus("sfx", this.soundsOn ? this.soundsVolume : 0);
     }
     /** Must be called every simulation step. */
     update(dt) {
@@ -758,7 +791,10 @@
     version: 1,
     settings: {
       music: true,
-      sounds: true
+      sounds: true,
+      // (0 .. 1, while switched on)
+      musicVolume: 1,
+      soundsVolume: 1
     },
     adventures: {
       won: [false, false, false, false, false],
@@ -848,6 +884,325 @@
         this.save();
       }
       return previous;
+    }
+  };
+
+  // src/data/enums.js
+  var BallType = Object.freeze({
+    YELLOW: 0,
+    // the default ball
+    GREEN: 1,
+    // destroys the green blocks
+    RED: 2,
+    // attracts the red pastilles
+    ORANGE: 3,
+    // fast
+    BLUE: 4,
+    // jumps over the holes
+    METAL: 5,
+    // heavy, immune to the death bumpers and to the magnets
+    VIOLET: 6
+    // sees the invisible bumpers
+  });
+  var BALL_TYPE_COUNT = 7;
+  var Item = Object.freeze({
+    NONE: 0,
+    // removed (destroyed block, collected pastille)
+    BUMPER: 1,
+    CLOCK: 2,
+    // costs 5 seconds when hit
+    DEATH: 3,
+    // kills the ball, except the metal one
+    MAGNET: 4,
+    GHOST: 5,
+    // invisible bumper
+    BLOCK: 6,
+    // green block, destroyed by the green ball
+    HOLE: 7,
+    RED: 8,
+    // red pastille : collect them all to open the doors
+    BLUE: 9,
+    // time pastille
+    TELEPORT: 10,
+    SWITCH: 11,
+    // toggles the pink and blue blocks
+    PINK_BLOCK: 12,
+    // solid while the switch is on
+    BLUE_BLOCK: 13,
+    // solid while the switch is off
+    ZAPPER: 14,
+    // laser post (a checkpoint in Course mode)
+    HATCH: 15
+    // exit of the Classique rooms
+  });
+  var RoomType = Object.freeze({
+    NONE: 0,
+    NORMAL: 1,
+    BOSS: 2,
+    BALL: 3,
+    // holds a ball to collect (data : DungeonObject)
+    BONUS: 4,
+    // holds an item box or a bonus ball (data : DungeonBonus)
+    NEEDS_BALL: 5
+    // a room that can only be crossed with a given ball
+  });
+  var Exit = Object.freeze({
+    DOOR: 0,
+    // opens when every red pastille is collected
+    WALL: 1,
+    HIDDEN: 2,
+    // open, but looks like a wall
+    SPECIAL: 3,
+    // Challenge : a door needing a ball ; other modes : a one-way door
+    OPEN: -1,
+    // a door that has been opened
+    ONE_WAY: -2
+    // a one-way door that has been crossed
+  });
+  var Dir = Object.freeze({ LEFT: 0, RIGHT: 1, UP: 2, DOWN: 3 });
+  var DIR_DX = [-1, 1, 0, 0];
+  var DIR_DY = [0, 0, -1, 1];
+  var OPPOSITE = [1, 0, 3, 2];
+  var DungeonBall = Object.freeze({ GREEN: 0, BLUE: 1, METAL: 2, VIOLET: 3 });
+  var DungeonBonus = Object.freeze({
+    ORANGE: 0,
+    RED: 1,
+    MAP: 2,
+    RADAR: 3,
+    KEY: 4,
+    SMALL_TIME: 5,
+    BIG_TIME: 6
+  });
+  var Mode = Object.freeze({
+    CHALLENGE: "challenge",
+    ADVENTURE: "adventure",
+    COURSE: "course",
+    CLASSIC: "classic",
+    TUTORIAL: "tutorial"
+  });
+  var Icon = Object.freeze({ MAP: 0, RADAR: 1, SMALL_TIME: 2, BIG_TIME: 3, KEY: 4 });
+
+  // src/gfx/draw.js
+  var FONT = "'Baloo 2', 'Trebuchet MS', 'Arial Rounded MT Bold', Verdana, sans-serif";
+  var BALL_COLORS = [
+    ["#ffd41c", "#b87a00", "#fffbd0"],
+    // yellow
+    ["#95e04c", "#3a8a14", "#efffd8"],
+    // green
+    ["#ee4a22", "#7a1004", "#ffc4a8"],
+    // red
+    ["#ffa01e", "#c04c00", "#fff0b8"],
+    // orange
+    ["#a8e2ff", "#3c86c4", "#ffffff"],
+    // blue
+    ["#d2d6dc", "#646e7a", "#ffffff"],
+    // metal
+    ["#bf84ea", "#6a2a9c", "#f6e6ff"]
+    // violet
+  ];
+  function circle(ctx, x, y, r) {
+    ctx.beginPath();
+    ctx.arc(x, y, Math.max(0, r), 0, Math.PI * 2);
+  }
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    roundRectPath(ctx, x, y, w, h, r);
+    ctx.closePath();
+  }
+  function roundRectPath(ctx, x, y, w, h, r) {
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+  }
+  function text(ctx, str, x, y, options = {}) {
+    const size = options.size || 16;
+    ctx.font = (options.weight || "800") + " " + size + "px " + FONT;
+    ctx.textAlign = options.align || "center";
+    ctx.textBaseline = options.baseline || "middle";
+    const lines = String(str).split("\n");
+    const lineHeight = size * 1.15;
+    let yy = y - (lines.length - 1) * lineHeight / 2;
+    for (const line of lines) {
+      if (options.outline) {
+        ctx.lineJoin = "round";
+        ctx.lineWidth = options.outlineWidth || Math.max(2, size / 5);
+        ctx.strokeStyle = options.outline;
+        ctx.strokeText(line, x, yy);
+      }
+      ctx.fillStyle = options.color || "#fff";
+      ctx.fillText(line, x, yy);
+      yy += lineHeight;
+    }
+  }
+
+  // src/achievements.js
+  var DUNGEON_BALLS = [BallType.GREEN, BallType.BLUE, BallType.METAL, BallType.VIOLET];
+  var ACHIEVEMENTS = [
+    { id: "tutorial", name: "Premier pas", text: "Terminer le tutoriel.", ball: BallType.YELLOW },
+    { id: "octopus", name: "Poulpe frit", text: "Battre le poulpe du Challenge.", ball: BallType.RED },
+    { id: "flawless", name: "Sans une \xE9gratignure", text: "Gagner un Challenge sans perdre de bille.", ball: BallType.METAL },
+    { id: "express", name: "Express", text: "Gagner un Challenge avec plus de 5 min restantes.", ball: BallType.ORANGE },
+    { id: "collector", name: "Collectionneur", text: "Trouver les 4 billes d'un donjon du Challenge.", ball: BallType.GREEN },
+    { id: "rainbow", name: "Arc-en-ciel", text: "Avoir les 7 billes dans une m\xEAme partie.", ball: BallType.VIOLET },
+    { id: "cartographer", name: "Cartographe", text: "Trouver la carte et le radar dans une m\xEAme partie.", ball: BallType.BLUE },
+    { id: "adventure", name: "Premier donjon", text: "Gagner une aventure.", ball: BallType.GREEN },
+    { id: "elements", name: "Ma\xEEtre des \xE9l\xE9ments", text: "Gagner les quatre aventures des \xE9l\xE9ments.", ball: BallType.RED },
+    { id: "final", name: "Le dernier donjon", text: "Gagner l'aventure finale.", ball: BallType.VIOLET, secret: true },
+    { id: "driver", name: "Pilote", text: "Terminer un circuit.", ball: BallType.ORANGE },
+    { id: "champion", name: "Champion", text: "Prendre la premi\xE8re place d'un circuit.", ball: BallType.YELLOW },
+    { id: "diver", name: "Plongeur", text: "Atteindre le niveau 10 en Classique.", ball: BallType.BLUE },
+    { id: "abyss", name: "Abysses", text: "Atteindre le niveau 25 en Classique.", ball: BallType.VIOLET },
+    { id: "pastilles", name: "Pastilleur", text: "Ramasser 500 pastilles rouges.", ball: BallType.RED, counter: "pastilles", goal: 500 },
+    { id: "bricks", name: "Casse-briques", text: "Casser 100 blocs verts.", ball: BallType.GREEN, counter: "blocks", goal: 100 },
+    { id: "clumsy", name: "Maladroit", text: "Tomber 25 fois dans un trou.", ball: BallType.METAL, counter: "falls", goal: 25 }
+  ];
+  var BANNER_TIME = 3.5;
+  var Achievements = class {
+    /** @param save  the Progress (its data keeps `achievements`) */
+    constructor(save) {
+      this.save = save;
+      this.banners = [];
+      const d = save.data;
+      if (!d.achievements || typeof d.achievements !== "object")
+        d.achievements = {};
+      d.achievements.unlocked = d.achievements.unlocked || {};
+      d.achievements.counters = d.achievements.counters || {};
+    }
+    get data() {
+      return this.save.data.achievements;
+    }
+    isUnlocked(id) {
+      return !!this.data.unlocked[id];
+    }
+    /** The date (ms) it was unlocked, or 0. */
+    date(id) {
+      return this.data.unlocked[id] || 0;
+    }
+    /** { value, goal } of a counting achievement, or null. */
+    progress(a) {
+      return a.counter ? { value: Math.min(a.goal, this.data.counters[a.counter] || 0), goal: a.goal } : null;
+    }
+    get unlockedCount() {
+      return ACHIEVEMENTS.filter((a) => this.isUnlocked(a.id)).length;
+    }
+    unlock(id) {
+      if (this.isUnlocked(id))
+        return false;
+      this.data.unlocked[id] = Date.now();
+      this.save.save();
+      const a = ACHIEVEMENTS.find((x) => x.id === id);
+      if (a)
+        this.banners.push({ achievement: a, time: 0 });
+      return true;
+    }
+    count(counter, n = 1) {
+      const c = this.data.counters;
+      c[counter] = (c[counter] || 0) + n;
+      for (const a of ACHIEVEMENTS)
+        if (a.counter === counter && c[counter] >= a.goal)
+          this.unlock(a.id);
+    }
+    /** Something happened in `game`. */
+    event(name, game, data) {
+      const stats = game.stats || (game.stats = { lost: 0 });
+      switch (name) {
+        case "pastille":
+          this.count("pastilles");
+          break;
+        case "block":
+          this.count("blocks");
+          break;
+        case "fall":
+          this.count("falls");
+          break;
+        case "lost":
+          stats.lost++;
+          break;
+        case "ball": {
+          const found = game.inventory.found;
+          if (game.mode === Mode.CHALLENGE && DUNGEON_BALLS.every((t) => found.has(t)))
+            this.unlock("collector");
+          if ((/* @__PURE__ */ new Set([BallType.YELLOW, ...found])).size === 7)
+            this.unlock("rainbow");
+          break;
+        }
+        case "item":
+          if (game.inventory.map && game.inventory.radar)
+            this.unlock("cartographer");
+          break;
+        case "level":
+          if (data >= 10)
+            this.unlock("diver");
+          if (data >= 25)
+            this.unlock("abyss");
+          break;
+        case "end":
+          this.gameOver(game, data);
+          this.save.save();
+          break;
+      }
+    }
+    gameOver(game, result) {
+      if (result.cause !== "win")
+        return;
+      switch (result.mode) {
+        case Mode.TUTORIAL:
+          this.unlock("tutorial");
+          break;
+        case Mode.CHALLENGE:
+          this.unlock("octopus");
+          if (!game.stats || game.stats.lost === 0)
+            this.unlock("flawless");
+          if (result.time > 5 * 60)
+            this.unlock("express");
+          break;
+        case Mode.ADVENTURE:
+          this.unlock("adventure");
+          if (result.param === 4)
+            this.unlock("final");
+          if (this.save.data.adventures.won.slice(0, 4).every(Boolean))
+            this.unlock("elements");
+          break;
+        case Mode.COURSE:
+          this.unlock("driver");
+          if (result.courseRank === 0)
+            this.unlock("champion");
+          break;
+      }
+    }
+    // ----- the banner of a new achievement -----
+    update(dt) {
+      const b = this.banners[0];
+      if (b) {
+        b.time += dt;
+        if (b.time >= BANNER_TIME)
+          this.banners.shift();
+      }
+    }
+    /** Draws the banner of the new achievement, over everything. */
+    render(ctx) {
+      const b = this.banners[0];
+      if (!b)
+        return;
+      const t = b.time;
+      const k = Math.min(1, t / 0.3, (BANNER_TIME - t) / 0.3);
+      const y = -30 + 52 * Math.max(0, k);
+      ctx.save();
+      ctx.fillStyle = "rgba(40,0,70,0.85)";
+      roundRect(ctx, WIDTH / 2 - 150, y - 20, 300, 42, 14);
+      ctx.fill();
+      ctx.strokeStyle = "#ffe060";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      text(ctx, "Succ\xE8s d\xE9bloqu\xE9 !", WIDTH / 2, y - 7, { size: 12, color: "#ffe060", weight: "700" });
+      text(ctx, b.achievement.name, WIDTH / 2, y + 9, { size: 16, color: "#fff" });
+      ctx.restore();
     }
   };
 
@@ -942,65 +1297,6 @@
       return p;
     }
   };
-
-  // src/gfx/draw.js
-  var FONT = "'Baloo 2', 'Trebuchet MS', 'Arial Rounded MT Bold', Verdana, sans-serif";
-  var BALL_COLORS = [
-    ["#ffd41c", "#b87a00", "#fffbd0"],
-    // yellow
-    ["#95e04c", "#3a8a14", "#efffd8"],
-    // green
-    ["#ee4a22", "#7a1004", "#ffc4a8"],
-    // red
-    ["#ffa01e", "#c04c00", "#fff0b8"],
-    // orange
-    ["#a8e2ff", "#3c86c4", "#ffffff"],
-    // blue
-    ["#d2d6dc", "#646e7a", "#ffffff"],
-    // metal
-    ["#bf84ea", "#6a2a9c", "#f6e6ff"]
-    // violet
-  ];
-  function circle(ctx, x, y, r) {
-    ctx.beginPath();
-    ctx.arc(x, y, Math.max(0, r), 0, Math.PI * 2);
-  }
-  function roundRect(ctx, x, y, w, h, r) {
-    ctx.beginPath();
-    roundRectPath(ctx, x, y, w, h, r);
-    ctx.closePath();
-  }
-  function roundRectPath(ctx, x, y, w, h, r) {
-    ctx.moveTo(x + r, y);
-    ctx.lineTo(x + w - r, y);
-    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-    ctx.lineTo(x + w, y + h - r);
-    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-    ctx.lineTo(x + r, y + h);
-    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-    ctx.lineTo(x, y + r);
-    ctx.quadraticCurveTo(x, y, x + r, y);
-  }
-  function text(ctx, str, x, y, options = {}) {
-    const size = options.size || 16;
-    ctx.font = (options.weight || "800") + " " + size + "px " + FONT;
-    ctx.textAlign = options.align || "center";
-    ctx.textBaseline = options.baseline || "middle";
-    const lines = String(str).split("\n");
-    const lineHeight = size * 1.15;
-    let yy = y - (lines.length - 1) * lineHeight / 2;
-    for (const line of lines) {
-      if (options.outline) {
-        ctx.lineJoin = "round";
-        ctx.lineWidth = options.outlineWidth || Math.max(2, size / 5);
-        ctx.strokeStyle = options.outline;
-        ctx.strokeText(line, x, yy);
-      }
-      ctx.fillStyle = options.color || "#fff";
-      ctx.fillText(line, x, yy);
-      yy += lineHeight;
-    }
-  }
 
   // src/gfx/xfl/render.js
   var GRADIENT_SIZE = 819.2;
@@ -1112,44 +1408,79 @@
       c = document.createElement("canvas");
       pool[poolDepth] = c;
     }
-    if (c.width !== w || c.height !== h) {
-      c.width = w;
-      c.height = h;
+    if (c.width < w || c.height < h) {
+      c.width = Math.max(c.width, w);
+      c.height = Math.max(c.height, h);
     }
     poolDepth++;
     return c;
   }
-  function withColor(ctx, c, draw) {
+  function deviceRect(ctx, t, bounds) {
+    const w = ctx.canvas.width;
+    const h = ctx.canvas.height;
+    if (!bounds)
+      return { x: 0, y: 0, w, h };
+    const [x0, y0, x1, y1] = bounds;
+    let minX = Infinity;
+    let minY = Infinity;
+    let maxX = -Infinity;
+    let maxY = -Infinity;
+    for (const [x, y] of [[x0, y0], [x1, y0], [x0, y1], [x1, y1]]) {
+      const dx = t.a * x + t.c * y + t.e;
+      const dy = t.b * x + t.d * y + t.f;
+      minX = Math.min(minX, dx);
+      minY = Math.min(minY, dy);
+      maxX = Math.max(maxX, dx);
+      maxY = Math.max(maxY, dy);
+    }
+    const rx = Math.max(0, Math.floor(minX) - 2);
+    const ry = Math.max(0, Math.floor(minY) - 2);
+    return { x: rx, y: ry, w: Math.min(w, Math.ceil(maxX) + 2) - rx, h: Math.min(h, Math.ceil(maxY) + 2) - ry };
+  }
+  function withColor(ctx, c, draw, bounds = null) {
     const alpha = Math.max(0, Math.min(1, c.am + c.ao / 255));
-    if (isAlphaOnly(c) || typeof document === "undefined" || !ctx.getTransform) {
+    const t = typeof document !== "undefined" && ctx.getTransform ? ctx.getTransform() : null;
+    if (isAlphaOnly(c) || !t) {
       const a = ctx.globalAlpha;
       ctx.globalAlpha = a * alpha;
       draw(ctx);
       ctx.globalAlpha = a;
       return;
     }
-    const w = ctx.canvas.width;
-    const h = ctx.canvas.height;
+    const r = deviceRect(ctx, t, bounds);
+    if (r.w <= 0 || r.h <= 0)
+      return;
+    const w = r.w;
+    const h = r.h;
     const layer = offscreen(w, h);
     const lc = layer.getContext("2d");
     lc.setTransform(1, 0, 0, 1, 0, 0);
     lc.globalCompositeOperation = "source-over";
     lc.globalAlpha = 1;
     lc.clearRect(0, 0, w, h);
-    lc.setTransform(ctx.getTransform());
+    lc.setTransform(t.a, t.b, t.c, t.d, t.e - r.x, t.f - r.y);
     draw(lc);
     lc.setTransform(1, 0, 0, 1, 0, 0);
+    const silhouette = (sc, color) => {
+      sc.setTransform(1, 0, 0, 1, 0, 0);
+      sc.globalCompositeOperation = "copy";
+      sc.drawImage(layer, 0, 0, w, h, 0, 0, w, h);
+      sc.globalCompositeOperation = "source-in";
+      sc.fillStyle = color;
+      sc.fillRect(0, 0, w, h);
+    };
+    const channel = (v) => Math.round(Math.max(0, Math.min(255, v)));
     if (c.rm < 1 || c.gm < 1 || c.bm < 1) {
       const copy = offscreen(w, h);
       const cc = copy.getContext("2d");
       cc.setTransform(1, 0, 0, 1, 0, 0);
       cc.globalCompositeOperation = "copy";
-      cc.drawImage(layer, 0, 0);
+      cc.drawImage(layer, 0, 0, w, h, 0, 0, w, h);
       lc.globalCompositeOperation = "multiply";
-      lc.fillStyle = "rgb(" + [c.rm, c.gm, c.bm].map((v) => Math.round(Math.max(0, Math.min(1, v)) * 255)).join(",") + ")";
+      lc.fillStyle = "rgb(" + [c.rm, c.gm, c.bm].map((v) => channel(v * 255)).join(",") + ")";
       lc.fillRect(0, 0, w, h);
       lc.globalCompositeOperation = "destination-in";
-      lc.drawImage(copy, 0, 0);
+      lc.drawImage(copy, 0, 0, w, h, 0, 0, w, h);
       poolDepth--;
     }
     const ro = Math.max(0, c.ro);
@@ -1157,15 +1488,9 @@
     const bo = Math.max(0, c.bo);
     if (ro || go || bo) {
       const sil = offscreen(w, h);
-      const sc = sil.getContext("2d");
-      sc.setTransform(1, 0, 0, 1, 0, 0);
-      sc.globalCompositeOperation = "copy";
-      sc.drawImage(layer, 0, 0);
-      sc.globalCompositeOperation = "source-in";
-      sc.fillStyle = "rgb(" + Math.round(Math.min(255, ro)) + "," + Math.round(Math.min(255, go)) + "," + Math.round(Math.min(255, bo)) + ")";
-      sc.fillRect(0, 0, w, h);
+      silhouette(sil.getContext("2d"), "rgb(" + [ro, go, bo].map(channel).join(",") + ")");
       lc.globalCompositeOperation = "lighter";
-      lc.drawImage(sil, 0, 0);
+      lc.drawImage(sil, 0, 0, w, h, 0, 0, w, h);
       poolDepth--;
     }
     const rn = Math.max(0, -c.ro);
@@ -1174,32 +1499,40 @@
     if (rn || gn || bn) {
       const sil = offscreen(w, h);
       const sc = sil.getContext("2d");
-      sc.setTransform(1, 0, 0, 1, 0, 0);
-      const silhouette = (color) => {
-        sc.globalCompositeOperation = "copy";
-        sc.drawImage(layer, 0, 0);
-        sc.globalCompositeOperation = "source-in";
-        sc.fillStyle = color;
-        sc.fillRect(0, 0, w, h);
-      };
       const invert = () => {
-        silhouette("#fff");
+        silhouette(sc, "#fff");
         lc.globalCompositeOperation = "difference";
-        lc.drawImage(sil, 0, 0);
+        lc.drawImage(sil, 0, 0, w, h, 0, 0, w, h);
       };
       invert();
-      silhouette("rgb(" + [rn, gn, bn].map((v) => Math.round(Math.min(255, v))).join(",") + ")");
+      silhouette(sc, "rgb(" + [rn, gn, bn].map(channel).join(",") + ")");
       lc.globalCompositeOperation = "lighter";
-      lc.drawImage(sil, 0, 0);
+      lc.drawImage(sil, 0, 0, w, h, 0, 0, w, h);
       invert();
       poolDepth--;
     }
     ctx.save();
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.globalAlpha *= alpha;
-    ctx.drawImage(layer, 0, 0);
+    ctx.drawImage(layer, 0, 0, w, h, r.x, r.y, w, h);
     ctx.restore();
     poolDepth--;
+  }
+  function unionBounds(acc, b, m) {
+    if (!b)
+      return acc;
+    let r = b;
+    if (m) {
+      const [a, bb, c, d, tx, ty] = m;
+      const xs = [];
+      const ys = [];
+      for (const [x, y] of [[b[0], b[1]], [b[2], b[1]], [b[0], b[3]], [b[2], b[3]]]) {
+        xs.push(a * x + c * y + tx);
+        ys.push(bb * x + d * y + ty);
+      }
+      r = [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
+    }
+    return acc ? [Math.min(acc[0], r[0]), Math.min(acc[1], r[1]), Math.max(acc[2], r[2]), Math.max(acc[3], r[3])] : r;
   }
   function clipToMask(ctx, lib, els, clip2, maskLayerIndex) {
     if (typeof Path2D === "undefined" || typeof DOMMatrix === "undefined")
@@ -1265,6 +1598,7 @@
 
   // src/gfx/xfl/clip.js
   var MAX_GOTO_DEPTH = 8;
+  var JUMPS = /* @__PURE__ */ new Set(["goto", "gotoRel", "randomFrame", "remove", "removeParent", "countdown", "loopUnlessRandom", "loopIf"]);
   var Clip = class _Clip {
     /**
      * @param lib     the XflLibrary
@@ -1338,6 +1672,30 @@
         this.time -= step2;
         this.tick();
       }
+    }
+    /**
+     * The frame to draw : between the current frame and the next one, by the
+     * time spent since the last frame, so that the motion tweens move smoothly
+     * on any screen instead of 40 times per second. (The frames themselves,
+     * their scripts and the drawings of the frame by frame animations stay
+     * whole.) Not when the timeline stops, loops or jumps at the next frame.
+     */
+    drawFrame() {
+      const f = this.frame;
+      if (this.removed || f + 1 >= this.totalFrames)
+        return f;
+      if (this.controlled) {
+        if (!this.followsParent || !this.parent)
+          return f;
+        const pf = this.parent.drawFrame();
+        return f + (pf - Math.floor(pf));
+      }
+      if (!this.playing)
+        return f;
+      const ops = this.symbol.scripts[f + 1];
+      if (ops && ops.some((op) => JUMPS.has(op[0])))
+        return f;
+      return f + Math.min(0.999, this.time * (this.lib.data.frameRate || 40));
     }
     /** One frame. */
     tick() {
@@ -1520,6 +1878,7 @@
             else
               f = (f % total + total) % total;
             c.frame = f;
+            c.followsParent = el.g.loop !== "single frame" && f + 1 < total;
             c.syncChildren(tick);
           } else if (tick && !created) {
             c.tick();
@@ -1570,7 +1929,7 @@
       if (this.removed)
         return;
       if (color && !isIdentityColor(color)) {
-        withColor(ctx, color, (lc) => this.draw(lc));
+        withColor(ctx, color, (lc) => this.draw(lc), this.bounds());
         return;
       }
       const lib = this.lib;
@@ -1583,16 +1942,17 @@
         if (v._flipY)
           ctx.scale(1, v._flipY);
       }
+      const frame = this.drawFrame();
       layers.forEach((layer, li) => {
         if (layer.mask)
           return;
-        const cur = this.layerElements(layer);
+        const cur = this.layerElements(layer, frame);
         if (!cur || !cur.els.length)
           return;
         const masked = layer.maskedBy !== void 0;
         if (masked) {
           ctx.save();
-          const mask = this.layerElements(layers[layer.maskedBy]);
+          const mask = this.layerElements(layers[layer.maskedBy], frame);
           if (mask)
             clipToMask(ctx, lib, mask.els, this, layer.maskedBy);
         }
@@ -1602,6 +1962,57 @@
       });
       if (v._flipY || v._rotate)
         ctx.restore();
+    }
+    /**
+     * The local bounds [x0, y0, x1, y1] of what the clip draws at its current
+     * frame (null when it draws nothing) : the colour transforms only work on
+     * that part of the canvas.
+     */
+    bounds() {
+      if (this.removed)
+        return null;
+      let acc = null;
+      const frame = this.drawFrame();
+      this.symbol.layers.forEach((layer, li) => {
+        if (layer.mask)
+          return;
+        const cur = this.layerElements(layer, frame);
+        if (!cur)
+          return;
+        cur.els.forEach((el, ei) => {
+          let m = el.m;
+          const o = el.n ? this.lookup("overrides", el.n) : null;
+          if (o) {
+            if (o.visible === false)
+              return;
+            m = applyOverride(m, o);
+          }
+          let b = null;
+          switch (el.t) {
+            case "shape":
+              b = this.lib.shape(el.id)?.bounds;
+              break;
+            case "bmp": {
+              const bmp = this.lib.bitmap(el.b);
+              b = bmp ? [0, 0, bmp.w, bmp.h] : null;
+              break;
+            }
+            case "text":
+              b = [0, 0, el.w || 0, el.h || 0];
+              break;
+            case "sym":
+              b = this.children.get(li + ":" + ei + ":" + el.s)?.bounds();
+              break;
+          }
+          acc = unionBounds(acc, b, m);
+        });
+      });
+      const v = this.vars;
+      if (acc && (v._rotate || v._flipY)) {
+        const r = Math.max(...acc.map(Math.abs));
+        acc = [-r * 1.5, -r * 1.5, r * 1.5, r * 1.5];
+      }
+      return acc;
     }
     drawElement(ctx, el, li, ei) {
       const lib = this.lib;
@@ -1638,7 +2049,7 @@
           if (o && o.alpha !== void 0)
             ct = combineColor(ct, { am: o.alpha, rm: 1, gm: 1, bm: 1, ao: 0, ro: 0, go: 0, bo: 0 });
           if (ct && !isIdentityColor(ct))
-            withColor(ctx, ct, (lc) => c.draw(lc));
+            withColor(ctx, ct, (lc) => c.draw(lc), c.bounds());
           else
             c.draw(ctx);
           break;
@@ -1748,101 +2159,6 @@
       return pad2(m) + ":" + pad2(sec) + ":" + pad2(Math.floor(s * 100) % 100);
     return m + ":" + pad2(sec);
   }
-
-  // src/data/enums.js
-  var BallType = Object.freeze({
-    YELLOW: 0,
-    // the default ball
-    GREEN: 1,
-    // destroys the green blocks
-    RED: 2,
-    // attracts the red pastilles
-    ORANGE: 3,
-    // fast
-    BLUE: 4,
-    // jumps over the holes
-    METAL: 5,
-    // heavy, immune to the death bumpers and to the magnets
-    VIOLET: 6
-    // sees the invisible bumpers
-  });
-  var BALL_TYPE_COUNT = 7;
-  var Item = Object.freeze({
-    NONE: 0,
-    // removed (destroyed block, collected pastille)
-    BUMPER: 1,
-    CLOCK: 2,
-    // costs 5 seconds when hit
-    DEATH: 3,
-    // kills the ball, except the metal one
-    MAGNET: 4,
-    GHOST: 5,
-    // invisible bumper
-    BLOCK: 6,
-    // green block, destroyed by the green ball
-    HOLE: 7,
-    RED: 8,
-    // red pastille : collect them all to open the doors
-    BLUE: 9,
-    // time pastille
-    TELEPORT: 10,
-    SWITCH: 11,
-    // toggles the pink and blue blocks
-    PINK_BLOCK: 12,
-    // solid while the switch is on
-    BLUE_BLOCK: 13,
-    // solid while the switch is off
-    ZAPPER: 14,
-    // laser post (a checkpoint in Course mode)
-    HATCH: 15
-    // exit of the Classique rooms
-  });
-  var RoomType = Object.freeze({
-    NONE: 0,
-    NORMAL: 1,
-    BOSS: 2,
-    BALL: 3,
-    // holds a ball to collect (data : DungeonObject)
-    BONUS: 4,
-    // holds an item box or a bonus ball (data : DungeonBonus)
-    NEEDS_BALL: 5
-    // a room that can only be crossed with a given ball
-  });
-  var Exit = Object.freeze({
-    DOOR: 0,
-    // opens when every red pastille is collected
-    WALL: 1,
-    HIDDEN: 2,
-    // open, but looks like a wall
-    SPECIAL: 3,
-    // Challenge : a door needing a ball ; other modes : a one-way door
-    OPEN: -1,
-    // a door that has been opened
-    ONE_WAY: -2
-    // a one-way door that has been crossed
-  });
-  var Dir = Object.freeze({ LEFT: 0, RIGHT: 1, UP: 2, DOWN: 3 });
-  var DIR_DX = [-1, 1, 0, 0];
-  var DIR_DY = [0, 0, -1, 1];
-  var OPPOSITE = [1, 0, 3, 2];
-  var DungeonBall = Object.freeze({ GREEN: 0, BLUE: 1, METAL: 2, VIOLET: 3 });
-  var DungeonBonus = Object.freeze({
-    ORANGE: 0,
-    RED: 1,
-    MAP: 2,
-    RADAR: 3,
-    KEY: 4,
-    SMALL_TIME: 5,
-    BIG_TIME: 6
-  });
-  var Mode = Object.freeze({
-    CHALLENGE: "challenge",
-    ADVENTURE: "adventure",
-    COURSE: "course",
-    CLASSIC: "classic",
-    TUTORIAL: "tutorial"
-  });
-  var Icon = Object.freeze({ MAP: 0, RADAR: 1, SMALL_TIME: 2, BIG_TIME: 3, KEY: 4 });
 
   // src/scenes/widgets.js
   var DIRS = { left: [-1, 0], right: [1, 0], up: [0, -1], down: [0, 1] };
@@ -4905,6 +5221,7 @@
       this.solid = false;
       this.data.destroyed = true;
       game.room.removeTile(this);
+      game.achieve("block");
       const ball = game.ball;
       const angle = Math.atan2(ball.vy, ball.vx);
       const speed = contact.speed;
@@ -5017,6 +5334,7 @@
       if (this.red) {
         app.audio.play("red");
         game.room.redTaken(game);
+        game.achieve("pastille");
       } else {
         app.audio.play("blue");
         game.addTime(game.rules.bluePastille);
@@ -5659,10 +5977,12 @@
   var BONUS_ITEMS = {
     [DungeonBonus.MAP]: [Icon.MAP, (game) => {
       game.inventory.map = true;
+      game.achieve("item");
       game.showMap();
     }],
     [DungeonBonus.RADAR]: [Icon.RADAR, (game) => {
       game.inventory.radar = true;
+      game.achieve("item");
       game.showMap();
     }],
     [DungeonBonus.KEY]: [Icon.KEY, (game) => {
@@ -6463,6 +6783,10 @@
      * (a spring, stiffer when stretched). The ball receives the pull too.
      */
     pullVine(ball) {
+      for (const m of this.vine) {
+        m.px = m.x;
+        m.py = m.y;
+      }
       const b = { x: ball.x, y: ball.y, vx: ball.vx / 40, vy: ball.vy / 40 };
       const chain = this.vine.concat([b]);
       for (let i = 1; i < chain.length; i++) {
@@ -6505,7 +6829,8 @@
       if (this.vine) {
         ctx.save();
         ctx.globalAlpha = this.breaking < 0 ? 1 : Math.max(0, 1 - this.breaking / 0.25);
-        const points = this.vine.concat([game.ball]);
+        const k = Math.min(1, this.clock.time / FRAME);
+        const points = this.vine.map((m) => m.px === void 0 ? m : { x: m.px + (m.x - m.px) * k, y: m.py + (m.y - m.py) * k }).concat([game.ball]);
         for (let i = 0; i < this.vine.length; i++) {
           const a = points[i];
           const b = points[i + 1];
@@ -7307,6 +7632,7 @@
       this.state = "play";
       this.scroll = null;
       this.hud = new Hud(this);
+      this.stats = { lost: 0 };
       let x = this.dungeon.start.x;
       let y = this.dungeon.start.y;
       if (this.rules.randomStartRow)
@@ -7333,6 +7659,11 @@
       return b.x > m && b.y > m && b.x < WIDTH - m && b.y < HEIGHT - m;
     }
     // ----- actions for the entities -----
+    /** Tells the achievements what happened (see achievements.js). */
+    achieve(event, data) {
+      if (app.achievements)
+        app.achievements.event(event, this, data);
+    }
     /** Adds time : in chrono mode, it counts the other way. */
     addTime(seconds) {
       this.time += seconds;
@@ -7350,6 +7681,7 @@
         inv.found.add(type);
         app.audio.setLayer(Math.min(inv.found.size, GAME_MUSIC.layers.length - 1));
       }
+      this.achieve("ball", type);
     }
     /** The ball has finished falling (hole, hatch) or dying. */
     ballFell(kind) {
@@ -7359,9 +7691,13 @@
       }
       const ball = this.ball;
       const inv = this.inventory;
+      if (kind === "hole")
+        this.achieve("fall");
       const free = this.rules.noLoss || this.rules.freeYellow && ball.type === BallType.YELLOW;
-      if (!free)
+      if (!free) {
         inv.balls[ball.type]--;
+        this.achieve("lost");
+      }
       const next = inv.next(ball.type, true);
       if (next < 0) {
         ball.hidden = true;
@@ -7528,6 +7864,7 @@
     nextClassicLevel() {
       const b = this.ball;
       this.level++;
+      this.achieve("level", this.level + 1);
       this.addTime(this.rules.levelBonus);
       b.vx = 0;
       b.vy = 0;
@@ -7799,6 +8136,7 @@
         this.game.boss.onPause(false);
     }
     quit() {
+      app.save.save();
       app.audio.stopLayers(0.5);
       app.audio.playMusic("musicMenu", MUSIC_VOLUME);
       app.scenes.goto(new MenuScene());
@@ -7811,6 +8149,7 @@
       const lines = [];
       let heading = win ? "Victoire !" : result.cause === "time" ? "Temps \xE9coul\xE9 !" : "Plus de billes !";
       let table = null;
+      let courseRank = -1;
       switch (result.mode) {
         case Mode.CHALLENGE:
         case Mode.ADVENTURE: {
@@ -7829,6 +8168,7 @@
           if (win) {
             heading = "Arriv\xE9e !";
             const r = save.courseTime(result.param, result.time);
+            courseRank = r.rank;
             table = r.table;
             lines.push("Temps : " + formatTime(result.time, true));
             lines.push(r.rank < 0 ? "Pas de record..." : "Record battu !");
@@ -7848,6 +8188,8 @@
           lines.push(win ? "Tu connais les bases : \xE0 toi de jouer !" : "Essaie encore !");
           break;
       }
+      if (app.achievements)
+        app.achievements.event("end", this.game, { ...result, courseRank });
       this.ending = { heading, lines, table, pop: new Pop(), scale: 0, time: 0, art: this.endPanel(win, lines, table) };
       if (win)
         app.audio.playMusic("musicMenu", MUSIC_VOLUME);
@@ -7965,23 +8307,123 @@
     }
   };
 
+  // src/scenes/achievements.js
+  var COLUMNS = 2;
+  var TOP = 58;
+  var ROW = 38;
+  var CELL_W = 285;
+  var LEFT2 = (WIDTH - CELL_W * COLUMNS - 10) / 2;
+  var day = (ms) => {
+    const d = new Date(ms);
+    const two = (n) => String(n).padStart(2, "0");
+    return two(d.getDate()) + "/" + two(d.getMonth() + 1) + "/" + d.getFullYear();
+  };
+  var AchievementsScene = class {
+    constructor() {
+      this.time = 0;
+      this.bg = clip("fondMenu");
+      this.icons = /* @__PURE__ */ new Map();
+    }
+    update(dt) {
+      this.time += dt;
+      const input = app.input;
+      if (this.time > 0.3 && !app.scenes.busy && (input.pressed("back") || input.pressed("confirm") || input.pressed("pause") || input.pointer)) {
+        app.audio.play("menuEnter");
+        this.back();
+      }
+    }
+    back() {
+      app.scenes.goto(new MenuScene("main", "succes"));
+    }
+    icon(type) {
+      if (!this.icons.has(type)) {
+        const c = clip("marble");
+        c.gotoAndStop(type);
+        this.icons.set(type, c);
+      }
+      return this.icons.get(type);
+    }
+    render(ctx) {
+      this.bg.draw(ctx);
+      ctx.fillStyle = "rgba(40,0,70,0.45)";
+      ctx.fillRect(0, 0, WIDTH, HEIGHT);
+      const ach = app.achievements;
+      text(
+        ctx,
+        "Succ\xE8s  " + ach.unlockedCount + " / " + ACHIEVEMENTS.length,
+        WIDTH / 2,
+        28,
+        { size: 24, color: "#ffe060", outline: "#4a1470" }
+      );
+      ACHIEVEMENTS.forEach((a, i) => {
+        const x = LEFT2 + i % COLUMNS * (CELL_W + 10);
+        const y = TOP + Math.floor(i / COLUMNS) * ROW;
+        const done = ach.isUnlocked(a.id);
+        const hidden = a.secret && !done;
+        ctx.fillStyle = done ? "rgba(255,255,255,0.22)" : "rgba(20,0,40,0.45)";
+        roundRect(ctx, x, y, CELL_W, ROW - 4, 10);
+        ctx.fill();
+        ctx.save();
+        ctx.globalAlpha = done ? 1 : 0.3;
+        ctx.translate(x + 18, y + (ROW - 4) / 2);
+        ctx.scale(1.15, 1.15);
+        this.icon(a.ball).draw(ctx);
+        ctx.restore();
+        const name = hidden ? "???" : a.name;
+        const desc = hidden ? "Un succ\xE8s secret." : a.text;
+        text(ctx, name, x + 38, y + 11, { size: 13, color: done ? "#ffe060" : "#e8dcf4", align: "left" });
+        text(ctx, desc, x + 38, y + 25, { size: 10, color: done ? "#fff" : "#c8b8d8", align: "left", weight: "600" });
+        if (done) {
+          text(ctx, day(ach.date(a.id)), x + CELL_W - 8, y + 11, { size: 10, color: "#fff", align: "right", weight: "600" });
+        } else {
+          const p = ach.progress(a);
+          if (p) {
+            text(ctx, p.value + " / " + p.goal, x + CELL_W - 8, y + 11, { size: 10, color: "#e8dcf4", align: "right", weight: "600" });
+            ctx.fillStyle = "rgba(0,0,0,0.35)";
+            ctx.fillRect(x + CELL_W - 70, y + 20, 62, 4);
+            ctx.fillStyle = "#b4f08a";
+            ctx.fillRect(x + CELL_W - 70, y + 20, 62 * p.value / p.goal, 4);
+          }
+        }
+      });
+      if (this.time > 0.3)
+        text(
+          ctx,
+          "Clique ou appuie sur une touche pour revenir",
+          WIDTH / 2,
+          HEIGHT - 8,
+          { size: 11, color: "rgba(255,255,255,0.75)", weight: "700" }
+        );
+    }
+  };
+
   // src/scenes/menu.js
   var FRAME2 = 1 / 40;
   var CX = 305;
   var CY = 205;
   var RADIUS = 136;
   var INFOS = { challenge: 0, aventure: 1, course: 2, classique: 3 };
+  var SLIDERS = [
+    { key: "music", label: "Musique", y: 190 },
+    { key: "sounds", label: "Sons", y: 238 }
+  ];
+  var SLIDER_X = 250;
+  var SLIDER_W = 110;
+  var VOLUME_STEP = 0.1;
   var Ring = class extends ButtonGroup {
     move(dx, dy) {
       const n = this.buttons.length;
       if (!n)
+        return;
+      if (dy && this.adjust && this.adjust(-dy))
         return;
       this.focus = (this.focus + (dx + dy > 0 ? 1 : n - 1)) % n;
       app.audio.play("menuMove");
     }
   };
   var MenuScene = class {
-    constructor(page = "main") {
+    /** @param focus  the name of the ball to focus on the main page (e.g. coming back from a screen) */
+    constructor(page = "main", focus = null) {
       this.time = 0;
       this.clock = 0;
       this.bg = clip("fondMenu");
@@ -7999,6 +8441,8 @@
       this.menuTime = 0;
       this.goHole = false;
       this.next = null;
+      if (focus)
+        this.mainFocus = Math.max(0, this.mainPage().findIndex((b) => b.name === focus));
       this.open(page);
     }
     /** Shows the balls of a page. */
@@ -8007,6 +8451,15 @@
       this.mainFocus = mainFocus;
       this.page = page;
       this.group = new Ring(this[page + "Page"](), page === "main" ? null : () => this.goto("main"));
+      this.dragging = null;
+      if (page === "options")
+        this.group.adjust = (way) => {
+          const key = this.group.focused.name;
+          if (key !== "music" && key !== "sounds")
+            return false;
+          this.setVolume(key, app.save.settings[key + "Volume"] + way * VOLUME_STEP, true);
+          return true;
+        };
       if (page === "main")
         this.group.focus = mainFocus;
       const n = this.group.buttons.length;
@@ -8015,17 +8468,21 @@
         b.w = b.h = 100;
       });
       this.place();
+      for (const b of this.group.buttons) {
+        b.px = b.x;
+        b.py = b.y;
+      }
     }
     /**
      * A ball of the menu : `id` is its frame in the original (its title and
      * its picture).
      */
-    ball(id, name, action, enabled = true) {
+    ball(id, name, action, enabled = true, label = null) {
       const art = clip("menu balls");
       art.gotoAndStop(enabled ? "normal" : "disable");
       art.child("title")?.gotoAndStop(id - 1);
       art.child("ball")?.gotoAndStop(id - 1);
-      const b = { name, id, art, enabled, action, x: CX, y: CY, selected: false };
+      const b = { name, id, art, enabled, action, x: CX, y: CY, selected: false, label };
       b.draw = (ctx, focused) => this.drawBall(ctx, b, focused);
       return b;
     }
@@ -8037,7 +8494,9 @@
         this.ball(3, "aventure", () => this.goto("adventure")),
         this.ball(4, "classique", () => this.play(Mode.CLASSIC)),
         this.ball(5, "options", () => this.goto("options")),
-        this.ball(6, "aide", () => this.play(Mode.TUTORIAL))
+        this.ball(6, "aide", () => this.play(Mode.TUTORIAL)),
+        // (the rewrite's achievements : on a silver ball of the original, without a title)
+        this.ball(26, "succes", () => this.leave(() => new AchievementsScene()), true, "succ\xE8s")
       ];
     }
     coursePage() {
@@ -8081,6 +8540,40 @@
         this.ball(24, "back", () => this.goto("main"))
       ];
     }
+    /**
+     * Sets the volume of the music or of the sounds (0 .. 1). `done` : saves it
+     * (and plays a sound, to hear the new volume of the sounds).
+     */
+    setVolume(key, v, done) {
+      const s = app.save.settings;
+      s[key + "Volume"] = Math.round(Math.max(0, Math.min(1, v)) * 100) / 100;
+      applySettings();
+      if (done) {
+        app.save.save();
+        if (key === "sounds")
+          app.audio.play("menuMove");
+      }
+    }
+    /** Dragging a slider (the mouse or a finger). */
+    updateSliders() {
+      const d = app.input.drag ? app.input.drag() : null;
+      if (!d) {
+        if (this.dragging)
+          this.setVolume(this.dragging, app.save.settings[this.dragging + "Volume"], true);
+        this.dragging = null;
+        return;
+      }
+      if (!this.dragging) {
+        const hit = SLIDERS.find((sl) => Math.abs(d.y - sl.y) < 16 && d.x > SLIDER_X - 12 && d.x < SLIDER_X + SLIDER_W + 12);
+        if (!hit)
+          return;
+        this.dragging = hit.key;
+        const i = this.group.buttons.findIndex((b) => b.name === hit.key);
+        if (i >= 0)
+          this.group.focus = i;
+      }
+      this.setVolume(this.dragging, (d.x - SLIDER_X) / SLIDER_W, false);
+    }
     // ----- transitions -----
     /** The balls fly away, the hole grows, the game starts. */
     play(mode, param = 0) {
@@ -8098,6 +8591,23 @@
       this.cosSpeed = 0;
       this.cosRay = 0;
       this.goHole = true;
+      this.showInfo(null);
+    }
+    /** The balls fly away, then another screen comes. */
+    leave(scene) {
+      if (this.phase > 1)
+        return;
+      this.phase = 2;
+      this.next = () => {
+        if (!app.scenes.busy)
+          app.scenes.goto(scene());
+      };
+      this.raySpeed = 7;
+      this.rayAcc = 1.05;
+      this.angSpeed = 0.1;
+      this.angAcc = 1.05;
+      this.cosSpeed = 0;
+      this.cosRay = 0;
       this.showInfo(null);
     }
     /** The balls fly to the centre, and come back with another page. */
@@ -8122,12 +8632,17 @@
         if (this.phase === 1 && hover && hover !== this.group.lastHover)
           this.steer(hover.x);
         this.group.update();
+        if (this.page === "options")
+          this.updateSliders();
       }
       this.clock += dt;
       while (this.clock >= FRAME2) {
         this.clock -= FRAME2;
         this.step();
       }
+      this.bg.update(dt);
+      for (const b of this.group.buttons)
+        b.art.update(dt);
       this.select();
     }
     /** The mouse on the left or on the right turns the ring. */
@@ -8160,10 +8675,14 @@
     }
     /** One frame of the original (40 per second). */
     step() {
+      for (const b of this.group.buttons) {
+        b.px = b.x;
+        b.py = b.y;
+      }
+      if (this.info)
+        this.info.py = this.info.y;
+      this.prevHole = this.holeScale;
       this.menuTime += 1 / 30;
-      this.bg.update(FRAME2);
-      for (const b of this.group.buttons)
-        b.art.update(FRAME2);
       const info = this.info;
       if (info) {
         info.y += info.dy;
@@ -8231,24 +8750,80 @@
       }
     }
     // ----- drawing -----
+    /** Between the previous step (0) and the last one (1). */
+    get k() {
+      return Math.min(1, this.clock / FRAME2);
+    }
     render(ctx) {
-      this.bg.set("hole", { xscale: this.holeScale, yscale: this.holeScale });
+      const k = this.k;
+      const hole = this.prevHole === void 0 ? this.holeScale : this.prevHole + (this.holeScale - this.prevHole) * k;
+      this.bg.set("hole", { xscale: hole, yscale: hole });
       this.bg.draw(ctx);
       this.group.render(ctx);
       const b = this.group.focused;
       if (this.phase <= 1 && b && b.enabled && b.info)
         text(ctx, b.info(), CX, CY, { size: 15, color: "#fff", outline: "#4a1470" });
+      if (this.page === "options" && this.phase <= 1)
+        this.renderSliders(ctx);
       if (this.info) {
+        const py = this.info.py ?? this.info.y;
         ctx.save();
-        ctx.translate(WIDTH / 2, this.info.y);
+        ctx.translate(WIDTH / 2, py + (this.info.y - py) * k);
         this.info.art.draw(ctx);
         ctx.restore();
       }
     }
+    /** The two volume sliders, in the hole. */
+    renderSliders(ctx) {
+      const s = app.save.settings;
+      const focused = this.group.focused && this.group.focused.name;
+      for (const sl of SLIDERS) {
+        const on = s[sl.key];
+        const v = s[sl.key + "Volume"];
+        const active = focused === sl.key || this.dragging === sl.key;
+        ctx.save();
+        ctx.globalAlpha = on ? 1 : 0.5;
+        text(
+          ctx,
+          sl.label + " " + (on ? Math.round(v * 100) + " %" : ": coup\xE9"),
+          CX,
+          sl.y - 16,
+          { size: 14, color: active ? "#ffe060" : "#fff", outline: "#4a1470" }
+        );
+        ctx.fillStyle = "rgba(40,0,70,0.6)";
+        roundRect(ctx, SLIDER_X, sl.y - 4, SLIDER_W, 8, 4);
+        ctx.fill();
+        ctx.fillStyle = active ? "#ffe060" : "#b4f08a";
+        roundRect(ctx, SLIDER_X, sl.y - 4, Math.max(8, SLIDER_W * v), 8, 4);
+        ctx.fill();
+        ctx.fillStyle = "#fff";
+        circle(ctx, SLIDER_X + SLIDER_W * v, sl.y, active ? 8 : 6);
+        ctx.fill();
+        ctx.strokeStyle = "#4a1470";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.restore();
+      }
+      if (focused === "music" || focused === "sounds")
+        text(ctx, "\u2191 \u2193 : volume", CX, 268, { size: 11, color: "rgba(255,255,255,0.8)", weight: "700" });
+    }
     drawBall(ctx, b) {
+      const k = this.k;
       ctx.save();
-      ctx.translate(b.x, b.y);
+      ctx.translate(b.px + (b.x - b.px) * k, b.py + (b.y - b.py) * k);
       b.art.draw(ctx);
+      if (b.label) {
+        const selected = b.art.frame >= b.art.frameOf("selected");
+        ctx.rotate(-0.12);
+        ctx.font = "italic 700 " + (selected ? 21 : 19) + "px Georgia, 'Times New Roman', serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "rgba(255,255,255,0.7)";
+        ctx.strokeText(b.label, 0, 0);
+        ctx.fillStyle = "#3d5561";
+        ctx.fillText(b.label, 0, 0);
+      }
       ctx.restore();
     }
   };
@@ -8256,6 +8831,8 @@
     const s = app.save.settings;
     app.audio.setMusicEnabled(s.music);
     app.audio.setSoundsEnabled(s.sounds);
+    app.audio.setMusicVolume(s.musicVolume);
+    app.audio.setSoundsVolume(s.soundsVolume);
   }
 
   // src/scenes/title.js
@@ -8271,12 +8848,21 @@
       this.xscale = 100;
       this.yscale = 100;
       this.color = null;
+      this.prev = null;
     }
-    draw(ctx) {
+    /** Keeps the place of this step. */
+    snapshot() {
+      this.prev = { x: this.x, y: this.y, rotation: this.rotation, xscale: this.xscale, yscale: this.yscale };
+    }
+    /** Draws between the previous step (k = 0) and this one (k = 1). */
+    draw(ctx, k = 1) {
+      const p = this.prev || this;
+      const lerp = (a, b) => a + (b - a) * k;
+      const dr = (this.rotation - p.rotation + 540) % 360 - 180;
       ctx.save();
-      ctx.translate(this.x, this.y);
-      ctx.rotate(this.rotation * Math.PI / 180);
-      ctx.scale(this.xscale / 100, this.yscale / 100);
+      ctx.translate(lerp(p.x, this.x), lerp(p.y, this.y));
+      ctx.rotate((p.rotation + dr * k) * Math.PI / 180);
+      ctx.scale(lerp(p.xscale, this.xscale) / 100, lerp(p.yscale, this.yscale) / 100);
       this.art.draw(ctx, this.color);
       ctx.restore();
     }
@@ -8336,7 +8922,13 @@
     breathe(t, i) {
       return 100 + this.scaleFactor * Math.cos(i + this.totTime / 20);
     }
+    /** Everything drawn by the intro. */
+    get all() {
+      return [this.bg, this.shadeDeux, ...this.fissures, this.deux, this.pressStart, ...this.letters].filter(Boolean);
+    }
     step() {
+      for (const mc of this.all)
+        mc.snapshot();
       this.totTime++;
       this.menuTime = Math.min(1, this.menuTime + 1 / 30);
       const L2 = this.letters;
@@ -8508,21 +9100,13 @@
       }
     }
     render(ctx) {
+      const k = Math.min(1, this.clock / FRAME3);
       ctx.fillStyle = "#000";
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
       ctx.save();
       ctx.translate(0, this.shakeY || 0);
-      this.bg.draw(ctx);
-      if (this.shadeDeux)
-        this.shadeDeux.draw(ctx);
-      for (const f of this.fissures)
-        f.draw(ctx);
-      if (this.deux)
-        this.deux.draw(ctx);
-      if (this.pressStart)
-        this.pressStart.draw(ctx);
-      for (const t of this.letters)
-        t.draw(ctx);
+      for (const mc of this.all)
+        mc.draw(ctx, k);
       ctx.restore();
     }
   };
@@ -8535,6 +9119,7 @@
     app.audio = new AudioEngine(SOUND_FILES);
     app.images = new ImageStore();
     app.save = new Progress();
+    app.achievements = new Achievements(app.save);
     app.scenes = new SceneManager();
     const bindButton = (id, action) => {
       const el = document.getElementById(id);
@@ -8597,11 +9182,14 @@
     app.time += dt;
     app.audio.update(dt);
     app.scenes.update(dt);
+    app.achievements.update(dt);
     app.input.endStep();
   }
   function render() {
     app.input.poll();
-    app.scenes.render(app.screen.begin());
+    const ctx = app.screen.begin();
+    app.scenes.render(ctx);
+    app.achievements.render(ctx);
   }
   start();
   window.motionball = app;

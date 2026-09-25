@@ -52,6 +52,7 @@ are replaced by fakes, see `tests/helpers.js`, and the random numbers are seeded
 | `tests/bosses.test.js` | the three bosses : how each one is hurt, its attacks, its death ; the four powers |
 | `tests/scenes.test.js` | menus, pause, end of game ; every screen, room and boss fight is also drawn on a fake canvas |
 | `tests/progress.test.js` | unlocks, records, saving |
+| `tests/achievements.test.js` | what unlocks each achievement, the counters, the banner, their screen |
 | `tests/engine.test.js` | input, audio mixing, main loop, transitions, math |
 | `tests/xfl.test.js` | the XFL converter (edges, colours, scripts, bitmaps), the converted symbols, the timeline player |
 | `tests/physics.test.js` | the collision shapes and the bounce |
@@ -71,7 +72,13 @@ differs:
 - Collisions are geometric: the ball bounces on the real shapes of the bumpers
   and slides along the walls instead of sampling 16 points on a 4 x 4 grid.
 - A fixed 120 steps per second simulation; the original's per-frame tuning
-  (40 frames per second) is converted to pixels per second.
+  (40 frames per second) is converted to pixels per second. The animations
+  keep the original 40 frames per second but are drawn in between (motion
+  tweens, the intro, the menu), so they are smooth at 60, 120 or 144 Hz.
+- 17 achievements (the "succès" ball of the menu shows them; a banner
+  appears when one is unlocked), in place of the Frutiparc trophies.
+- Separate volumes for the music and the sound effects (sliders in the
+  options page of the menu, saved with the settings).
 - Keyboard, gamepad and touch controls: the menu's ring of balls can be walked
   with the arrows, the pause has "Continuer" / "Abandonner" buttons, a finger
   drives the ball with a virtual joystick.

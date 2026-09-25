@@ -18,7 +18,11 @@ const FRAME = 1 / 40;
 /** A colour transform replacing the colour (Color.setRGB). */
 const rgb = (r, g, b) => ({ am: 1, rm: 0, gm: 0, bm: 0, ao: 0, ro: r, go: g, bo: b });
 
-/** A symbol placed like a movie clip (x, y, rotation in degrees, scale in %). */
+/**
+ * A symbol placed like a movie clip (x, y, rotation in degrees, scale in %).
+ * It keeps its place of the previous step : it is drawn in between, so that
+ * it moves smoothly on any screen although the intro runs 40 steps per second.
+ */
 class Mc {
 
 	constructor(name, frame = 0) {
@@ -30,13 +34,24 @@ class Mc {
 		this.xscale = 100;
 		this.yscale = 100;
 		this.color = null;
+		this.prev = null;
 	}
 
-	draw(ctx) {
+	/** Keeps the place of this step. */
+	snapshot() {
+		this.prev = { x: this.x, y: this.y, rotation: this.rotation, xscale: this.xscale, yscale: this.yscale };
+	}
+
+	/** Draws between the previous step (k = 0) and this one (k = 1). */
+	draw(ctx, k = 1) {
+		const p = this.prev || this;
+		const lerp = (a, b) => a + (b - a) * k;
+		// (the rotation takes the short way, it wraps around at 180)
+		const dr = ((this.rotation - p.rotation + 540) % 360) - 180;
 		ctx.save();
-		ctx.translate(this.x, this.y);
-		ctx.rotate(this.rotation * Math.PI / 180);
-		ctx.scale(this.xscale / 100, this.yscale / 100);
+		ctx.translate(lerp(p.x, this.x), lerp(p.y, this.y));
+		ctx.rotate((p.rotation + dr * k) * Math.PI / 180);
+		ctx.scale(lerp(p.xscale, this.xscale) / 100, lerp(p.yscale, this.yscale) / 100);
 		this.art.draw(ctx, this.color);
 		ctx.restore();
 	}
@@ -103,7 +118,14 @@ export class TitleScene {
 		return 100 + this.scaleFactor * Math.cos(i + this.totTime / 20);
 	}
 
+	/** Everything drawn by the intro. */
+	get all() {
+		return [this.bg, this.shadeDeux, ...this.fissures, this.deux, this.pressStart, ...this.letters].filter(Boolean);
+	}
+
 	step() {
+		for (const mc of this.all)
+			mc.snapshot();
 		this.totTime++;
 		this.menuTime = Math.min(1, this.menuTime + 1 / 30);
 		const L = this.letters;
@@ -291,22 +313,15 @@ export class TitleScene {
 	}
 
 	render(ctx) {
+		// (between the last two steps)
+		const k = Math.min(1, this.clock / FRAME);
 		ctx.fillStyle = "#000";
 		ctx.fillRect(0, 0, W, H);
 		ctx.save();
 		ctx.translate(0, this.shakeY || 0);
 		// (the depths of the original : background, shadow and cracks, the "2", the letters)
-		this.bg.draw(ctx);
-		if (this.shadeDeux)
-			this.shadeDeux.draw(ctx);
-		for (const f of this.fissures)
-			f.draw(ctx);
-		if (this.deux)
-			this.deux.draw(ctx);
-		if (this.pressStart)
-			this.pressStart.draw(ctx);
-		for (const t of this.letters)
-			t.draw(ctx);
+		for (const mc of this.all)
+			mc.draw(ctx, k);
 		ctx.restore();
 	}
 }

@@ -64,7 +64,7 @@ test("menu : the arrows go around the ring of modes, confirm opens them", () => 
 	assert.equal(menu.group.focused.name, "course");
 	press(menu, "left");
 	press(menu, "left");
-	assert.equal(menu.group.focused.name, "aide", "the ring goes round");
+	assert.equal(menu.group.focused.name, "succes", "the ring goes round");
 	press(menu, "right");
 	press(menu, "right");
 	press(menu, "confirm");
@@ -118,6 +118,29 @@ test("menu : the options toggle the music and the sounds", () => {
 	press(menu, "confirm");
 	settle(menu);
 	assert.equal(app.save.settings.sounds, false);
+});
+
+test("menu : the volume sliders, dragged or with up / down on the ball", () => {
+	setup();
+	const menu = new MenuScene("options");
+	play(menu, 1.5);
+	const s = app.save.settings;
+	assert.equal(s.musicVolume, 1);
+	// the music ball has the focus : down lowers its volume
+	press(menu, "down");
+	press(menu, "down");
+	assert.equal(s.musicVolume, 0.8);
+	assert.equal(app.audio.musicVolume, 0.8, "applied");
+	assert.equal(menu.group.focused.name, "music", "the ring did not turn");
+	// dragging the sounds slider to its middle
+	app.input.dragging = { x: 250 + 55, y: 238 };
+	play(menu, STEP * 2);
+	assert.equal(menu.group.focused.name, "sounds", "its ball gets the focus");
+	app.input.dragging = null;
+	play(menu, STEP);
+	assert.equal(s.soundsVolume, 0.5);
+	assert.equal(app.audio.soundsVolume, 0.5);
+	assert.ok(app.audio.count("menuMove") > 0, "a sound to hear the new volume");
 });
 
 // ----- playing -----

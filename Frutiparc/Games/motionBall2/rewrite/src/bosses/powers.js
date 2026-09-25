@@ -298,6 +298,11 @@ export class Earth extends Power {
 	 * (a spring, stiffer when stretched). The ball receives the pull too.
 	 */
 	pullVine(ball) {
+		// (the places before this frame, to draw in between)
+		for (const m of this.vine) {
+			m.px = m.x;
+			m.py = m.y;
+		}
 		// the ball is the last element (its speed in pixels per frame)
 		const b = { x: ball.x, y: ball.y, vx: ball.vx / 40, vy: ball.vy / 40 };
 		const chain = this.vine.concat([b]);
@@ -347,7 +352,10 @@ export class Earth extends Power {
 			ctx.save();
 			// (original : -10 % alpha per frame when it breaks)
 			ctx.globalAlpha = this.breaking < 0 ? 1 : Math.max(0, 1 - this.breaking / 0.25);
-			const points = this.vine.concat([game.ball]);
+			// (the vine moves 40 times per second : drawn between its last two frames)
+			const k = Math.min(1, this.clock.time / FRAME);
+			const points = this.vine.map(m => m.px === undefined ? m : { x: m.px + (m.x - m.px) * k, y: m.py + (m.y - m.py) * k })
+				.concat([game.ball]);
 			for (let i = 0; i < this.vine.length; i++) {
 				const a = points[i];
 				const b = points[i + 1];

@@ -45,6 +45,7 @@ export class Pastille extends Entity {
 		if (this.red) {
 			app.audio.play("red");
 			game.room.redTaken(game);
+			game.achieve("pastille");
 		} else {
 			app.audio.play("blue");
 			game.addTime(game.rules.bluePastille);
